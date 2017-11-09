@@ -8,6 +8,7 @@ Release
 ipch
 .gitignore~
 *.opensdf
+*.opendb
 *.db
 *.sdf
 *.suo

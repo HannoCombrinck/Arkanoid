@@ -562,8 +562,8 @@ int main(int argc, char** argv)
 	saveGraph(spRoot, "../Data/graph.dat");
 	auto spNewRoot = loadGraph("../Data/graph.dat");*/
 
-	Arkanoid ark;
-	ark.startMainLoop();
+	Arkanoid arkanoid;
+	arkanoid.startMainLoop();
 
 	return 0;
 }
