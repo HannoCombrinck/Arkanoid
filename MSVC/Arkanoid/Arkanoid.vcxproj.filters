@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header/Source Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header/Source Files\Engine">
+      <UniqueIdentifier>{42132125-03aa-43f0-a391-20db2d53f463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header/Source Files\Engine\Core">
+      <UniqueIdentifier>{84145602-7385-4d0f-bd61-f9da7595cef5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header/Source Files\Engine\Core\Math">
+      <UniqueIdentifier>{c88ebff0-1bb2-4e03-8bee-1d1e816585f8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\main.cpp">
+      <Filter>Header/Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Core\Math\MathHelpers.cpp">
+      <Filter>Header/Source Files\Engine\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\AppBase.cpp">
+      <Filter>Header/Source Files\Engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h">
+      <Filter>Header/Source Files\Engine\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Math\Math.h">
+      <Filter>Header/Source Files\Engine\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\AppBase.h">
+      <Filter>Header/Source Files\Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -4,7 +4,6 @@ Debug
 Data/
 Libraries/
 Release
-MSVC/Arkanoid/
 .vs/
 ipch
 .gitignore~
