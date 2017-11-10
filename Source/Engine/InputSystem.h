@@ -142,7 +142,7 @@ namespace engine
 		// }
 
 	private:
-		// AppBase interface for updating and forwarding input events
+		// AppBase interface
 		// {
 		friend class AppBase;
 		void update(float fDT);

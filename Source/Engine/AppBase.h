@@ -8,6 +8,8 @@
 namespace engine
 {
 	class InputSystem;
+	class GraphicsSystem;
+	class SoundSystem;
 
 	class AppBase
 	{
@@ -19,6 +21,9 @@ namespace engine
 		// Derived application
 		// {
 		void closeApplication();
+		InputSystem* InputSys() { return m_upInputSystem.get(); }
+		GraphicsSystem* GraphicsSys() { return m_upGraphicsSystem.get(); }
+		SoundSystem* SoundSys() { return m_upSoundSystem.get(); }
 		// }
 
 	private:
@@ -41,25 +46,17 @@ namespace engine
 
 		// Application state
 		float m_fDeltaTime;
-		float m_fDeltaTimeSmoothed;
 
 		// Move to application config
 		bool m_bFullscreen;
 		bool m_bVSync;
 		// }
 
-
 		// Application systems - dependent on Application internals
 		// {
 		std::unique_ptr<InputSystem> m_upInputSystem;
+		std::unique_ptr<GraphicsSystem> m_upGraphicsSystem;
+		std::unique_ptr<SoundSystem> m_upSoundSystem;
 		// }
-
-
-		// TEMP
-		sf::Font m_Font;
-		sf::Text m_Text;
-		sf::Sound m_BeepSound;
-		sf::SoundBuffer m_BeepSoundBuffer;
-		sf::Music m_Music;
 	};
 }
