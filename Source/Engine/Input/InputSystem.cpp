@@ -25,24 +25,24 @@ namespace input {
 
 	}
 
-	void InputSystem::keyPressed(unsigned int uKey)
+	void InputSystem::keyPressed(KeyboardKey eKey)
 	{
-		m_KBState[uKey] = true;
+		m_KBState[eKey] = true;
 	}
 
-	void InputSystem::keyReleased(unsigned int uKey)
+	void InputSystem::keyReleased(KeyboardKey eKey)
 	{
-		m_KBState[uKey] = false;
+		m_KBState[eKey] = false;
 	}
 
-	void InputSystem::mbPressed(unsigned int uButton)
+	void InputSystem::mbPressed(MouseButton eButton)
 	{
-		m_MBState[uButton] = true;
+		m_MBState[eButton] = true;
 	}
 
-	void InputSystem::mbReleased(unsigned int uButton)
+	void InputSystem::mbReleased(MouseButton eButton)
 	{
-		m_MBState[uButton] = false;
+		m_MBState[eButton] = false;
 	}
 
 	void InputSystem::mouseMoved(int iX, int iY)

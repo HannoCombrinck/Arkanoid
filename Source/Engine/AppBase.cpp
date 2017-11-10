@@ -88,7 +88,7 @@ void AppBase::handleEvents()
 			m_upVisualSystem->resize(e.size.width, e.size.height);
 			break;
 		case Event::KeyPressed:
-			m_upInputSystem->keyPressed(e.key.code);
+			m_upInputSystem->keyPressed(KeyboardKey(e.key.code));
 				
 			{
 				switch (e.key.code)
@@ -111,13 +111,13 @@ void AppBase::handleEvents()
 			}
 			break;
 		case Event::KeyReleased:
-			m_upInputSystem->keyReleased(e.key.code);
+			m_upInputSystem->keyReleased(KeyboardKey(e.key.code));
 			break;
 		case Event::MouseButtonPressed:
-			m_upInputSystem->mbPressed(e.mouseButton.button);
+			m_upInputSystem->mbPressed(MouseButton(e.mouseButton.button));
 			break;
 		case Event::MouseButtonReleased:
-			m_upInputSystem->mbReleased(e.mouseButton.button);
+			m_upInputSystem->mbReleased(MouseButton(e.mouseButton.button));
 			break;
 		case Event::MouseMoved:
 			m_upInputSystem->mouseMoved(e.mouseMove.x, e.mouseMove.y);

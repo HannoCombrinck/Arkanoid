@@ -43,6 +43,9 @@
     <ClCompile Include="..\..\Source\Engine\Graphics\VisualSystem.cpp">
       <Filter>Header/Source Files\Engine\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Input\InputListener.cpp">
+      <Filter>Header/Source Files\Engine\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h">
@@ -62,6 +65,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Engine\Graphics\VisualSystem.h">
       <Filter>Header/Source Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Input\InputListener.h">
+      <Filter>Header/Source Files\Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Input\InputCodes.h">
+      <Filter>Header/Source Files\Engine\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
