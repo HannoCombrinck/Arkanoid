@@ -26,7 +26,10 @@ public:
 	AppBase();
 	virtual ~AppBase();
 
+	// Public interface
+	// {
 	void start();
+	// }
 
 protected:
 	// Derived application

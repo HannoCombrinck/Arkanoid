@@ -29,12 +29,6 @@ AppBase::AppBase()
 	m_upInputSystem = make_unique<InputSystem>();
 	m_upVisualSystem = make_unique<VisualSystem>(m_upWindow.get());
 	m_upSoundSystem = make_unique<SoundSystem>();
-
-	// Initialize systems
-	//m_Systems.spVS = boost::make_shared<VisualSystem>();
-	//m_Systems.spPS = boost::make_shared<PhysicsSystem>();
-	//m_Systems.spSS = boost::make_shared<SoundSystem>();
-	//m_Systems.spIS = boost::make_shared<InputSystem>();
 }
 
 AppBase::~AppBase()
