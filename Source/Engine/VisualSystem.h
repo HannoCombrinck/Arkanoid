@@ -10,11 +10,11 @@ namespace sf
 
 namespace engine
 {
-	class GraphicsSystem
+	class VisualSystem
 	{
 	public:
-		GraphicsSystem(sf::RenderWindow *pWindow);
-		~GraphicsSystem();
+		VisualSystem(sf::RenderWindow *pWindow);
+		~VisualSystem();
 
 	private:
 		// AppBase interface
@@ -25,7 +25,7 @@ namespace engine
 		void resize(int iWidth, int iHeight);
 		// }
 
-		// GraphicsSystem internals
+		// VisualSystem internals
 		// {
 		sf::RenderWindow *m_pWindow;
 		float m_fDeltaTime;

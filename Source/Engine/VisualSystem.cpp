@@ -1,4 +1,4 @@
-#include "GraphicsSystem.h"
+#include "VisualSystem.h"
 
 #include <iostream>
 
@@ -9,7 +9,7 @@ using namespace sf;
 
 namespace engine {
 
-	GraphicsSystem::GraphicsSystem(RenderWindow *pWindow)
+	VisualSystem::VisualSystem(RenderWindow *pWindow)
 		: m_pWindow(pWindow)
 		, m_fDeltaTime(0.0f)
 		, m_fDeltaTimeSmoothed(0.0f)
@@ -23,17 +23,17 @@ namespace engine {
 		m_upText->setCharacterSize(10U);
 	}
 
-	GraphicsSystem::~GraphicsSystem()
+	VisualSystem::~VisualSystem()
 	{
 	}
 
-	void GraphicsSystem::update(float fDT)
+	void VisualSystem::update(float fDT)
 	{
 		m_fDeltaTime = fDT;
 		m_fDeltaTimeSmoothed = m_fDeltaTimeSmoothed*0.98f + m_fDeltaTime*0.02f;
 	}
 
-	void GraphicsSystem::render()
+	void VisualSystem::render()
 	{
 		m_pWindow->clear();
 		// Draw custom OpenGL stuff here
@@ -51,7 +51,7 @@ namespace engine {
 		m_pWindow->display();
 	}
 
-	void GraphicsSystem::resize(int iWidth, int iHeight)
+	void VisualSystem::resize(int iWidth, int iHeight)
 	{
 		m_pWindow->setView(View(FloatRect(0, 0, float(iWidth), float(iHeight))));
 	}

@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include <Engine/InputSystem.h>
-#include <Engine/GraphicsSystem.h>
+#include <Engine/VisualSystem.h>
 #include <Engine/SoundSystem.h>
 
 using namespace sf;
@@ -20,7 +20,7 @@ namespace engine {
 		m_Window.setVerticalSyncEnabled(m_bVSync);
 
 		m_upInputSystem = make_unique<InputSystem>();
-		m_upGraphicsSystem = make_unique<GraphicsSystem>(&m_Window);
+		m_upVisualSystem = make_unique<VisualSystem>(&m_Window);
 		m_upSoundSystem = make_unique<SoundSystem>();
 
 		// Initialize systems
@@ -56,7 +56,7 @@ namespace engine {
 	void AppBase::update()
 	{
 		m_upInputSystem->update(m_fDeltaTime);
-		m_upGraphicsSystem->update(m_fDeltaTime);
+		m_upVisualSystem->update(m_fDeltaTime);
 		m_upSoundSystem->update(m_fDeltaTime);
 
 		onUpdate(m_fDeltaTime);
@@ -64,7 +64,7 @@ namespace engine {
 
 	void AppBase::render()
 	{
-		m_upGraphicsSystem->render();
+		m_upVisualSystem->render();
 	}
 
 	void AppBase::handleEvents()
@@ -78,7 +78,7 @@ namespace engine {
 				m_Window.close();
 				break;
 			case Event::Resized:
-				m_upGraphicsSystem->resize(e.size.width, e.size.height);
+				m_upVisualSystem->resize(e.size.width, e.size.height);
 				break;
 			case Event::KeyPressed:
 				m_upInputSystem->keyPressed(e.key.code);

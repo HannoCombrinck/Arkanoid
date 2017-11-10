@@ -31,7 +31,7 @@
     <ClCompile Include="..\..\Source\Engine\SoundSystem.cpp">
       <Filter>Header/Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Engine\GraphicsSystem.cpp">
+    <ClCompile Include="..\..\Source\Engine\VisualSystem.cpp">
       <Filter>Header/Source Files\Engine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -51,7 +51,7 @@
     <ClInclude Include="..\..\Source\Engine\SoundSystem.h">
       <Filter>Header/Source Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Engine\GraphicsSystem.h">
+    <ClInclude Include="..\..\Source\Engine\VisualSystem.h">
       <Filter>Header/Source Files\Engine</Filter>
     </ClInclude>
   </ItemGroup>

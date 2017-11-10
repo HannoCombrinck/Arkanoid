@@ -13,7 +13,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\Source\Engine\AppBase.cpp" />
     <ClCompile Include="..\..\Source\Engine\Core\Math\MathHelpers.cpp" />
-    <ClCompile Include="..\..\Source\Engine\GraphicsSystem.cpp" />
+    <ClCompile Include="..\..\Source\Engine\VisualSystem.cpp" />
     <ClCompile Include="..\..\Source\Engine\InputSystem.cpp" />
     <ClCompile Include="..\..\Source\Engine\SoundSystem.cpp" />
     <ClCompile Include="..\..\Source\main.cpp" />
@@ -22,7 +22,7 @@
     <ClInclude Include="..\..\Source\Engine\AppBase.h" />
     <ClInclude Include="..\..\Source\Engine\Core\Math\Math.h" />
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h" />
-    <ClInclude Include="..\..\Source\Engine\GraphicsSystem.h" />
+    <ClInclude Include="..\..\Source\Engine\VisualSystem.h" />
     <ClInclude Include="..\..\Source\Engine\InputSystem.h" />
     <ClInclude Include="..\..\Source\Engine\SoundSystem.h" />
   </ItemGroup>

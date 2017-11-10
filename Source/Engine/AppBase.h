@@ -8,7 +8,7 @@
 namespace engine
 {
 	class InputSystem;
-	class GraphicsSystem;
+	class VisualSystem;
 	class SoundSystem;
 
 	class AppBase
@@ -22,7 +22,7 @@ namespace engine
 		// {
 		void closeApplication();
 		InputSystem* InputSys() { return m_upInputSystem.get(); }
-		GraphicsSystem* GraphicsSys() { return m_upGraphicsSystem.get(); }
+		VisualSystem* VisualSys() { return m_upVisualSystem.get(); }
 		SoundSystem* SoundSys() { return m_upSoundSystem.get(); }
 		// }
 
@@ -52,7 +52,7 @@ namespace engine
 		// Application systems - dependent on Application internals
 		// {
 		std::unique_ptr<InputSystem> m_upInputSystem;
-		std::unique_ptr<GraphicsSystem> m_upGraphicsSystem;
+		std::unique_ptr<VisualSystem> m_upVisualSystem;
 		std::unique_ptr<SoundSystem> m_upSoundSystem;
 		// }
 	};
