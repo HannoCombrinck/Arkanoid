@@ -64,9 +64,6 @@ namespace engine {
 
 	void AppBase::render()
 	{
-		// for all entities: preRender()
-		//m_Systems.spVS->render();
-		// for all entities: postRender()
 		m_upGraphicsSystem->render();
 	}
 
@@ -81,9 +78,8 @@ namespace engine {
 				m_Window.close();
 				break;
 			case Event::Resized:
-				m_Window.setView(View(FloatRect(0, 0, float(e.size.width), float(e.size.height))));
+				m_upGraphicsSystem->resize(e.size.width, e.size.height);
 				break;
-
 			case Event::KeyPressed:
 				m_upInputSystem->keyPressed(e.key.code);
 				

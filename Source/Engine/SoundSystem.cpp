@@ -5,12 +5,13 @@
 #include <SFML\Audio.hpp>
 
 using namespace std;
-using namespace core;
 using namespace sf;
+using namespace engine::core;
 
 namespace engine {
 
 	SoundSystem::SoundSystem()
+		: m_fGlobalVolume(100.0f)
 	{
 		m_BeepSoundBuffer = make_unique<SoundBuffer>();
 		m_BeepSound = make_unique<Sound>();

@@ -27,7 +27,7 @@
 
 using namespace sf;
 using namespace std;
-using namespace core;
+using namespace engine::core;
 
 namespace game
 {

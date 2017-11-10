@@ -22,6 +22,7 @@ namespace engine
 		friend class AppBase;
 		void update(float fDT);
 		void render();
+		void resize(int iWidth, int iHeight);
 		// }
 
 		// GraphicsSystem internals

@@ -5,7 +5,7 @@
 #include <SFML\Window.hpp>
 
 using namespace std;
-using namespace core;
+using namespace engine::core;
 
 namespace engine {
 

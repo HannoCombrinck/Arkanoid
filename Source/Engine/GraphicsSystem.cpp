@@ -36,17 +36,24 @@ namespace engine {
 	void GraphicsSystem::render()
 	{
 		m_pWindow->clear();
-		
 		// Draw custom OpenGL stuff here
-		
 		m_pWindow->pushGLStates();
 		// Draw via SFML (Convenient wrappers for text, 2d rendering etc.)
+
+		//////
+		// TEMP TEST RENDERING
 		m_upText->setString(to_string(1.0f / m_fDeltaTimeSmoothed));
 		m_pWindow->draw(*m_upText);
-		m_pWindow->popGLStates();
+		//////
 
+		m_pWindow->popGLStates();
 		// Flip buffers 
 		m_pWindow->display();
+	}
+
+	void GraphicsSystem::resize(int iWidth, int iHeight)
+	{
+		m_pWindow->setView(View(FloatRect(0, 0, float(iWidth), float(iHeight))));
 	}
 
 }

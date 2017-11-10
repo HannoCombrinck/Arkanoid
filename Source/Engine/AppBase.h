@@ -32,7 +32,6 @@ namespace engine
 		virtual void onUpdate(float fDT) {}
 		// }
 
-
 		// Application internals
 		// {
 		void mainLoop();
@@ -43,8 +42,6 @@ namespace engine
 
 		sf::RenderWindow m_Window;
 		sf::Clock m_Clock;
-
-		// Application state
 		float m_fDeltaTime;
 
 		// Move to application config

@@ -24,6 +24,13 @@ namespace engine
 		void update(float fDT);
 		// }
 
+		// SoundSystem internals
+		// {
+		core::Vec3 m_vListenerPosition;
+		core::Vec3 m_vListenerDirection;
+		float m_fGlobalVolume; 
+		// }
+
 		// TEMP
 		std::unique_ptr<sf::Sound> m_BeepSound;
 		std::unique_ptr<sf::SoundBuffer> m_BeepSoundBuffer;
