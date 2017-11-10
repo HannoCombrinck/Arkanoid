@@ -7,7 +7,7 @@
 using namespace std;
 using namespace sf;
 
-namespace engine {
+namespace graphics {
 
 	VisualSystem::VisualSystem(RenderWindow *pWindow)
 		: m_pWindow(pWindow)

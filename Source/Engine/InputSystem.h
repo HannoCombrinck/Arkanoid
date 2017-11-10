@@ -2,7 +2,7 @@
 
 #include <Engine\Core\Math\Math.h>
 
-namespace engine
+namespace input
 {
 	class InputSystem
 	{

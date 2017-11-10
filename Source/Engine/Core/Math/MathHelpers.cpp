@@ -1,6 +1,6 @@
 #include "MathHelpers.h"
 
-namespace engine { namespace core {
+namespace core {
 
 	float calcQuatWComponent(const glm::quat &q) 
 	{
@@ -61,4 +61,4 @@ namespace engine { namespace core {
 	{
 		return rad*180.0f/PI;
 	}
-} }
+}

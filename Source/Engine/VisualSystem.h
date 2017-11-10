@@ -8,7 +8,7 @@ namespace sf
 	class Text;
 }
 
-namespace engine
+namespace graphics
 {
 	class VisualSystem
 	{

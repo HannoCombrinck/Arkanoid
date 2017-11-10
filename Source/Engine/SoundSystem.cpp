@@ -6,9 +6,9 @@
 
 using namespace std;
 using namespace sf;
-using namespace engine::core;
+using namespace core;
 
-namespace engine {
+namespace sound {
 
 	SoundSystem::SoundSystem()
 		: m_fGlobalVolume(100.0f)

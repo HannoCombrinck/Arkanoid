@@ -5,9 +5,9 @@
 #include <SFML\Window.hpp>
 
 using namespace std;
-using namespace engine::core;
+using namespace core;
 
-namespace engine {
+namespace input {
 
 	InputSystem::InputSystem()
 	{

@@ -27,7 +27,7 @@
 
 using namespace sf;
 using namespace std;
-using namespace engine::core;
+using namespace core;
 
 namespace game
 {
@@ -439,7 +439,7 @@ private:
 
 };
 
-class Arkanoid : public engine::AppBase
+class Arkanoid : public AppBase
 {
 public:
 	Arkanoid() 

@@ -9,7 +9,7 @@ namespace sf
 	class Music;
 }
 
-namespace engine
+namespace sound
 {
 	class SoundSystem
 	{
