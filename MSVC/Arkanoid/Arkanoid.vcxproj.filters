@@ -25,6 +25,9 @@
     <ClCompile Include="..\..\Source\Engine\AppBase.cpp">
       <Filter>Header/Source Files\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\InputSystem.cpp">
+      <Filter>Header/Source Files\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h">
@@ -34,6 +37,9 @@
       <Filter>Header/Source Files\Engine\Core\Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Engine\AppBase.h">
+      <Filter>Header/Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\InputSystem.h">
       <Filter>Header/Source Files\Engine</Filter>
     </ClInclude>
   </ItemGroup>

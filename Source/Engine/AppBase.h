@@ -1,17 +1,25 @@
 #pragma once
 
+#include <memory>
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
 namespace engine
 {
+	class InputSystem;
+
 	class AppBase
 	{
 	public:
 		AppBase();
 		virtual ~AppBase();
 
-		void startMainLoop();
+	protected:
+		// Derived application
+		// {
+		void closeApplication();
+		// }
 
 	private:
 		// Application events (to be overridden by derived applications)
@@ -19,8 +27,10 @@ namespace engine
 		virtual void onUpdate(float fDT) {}
 		// }
 
+
 		// Application internals
 		// {
+		void mainLoop();
 		void update();
 		void render();
 		void handleEvents();
@@ -37,6 +47,13 @@ namespace engine
 		bool m_bFullscreen;
 		bool m_bVSync;
 		// }
+
+
+		// Application systems - dependent on Application internals
+		// {
+		std::unique_ptr<InputSystem> m_upInputSystem;
+		// }
+
 
 		// TEMP
 		sf::Font m_Font;

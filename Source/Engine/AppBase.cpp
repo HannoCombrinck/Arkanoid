@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include <Engine/InputSystem.h>
+
 using namespace sf;
 using namespace std;
 
@@ -21,6 +23,8 @@ namespace engine {
 		m_Text.setFont(m_Font);
 		m_Text.setCharacterSize(10U);
 
+		m_upInputSystem = make_unique<InputSystem>();
+
 		// TEMP
 		if (!m_BeepSoundBuffer.loadFromFile("../Data/Sounds/beep.wav"))
 			std::cout << "Couldn't load beep.wav\n";
@@ -39,6 +43,8 @@ namespace engine {
 		//m_Systems.spPS = boost::make_shared<PhysicsSystem>();
 		//m_Systems.spSS = boost::make_shared<SoundSystem>();
 		//m_Systems.spIS = boost::make_shared<InputSystem>();
+
+		mainLoop();
 	}
 
 	AppBase::~AppBase()
@@ -46,7 +52,7 @@ namespace engine {
 
 	}
 
-	void AppBase::startMainLoop()
+	void AppBase::mainLoop()
 	{
 		while (m_Window.isOpen())
 		{
@@ -57,13 +63,20 @@ namespace engine {
 		}
 	}
 
+	void AppBase::closeApplication()
+	{
+		m_Window.close();
+	}
+
 	void AppBase::update()
 	{
 		// Systems updates
-		//m_Systems.spIS->update(ddT);
-		//m_Systems.spPS->update(ddT);
-		//m_Systems.spSS->update(ddT);
-		//m_Systems.spVS->update(ddT);
+		//m_Systems.spIS->update(fDT);
+		//m_Systems.spPS->update(fDT);
+		//m_Systems.spSS->update(fDT);
+		//m_Systems.spVS->update(fDT);
+
+		m_upInputSystem->update(m_fDeltaTime);
 		onUpdate(m_fDeltaTime);
 	}
 
@@ -101,32 +114,47 @@ namespace engine {
 			case Event::Resized:
 				m_Window.setView(View(FloatRect(0, 0, float(e.size.width), float(e.size.height))));
 				break;
+
 			case Event::KeyPressed:
-			{
-				if (m_BeepSound.getStatus() == Sound::Playing)
-					m_BeepSound.stop();
+				m_upInputSystem->keyPressed(e.key.code);
 				
-				m_BeepSound.play();
-
-				switch (e.key.code)
 				{
-				case Keyboard::Escape:
-					m_Window.close();
+					if (m_BeepSound.getStatus() == Sound::Playing)
+						m_BeepSound.stop();
+				
+					m_BeepSound.play();
+
+					switch (e.key.code)
+					{
+					case Keyboard::Escape:
+						m_Window.close();
+						break;
+					case Keyboard::F:
+					{
+						m_bFullscreen = !m_bFullscreen;
+						if (m_bFullscreen)
+							m_Window.create(VideoMode::getDesktopMode(), "Test", Style::Fullscreen);
+						else
+							m_Window.create(VideoMode(800U, 600U, 32U), "Test");
+
+						m_Window.setVerticalSyncEnabled(true);
+					}
 					break;
-				case Keyboard::F:
-				{
-					m_bFullscreen = !m_bFullscreen;
-					if (m_bFullscreen)
-						m_Window.create(VideoMode::getDesktopMode(), "Test", Style::Fullscreen);
-					else
-						m_Window.create(VideoMode(800U, 600U, 32U), "Test");
-
-					m_Window.setVerticalSyncEnabled(true);
+					}
 				}
 				break;
-				}
-			}
-			break;
+			case Event::KeyReleased:
+				m_upInputSystem->keyReleased(e.key.code);
+				break;
+			case Event::MouseButtonPressed:
+				m_upInputSystem->mbPressed(e.mouseButton.button);
+				break;
+			case Event::MouseButtonReleased:
+				m_upInputSystem->mbReleased(e.mouseButton.button);
+				break;
+			case Event::MouseMoved:
+				m_upInputSystem->mouseMoved(e.mouseMove.x, e.mouseMove.y);
+				break;
 			}
 		}
 	}

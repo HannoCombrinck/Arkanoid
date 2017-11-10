@@ -13,12 +13,14 @@
   <ItemGroup>
     <ClCompile Include="..\..\Source\Engine\AppBase.cpp" />
     <ClCompile Include="..\..\Source\Engine\Core\Math\MathHelpers.cpp" />
+    <ClCompile Include="..\..\Source\Engine\InputSystem.cpp" />
     <ClCompile Include="..\..\Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Engine\AppBase.h" />
     <ClInclude Include="..\..\Source\Engine\Core\Math\Math.h" />
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h" />
+    <ClInclude Include="..\..\Source\Engine\InputSystem.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A103236F-90F9-4FF0-83E6-58A47189F605}</ProjectGuid>

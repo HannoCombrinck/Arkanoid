@@ -563,7 +563,7 @@ int main(int argc, char** argv)
 	auto spNewRoot = loadGraph("../Data/graph.dat");*/
 
 	Arkanoid arkanoid;
-	arkanoid.startMainLoop();
+	arkanoid.start();
 
 	return 0;
 }
