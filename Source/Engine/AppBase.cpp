@@ -2,9 +2,12 @@
 
 #include <iostream>
 
-#include <Engine/InputSystem.h>
-#include <Engine/VisualSystem.h>
-#include <Engine/SoundSystem.h>
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+
+#include <Engine/Input/InputSystem.h>
+#include <Engine/Graphics/VisualSystem.h>
+#include <Engine/Sound/SoundSystem.h>
 
 using namespace sf;
 using namespace std;
@@ -17,11 +20,14 @@ AppBase::AppBase()
 	, m_bVSync(true)
 	, m_fDeltaTime(0.0f)
 {
-	m_Window.create(VideoMode(800U, 600U, 32U), "Test");
-	m_Window.setVerticalSyncEnabled(m_bVSync);
+	m_upWindow = make_unique<RenderWindow>();
+	m_upWindow->create(VideoMode(800U, 600U, 32U), "Test");
+	m_upWindow->setVerticalSyncEnabled(m_bVSync);
+
+	m_upClock = make_unique<Clock>();
 
 	m_upInputSystem = make_unique<InputSystem>();
-	m_upVisualSystem = make_unique<VisualSystem>(&m_Window);
+	m_upVisualSystem = make_unique<VisualSystem>(m_upWindow.get());
 	m_upSoundSystem = make_unique<SoundSystem>();
 
 	// Initialize systems
@@ -40,7 +46,7 @@ AppBase::~AppBase()
 
 void AppBase::mainLoop()
 {
-	while (m_Window.isOpen())
+	while (m_upWindow->isOpen())
 	{
 		handleEvents();
 		checkTime();
@@ -51,7 +57,7 @@ void AppBase::mainLoop()
 
 void AppBase::closeApplication()
 {
-	m_Window.close();
+	m_upWindow->close();
 }
 
 void AppBase::update()
@@ -71,12 +77,12 @@ void AppBase::render()
 void AppBase::handleEvents()
 {
 	Event e;
-	while (m_Window.pollEvent(e))
+	while (m_upWindow->pollEvent(e))
 	{
 		switch (e.type)
 		{
 		case Event::Closed:
-			m_Window.close();
+			m_upWindow->close();
 			break;
 		case Event::Resized:
 			m_upVisualSystem->resize(e.size.width, e.size.height);
@@ -88,17 +94,17 @@ void AppBase::handleEvents()
 				switch (e.key.code)
 				{
 				case Keyboard::Escape:
-					m_Window.close();
+					m_upWindow->close();
 					break;
 				case Keyboard::F:
 				{
 					m_bFullscreen = !m_bFullscreen;
 					if (m_bFullscreen)
-						m_Window.create(VideoMode::getDesktopMode(), "Test", Style::Fullscreen);
+						m_upWindow->create(VideoMode::getDesktopMode(), "Test", Style::Fullscreen);
 					else
-						m_Window.create(VideoMode(800U, 600U, 32U), "Test");
+						m_upWindow->create(VideoMode(800U, 600U, 32U), "Test");
 
-					m_Window.setVerticalSyncEnabled(true);
+					m_upWindow->setVerticalSyncEnabled(true);
 				}
 				break;
 				}
@@ -122,5 +128,5 @@ void AppBase::handleEvents()
 
 void AppBase::checkTime()
 {
-	m_fDeltaTime = m_Clock.restart().asSeconds();
+	m_fDeltaTime = m_upClock->restart().asSeconds();
 }

@@ -2,9 +2,11 @@
 
 #include <memory>
 
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-
+namespace sf
+{
+	class RenderWindow;
+	class Clock;
+}
 namespace input
 {
 	class InputSystem;
@@ -47,8 +49,8 @@ private:
 	void handleEvents();
 	void checkTime();
 
-	sf::RenderWindow m_Window;
-	sf::Clock m_Clock;
+	std::unique_ptr<sf::RenderWindow> m_upWindow;
+	std::unique_ptr<sf::Clock> m_upClock;
 	float m_fDeltaTime;
 
 	// Move to application config

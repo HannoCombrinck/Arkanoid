@@ -14,6 +14,15 @@
     <Filter Include="Header/Source Files\Engine\Core\Math">
       <UniqueIdentifier>{c88ebff0-1bb2-4e03-8bee-1d1e816585f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header/Source Files\Engine\Sound">
+      <UniqueIdentifier>{93fc0621-a742-4b01-9006-4d361c8da7bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header/Source Files\Engine\Graphics">
+      <UniqueIdentifier>{f22cd075-aede-4b4a-b472-e7549f48e3fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header/Source Files\Engine\Input">
+      <UniqueIdentifier>{e1013c63-d119-43bb-8500-07ab55acef63}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\main.cpp">
@@ -25,14 +34,14 @@
     <ClCompile Include="..\..\Source\Engine\AppBase.cpp">
       <Filter>Header/Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Engine\InputSystem.cpp">
-      <Filter>Header/Source Files\Engine</Filter>
+    <ClCompile Include="..\..\Source\Engine\Sound\SoundSystem.cpp">
+      <Filter>Header/Source Files\Engine\Sound</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Engine\SoundSystem.cpp">
-      <Filter>Header/Source Files\Engine</Filter>
+    <ClCompile Include="..\..\Source\Engine\Input\InputSystem.cpp">
+      <Filter>Header/Source Files\Engine\Input</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Engine\VisualSystem.cpp">
-      <Filter>Header/Source Files\Engine</Filter>
+    <ClCompile Include="..\..\Source\Engine\Graphics\VisualSystem.cpp">
+      <Filter>Header/Source Files\Engine\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -45,14 +54,14 @@
     <ClInclude Include="..\..\Source\Engine\AppBase.h">
       <Filter>Header/Source Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Engine\InputSystem.h">
-      <Filter>Header/Source Files\Engine</Filter>
+    <ClInclude Include="..\..\Source\Engine\Sound\SoundSystem.h">
+      <Filter>Header/Source Files\Engine\Sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Engine\SoundSystem.h">
-      <Filter>Header/Source Files\Engine</Filter>
+    <ClInclude Include="..\..\Source\Engine\Input\InputSystem.h">
+      <Filter>Header/Source Files\Engine\Input</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Engine\VisualSystem.h">
-      <Filter>Header/Source Files\Engine</Filter>
+    <ClInclude Include="..\..\Source\Engine\Graphics\VisualSystem.h">
+      <Filter>Header/Source Files\Engine\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
