@@ -24,10 +24,12 @@
 #include <Engine/Core/Math/MathHelpers.h>
 
 #include <Engine/AppBase.h>
+#include <Engine/Input/InputListener.h>
 
 using namespace sf;
 using namespace std;
 using namespace core;
+using namespace input;
 
 namespace game
 {
@@ -133,14 +135,14 @@ private:
 		//m_spRigidBody = CreateComponent<RigidBodyComponent>(physics::BOX, 50, 10);
 	}
 
-	void createInputComponents(InputSystem& IS)
-	{
+	//void createInputComponents(InputSystem& IS)
+	//{
 		// m_spKeyboardInput = IS.createKeyboardComponent();
 		// Use m_spKeyboardInput bind callbacks for key presses
 
 		// m_spMouseInput = IS.createMouseComponent();
 		// Use m_spMouseInput to bind callbacks for mouse button presses and mouse movements
-	}
+	//}
 	
 	void createSoundComponents(SoundSystem& SS)
 	{
@@ -391,7 +393,7 @@ enum StateVal
 
 class Arkanoid;
 
-class ArkanoidState
+class ArkanoidState : public InputListener
 {
 public:
 	ArkanoidState(Arkanoid* pArkanoid) 
@@ -408,7 +410,15 @@ protected:
 	}
 
 private:
-	
+	// InputListener overrides
+	// {
+	virtual void onKeyPressed(KeyboardKey eKey) override {}
+	virtual void onKeyReleased(KeyboardKey eKey) override {}
+	virtual void onMBPressed(MouseButton eButton) override {}
+	virtual void onMBReleased(MouseButton eButton) override {}
+	virtual void onMouseMoved(int iX, int iY) override {}
+	// }
+
 	Arkanoid* m_pArkanoid;
 
 };
@@ -450,28 +460,7 @@ public:
 	virtual ~Arkanoid() 
 	{
 	}
-
-	void init() 
-	{
-		m_spStatePlaying = boost::make_shared<StatePlaying>(this);
-		m_spStateMenu = boost::make_shared<StateMenu>(this);
-		m_pState = m_spStateMenu.get();
-		// Load game resources i.e. resources that persist for the whole game lifetime
-	}
-
-	void start()
-	{
-	}
-
-	void stop()
-	{
-	}
-
-	void reset()
-	{
-
-	}
-
+	
 	void load(const string& sFile)
 	{
 		// Load game objects and game state from file
@@ -481,6 +470,14 @@ public:
 	StateVal getState() const { return m_eState; }
 
 private:
+
+	void onInit() override
+	{
+		m_spStatePlaying = boost::make_shared<StatePlaying>(this);
+		m_spStateMenu = boost::make_shared<StateMenu>(this);
+		m_pState = m_spStateMenu.get();
+		// Load game resources i.e. resources that persist for the whole game lifetime
+	}
 
 	void onUpdate(float fDT) override
 	{

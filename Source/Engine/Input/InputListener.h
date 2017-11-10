@@ -24,11 +24,11 @@ namespace input
 
 		// Derived listener overrides
 		// {
-		virtual void onKeyPressed(KeyboardKey eKey) = 0;
-		virtual void onKeyReleased(KeyboardKey eKey) = 0;
-		virtual void onMBPressed(MouseButton eButton) = 0;
-		virtual void onMBReleased(MouseButton eButton) = 0;
-		virtual void onMouseMoved(int iX, int iY) = 0;
+		virtual void onKeyPressed(KeyboardKey eKey) {}
+		virtual void onKeyReleased(KeyboardKey eKey) {}
+		virtual void onMBPressed(MouseButton eButton) {}
+		virtual void onMBReleased(MouseButton eButton) {}
+		virtual void onMouseMoved(int iX, int iY) {}
 		// }
 	};
 }

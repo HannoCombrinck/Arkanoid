@@ -35,8 +35,6 @@ AppBase::AppBase()
 	//m_Systems.spPS = boost::make_shared<PhysicsSystem>();
 	//m_Systems.spSS = boost::make_shared<SoundSystem>();
 	//m_Systems.spIS = boost::make_shared<InputSystem>();
-
-	mainLoop();
 }
 
 AppBase::~AppBase()
@@ -44,8 +42,9 @@ AppBase::~AppBase()
 
 }
 
-void AppBase::mainLoop()
+void AppBase::start()
 {
+	onInit();
 	while (m_upWindow->isOpen())
 	{
 		handleEvents();

@@ -26,6 +26,8 @@ public:
 	AppBase();
 	virtual ~AppBase();
 
+	void start();
+
 protected:
 	// Derived application
 	// {
@@ -39,11 +41,11 @@ private:
 	// Application events (to be overridden by derived applications)
 	// {
 	virtual void onUpdate(float fDT) {}
+	virtual void onInit() {}
 	// }
 
 	// Application internals
 	// {
-	void mainLoop();
 	void update();
 	void render();
 	void handleEvents();
