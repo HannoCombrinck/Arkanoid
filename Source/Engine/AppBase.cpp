@@ -106,6 +106,10 @@ void AppBase::handleEvents()
 		case Event::KeyReleased:
 			m_upInputSystem->keyReleased(KeyboardKey(e.key.code));
 			break;
+		case Event::TextEntered:
+			if (e.text.unicode < 128)
+				m_upInputSystem->charEntered(static_cast<char>(e.text.unicode));
+			break;
 		case Event::MouseButtonPressed:
 			m_upInputSystem->mbPressed(MouseButton(e.mouseButton.button));
 			break;

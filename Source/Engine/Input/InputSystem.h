@@ -1,7 +1,11 @@
 #pragma once
 
+#include <vector>
+
 #include <Engine\Core\Math\Math.h>
-#include <Engine\Input\InputCodes.h>
+#include <Engine\Input\InputListener.h>
+
+#include <boost/shared_ptr.hpp>
 
 namespace input
 {
@@ -16,6 +20,8 @@ namespace input
 		bool getKeyState(KeyboardKey eKey) const { return m_KBState[eKey]; }
 		bool getMBState(MouseButton eButton) const { return m_MBState[eButton]; }
 		core::Vec2i getMousePos() const { return m_MousePos; }
+
+		void setListener(const boost::shared_ptr<InputListener>& spListener);
 		// }
 
 	private:
@@ -25,6 +31,7 @@ namespace input
 		void update(float fDT);
 		void keyPressed(KeyboardKey eKey);
 		void keyReleased(KeyboardKey eKey);
+		void charEntered(char ch);
 		void mbPressed(MouseButton eButton);
 		void mbReleased(MouseButton eButton);
 		void mouseMoved(int iX, int iY);
@@ -35,6 +42,11 @@ namespace input
 		bool m_KBState[KEY_KeyCount];
 		bool m_MBState[MB_ButtonCount];
 		core::Vec2i m_MousePos;
+		// }
+
+		// InputSystem internals
+		// {
+		boost::shared_ptr<InputListener> m_spListener;
 		// }
 
 	};

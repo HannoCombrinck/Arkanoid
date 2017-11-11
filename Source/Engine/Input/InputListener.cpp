@@ -25,6 +25,11 @@ namespace input {
 		onKeyReleased(eKey);
 	}
 
+	void InputListener::charEntered(char ch)
+	{
+		onCharEntered(ch);
+	}
+
 	void InputListener::mbPressed(MouseButton eButton)
 	{
 		onMBPressed(eButton);

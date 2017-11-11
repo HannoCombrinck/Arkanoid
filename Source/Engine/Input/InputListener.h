@@ -17,6 +17,7 @@ namespace input
 		friend class InputSystem;
 		void keyPressed(KeyboardKey eKey);
 		void keyReleased(KeyboardKey eKey);
+		void charEntered(char ch);
 		void mbPressed(MouseButton eButton);
 		void mbReleased(MouseButton eButton);
 		void mouseMoved(int iX, int iY);
@@ -26,6 +27,7 @@ namespace input
 		// {
 		virtual void onKeyPressed(KeyboardKey eKey) {}
 		virtual void onKeyReleased(KeyboardKey eKey) {}
+		virtual void onCharEntered(char ch) {}
 		virtual void onMBPressed(MouseButton eButton) {}
 		virtual void onMBReleased(MouseButton eButton) {}
 		virtual void onMouseMoved(int iX, int iY) {}

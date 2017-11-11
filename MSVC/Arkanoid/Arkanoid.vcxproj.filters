@@ -23,6 +23,9 @@
     <Filter Include="Header/Source Files\Engine\Input">
       <UniqueIdentifier>{e1013c63-d119-43bb-8500-07ab55acef63}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header/Source Files\Arkanoid">
+      <UniqueIdentifier>{bcd22a8b-0a1f-42ac-87af-4fbfaf5f0903}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\main.cpp">
@@ -45,6 +48,18 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Engine\Input\InputListener.cpp">
       <Filter>Header/Source Files\Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Arkanoid\Arkanoid.cpp">
+      <Filter>Header/Source Files\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Arkanoid\ArkanoidState.cpp">
+      <Filter>Header/Source Files\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Arkanoid\StateMenu.cpp">
+      <Filter>Header/Source Files\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Arkanoid\StatePlaying.cpp">
+      <Filter>Header/Source Files\Arkanoid</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +86,18 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Engine\Input\InputCodes.h">
       <Filter>Header/Source Files\Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Arkanoid\Arkanoid.h">
+      <Filter>Header/Source Files\Arkanoid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Arkanoid\ArkanoidState.h">
+      <Filter>Header/Source Files\Arkanoid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Arkanoid\StateMenu.h">
+      <Filter>Header/Source Files\Arkanoid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Arkanoid\StatePlaying.h">
+      <Filter>Header/Source Files\Arkanoid</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
