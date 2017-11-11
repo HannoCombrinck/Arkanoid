@@ -89,7 +89,7 @@ void AppBase::handleEvents()
 				case Keyboard::Escape:
 					m_upWindow->close();
 					break;
-				case Keyboard::F:
+				case Keyboard::F2:
 				{
 					m_bFullscreen = !m_bFullscreen;
 					if (m_bFullscreen)

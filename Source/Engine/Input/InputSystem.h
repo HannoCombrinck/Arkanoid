@@ -47,6 +47,7 @@ namespace input
 		// InputSystem internals
 		// {
 		boost::shared_ptr<InputListener> m_spListener;
+		boost::shared_ptr<InputListener> m_spNewListener;
 		// }
 
 	};

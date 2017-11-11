@@ -30,10 +30,14 @@ void StatePlaying::onKeyPressed(KeyboardKey eKey)
 {
 	switch (eKey)
 	{
-		case KEY_M: 
+		case KEY_M:
 			getApp()->stopGame(); 
 			return;  
 			break;
 	}
-	cout << "Playing state key pressed: " << eKey << endl;
+}
+
+void StatePlaying::onCharEntered(char ch)
+{
+	cout << ch;
 }
