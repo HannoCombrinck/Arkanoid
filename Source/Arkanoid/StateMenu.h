@@ -1,7 +1,5 @@
 #pragma once
 
-#include <memory>
-
 #include <Arkanoid/ArkanoidState.h>
 
 class StateMenu : public ArkanoidState

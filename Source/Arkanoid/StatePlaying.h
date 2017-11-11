@@ -1,7 +1,5 @@
 #pragma once
 
-#include <memory>
-
 #include <Arkanoid/ArkanoidState.h>
 
 class StatePlaying : public ArkanoidState
@@ -19,7 +17,6 @@ private:
 	// InputListener overrides
 	// {
 	virtual void onKeyPressed(KeyboardKey eKey) override;
-	virtual void onKeyReleased(KeyboardKey eKey) override {}
 	virtual void onCharEntered(char ch) override;
 	virtual void onMBPressed(MouseButton eButton) override {}
 	virtual void onMBReleased(MouseButton eButton) override {}

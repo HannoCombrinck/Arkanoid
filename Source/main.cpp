@@ -382,12 +382,15 @@ namespace engine
 	}
 }
 
+void testGraphSerialization()
+{
+	auto spRoot = buildGraph();
+	saveGraph(spRoot, "../Data/graph.dat");
+	auto spNewRoot = loadGraph("../Data/graph.dat");
+}
+
 int main(int argc, char** argv)
 {
-	/*auto spRoot = buildGraph();
-	saveGraph(spRoot, "../Data/graph.dat");
-	auto spNewRoot = loadGraph("../Data/graph.dat");*/
-
 	Arkanoid arkanoid;
 	arkanoid.start();
 

@@ -2,15 +2,9 @@
 
 #include <iostream>
 
-#include <Engine/Input/InputSystem.h>
-#include <Engine/Graphics/VisualSystem.h>
-#include <Engine/Sound/SoundSystem.h>
 #include <Arkanoid/Arkanoid.h>
 
 using namespace std;
-using namespace input;
-using namespace graphics;
-using namespace sound;
 
 StateMenu::StateMenu(Arkanoid * pArkanoid)
 	: ArkanoidState(pArkanoid)
