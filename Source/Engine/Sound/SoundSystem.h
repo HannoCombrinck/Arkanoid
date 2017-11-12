@@ -1,6 +1,6 @@
 #pragma once
 #include <memory>
-#include <Engine\Core\Math\Math.h>
+#include <Engine/Core/Math/Math.h>
 
 namespace sf
 {

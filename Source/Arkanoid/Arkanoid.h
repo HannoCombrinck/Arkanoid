@@ -17,7 +17,7 @@ public:
 
 	void startNewGame();
 	void stopGame();
-	void load(const std::string& sFile);
+	void loadGame(const std::string& sFilename);
 
 	void setState(ArkanoidState* p) { m_pState = p; }
 	ArkanoidState* getState() const { return m_pState; }

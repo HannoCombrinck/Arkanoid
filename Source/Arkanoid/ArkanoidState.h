@@ -5,6 +5,12 @@
 #include <Engine/AppBase.h>
 #include <Engine/Input/InputListener.h>
 
+namespace entity
+{
+	class World;
+}
+
+using namespace std;
 using namespace input;
 
 class Arkanoid;
@@ -17,10 +23,15 @@ public:
 
 	void update(float fDT) { onUpdate(fDT); }
 
+	void setWorld(entity::World* pWorld);
+	entity::World* getWorld();
+
 protected:
 	Arkanoid* getApp() const { return m_pArkanoid; }
 
 private:
 	virtual void onUpdate(float fDT) {}
 	Arkanoid* m_pArkanoid;
+
+	shared_ptr<entity::World> m_spWorld;
 };

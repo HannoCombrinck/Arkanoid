@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include <SFML\Audio.hpp>
+#include <SFML/Audio.hpp>
 
 using namespace std;
 using namespace sf;

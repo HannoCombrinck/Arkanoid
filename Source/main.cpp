@@ -91,7 +91,7 @@ private:
 	
 };
 
-class Paddle : public game::GameObject
+/*class Paddle : public game::GameObject
 {
 public:
 	Paddle() {}
@@ -194,7 +194,7 @@ private:
 	}
 };
 BOOST_SERIALIZATION_SHARED_PTR(Paddle)
-BOOST_CLASS_EXPORT(Paddle)
+BOOST_CLASS_EXPORT(Paddle)*/
 
 
 class Node : public boost::enable_shared_from_this<Node>
