@@ -25,8 +25,9 @@ namespace input
 		// }
 
 	private:
-		// AppBase interface
+		// EngineSystems interface
 		// {
+		friend class EngineSystems;
 		friend class AppBase;
 		void update(float fDT);
 		void keyPressed(KeyboardKey eKey);

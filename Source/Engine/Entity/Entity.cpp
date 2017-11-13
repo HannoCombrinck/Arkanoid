@@ -17,6 +17,7 @@ namespace entity {
 
 	void Entity::update(float fDT)
 	{
+		onUpdate(fDT);
 	}
 
 }

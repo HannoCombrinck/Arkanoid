@@ -8,11 +8,12 @@ namespace entity
 	{
 	public:
 		Entity();
-		~Entity();
+		virtual ~Entity();
 
 		void update(float fDT);
 
 	private:
+		virtual void onUpdate(float fDT) {}
 
 	};
 }

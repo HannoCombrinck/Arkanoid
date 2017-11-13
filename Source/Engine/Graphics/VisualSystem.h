@@ -17,8 +17,9 @@ namespace graphics
 		~VisualSystem();
 
 	private:
-		// AppBase interface
+		// EngineSystems interface
 		// {
+		friend class EngineSystems;
 		friend class AppBase;
 		void update(float fDT);
 		void render();

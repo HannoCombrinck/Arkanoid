@@ -23,9 +23,16 @@ ArkanoidState::~ArkanoidState()
 {
 }
 
+void ArkanoidState::update(float fDT) 
+{ 
+	m_spWorld->update(fDT);
+	onUpdate(fDT); 
+}
+
 void ArkanoidState::setWorld(World * pWorld) 
 { 
 	m_spWorld.reset(pWorld); 
+	onSetWorld(pWorld);
 }
 
 World * ArkanoidState::getWorld() 

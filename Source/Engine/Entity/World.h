@@ -13,7 +13,7 @@ namespace entity
 	{
 	public:
 		World();
-		~World();
+		virtual ~World();
 
 		static World* load(const string& sFilename);
 

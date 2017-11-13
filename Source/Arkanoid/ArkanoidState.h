@@ -21,7 +21,7 @@ public:
 	ArkanoidState(Arkanoid* pArkanoid);
 	virtual ~ArkanoidState();
 
-	void update(float fDT) { onUpdate(fDT); }
+	void update(float fDT);
 
 	void setWorld(entity::World* pWorld);
 	entity::World* getWorld();
@@ -31,6 +31,7 @@ protected:
 
 private:
 	virtual void onUpdate(float fDT) {}
+	virtual void onSetWorld(entity::World* pWorld) {}
 	Arkanoid* m_pArkanoid;
 
 	shared_ptr<entity::World> m_spWorld;

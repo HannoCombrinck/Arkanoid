@@ -18,6 +18,7 @@
     <ClCompile Include="..\..\Source\Arkanoid\StatePlaying.cpp" />
     <ClCompile Include="..\..\Source\Engine\AppBase.cpp" />
     <ClCompile Include="..\..\Source\Engine\Core\Math\MathHelpers.cpp" />
+    <ClCompile Include="..\..\Source\Engine\EngineSystems.cpp" />
     <ClCompile Include="..\..\Source\Engine\Entity\Entity.cpp" />
     <ClCompile Include="..\..\Source\Engine\Entity\World.cpp" />
     <ClCompile Include="..\..\Source\Engine\Graphics\VisualSystem.cpp" />
@@ -35,6 +36,7 @@
     <ClInclude Include="..\..\Source\Engine\AppBase.h" />
     <ClInclude Include="..\..\Source\Engine\Core\Math\Math.h" />
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h" />
+    <ClInclude Include="..\..\Source\Engine\EngineSystems.h" />
     <ClInclude Include="..\..\Source\Engine\Entity\Entity.h" />
     <ClInclude Include="..\..\Source\Engine\Entity\World.h" />
     <ClInclude Include="..\..\Source\Engine\Graphics\VisualSystem.h" />

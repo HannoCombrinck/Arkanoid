@@ -7,18 +7,7 @@ namespace sf
 	class RenderWindow;
 	class Clock;
 }
-namespace input
-{
-	class InputSystem;
-}
-namespace graphics
-{
-	class VisualSystem;
-}
-namespace sound
-{
-	class SoundSystem;
-}
+class EngineSystems;
 
 class AppBase
 {
@@ -35,9 +24,7 @@ protected:
 	// Derived application
 	// {
 	void closeApplication();
-	input::InputSystem* InputSys() { return m_upInputSystem.get(); }
-	graphics::VisualSystem* VisualSys() { return m_upVisualSystem.get(); }
-	sound::SoundSystem* SoundSys() { return m_upSoundSystem.get(); }
+	EngineSystems* engine();
 	// }
 
 private:
@@ -63,10 +50,6 @@ private:
 	bool m_bVSync;
 	// }
 
-	// Application systems - dependent on Application internals
-	// {
-	std::unique_ptr<input::InputSystem> m_upInputSystem;
-	std::unique_ptr<graphics::VisualSystem> m_upVisualSystem;
-	std::unique_ptr<sound::SoundSystem> m_upSoundSystem;
-	// }
+	// Engine systems
+	std::unique_ptr<EngineSystems> m_upEngineSystems;
 };

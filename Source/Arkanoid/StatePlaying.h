@@ -11,7 +11,8 @@ public:
 private:
 	// AkranoidState overrides
 	// {
-	virtual void onUpdate(float fDT);
+	virtual void onUpdate(float fDT) override;
+	virtual void onSetWorld(entity::World* pWorld) override;
 	// }
 
 	// InputListener overrides

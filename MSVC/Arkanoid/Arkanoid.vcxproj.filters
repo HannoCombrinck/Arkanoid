@@ -76,6 +76,9 @@
     <ClCompile Include="..\..\Source\Engine\Entity\Entity.cpp">
       <Filter>Header/Source Files\Engine\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\EngineSystems.cpp">
+      <Filter>Header/Source Files\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h">
@@ -122,6 +125,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Engine\Entity\Entity.h">
       <Filter>Header/Source Files\Engine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\EngineSystems.h">
+      <Filter>Header/Source Files\Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

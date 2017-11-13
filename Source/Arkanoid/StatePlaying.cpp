@@ -2,9 +2,12 @@
 
 #include <iostream>
 
+#include <Engine/Entity/World.h>
+#include <Engine/Entity/Entity.h>
 #include <Arkanoid/Arkanoid.h>
 
 using namespace std;
+using namespace entity;
 
 StatePlaying::StatePlaying(Arkanoid * pArkanoid)
 	: ArkanoidState(pArkanoid)
@@ -24,6 +27,10 @@ void StatePlaying::onUpdate(float fDT)
 	
 }
 
+void StatePlaying::onSetWorld(World* pWorld)
+{
+}
+
 void StatePlaying::onKeyPressed(KeyboardKey eKey)
 {
 	switch (eKey)
@@ -40,7 +47,7 @@ void StatePlaying::onKeyPressed(KeyboardKey eKey)
 		case KEY_D:
 			m_bRight = true;
 			break;
-		case KEY_M:
+		case KEY_Num1:
 			getApp()->stopGame(); 
 			return;  
 			break;

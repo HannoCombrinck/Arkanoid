@@ -18,9 +18,9 @@ namespace sound
 		~SoundSystem();
 
 	private:
-		// AppBase interface
+		// EngineSystems interface
 		// {
-		friend class AppBase;
+		friend class EngineSystems;
 		void update(float fDT);
 		// }
 

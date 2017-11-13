@@ -5,15 +5,14 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+#include <Engine/EngineSystems.h>
 #include <Engine/Input/InputSystem.h>
 #include <Engine/Graphics/VisualSystem.h>
-#include <Engine/Sound/SoundSystem.h>
 
 using namespace sf;
 using namespace std;
 using namespace input;
 using namespace graphics;
-using namespace sound;
 
 AppBase::AppBase()
 	: m_bFullscreen(false)
@@ -26,9 +25,7 @@ AppBase::AppBase()
 
 	m_upClock = make_unique<Clock>();
 
-	m_upInputSystem = make_unique<InputSystem>();
-	m_upVisualSystem = make_unique<VisualSystem>(m_upWindow.get());
-	m_upSoundSystem = make_unique<SoundSystem>();
+	m_upEngineSystems = make_unique<EngineSystems>(m_upWindow.get());
 }
 
 AppBase::~AppBase()
@@ -53,18 +50,21 @@ void AppBase::closeApplication()
 	m_upWindow->close();
 }
 
+EngineSystems* AppBase::engine() 
+{ 
+	return m_upEngineSystems.get(); 
+}
+
 void AppBase::update()
 {
-	m_upInputSystem->update(m_fDeltaTime);
-	m_upVisualSystem->update(m_fDeltaTime);
-	m_upSoundSystem->update(m_fDeltaTime);
+	engine()->update(m_fDeltaTime);
 
 	onUpdate(m_fDeltaTime);
 }
 
 void AppBase::render()
 {
-	m_upVisualSystem->render();
+	engine()->visuals()->render();
 }
 
 void AppBase::handleEvents()
@@ -78,10 +78,10 @@ void AppBase::handleEvents()
 			m_upWindow->close();
 			break;
 		case Event::Resized:
-			m_upVisualSystem->resize(e.size.width, e.size.height);
+			engine()->visuals()->resize(e.size.width, e.size.height);
 			break;
 		case Event::KeyPressed:
-			m_upInputSystem->keyPressed(KeyboardKey(e.key.code));
+			engine()->inputs()->keyPressed(KeyboardKey(e.key.code));
 				
 			{
 				switch (e.key.code)
@@ -104,20 +104,20 @@ void AppBase::handleEvents()
 			}
 			break;
 		case Event::KeyReleased:
-			m_upInputSystem->keyReleased(KeyboardKey(e.key.code));
+			engine()->inputs()->keyReleased(KeyboardKey(e.key.code));
 			break;
 		case Event::TextEntered:
 			if (e.text.unicode < 128)
-				m_upInputSystem->charEntered(static_cast<char>(e.text.unicode));
+				engine()->inputs()->charEntered(static_cast<char>(e.text.unicode));
 			break;
 		case Event::MouseButtonPressed:
-			m_upInputSystem->mbPressed(MouseButton(e.mouseButton.button));
+			engine()->inputs()->mbPressed(MouseButton(e.mouseButton.button));
 			break;
 		case Event::MouseButtonReleased:
-			m_upInputSystem->mbReleased(MouseButton(e.mouseButton.button));
+			engine()->inputs()->mbReleased(MouseButton(e.mouseButton.button));
 			break;
 		case Event::MouseMoved:
-			m_upInputSystem->mouseMoved(e.mouseMove.x, e.mouseMove.y);
+			engine()->inputs()->mouseMoved(e.mouseMove.x, e.mouseMove.y);
 			break;
 		}
 	}

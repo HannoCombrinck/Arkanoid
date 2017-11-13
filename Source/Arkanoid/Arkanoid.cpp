@@ -5,6 +5,7 @@
 #include <Engine/Input/InputSystem.h>
 #include <Engine/Graphics/VisualSystem.h>
 #include <Engine/Sound/SoundSystem.h>
+#include <Engine/EngineSystems.h>
 #include <Engine/Entity/World.h>
 #include <Arkanoid/StateMenu.h>
 #include <Arkanoid/StatePlaying.h>
@@ -27,7 +28,7 @@ Arkanoid::~Arkanoid()
 void Arkanoid::startNewGame()
 {
 	m_pState = m_spStatePlaying.get();
-	InputSys()->setListener(m_spStatePlaying);
+	engine()->inputs()->setListener(m_spStatePlaying);
 
 	auto spLevel1 = World::load("../Data/Levels/1.dat");
 	m_spStatePlaying->setWorld(spLevel1);
@@ -36,7 +37,7 @@ void Arkanoid::startNewGame()
 void Arkanoid::stopGame()
 {
 	m_pState = m_spStateMenu.get();
-	InputSys()->setListener(m_spStateMenu);
+	engine()->inputs()->setListener(m_spStateMenu);
 }
 
 void Arkanoid::loadGame(const string & sFilename)
@@ -50,7 +51,7 @@ void Arkanoid::onInit()
 	m_spStatePlaying = boost::make_shared<StatePlaying>(this);
 	m_spStateMenu = boost::make_shared<StateMenu>(this);
 	m_pState = m_spStateMenu.get();
-	InputSys()->setListener(m_spStateMenu);
+	engine()->inputs()->setListener(m_spStateMenu);
 
 	//auto spMainMenu = World::load("../Data/Menus/main.dat");
 	//m_spStateMenu->setWorld(spMainMenu);
