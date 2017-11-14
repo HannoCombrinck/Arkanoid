@@ -24,7 +24,7 @@ protected:
 	// Derived application
 	// {
 	void closeApplication();
-	EngineSystems* engine();
+	EngineSystems& engine();
 	// }
 
 private:

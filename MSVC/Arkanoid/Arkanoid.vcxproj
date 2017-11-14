@@ -24,6 +24,7 @@
     <ClCompile Include="..\..\Source\Engine\Graphics\VisualSystem.cpp" />
     <ClCompile Include="..\..\Source\Engine\Input\InputListener.cpp" />
     <ClCompile Include="..\..\Source\Engine\Input\InputSystem.cpp" />
+    <ClCompile Include="..\..\Source\Engine\Sound\Sound.cpp" />
     <ClCompile Include="..\..\Source\Engine\Sound\SoundSystem.cpp" />
     <ClCompile Include="..\..\Source\main.cpp" />
   </ItemGroup>
@@ -43,6 +44,7 @@
     <ClInclude Include="..\..\Source\Engine\Input\InputCodes.h" />
     <ClInclude Include="..\..\Source\Engine\Input\InputListener.h" />
     <ClInclude Include="..\..\Source\Engine\Input\InputSystem.h" />
+    <ClInclude Include="..\..\Source\Engine\Sound\Sound.h" />
     <ClInclude Include="..\..\Source\Engine\Sound\SoundSystem.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

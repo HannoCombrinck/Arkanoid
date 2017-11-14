@@ -11,7 +11,9 @@ public:
 	virtual ~Paddle();
 
 private:
+	virtual void onInit(EngineSystems& engine) override;
 	virtual void onUpdate(float fDT) override;
+
 
 	bool m_bLeft;
 	bool m_bRight;

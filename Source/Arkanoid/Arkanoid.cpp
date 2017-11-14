@@ -28,7 +28,7 @@ Arkanoid::~Arkanoid()
 void Arkanoid::startNewGame()
 {
 	m_pState = m_spStatePlaying.get();
-	engine()->inputs()->setListener(m_spStatePlaying);
+	engine().inputs().setListener(m_spStatePlaying);
 
 	auto spLevel1 = World::load("../Data/Levels/1.dat");
 	m_spStatePlaying->setWorld(spLevel1);
@@ -37,7 +37,7 @@ void Arkanoid::startNewGame()
 void Arkanoid::stopGame()
 {
 	m_pState = m_spStateMenu.get();
-	engine()->inputs()->setListener(m_spStateMenu);
+	engine().inputs().setListener(m_spStateMenu);
 }
 
 void Arkanoid::loadGame(const string & sFilename)
@@ -51,7 +51,7 @@ void Arkanoid::onInit()
 	m_spStatePlaying = boost::make_shared<StatePlaying>(this);
 	m_spStateMenu = boost::make_shared<StateMenu>(this);
 	m_pState = m_spStateMenu.get();
-	engine()->inputs()->setListener(m_spStateMenu);
+	engine().inputs().setListener(m_spStateMenu);
 
 	//auto spMainMenu = World::load("../Data/Menus/main.dat");
 	//m_spStateMenu->setWorld(spMainMenu);

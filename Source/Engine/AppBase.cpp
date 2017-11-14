@@ -50,21 +50,21 @@ void AppBase::closeApplication()
 	m_upWindow->close();
 }
 
-EngineSystems* AppBase::engine() 
+EngineSystems& AppBase::engine() 
 { 
-	return m_upEngineSystems.get(); 
+	return *m_upEngineSystems; 
 }
 
 void AppBase::update()
 {
-	engine()->update(m_fDeltaTime);
+	engine().update(m_fDeltaTime);
 
 	onUpdate(m_fDeltaTime);
 }
 
 void AppBase::render()
 {
-	engine()->visuals()->render();
+	engine().visuals().render();
 }
 
 void AppBase::handleEvents()
@@ -78,10 +78,10 @@ void AppBase::handleEvents()
 			m_upWindow->close();
 			break;
 		case Event::Resized:
-			engine()->visuals()->resize(e.size.width, e.size.height);
+			engine().visuals().resize(e.size.width, e.size.height);
 			break;
 		case Event::KeyPressed:
-			engine()->inputs()->keyPressed(KeyboardKey(e.key.code));
+			engine().inputs().keyPressed(KeyboardKey(e.key.code));
 				
 			{
 				switch (e.key.code)
@@ -104,20 +104,20 @@ void AppBase::handleEvents()
 			}
 			break;
 		case Event::KeyReleased:
-			engine()->inputs()->keyReleased(KeyboardKey(e.key.code));
+			engine().inputs().keyReleased(KeyboardKey(e.key.code));
 			break;
 		case Event::TextEntered:
 			if (e.text.unicode < 128)
-				engine()->inputs()->charEntered(static_cast<char>(e.text.unicode));
+				engine().inputs().charEntered(static_cast<char>(e.text.unicode));
 			break;
 		case Event::MouseButtonPressed:
-			engine()->inputs()->mbPressed(MouseButton(e.mouseButton.button));
+			engine().inputs().mbPressed(MouseButton(e.mouseButton.button));
 			break;
 		case Event::MouseButtonReleased:
-			engine()->inputs()->mbReleased(MouseButton(e.mouseButton.button));
+			engine().inputs().mbReleased(MouseButton(e.mouseButton.button));
 			break;
 		case Event::MouseMoved:
-			engine()->inputs()->mouseMoved(e.mouseMove.x, e.mouseMove.y);
+			engine().inputs().mouseMoved(e.mouseMove.x, e.mouseMove.y);
 			break;
 		}
 	}

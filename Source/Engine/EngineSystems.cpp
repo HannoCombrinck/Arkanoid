@@ -30,17 +30,17 @@ void EngineSystems::update(float fDT)
 	m_upSoundSystem->update(fDT);
 }
 
-InputSystem* EngineSystems::inputs() 
+InputSystem& EngineSystems::inputs() 
 { 
-	return m_upInputSystem.get(); 
+	return *m_upInputSystem; 
 }
 
-VisualSystem* EngineSystems::visuals() 
+VisualSystem& EngineSystems::visuals() 
 { 
-	return m_upVisualSystem.get(); 
+	return *m_upVisualSystem; 
 }
 
-SoundSystem* EngineSystems::sounds() 
+SoundSystem& EngineSystems::sounds() 
 { 
-	return m_upSoundSystem.get(); 
+	return *m_upSoundSystem;
 }

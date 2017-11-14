@@ -79,6 +79,9 @@
     <ClCompile Include="..\..\Source\Engine\EngineSystems.cpp">
       <Filter>Header/Source Files\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Sound\Sound.cpp">
+      <Filter>Header/Source Files\Engine\Sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h">
@@ -128,6 +131,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Engine\EngineSystems.h">
       <Filter>Header/Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Sound\Sound.h">
+      <Filter>Header/Source Files\Engine\Sound</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

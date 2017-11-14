@@ -27,9 +27,9 @@ public:
 
 	void update(float fDT);
 
-	input::InputSystem* inputs();
-	graphics::VisualSystem* visuals();
-	sound::SoundSystem* sounds();
+	input::InputSystem& inputs();
+	graphics::VisualSystem& visuals();
+	sound::SoundSystem& sounds();
 
 private:
 	std::unique_ptr<input::InputSystem> m_upInputSystem;
