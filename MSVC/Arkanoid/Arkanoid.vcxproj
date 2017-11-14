@@ -35,6 +35,7 @@
     <ClInclude Include="..\..\Source\Arkanoid\StateMenu.h" />
     <ClInclude Include="..\..\Source\Arkanoid\StatePlaying.h" />
     <ClInclude Include="..\..\Source\Engine\AppBase.h" />
+    <ClInclude Include="..\..\Source\Engine\Core\GlobalTypes.h" />
     <ClInclude Include="..\..\Source\Engine\Core\Math\Math.h" />
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h" />
     <ClInclude Include="..\..\Source\Engine\EngineSystems.h" />

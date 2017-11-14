@@ -135,5 +135,8 @@
     <ClInclude Include="..\..\Source\Engine\Sound\Sound.h">
       <Filter>Header/Source Files\Engine\Sound</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\GlobalTypes.h">
+      <Filter>Header/Source Files\Engine\Core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

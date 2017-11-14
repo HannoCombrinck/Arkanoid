@@ -2,6 +2,7 @@
 #include <memory>
 #include <vector>
 #include <Engine/Core/Math/Math.h>
+#include <boost/shared_ptr.hpp>
 
 using namespace std;
 
@@ -20,7 +21,7 @@ namespace entity
 		void update(float fDT);
 
 	private:
-		vector<shared_ptr<Entity>> m_aspEntities;
+		vector<boost::shared_ptr<Entity>> m_aspEntities;
 
 	};
 }

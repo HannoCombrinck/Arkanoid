@@ -1,12 +1,20 @@
 #pragma once
+
 #include <memory>
+#include <vector>
 #include <Engine/Core/Math/Math.h>
+#include <Engine/Core/GlobalTypes.h>
+#include <boost/shared_ptr.hpp>
 
 namespace sf
 {
 	class Sound;
 	class SoundBuffer;
 	class Music;
+}
+namespace sound
+{
+	class Sound;
 }
 
 namespace sound
@@ -17,6 +25,8 @@ namespace sound
 		SoundSystem();
 		~SoundSystem();
 
+		uint createSound();
+
 	private:
 		// EngineSystems interface
 		// {
@@ -26,6 +36,8 @@ namespace sound
 
 		// SoundSystem internals
 		// {
+		std::vector<boost::shared_ptr<Sound>> m_aspSounds;
+
 		core::Vec3 m_vListenerPosition;
 		core::Vec3 m_vListenerDirection;
 		float m_fGlobalVolume; 

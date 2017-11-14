@@ -4,8 +4,9 @@
 
 #include <SFML/Audio.hpp>
 
+#include <Engine/Sound/Sound.h>
+
 using namespace std;
-using namespace sf;
 using namespace core;
 
 namespace sound {
@@ -13,9 +14,9 @@ namespace sound {
 	SoundSystem::SoundSystem()
 		: m_fGlobalVolume(100.0f)
 	{
-		m_BeepSoundBuffer = make_unique<SoundBuffer>();
-		m_BeepSound = make_unique<Sound>();
-		m_Music = make_unique<Music>();
+		m_BeepSoundBuffer = make_unique<sf::SoundBuffer>();
+		m_BeepSound = make_unique<sf::Sound>();
+		m_Music = make_unique<sf::Music>();
 
 		if (!m_BeepSoundBuffer->loadFromFile("../Data/Sounds/beep.wav"))
 			std::cout << "Couldn't load beep.wav\n";
@@ -31,6 +32,11 @@ namespace sound {
 
 	SoundSystem::~SoundSystem()
 	{
+	}
+
+	uint SoundSystem::createSound()
+	{
+		return 0U;
 	}
 
 	void SoundSystem::update(float fDT)
