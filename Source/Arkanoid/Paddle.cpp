@@ -6,6 +6,11 @@
 
 using namespace std;
 
+Paddle* Paddle::create()
+{
+	return new Paddle;
+}
+
 Paddle::Paddle()
 {
 }

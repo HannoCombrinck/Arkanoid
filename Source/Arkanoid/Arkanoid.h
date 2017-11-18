@@ -4,6 +4,7 @@
 #include <string>
 #include <Engine/AppBase.h>
 #include <boost/shared_ptr.hpp>
+#include <Arkanoid/ArkanoidFactory.h>
 
 class ArkanoidState;
 class StatePlaying;
@@ -34,4 +35,5 @@ private:
 	ArkanoidState* m_pState;
 	boost::shared_ptr<StatePlaying> m_spStatePlaying;
 	boost::shared_ptr<StateMenu> m_spStateMenu;
+	unique_ptr<ArkanoidFactory> m_upFactory;
 };

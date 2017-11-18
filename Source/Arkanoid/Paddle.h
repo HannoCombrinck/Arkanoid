@@ -7,6 +7,8 @@ using namespace entity;
 class Paddle : public Entity
 {
 public:
+	static Paddle* create();
+
 	Paddle();
 	virtual ~Paddle();
 

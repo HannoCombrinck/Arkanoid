@@ -9,13 +9,15 @@ namespace entity
 	class World;
 }
 
+class ArkanoidFactory;
+
 class LevelGenerator
 {
 public:
 	LevelGenerator();
 	~LevelGenerator();
 
-	entity::World* generate();
+	entity::World* generate(ArkanoidFactory& factory);
 
 private:
 

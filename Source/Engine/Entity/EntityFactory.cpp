@@ -23,6 +23,10 @@ namespace entity {
 
 	Entity* EntityFactory::create(const string & sEntity)
 	{
+		// TODO: Check if pool exists for this type
+		// Return existing object from pool
+
+		// If there is no pool, create a new instance
 		auto it = m_FactoryMap.find(sEntity);
 		if (it == m_FactoryMap.end())
 		{
@@ -30,7 +34,8 @@ namespace entity {
 			return nullPtr;
 		}
 
-		return nullPtr;
+		auto pFactoryFunc = it->second;
+		return pFactoryFunc();
 	}
 
 }

@@ -9,6 +9,7 @@
 #include <Engine/Entity/World.h>
 #include <Arkanoid/StateMenu.h>
 #include <Arkanoid/StatePlaying.h>
+#include <Arkanoid/LevelGenerator.h>
 #include <boost/make_shared.hpp>
 
 using namespace std;
@@ -19,6 +20,7 @@ using namespace entity;
 
 Arkanoid::Arkanoid()
 {
+	m_upFactory = make_unique<ArkanoidFactory>();
 }
 
 Arkanoid::~Arkanoid()
@@ -30,8 +32,12 @@ void Arkanoid::startNewGame()
 	m_pState = m_spStatePlaying.get();
 	engine().inputs().setListener(m_spStatePlaying);
 
-	auto spLevel1 = World::load("../Data/Levels/1.dat");
-	m_spStatePlaying->setWorld(spLevel1);
+	//auto spLevel1 = World::load("../Data/Levels/1.dat");
+	//m_spStatePlaying->setWorld(spLevel1);
+
+	LevelGenerator levelGen;
+	auto spLevel = levelGen.generate(*m_upFactory);
+	m_spStatePlaying->setWorld(spLevel);
 }
 
 void Arkanoid::stopGame()

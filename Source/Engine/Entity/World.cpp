@@ -11,10 +11,6 @@ namespace entity {
 
 	World::World()
 	{
-		// TEMP
-		auto spEntity = boost::shared_ptr<Entity>();
-		m_aspEntities.push_back(spEntity);
-		//
 	}
 
 	World::~World()
@@ -27,6 +23,11 @@ namespace entity {
 		return new World;
 	}
 	
+	void World::addEntity(Entity* pEntity)
+	{
+		m_aspEntities.push_back(boost::shared_ptr<Entity>(pEntity));
+	}
+
 	void World::update(float fDT)
 	{
 	}

@@ -7,6 +7,9 @@
 #include <Engine/SystemsInclude.h>
 #include <Engine/Entity/World.h>
 #include <Engine/Entity/Entity.h>
+
+#include <Arkanoid/ArkanoidFactory.h>
+
 #include <boost/make_shared.hpp>
 
 using namespace std;
@@ -23,12 +26,10 @@ LevelGenerator::~LevelGenerator()
 {
 }
 
-World* LevelGenerator::generate()
+World* LevelGenerator::generate(ArkanoidFactory& factory)
 {
 	World* pWorld = new World;
-	//pWorld->addEntity(createPaddle());
-	//pWorld->addEntity(createBricks(20, 5));
-	//pWorld->addEntity(createBall(Ball::STUCK_ON_PADDLE));
-	
-	return nullPtr;
+	pWorld->addEntity(factory.create("Paddle"));
+
+	return pWorld;
 }

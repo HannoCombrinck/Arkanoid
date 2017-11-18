@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Arkanoid\Arkanoid.cpp" />
+    <ClCompile Include="..\..\Source\Arkanoid\ArkanoidFactory.cpp" />
     <ClCompile Include="..\..\Source\Arkanoid\ArkanoidState.cpp" />
     <ClCompile Include="..\..\Source\Arkanoid\LevelGenerator.cpp" />
     <ClCompile Include="..\..\Source\Arkanoid\Paddle.cpp" />
@@ -32,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Arkanoid\Arkanoid.h" />
+    <ClInclude Include="..\..\Source\Arkanoid\ArkanoidFactory.h" />
     <ClInclude Include="..\..\Source\Arkanoid\ArkanoidState.h" />
     <ClInclude Include="..\..\Source\Arkanoid\LevelGenerator.h" />
     <ClInclude Include="..\..\Source\Arkanoid\Paddle.h" />

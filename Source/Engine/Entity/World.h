@@ -18,6 +18,7 @@ namespace entity
 
 		static World* load(const string& sFilename);
 
+		void addEntity(Entity* pEntity);
 		void update(float fDT);
 
 	private:

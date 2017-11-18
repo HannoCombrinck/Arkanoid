@@ -12,7 +12,7 @@ namespace entity
 	class Entity;
 }
 
-class PoolInterface;
+//class PoolInterface;
 
 namespace entity
 {
