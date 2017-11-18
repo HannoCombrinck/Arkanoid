@@ -16,11 +16,11 @@ class PoolInterface;
 
 namespace entity
 {
-	class EntitySystem
+	class EntityFactory
 	{
 	public:
-		EntitySystem();
-		virtual ~EntitySystem();
+		EntityFactory();
+		virtual ~EntityFactory();
 
 		Entity* create(const string& sEntity);
 
