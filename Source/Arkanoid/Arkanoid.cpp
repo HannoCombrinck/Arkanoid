@@ -37,6 +37,7 @@ void Arkanoid::startNewGame()
 
 	LevelGenerator levelGen;
 	auto spLevel = levelGen.generate(*m_upFactory);
+	spLevel->init(engine());
 	m_spStatePlaying->setWorld(spLevel);
 }
 

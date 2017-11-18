@@ -6,6 +6,8 @@
 
 using namespace std;
 
+class EngineSystems;
+
 namespace entity
 {
 	class Entity;
@@ -18,6 +20,7 @@ namespace entity
 
 		static World* load(const string& sFilename);
 
+		void init(EngineSystems& rEngine);
 		void addEntity(Entity* pEntity);
 		void update(float fDT);
 

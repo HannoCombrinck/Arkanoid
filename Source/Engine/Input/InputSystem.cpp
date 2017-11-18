@@ -1,7 +1,7 @@
 #include "InputSystem.h"
 
 #include <iostream>
-
+#include <Engine/Core/GlobalTypes.h>
 #include <SFML/Window.hpp>
 
 using namespace std;
@@ -10,8 +10,8 @@ using namespace core;
 namespace input {
 
 	InputSystem::InputSystem()
-		: m_spListener(boost::shared_ptr<InputListener>())
-		, m_spNewListener(boost::shared_ptr<InputListener>())
+		: m_spListener(nullPtr)
+		, m_spNewListener(nullPtr)
 	{
 		memset(m_KBState, false, sizeof(bool)*KEY_KeyCount);
 		memset(m_MBState, false, sizeof(bool)*MB_ButtonCount);

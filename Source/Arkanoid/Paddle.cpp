@@ -4,8 +4,10 @@
 
 #include <Engine/EngineSystems.h>
 #include <Engine/SystemsInclude.h>
+#include <Engine/Input/InputCodes.h>
 
 using namespace std;
+using namespace input;
 
 Paddle* Paddle::create()
 {
@@ -28,6 +30,10 @@ void Paddle::onInit()
 
 void Paddle::onUpdate(float fDT)
 {
-	//engine().inputs().IsKeyDown(KEY_W);
-	//engine().visuals().
+	m_bLeft = engine().inputs().getKeyState(KEY_Left);
+	m_bRight = engine().inputs().getKeyState(KEY_Right);
+	m_bAction = engine().inputs().getKeyState(KEY_Space);
+		
+	// Update visual according to current state
+	// engine().visuals().
 }

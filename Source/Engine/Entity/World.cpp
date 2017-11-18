@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include <Engine/Entity/Entity.h>
+#include <Engine/EngineSystems.h>
 
 using namespace std;
 using namespace core;
@@ -23,6 +24,12 @@ namespace entity {
 		return new World;
 	}
 	
+	void World::init(EngineSystems& rEngine)
+	{
+		for (auto& sp : m_aspEntities)
+			sp->init(rEngine);
+	}
+
 	void World::addEntity(Entity* pEntity)
 	{
 		m_aspEntities.push_back(boost::shared_ptr<Entity>(pEntity));
@@ -31,9 +38,7 @@ namespace entity {
 	void World::update(float fDT)
 	{
 		for (auto& sp : m_aspEntities)
-		{
 			sp->update(fDT);
-		}
 	}
 
 }

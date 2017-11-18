@@ -5,6 +5,8 @@
 #include <Engine/AppBase.h>
 #include <Engine/Input/InputListener.h>
 
+#include <boost/shared_ptr.hpp>
+
 namespace entity
 {
 	class World;
@@ -34,5 +36,5 @@ private:
 	virtual void onSetWorld(entity::World* pWorld) {}
 	Arkanoid* m_pArkanoid;
 
-	shared_ptr<entity::World> m_spWorld;
+	boost::shared_ptr<entity::World> m_spWorld;
 };

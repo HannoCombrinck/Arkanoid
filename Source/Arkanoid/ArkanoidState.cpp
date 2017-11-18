@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+#include <Engine/Core/GlobalTypes.h>
 #include <Engine/Input/InputSystem.h>
 #include <Engine/Graphics/VisualSystem.h>
 #include <Engine/Sound/SoundSystem.h>
@@ -16,6 +17,7 @@ using namespace entity;
 
 ArkanoidState::ArkanoidState(Arkanoid * pArkanoid)
 	: m_pArkanoid(pArkanoid)
+	, m_spWorld(nullPtr)
 {
 }
 
@@ -25,7 +27,9 @@ ArkanoidState::~ArkanoidState()
 
 void ArkanoidState::update(float fDT) 
 { 
-	m_spWorld->update(fDT);
+	if (m_spWorld)
+		m_spWorld->update(fDT);
+
 	onUpdate(fDT); 
 }
 

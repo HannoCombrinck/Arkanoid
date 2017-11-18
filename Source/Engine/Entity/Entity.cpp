@@ -23,8 +23,6 @@ namespace entity {
 	void Entity::init(EngineSystems& rEngine)
 	{
 		m_pEngine = &rEngine;
-
-		engine().inputs().getKeyState(KEY_Num0);
 		onInit();
 	}
 
@@ -33,7 +31,7 @@ namespace entity {
 		onUpdate(fDT);
 	}
 
-	EngineSystems & Entity::engine()
+	EngineSystems& Entity::engine()
 	{
 		assert(m_pEngine);
 		return *m_pEngine;
