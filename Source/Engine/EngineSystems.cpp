@@ -2,9 +2,7 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include <Engine/Input/InputSystem.h>
-#include <Engine/Graphics/VisualSystem.h>
-#include <Engine/Sound/SoundSystem.h>
+#include <Engine/SystemsInclude.h>
 
 using namespace std;
 using namespace sf;

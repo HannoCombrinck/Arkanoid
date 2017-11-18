@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\Source\Arkanoid\Arkanoid.cpp" />
     <ClCompile Include="..\..\Source\Arkanoid\ArkanoidState.cpp" />
+    <ClCompile Include="..\..\Source\Arkanoid\LevelGenerator.cpp" />
     <ClCompile Include="..\..\Source\Arkanoid\Paddle.cpp" />
     <ClCompile Include="..\..\Source\Arkanoid\StateMenu.cpp" />
     <ClCompile Include="..\..\Source\Arkanoid\StatePlaying.cpp" />
@@ -20,6 +21,7 @@
     <ClCompile Include="..\..\Source\Engine\Core\Math\MathHelpers.cpp" />
     <ClCompile Include="..\..\Source\Engine\EngineSystems.cpp" />
     <ClCompile Include="..\..\Source\Engine\Entity\Entity.cpp" />
+    <ClCompile Include="..\..\Source\Engine\Entity\EntityFactory.cpp" />
     <ClCompile Include="..\..\Source\Engine\Entity\World.cpp" />
     <ClCompile Include="..\..\Source\Engine\Graphics\VisualSystem.cpp" />
     <ClCompile Include="..\..\Source\Engine\Input\InputListener.cpp" />
@@ -31,6 +33,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Source\Arkanoid\Arkanoid.h" />
     <ClInclude Include="..\..\Source\Arkanoid\ArkanoidState.h" />
+    <ClInclude Include="..\..\Source\Arkanoid\LevelGenerator.h" />
     <ClInclude Include="..\..\Source\Arkanoid\Paddle.h" />
     <ClInclude Include="..\..\Source\Arkanoid\StateMenu.h" />
     <ClInclude Include="..\..\Source\Arkanoid\StatePlaying.h" />
@@ -40,6 +43,7 @@
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h" />
     <ClInclude Include="..\..\Source\Engine\EngineSystems.h" />
     <ClInclude Include="..\..\Source\Engine\Entity\Entity.h" />
+    <ClInclude Include="..\..\Source\Engine\Entity\EntityFactory.h" />
     <ClInclude Include="..\..\Source\Engine\Entity\World.h" />
     <ClInclude Include="..\..\Source\Engine\Graphics\VisualSystem.h" />
     <ClInclude Include="..\..\Source\Engine\Input\InputCodes.h" />
@@ -47,6 +51,8 @@
     <ClInclude Include="..\..\Source\Engine\Input\InputSystem.h" />
     <ClInclude Include="..\..\Source\Engine\Sound\Sound.h" />
     <ClInclude Include="..\..\Source\Engine\Sound\SoundSystem.h" />
+    <ClInclude Include="..\..\Source\Engine\SystemsInclude.h" />
+    <ClInclude Include="..\..\Source\Engine\SystemsInclude_fwd.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A103236F-90F9-4FF0-83E6-58A47189F605}</ProjectGuid>
