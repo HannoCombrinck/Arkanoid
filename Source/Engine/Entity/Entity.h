@@ -11,13 +11,17 @@ namespace entity
 		Entity();
 		virtual ~Entity();
 
-		void init(EngineSystems& engine);
+		void init(EngineSystems& rEngine);
 
 		void update(float fDT);
 
+	protected:
+		EngineSystems& engine();
+
 	private:
-		virtual void onInit(EngineSystems& engine) {}
+		virtual void onInit() {}
 		virtual void onUpdate(float fDT) {}
 
+		EngineSystems* m_pEngine;
 	};
 }

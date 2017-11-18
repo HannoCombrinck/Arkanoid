@@ -20,15 +20,23 @@ namespace entity {
 	{
 	}
 
-	void Entity::init(EngineSystems& engine)
+	void Entity::init(EngineSystems& rEngine)
 	{
-		engine.inputs().getKeyState(KEY_Num0);
-		onInit(engine);
+		m_pEngine = &rEngine;
+
+		engine().inputs().getKeyState(KEY_Num0);
+		onInit();
 	}
 
 	void Entity::update(float fDT)
 	{
 		onUpdate(fDT);
+	}
+
+	EngineSystems & Entity::engine()
+	{
+		assert(m_pEngine);
+		return *m_pEngine;
 	}
 
 }

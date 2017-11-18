@@ -27,7 +27,7 @@ public:
 	entity::World* getWorld();
 
 protected:
-	Arkanoid* getApp() const { return m_pArkanoid; }
+	Arkanoid& arkanoid() const;
 
 private:
 	virtual void onUpdate(float fDT) {}

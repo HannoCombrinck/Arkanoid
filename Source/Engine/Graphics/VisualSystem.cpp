@@ -27,6 +27,11 @@ namespace graphics {
 	{
 	}
 
+	uint VisualSystem::createVisual()
+	{
+		return 0U;
+	}
+
 	void VisualSystem::update(float fDT)
 	{
 		m_fDeltaTime = fDT;

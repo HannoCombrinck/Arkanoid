@@ -30,6 +30,10 @@ namespace entity {
 
 	void World::update(float fDT)
 	{
+		for (auto& sp : m_aspEntities)
+		{
+			sp->update(fDT);
+		}
 	}
 
 }

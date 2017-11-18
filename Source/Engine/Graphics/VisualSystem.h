@@ -1,6 +1,8 @@
 #pragma once
 #include <memory>
 
+#include <Engine/Core/GlobalTypes.h>
+
 namespace sf
 {
 	class RenderWindow;
@@ -15,6 +17,8 @@ namespace graphics
 	public:
 		VisualSystem(sf::RenderWindow *pWindow);
 		~VisualSystem();
+
+		uint createVisual();
 
 	private:
 		// EngineSystems interface

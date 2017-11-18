@@ -48,7 +48,7 @@ void StatePlaying::onKeyPressed(KeyboardKey eKey)
 			m_bRight = true;
 			break;
 		case KEY_Num1:
-			getApp()->stopGame(); 
+			arkanoid().stopGame(); 
 			return;  
 			break;
 	}

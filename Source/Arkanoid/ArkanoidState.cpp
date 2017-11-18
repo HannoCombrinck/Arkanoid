@@ -39,3 +39,8 @@ World * ArkanoidState::getWorld()
 { 
 	return m_spWorld.get(); 
 }
+
+Arkanoid& ArkanoidState::arkanoid() const 
+{ 
+	return *m_pArkanoid; 
+}

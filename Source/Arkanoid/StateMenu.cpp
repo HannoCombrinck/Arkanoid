@@ -25,7 +25,7 @@ void StateMenu::onKeyPressed(KeyboardKey eKey)
 	switch (eKey)
 	{
 		case KEY_N: 
-			getApp()->startNewGame(); 
+			arkanoid().startNewGame(); 
 			return;
 			break;
 	}
