@@ -30,5 +30,5 @@ World* LevelGenerator::generate()
 	//pWorld->addEntity(createBricks(20, 5));
 	//pWorld->addEntity(createBall(Ball::STUCK_ON_PADDLE));
 	
-	return null_ptr;
+	return nullPtr;
 }

@@ -16,4 +16,4 @@ struct NullPointer
 	template<class T>
 	inline operator T* () const { return 0; }
 };
-static NullPointer null_ptr;
+static NullPointer nullPtr;
