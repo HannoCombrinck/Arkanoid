@@ -1,14 +1,11 @@
 #include "Entity.h"
 
 #include <iostream>
+#include <assert.h>
 
 #include <Engine/EngineSystems.h>
-#include <Engine/Input/InputSystem.h>
-#include <Engine/Input/InputCodes.h>
 
 using namespace std;
-using namespace core;
-using namespace input;
 
 namespace entity {
 

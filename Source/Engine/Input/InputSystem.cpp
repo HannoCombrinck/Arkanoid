@@ -31,6 +31,9 @@ namespace input {
 	{
 		if (m_spListener != m_spNewListener)
 			m_spListener = m_spNewListener;
+
+		m_MousePosRel = m_MousePos - m_MousePosPrev;
+		m_MousePosPrev = m_MousePos;
 	}
 
 	void InputSystem::keyPressed(KeyboardKey eKey)

@@ -22,8 +22,10 @@ namespace entity
 		EntityFactory();
 		virtual ~EntityFactory();
 
-		void registerEntity(const string sEntity, const function<Entity*()>& func);
 		Entity* create(const string& sEntity);
+
+	protected:
+		void registerEntity(const string sEntity, const function<Entity*()>& func);
 
 	private:
 		unordered_map<string, function<Entity*()>> m_FactoryMap;

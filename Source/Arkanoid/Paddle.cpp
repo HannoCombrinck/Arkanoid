@@ -34,6 +34,10 @@ void Paddle::onUpdate(float fDT)
 	m_bRight = engine().inputs().getKeyState(KEY_Right);
 	m_bAction = engine().inputs().getKeyState(KEY_Space);
 
+	auto vMouseMove = engine().inputs().getMousePosRel();
+	if (vMouseMove.x != 0 || vMouseMove.y != 0)
+		cout << "Mouse move: " << vMouseMove.x << ", " << vMouseMove.y << endl;
+
 	if (m_bLeft)
 		cout << "Left\n";
 	if (m_bRight)

@@ -20,6 +20,7 @@ namespace input
 		bool& getKeyState(KeyboardKey eKey) { return m_KBState[eKey]; }
 		bool& getMBState(MouseButton eButton) { return m_MBState[eButton]; }
 		core::Vec2i getMousePos() const { return m_MousePos; }
+		core::Vec2i getMousePosRel() const { return m_MousePosRel; }
 
 		void setListener(const boost::shared_ptr<InputListener>& spListener);
 		// }
@@ -43,6 +44,8 @@ namespace input
 		bool m_KBState[KEY_KeyCount];
 		bool m_MBState[MB_ButtonCount];
 		core::Vec2i m_MousePos;
+		core::Vec2i m_MousePosPrev;
+		core::Vec2i m_MousePosRel;
 		// }
 
 		// InputSystem internals
