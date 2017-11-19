@@ -17,6 +17,7 @@ using namespace entity;
 
 Arkanoid::Arkanoid()
 	: m_spWorld(nullPtr)
+	, m_eState(STOPPED)
 {
 	m_upFactory = make_unique<ArkanoidFactory>();
 }
@@ -27,6 +28,9 @@ Arkanoid::~Arkanoid()
 
 void Arkanoid::startNewGame()
 {
+	if (m_eState == RUNNING)
+		return;
+
 	//auto spLevel1 = World::load("../Data/Levels/1.dat");
 	//m_spWorld = boost::shared_ptr<World>(spLevel1);
 
@@ -37,15 +41,22 @@ void Arkanoid::startNewGame()
 	spLevel->init(engine());
 
 	m_spWorld = boost::shared_ptr<World>(spLevel);
+
+	m_eState = RUNNING;
 }
 
 void Arkanoid::stopGame()
 {
+	if (m_eState == STOPPED)
+		return;
+
 	cout << "Stopping game\n";
 	m_spWorld.reset();
+
+	m_eState = STOPPED;
 }
 
-void Arkanoid::loadGame(const string & sFilename)
+void Arkanoid::loadGame(const string& sFilename)
 {
 	auto spLevel = World::load(sFilename);
 	m_spWorld = boost::shared_ptr<World>(spLevel);

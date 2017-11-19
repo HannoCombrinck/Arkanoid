@@ -14,6 +14,13 @@ namespace entity
 class Arkanoid : public AppBase
 {
 public:
+	enum GameState
+	{
+		STOPPED,
+		RUNNING,
+		PAUSED,
+	};
+
 	Arkanoid();
 	virtual ~Arkanoid();
 
@@ -57,4 +64,6 @@ private:
 	unique_ptr<ArkanoidFactory> m_upFactory;
 
 	boost::shared_ptr<entity::World> m_spWorld;
+
+	GameState m_eState;
 };
