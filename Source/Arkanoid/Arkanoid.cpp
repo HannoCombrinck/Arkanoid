@@ -6,8 +6,6 @@
 #include <Engine/SystemsInclude.h>
 #include <Engine/EngineSystems.h>
 #include <Engine/Entity/World.h>
-#include <Arkanoid/StateMenu.h>
-#include <Arkanoid/StatePlaying.h>
 #include <Arkanoid/LevelGenerator.h>
 #include <boost/make_shared.hpp>
 
