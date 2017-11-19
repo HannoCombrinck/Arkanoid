@@ -17,8 +17,8 @@ namespace input
 
 		// Public interface
 		// {
-		bool getKeyState(KeyboardKey eKey) const { return m_KBState[eKey]; }
-		bool getMBState(MouseButton eButton) const { return m_MBState[eButton]; }
+		bool& getKeyState(KeyboardKey eKey) { return m_KBState[eKey]; }
+		bool& getMBState(MouseButton eButton) { return m_MBState[eButton]; }
 		core::Vec2i getMousePos() const { return m_MousePos; }
 
 		void setListener(const boost::shared_ptr<InputListener>& spListener);

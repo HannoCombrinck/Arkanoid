@@ -1,10 +1,9 @@
 #include "Arkanoid.h"
 
 #include <iostream>
+#include <functional>
 
-#include <Engine/Input/InputSystem.h>
-#include <Engine/Graphics/VisualSystem.h>
-#include <Engine/Sound/SoundSystem.h>
+#include <Engine/SystemsInclude.h>
 #include <Engine/EngineSystems.h>
 #include <Engine/Entity/World.h>
 #include <Arkanoid/StateMenu.h>
@@ -19,6 +18,7 @@ using namespace sound;
 using namespace entity;
 
 Arkanoid::Arkanoid()
+	: m_spWorld(nullPtr)
 {
 	m_upFactory = make_unique<ArkanoidFactory>();
 }
@@ -29,46 +29,68 @@ Arkanoid::~Arkanoid()
 
 void Arkanoid::startNewGame()
 {
-	m_pState = m_spStatePlaying.get();
-	engine().inputs().setListener(m_spStatePlaying);
-
 	//auto spLevel1 = World::load("../Data/Levels/1.dat");
-	//m_spStatePlaying->setWorld(spLevel1);
+	//m_spWorld = boost::shared_ptr<World>(spLevel1);
+
+	cout << "Starting new game\n";
 
 	LevelGenerator levelGen;
 	auto spLevel = levelGen.generate(*m_upFactory);
 	spLevel->init(engine());
-	m_spStatePlaying->setWorld(spLevel);
+
+	m_spWorld = boost::shared_ptr<World>(spLevel);
 }
 
 void Arkanoid::stopGame()
 {
-	m_pState = m_spStateMenu.get();
-	engine().inputs().setListener(m_spStateMenu);
+	cout << "Stopping game\n";
+	m_spWorld.reset();
 }
 
 void Arkanoid::loadGame(const string & sFilename)
 {
 	auto spLevel = World::load(sFilename);
-	m_spStatePlaying->setWorld(spLevel);
+	m_spWorld = boost::shared_ptr<World>(spLevel);
 }
 
 void Arkanoid::onInit()
 {
-	m_spStatePlaying = boost::make_shared<StatePlaying>(this);
-	m_spStateMenu = boost::make_shared<StateMenu>(this);
-	m_pState = m_spStateMenu.get();
-	engine().inputs().setListener(m_spStateMenu);
+	OnTrue(engine().inputs().getKeyState(KEY_N), bind(&Arkanoid::startNewGame, this));
+	OnTrue(engine().inputs().getKeyState(KEY_Num1), bind(&Arkanoid::stopGame, this));
 
 	//auto spMainMenu = World::load("../Data/Menus/main.dat");
-	//m_spStateMenu->setWorld(spMainMenu);
 }
+
 
 void Arkanoid::onUpdate(float fDT)
 {
-	m_pState->update(fDT);
+	// Execute conditional actions 
+	for (auto& action : m_aActions)
+		action();
+
+	// Update world and all of its entities
+	if (m_spWorld)
+		m_spWorld->update(fDT);
 }
 
-void Arkanoid::onStateChanged()
+void Arkanoid::OnTrue(bool& bCondition, function<void()> fnAction)
 {
+	m_aActions.emplace_back(TrueEdgeAction(bCondition, fnAction));
 }
+
+/*void Arkanoid::onKeyPressed(KeyboardKey eKey)
+{
+	switch (eKey)
+	{
+	case KEY_N:
+		startNewGame();
+		return;
+		break;
+	case KEY_Num1:
+		stopGame();
+		return;
+		break;
+	}
+
+	cout << "Key pressed: " << eKey << endl;
+}*/

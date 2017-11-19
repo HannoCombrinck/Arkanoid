@@ -33,6 +33,13 @@ void Paddle::onUpdate(float fDT)
 	m_bLeft = engine().inputs().getKeyState(KEY_Left);
 	m_bRight = engine().inputs().getKeyState(KEY_Right);
 	m_bAction = engine().inputs().getKeyState(KEY_Space);
+
+	if (m_bLeft)
+		cout << "Left\n";
+	if (m_bRight)
+		cout << "Right\n";
+	if (m_bAction)
+		cout << "Action\n";
 		
 	// Update visual according to current state
 	// engine().visuals().

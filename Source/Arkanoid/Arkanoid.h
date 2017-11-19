@@ -3,12 +3,13 @@
 #include <memory>
 #include <string>
 #include <Engine/AppBase.h>
-#include <boost/shared_ptr.hpp>
 #include <Arkanoid/ArkanoidFactory.h>
+#include <boost/shared_ptr.hpp>
 
-class ArkanoidState;
-class StatePlaying;
-class StateMenu;
+namespace entity
+{
+	class World;
+}
 
 class Arkanoid : public AppBase
 {
@@ -20,9 +21,6 @@ public:
 	void stopGame();
 	void loadGame(const std::string& sFilename);
 
-	void setState(ArkanoidState* p) { m_pState = p; }
-	ArkanoidState* getState() const { return m_pState; }
-
 private:
 	// AppBase overrides
 	// {
@@ -30,10 +28,33 @@ private:
 	void onUpdate(float fDT) override;
 	// }
 
-	void onStateChanged();
+	// Conditional actions
+	// {
+	struct TrueEdgeAction
+	{
+		TrueEdgeAction(bool& _bCondition, function<void()> _fnAction)
+			: bCondition(_bCondition)
+			, fnAction(_fnAction)
+			, bPrev(false)
+		{}
 
-	ArkanoidState* m_pState;
-	boost::shared_ptr<StatePlaying> m_spStatePlaying;
-	boost::shared_ptr<StateMenu> m_spStateMenu;
+		void operator()() 
+		{
+			if (bCondition && !bPrev)
+				fnAction();
+
+			bPrev = bCondition;
+		}
+
+		function<void()> fnAction;
+		bool& bCondition;
+		bool bPrev;
+	};
+	std::vector<TrueEdgeAction> m_aActions;
+	void OnTrue(bool& bCondition, function<void()> fnAction);
+	// }
+
 	unique_ptr<ArkanoidFactory> m_upFactory;
+
+	boost::shared_ptr<entity::World> m_spWorld;
 };
