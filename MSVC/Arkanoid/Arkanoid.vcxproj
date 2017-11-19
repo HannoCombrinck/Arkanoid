@@ -13,11 +13,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\Source\Arkanoid\Arkanoid.cpp" />
     <ClCompile Include="..\..\Source\Arkanoid\ArkanoidFactory.cpp" />
-    <ClCompile Include="..\..\Source\Arkanoid\ArkanoidState.cpp" />
     <ClCompile Include="..\..\Source\Arkanoid\LevelGenerator.cpp" />
     <ClCompile Include="..\..\Source\Arkanoid\Paddle.cpp" />
-    <ClCompile Include="..\..\Source\Arkanoid\StateMenu.cpp" />
-    <ClCompile Include="..\..\Source\Arkanoid\StatePlaying.cpp" />
     <ClCompile Include="..\..\Source\Engine\AppBase.cpp" />
     <ClCompile Include="..\..\Source\Engine\Core\Math\MathHelpers.cpp" />
     <ClCompile Include="..\..\Source\Engine\EngineSystems.cpp" />
@@ -34,11 +31,8 @@
   <ItemGroup>
     <ClInclude Include="..\..\Source\Arkanoid\Arkanoid.h" />
     <ClInclude Include="..\..\Source\Arkanoid\ArkanoidFactory.h" />
-    <ClInclude Include="..\..\Source\Arkanoid\ArkanoidState.h" />
     <ClInclude Include="..\..\Source\Arkanoid\LevelGenerator.h" />
     <ClInclude Include="..\..\Source\Arkanoid\Paddle.h" />
-    <ClInclude Include="..\..\Source\Arkanoid\StateMenu.h" />
-    <ClInclude Include="..\..\Source\Arkanoid\StatePlaying.h" />
     <ClInclude Include="..\..\Source\Engine\AppBase.h" />
     <ClInclude Include="..\..\Source\Engine\Core\GlobalTypes.h" />
     <ClInclude Include="..\..\Source\Engine\Core\Math\Math.h" />
