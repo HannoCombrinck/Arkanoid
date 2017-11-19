@@ -31,15 +31,11 @@ void Arkanoid::startNewGame()
 	if (m_eState == RUNNING)
 		return;
 
-	//auto spLevel1 = World::load("../Data/Levels/1.dat");
-	//m_spWorld = boost::shared_ptr<World>(spLevel1);
-
 	cout << "Starting new game\n";
 
 	LevelGenerator levelGen;
 	auto spLevel = levelGen.generate(*m_upFactory);
 	spLevel->init(engine());
-
 	m_spWorld = boost::shared_ptr<World>(spLevel);
 
 	m_eState = RUNNING;
@@ -60,16 +56,15 @@ void Arkanoid::loadGame(const string& sFilename)
 {
 	auto spLevel = World::load(sFilename);
 	m_spWorld = boost::shared_ptr<World>(spLevel);
+
+	m_eState = RUNNING;
 }
 
 void Arkanoid::onInit()
 {
 	OnTrue(engine().inputs().getKeyState(KEY_N), bind(&Arkanoid::startNewGame, this));
 	OnTrue(engine().inputs().getKeyState(KEY_Num1), bind(&Arkanoid::stopGame, this));
-
-	//auto spMainMenu = World::load("../Data/Menus/main.dat");
 }
-
 
 void Arkanoid::onUpdate(float fDT)
 {
@@ -86,20 +81,3 @@ void Arkanoid::OnTrue(bool& bCondition, function<void()> fnAction)
 {
 	m_aActions.emplace_back(TrueEdgeAction(bCondition, fnAction));
 }
-
-/*void Arkanoid::onKeyPressed(KeyboardKey eKey)
-{
-	switch (eKey)
-	{
-	case KEY_N:
-		startNewGame();
-		return;
-		break;
-	case KEY_Num1:
-		stopGame();
-		return;
-		break;
-	}
-
-	cout << "Key pressed: " << eKey << endl;
-}*/
