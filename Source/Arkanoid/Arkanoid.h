@@ -35,32 +35,6 @@ private:
 	void onUpdate(float fDT) override;
 	// }
 
-	// Conditional actions
-	// {
-	struct TrueEdgeAction
-	{
-		TrueEdgeAction(bool& _bCondition, function<void()> _fnAction)
-			: bCondition(_bCondition)
-			, fnAction(_fnAction)
-			, bPrev(false)
-		{}
-
-		void operator()() 
-		{
-			if (bCondition && !bPrev)
-				fnAction();
-
-			bPrev = bCondition;
-		}
-
-		function<void()> fnAction;
-		bool& bCondition;
-		bool bPrev;
-	};
-	std::vector<TrueEdgeAction> m_aActions;
-	void OnTrue(bool& bCondition, function<void()> fnAction);
-	// }
-
 	unique_ptr<ArkanoidFactory> m_upFactory;
 
 	boost::shared_ptr<entity::World> m_spWorld;

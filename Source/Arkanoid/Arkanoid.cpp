@@ -62,22 +62,17 @@ void Arkanoid::loadGame(const string& sFilename)
 
 void Arkanoid::onInit()
 {
-	OnTrue(engine().inputs().getKeyState(KEY_N), bind(&Arkanoid::startNewGame, this));
-	OnTrue(engine().inputs().getKeyState(KEY_Num1), bind(&Arkanoid::stopGame, this));
 }
 
 void Arkanoid::onUpdate(float fDT)
 {
-	// Execute conditional actions 
-	for (auto& action : m_aActions)
-		action();
+	if (engine().inputs().isKeyPressed(KEY_N) && m_eState == STOPPED)
+		startNewGame();
+
+	if (engine().inputs().isKeyPressed(KEY_Num1) && m_eState == RUNNING)
+		stopGame();
 
 	// Update world and all of its entities
 	if (m_spWorld)
 		m_spWorld->update(fDT);
-}
-
-void Arkanoid::OnTrue(bool& bCondition, function<void()> fnAction)
-{
-	m_aActions.emplace_back(TrueEdgeAction(bCondition, fnAction));
 }

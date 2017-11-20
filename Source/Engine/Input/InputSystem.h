@@ -17,8 +17,8 @@ namespace input
 
 		// Public interface
 		// {
-		bool& getKeyState(KeyboardKey eKey) { return m_KBState[eKey]; }
-		bool& getMBState(MouseButton eButton) { return m_MBState[eButton]; }
+		bool& isKeyPressed(KeyboardKey eKey) { return m_KBState[eKey]; }
+		bool& isMBPressed(MouseButton eButton) { return m_MBState[eButton]; }
 		core::Vec2i getMousePos() const { return m_MousePos; }
 		core::Vec2i getMousePosRel() const { return m_MousePosRel; }
 
