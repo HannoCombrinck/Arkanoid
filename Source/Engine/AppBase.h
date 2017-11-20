@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <Engine/Input/InputCodes.h>
 
 namespace sf
 {
@@ -24,6 +25,7 @@ protected:
 	// Derived application
 	// {
 	void closeApplication();
+	void toggleFullscreen();
 	EngineSystems& engine();
 	// }
 
@@ -32,6 +34,12 @@ private:
 	// {
 	virtual void onUpdate(float fDT) {}
 	virtual void onInit() {}
+	virtual void onKeyPressed(input::KeyboardKey eKey) {}
+	virtual void onKeyReleased(input::KeyboardKey eKey) {}
+	virtual void onCharEntered(char ch) {}
+	virtual void onMBPressed(input::MouseButton eButton) {}
+	virtual void onMBReleased(input::MouseButton eButton) {}
+	virtual void onMouseMoved(int iX, int iY) {}
 	// }
 
 	// Application internals

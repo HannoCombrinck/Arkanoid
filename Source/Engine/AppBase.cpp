@@ -50,6 +50,17 @@ void AppBase::closeApplication()
 	m_upWindow->close();
 }
 
+void AppBase::toggleFullscreen()
+{
+	m_bFullscreen = !m_bFullscreen;
+	if (m_bFullscreen)
+		m_upWindow->create(VideoMode::getDesktopMode(), "Test", Style::Fullscreen);
+	else
+		m_upWindow->create(VideoMode(800U, 600U, 32U), "Test");
+
+	m_upWindow->setVerticalSyncEnabled(true);
+}
+
 EngineSystems& AppBase::engine() 
 { 
 	return *m_upEngineSystems; 
@@ -81,42 +92,42 @@ void AppBase::handleEvents()
 			engine().visuals().resize(e.size.width, e.size.height);
 			break;
 		case Event::KeyPressed:
-			engine().inputs().keyPressed(KeyboardKey(e.key.code));
-				
-			{
-				switch (e.key.code)
-				{
-				case Keyboard::Escape:
-					m_upWindow->close();
-					break;
-				case Keyboard::F2:
-				{
-					m_bFullscreen = !m_bFullscreen;
-					if (m_bFullscreen)
-						m_upWindow->create(VideoMode::getDesktopMode(), "Test", Style::Fullscreen);
-					else
-						m_upWindow->create(VideoMode(800U, 600U, 32U), "Test");
-
-					m_upWindow->setVerticalSyncEnabled(true);
-				}
-				break;
-				}
-			}
-			break;
+		{
+			auto key = KeyboardKey(e.key.code);
+			onKeyPressed(key);
+			engine().inputs().keyPressed(key);
+		}
+		break;
 		case Event::KeyReleased:
-			engine().inputs().keyReleased(KeyboardKey(e.key.code));
-			break;
+		{
+			auto key = KeyboardKey(e.key.code);
+			onKeyReleased(key);
+			engine().inputs().keyReleased(key);
+		}
+		break;
 		case Event::TextEntered:
 			if (e.text.unicode < 128)
+			{
+				onCharEntered(static_cast<char>(e.text.unicode));
 				engine().inputs().charEntered(static_cast<char>(e.text.unicode));
+			}
 			break;
 		case Event::MouseButtonPressed:
-			engine().inputs().mbPressed(MouseButton(e.mouseButton.button));
-			break;
+		{
+			auto btn = MouseButton(e.mouseButton.button);
+			onMBPressed(btn);
+			engine().inputs().mbPressed(btn);
+		}
+		break;
 		case Event::MouseButtonReleased:
-			engine().inputs().mbReleased(MouseButton(e.mouseButton.button));
-			break;
+		{
+			auto btn = MouseButton(e.mouseButton.button);
+			onMBReleased(btn);
+			engine().inputs().mbReleased(btn);
+		}
+		break;
 		case Event::MouseMoved:
+			onMouseMoved(e.mouseMove.x, e.mouseMove.y);
 			engine().inputs().mouseMoved(e.mouseMove.x, e.mouseMove.y);
 			break;
 		}

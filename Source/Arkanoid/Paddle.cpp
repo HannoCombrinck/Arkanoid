@@ -30,9 +30,9 @@ void Paddle::onInit()
 
 void Paddle::onUpdate(float fDT)
 {
-	m_bLeft = engine().inputs().getKeyState(KEY_Left);
-	m_bRight = engine().inputs().getKeyState(KEY_Right);
-	m_bAction = engine().inputs().getKeyState(KEY_Space) || engine().inputs().getMBState(MB_Left);
+	m_bLeft = engine().inputs().isKeyPressed(KEY_Left);
+	m_bRight = engine().inputs().isKeyPressed(KEY_Right);
+	m_bAction = engine().inputs().isKeyPressed(KEY_Space) || engine().inputs().isMBPressed(MB_Left);
 
 	auto vMouseMove = engine().inputs().getMousePosRel();
 	if (vMouseMove.x != 0 || vMouseMove.y != 0)

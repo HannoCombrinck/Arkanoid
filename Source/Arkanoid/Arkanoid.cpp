@@ -66,13 +66,31 @@ void Arkanoid::onInit()
 
 void Arkanoid::onUpdate(float fDT)
 {
-	if (engine().inputs().isKeyPressed(KEY_N) && m_eState == STOPPED)
-		startNewGame();
-
-	if (engine().inputs().isKeyPressed(KEY_Num1) && m_eState == RUNNING)
-		stopGame();
-
 	// Update world and all of its entities
 	if (m_spWorld)
 		m_spWorld->update(fDT);
+}
+
+void Arkanoid::onKeyPressed(input::KeyboardKey eKey)
+{
+	switch (eKey)
+	{
+	case input::KEY_N:
+		if (m_eState == STOPPED)
+			startNewGame();
+		break;
+	case input::KEY_Num1:
+		if (m_eState == RUNNING)
+			stopGame();
+		break;
+	case input::KEY_Escape:
+		if (m_eState == STOPPED)
+			closeApplication();
+		break;
+	case input::KEY_F2:
+		toggleFullscreen();
+		break;
+	default:
+		break;
+	}
 }

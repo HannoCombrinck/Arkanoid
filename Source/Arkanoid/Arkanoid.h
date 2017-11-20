@@ -33,6 +33,7 @@ private:
 	// {
 	void onInit() override;
 	void onUpdate(float fDT) override;
+	void onKeyPressed(input::KeyboardKey eKey) override;
 	// }
 
 	unique_ptr<ArkanoidFactory> m_upFactory;
