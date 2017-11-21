@@ -79,6 +79,9 @@
     <ClCompile Include="..\..\Source\Arkanoid\ArkanoidFactory.cpp">
       <Filter>Header/Source Files\Arkanoid</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Graphics\Visual.cpp">
+      <Filter>Header/Source Files\Engine\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h">
@@ -140,6 +143,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Arkanoid\ArkanoidFactory.h">
       <Filter>Header/Source Files\Arkanoid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Graphics\Visual.h">
+      <Filter>Header/Source Files\Engine\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

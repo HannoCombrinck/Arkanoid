@@ -6,8 +6,6 @@
 namespace sf
 {
 	class RenderWindow;
-	class Font;
-	class Text;
 }
 
 namespace graphics
@@ -33,15 +31,13 @@ namespace graphics
 
 		// VisualSystem internals
 		// {
-		sf::RenderWindow *m_pWindow;
 		bool m_bVSync;
 		bool m_bFullscreen;
 		float m_fDeltaTime;
 		float m_fDeltaTimeSmoothed;
 		// }
 
-		// TEMP
-		std::unique_ptr<sf::Font> m_upFont;
-		std::unique_ptr<sf::Text> m_upText;
+		struct SFMLMembers;
+		SFMLMembers* m_pSFML;
 	};
 }

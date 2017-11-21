@@ -9,27 +9,34 @@ using namespace sf;
 
 namespace graphics {
 
+	struct VisualSystem::SFMLMembers
+	{
+		RenderWindow *pWindow;
+		Font font;
+		Text text;
+	};
+
 	VisualSystem::VisualSystem(RenderWindow *pWindow)
-		: m_pWindow(pWindow)
-		, m_fDeltaTime(0.0f)
+		: m_fDeltaTime(0.0f)
 		, m_fDeltaTimeSmoothed(0.0f)
 		, m_bVSync(true)
 		, m_bFullscreen(false)
 	{
-		m_pWindow->create(VideoMode(800U, 600U, 32U), "Test");
-		m_pWindow->setVerticalSyncEnabled(m_bVSync);
+		m_pSFML = new SFMLMembers;
+		m_pSFML->pWindow = pWindow;
 
-		m_upFont = make_unique<Font>();
-		m_upText = make_unique<Text>();
+		m_pSFML->pWindow->create(VideoMode(800U, 600U, 32U), "Test");
+		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
 
-		m_upFont->loadFromFile("../Data/Fonts/f.ttf");
-		m_upText->move(10.0f, 5.0f);
-		m_upText->setFont(*m_upFont);
-		m_upText->setCharacterSize(10U);
+		m_pSFML->font.loadFromFile("../Data/Fonts/f.ttf");
+		m_pSFML->text.move(10.0f, 5.0f);
+		m_pSFML->text.setFont(m_pSFML->font);
+		m_pSFML->text.setCharacterSize(10U);
 	}
 
 	VisualSystem::~VisualSystem()
 	{
+		delete m_pSFML;
 	}
 
 	uint VisualSystem::createVisual()
@@ -45,36 +52,36 @@ namespace graphics {
 
 	void VisualSystem::render()
 	{
-		m_pWindow->clear();
+		m_pSFML->pWindow->clear();
 		// Draw custom OpenGL stuff here
-		m_pWindow->pushGLStates();
+		m_pSFML->pWindow->pushGLStates();
 		// Draw via SFML (Convenient wrappers for text, 2d rendering etc.)
 
 		//////
 		// TEMP TEST RENDERING
-		m_upText->setString(to_string(1.0f / m_fDeltaTimeSmoothed));
-		m_pWindow->draw(*m_upText);
+		m_pSFML->text.setString(to_string(1.0f / m_fDeltaTimeSmoothed));
+		m_pSFML->pWindow->draw(m_pSFML->text);
 		//////
 
-		m_pWindow->popGLStates();
+		m_pSFML->pWindow->popGLStates();
 		// Flip buffers 
-		m_pWindow->display();
+		m_pSFML->pWindow->display();
 	}
 
 	void VisualSystem::resize(int iWidth, int iHeight)
 	{
-		m_pWindow->setView(View(FloatRect(0, 0, float(iWidth), float(iHeight))));
+		m_pSFML->pWindow->setView(View(FloatRect(0, 0, float(iWidth), float(iHeight))));
 	}
 
 	void VisualSystem::toggleFullscreen()
 	{
 		m_bFullscreen = !m_bFullscreen;
 		if (m_bFullscreen)
-			m_pWindow->create(VideoMode::getDesktopMode(), "Test", Style::Fullscreen);
+			m_pSFML->pWindow->create(VideoMode::getDesktopMode(), "Test", Style::Fullscreen);
 		else
-			m_pWindow->create(VideoMode(800U, 600U, 32U), "Test");
+			m_pSFML->pWindow->create(VideoMode(800U, 600U, 32U), "Test");
 
-		m_pWindow->setVerticalSyncEnabled(m_bVSync);
+		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
 	}
 
 }
