@@ -90,6 +90,9 @@ void Arkanoid::onKeyPressed(KeyboardKey eKey)
 	case KEY_F2:
 		toggleFullscreen();
 		break;
+	case KEY_F3:
+		toggleMouseLock();
+		break;
 	default:
 		break;
 	}

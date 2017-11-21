@@ -31,9 +31,6 @@ namespace input {
 	{
 		if (m_spListener != m_spNewListener)
 			m_spListener = m_spNewListener;
-
-		m_MousePosRel = m_MousePos - m_MousePosPrev;
-		m_MousePosPrev = m_MousePos;
 	}
 
 	void InputSystem::keyPressed(KeyboardKey eKey)
@@ -81,6 +78,18 @@ namespace input {
 
 		if (m_spListener)
 			m_spListener->mouseMoved(iX, iY);
+	}
+
+	void InputSystem::mouseMovedRel(int iX, int iY)
+	{
+		if (m_MousePosRel.x == iX && m_MousePosRel.y == iY)
+			return;
+
+		m_MousePosRel.x = iX;
+		m_MousePosRel.y = iY;
+
+		if (m_spListener)
+			m_spListener->mouseMovedRel(iX, iY);
 	}
 
 }

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <Engine/Input/InputCodes.h>
+#include <Engine/Core/Math/Math.h>
 
 namespace sf
 {
@@ -26,6 +27,7 @@ protected:
 	// {
 	void closeApplication();
 	void toggleFullscreen();
+	void toggleMouseLock();
 	EngineSystems& engine();
 	// }
 
@@ -40,6 +42,7 @@ private:
 	virtual void onMBPressed(input::MouseButton eButton) {}
 	virtual void onMBReleased(input::MouseButton eButton) {}
 	virtual void onMouseMoved(int iX, int iY) {}
+	virtual void onMouseMovedRel(int iX, int iY) {}
 	// }
 
 	// Application internals
@@ -47,6 +50,7 @@ private:
 	void update();
 	void render();
 	void handleEvents();
+	void handleMouseInput();
 	void checkTime();
 	// }
 
@@ -54,4 +58,6 @@ private:
 	std::unique_ptr<sf::Clock> m_upClock;
 	float m_fDeltaTime;
 	std::unique_ptr<EngineSystems> m_upEngineSystems;
+	core::Vec2i m_vMousePos;
+	bool m_bMouseLock;
 };

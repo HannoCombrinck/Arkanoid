@@ -45,4 +45,9 @@ namespace input {
 		onMouseMoved(iX, iY);
 	}
 
+	void InputListener::mouseMovedRel(int iX, int iY)
+	{
+		onMouseMovedRel(iX, iY);
+	}
+
 }

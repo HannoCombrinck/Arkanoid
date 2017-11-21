@@ -21,6 +21,7 @@ namespace input
 		void mbPressed(MouseButton eButton);
 		void mbReleased(MouseButton eButton);
 		void mouseMoved(int iX, int iY);
+		void mouseMovedRel(int iX, int iY);
 		// }
 
 		// Derived listener overrides
@@ -31,6 +32,7 @@ namespace input
 		virtual void onMBPressed(MouseButton eButton) {}
 		virtual void onMBReleased(MouseButton eButton) {}
 		virtual void onMouseMoved(int iX, int iY) {}
+		virtual void onMouseMovedRel(int iX, int iY) {}
 		// }
 	};
 }

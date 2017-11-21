@@ -37,6 +37,7 @@ namespace input
 		void mbPressed(MouseButton eButton);
 		void mbReleased(MouseButton eButton);
 		void mouseMoved(int iX, int iY);
+		void mouseMovedRel(int iX, int iY);
 		// }
 
 		// Input state
@@ -44,7 +45,6 @@ namespace input
 		bool m_KBState[KEY_KeyCount];
 		bool m_MBState[MB_ButtonCount];
 		core::Vec2i m_MousePos;
-		core::Vec2i m_MousePosPrev;
 		core::Vec2i m_MousePosRel;
 		// }
 

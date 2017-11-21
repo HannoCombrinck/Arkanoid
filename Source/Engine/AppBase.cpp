@@ -11,11 +11,13 @@
 
 using namespace sf;
 using namespace std;
+using namespace core;
 using namespace input;
 using namespace graphics;
 
 AppBase::AppBase()
 	: m_fDeltaTime(0.0f)
+	, m_bMouseLock(false)
 {
 	m_upWindow = make_unique<RenderWindow>();
 	m_upClock = make_unique<Clock>();
@@ -46,6 +48,13 @@ void AppBase::closeApplication()
 void AppBase::toggleFullscreen()
 {
 	engine().visuals().toggleFullscreen();
+}
+
+void AppBase::toggleMouseLock()
+{
+	m_bMouseLock = !m_bMouseLock;
+	m_upWindow->setMouseCursorGrabbed(m_bMouseLock);
+	m_upWindow->setMouseCursorVisible(!m_bMouseLock);
 }
 
 EngineSystems& AppBase::engine() 
@@ -112,12 +121,45 @@ void AppBase::handleEvents()
 			engine().inputs().mbReleased(btn);
 		}
 		break;
-		case Event::MouseMoved:
-			onMouseMoved(e.mouseMove.x, e.mouseMove.y);
-			engine().inputs().mouseMoved(e.mouseMove.x, e.mouseMove.y);
-			break;
 		}
 	}
+
+	handleMouseInput();
+}
+
+void AppBase::handleMouseInput()
+{
+	auto vMousePosScreen = Mouse::getPosition();
+	if (m_bMouseLock)
+	{
+		auto vWindowSize = m_upWindow->getSize();
+		auto vWindowPos = m_upWindow->getPosition();
+		auto vCenter = Vector2i(vWindowPos.x + int(vWindowSize.x) / 2, vWindowPos.y + int(vWindowSize.y) / 2);
+		auto vDiff = vMousePosScreen - vCenter;
+		if (vDiff.x != 0 || vDiff.y != 0)
+		{
+			Mouse::setPosition(vCenter);
+			onMouseMovedRel(vDiff.x, vDiff.y);
+		}
+
+		engine().inputs().mouseMovedRel(vDiff.x, vDiff.y);
+		return;
+	}
+
+	auto vMousePosWindow = Mouse::getPosition(*m_upWindow);
+	if (vMousePosWindow.x != m_vMousePos.x || vMousePosWindow.y != m_vMousePos.y)
+	{
+		auto iX = vMousePosWindow.x;
+		auto iY = vMousePosWindow.y;
+		engine().inputs().mouseMoved(iX, iY);
+		engine().inputs().mouseMovedRel(iX - m_vMousePos.x, iY - m_vMousePos.y);
+		onMouseMovedRel(iX - m_vMousePos.x, iY - m_vMousePos.y);
+		onMouseMoved(iX, iY);
+		m_vMousePos = Vec2(iX, iY);
+		return;
+	}
+
+	engine().inputs().mouseMovedRel(0, 0);
 }
 
 void AppBase::checkTime()
