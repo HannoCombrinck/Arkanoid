@@ -1,7 +1,5 @@
 #include "ArkanoidFactory.h"
 
-#include <iostream>
-
 #include <Arkanoid/Paddle.h>
 
 using namespace std;

@@ -71,23 +71,23 @@ void Arkanoid::onUpdate(float fDT)
 		m_spWorld->update(fDT);
 }
 
-void Arkanoid::onKeyPressed(input::KeyboardKey eKey)
+void Arkanoid::onKeyPressed(KeyboardKey eKey)
 {
 	switch (eKey)
 	{
-	case input::KEY_N:
+	case KEY_N:
 		if (m_eState == STOPPED)
 			startNewGame();
 		break;
-	case input::KEY_Num1:
+	case KEY_Num1:
 		if (m_eState == RUNNING)
 			stopGame();
 		break;
-	case input::KEY_Escape:
+	case KEY_Escape:
 		if (m_eState == STOPPED)
 			closeApplication();
 		break;
-	case input::KEY_F2:
+	case KEY_F2:
 		toggleFullscreen();
 		break;
 	default:
