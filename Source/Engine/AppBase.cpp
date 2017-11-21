@@ -15,22 +15,15 @@ using namespace input;
 using namespace graphics;
 
 AppBase::AppBase()
-	: m_bFullscreen(false)
-	, m_bVSync(true)
-	, m_fDeltaTime(0.0f)
+	: m_fDeltaTime(0.0f)
 {
 	m_upWindow = make_unique<RenderWindow>();
-	m_upWindow->create(VideoMode(800U, 600U, 32U), "Test");
-	m_upWindow->setVerticalSyncEnabled(m_bVSync);
-
 	m_upClock = make_unique<Clock>();
-
 	m_upEngineSystems = make_unique<EngineSystems>(m_upWindow.get());
 }
 
 AppBase::~AppBase()
 {
-
 }
 
 void AppBase::start()
@@ -52,13 +45,7 @@ void AppBase::closeApplication()
 
 void AppBase::toggleFullscreen()
 {
-	m_bFullscreen = !m_bFullscreen;
-	if (m_bFullscreen)
-		m_upWindow->create(VideoMode::getDesktopMode(), "Test", Style::Fullscreen);
-	else
-		m_upWindow->create(VideoMode(800U, 600U, 32U), "Test");
-
-	m_upWindow->setVerticalSyncEnabled(true);
+	engine().visuals().toggleFullscreen();
 }
 
 EngineSystems& AppBase::engine() 
@@ -69,7 +56,6 @@ EngineSystems& AppBase::engine()
 void AppBase::update()
 {
 	engine().update(m_fDeltaTime);
-
 	onUpdate(m_fDeltaTime);
 }
 

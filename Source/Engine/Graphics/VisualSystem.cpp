@@ -13,7 +13,12 @@ namespace graphics {
 		: m_pWindow(pWindow)
 		, m_fDeltaTime(0.0f)
 		, m_fDeltaTimeSmoothed(0.0f)
+		, m_bVSync(true)
+		, m_bFullscreen(false)
 	{
+		m_pWindow->create(VideoMode(800U, 600U, 32U), "Test");
+		m_pWindow->setVerticalSyncEnabled(m_bVSync);
+
 		m_upFont = make_unique<Font>();
 		m_upText = make_unique<Text>();
 
@@ -59,6 +64,17 @@ namespace graphics {
 	void VisualSystem::resize(int iWidth, int iHeight)
 	{
 		m_pWindow->setView(View(FloatRect(0, 0, float(iWidth), float(iHeight))));
+	}
+
+	void VisualSystem::toggleFullscreen()
+	{
+		m_bFullscreen = !m_bFullscreen;
+		if (m_bFullscreen)
+			m_pWindow->create(VideoMode::getDesktopMode(), "Test", Style::Fullscreen);
+		else
+			m_pWindow->create(VideoMode(800U, 600U, 32U), "Test");
+
+		m_pWindow->setVerticalSyncEnabled(m_bVSync);
 	}
 
 }

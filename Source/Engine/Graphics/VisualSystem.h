@@ -28,11 +28,14 @@ namespace graphics
 		void update(float fDT);
 		void render();
 		void resize(int iWidth, int iHeight);
+		void toggleFullscreen();
 		// }
 
 		// VisualSystem internals
 		// {
 		sf::RenderWindow *m_pWindow;
+		bool m_bVSync;
+		bool m_bFullscreen;
 		float m_fDeltaTime;
 		float m_fDeltaTimeSmoothed;
 		// }
