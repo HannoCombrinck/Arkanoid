@@ -39,9 +39,9 @@ namespace graphics {
 		delete m_pSFML;
 	}
 
-	uint VisualSystem::createVisual()
+	boost::shared_ptr<Visual> VisualSystem::createVisual()
 	{
-		return 0U;
+		return nullPtr;
 	}
 
 	void VisualSystem::update(float fDT)

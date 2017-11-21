@@ -7,6 +7,10 @@ namespace sf
 {
 	class RenderWindow;
 }
+namespace graphics
+{
+	class Visual;
+}
 
 namespace graphics
 {
@@ -16,7 +20,7 @@ namespace graphics
 		VisualSystem(sf::RenderWindow *pWindow);
 		~VisualSystem();
 
-		uint createVisual();
+		boost::shared_ptr<Visual> createVisual();
 
 	private:
 		// EngineSystems interface

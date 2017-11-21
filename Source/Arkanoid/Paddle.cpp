@@ -5,9 +5,11 @@
 #include <Engine/EngineSystems.h>
 #include <Engine/SystemsInclude.h>
 #include <Engine/Input/InputCodes.h>
+#include <Engine/Graphics/Visual.h>
 
 using namespace std;
 using namespace input;
+using namespace graphics;
 
 Paddle* Paddle::create()
 {
@@ -25,7 +27,7 @@ Paddle::~Paddle()
 void Paddle::onInit()
 {
 	// TODO: Create visuals, collision objects, sounds i.e. all the components that make up the Paddle object
-	m_uVisual = engine().visuals().createVisual();
+	m_spVisual = engine().visuals().createVisual();
 }
 
 void Paddle::onUpdate(float fDT)

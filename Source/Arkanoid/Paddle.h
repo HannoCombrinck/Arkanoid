@@ -4,6 +4,11 @@
 #include <Engine/Core/Math/Math.h>
 #include <Engine/Entity/Entity.h>
 
+namespace graphics
+{
+	class Visual;
+}
+
 using namespace core;
 using namespace entity;
 
@@ -24,5 +29,5 @@ private:
 	bool m_bRight;
 	bool m_bAction;
 	
-	uint m_uVisual;
+	boost::shared_ptr<graphics::Visual> m_spVisual;
 };
