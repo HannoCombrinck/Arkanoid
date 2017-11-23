@@ -1,6 +1,9 @@
 #include "VisualSystem.h"
 
 #include <iostream>
+#include <vector>
+
+#include <Engine/Graphics/Visual.h>
 
 #include <SFML/Graphics.hpp>
 
@@ -41,6 +44,7 @@ namespace graphics {
 
 	boost::shared_ptr<Visual> VisualSystem::createVisual()
 	{
+		auto spVisual = new Visual(this);
 		return nullPtr;
 	}
 
@@ -83,5 +87,5 @@ namespace graphics {
 
 		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
 	}
-
+	
 }

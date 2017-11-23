@@ -6,9 +6,9 @@
 
 using namespace core;
 
-namespace sf
+namespace graphics
 {
-	class RenderWindow;
+	class VisualSystem;
 }
 
 namespace graphics
@@ -16,11 +16,14 @@ namespace graphics
 	class Visual
 	{
 	public:
-		Visual();
+		Visual(VisualSystem* pVisualSystem);
 		~Visual();
 
+		void update(float fDT);
+
 	private:
-		friend class VisualSystem;
+		VisualSystem* m_pVisualSystem;
+		uint m_uSprite;
 		Vec2 m_vPos;
 
 	};
