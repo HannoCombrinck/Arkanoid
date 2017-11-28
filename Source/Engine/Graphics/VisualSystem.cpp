@@ -17,6 +17,7 @@ namespace graphics {
 		RenderWindow *pWindow;
 		Font font;
 		Text text;
+		vector<pair<Sprite,Texture>> aSprites;
 	};
 
 	VisualSystem::VisualSystem(RenderWindow *pWindow)
@@ -44,8 +45,7 @@ namespace graphics {
 
 	boost::shared_ptr<Visual> VisualSystem::createVisual()
 	{
-		auto spVisual = new Visual(this);
-		return nullPtr;
+		return boost::shared_ptr<Visual>(new Visual(this));
 	}
 
 	void VisualSystem::update(float fDT)
@@ -63,6 +63,12 @@ namespace graphics {
 
 		//////
 		// TEMP TEST RENDERING
+		
+		// Draw sprites
+		for (const auto& s : m_pSFML->aSprites)
+			m_pSFML->pWindow->draw(s.first);
+
+
 		m_pSFML->text.setString(to_string(1.0f / m_fDeltaTimeSmoothed));
 		m_pSFML->pWindow->draw(m_pSFML->text);
 		//////
@@ -88,4 +94,24 @@ namespace graphics {
 		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
 	}
 	
+	uint VisualSystem::createSprite(const std::string& sTextureFilename)
+	{
+		auto uIndex = m_pSFML->aSprites.size();
+		m_pSFML->aSprites.resize(uIndex + 1);
+		auto& rTex = m_pSFML->aSprites[uIndex].second;
+		rTex.loadFromFile(sTextureFilename);
+		m_pSFML->aSprites[uIndex].first.setTexture(rTex);
+		return uIndex;
+	}
+
+	void VisualSystem::removeSprite(uint uHandle)
+	{
+		m_pSFML->aSprites.erase(m_pSFML->aSprites.begin() + uHandle);
+	}
+
+	Sprite& VisualSystem::modifySprite(uint uHandle)
+	{
+		return m_pSFML->aSprites[uHandle].first;
+	}
+
 }

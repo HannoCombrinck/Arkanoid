@@ -6,6 +6,7 @@
 namespace sf
 {
 	class RenderWindow;
+	class Sprite;
 }
 namespace graphics
 {
@@ -31,6 +32,14 @@ namespace graphics
 		void render();
 		void resize(int iWidth, int iHeight);
 		void toggleFullscreen();
+		// }
+
+		// Visual interface
+		// {
+		friend class Visual;
+		uint createSprite(const std::string& sTextureFilename);
+		void removeSprite(uint uHandle);
+		sf::Sprite& modifySprite(uint uHandle);
 		// }
 
 		// VisualSystem internals
