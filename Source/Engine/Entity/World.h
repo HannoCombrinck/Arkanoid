@@ -25,6 +25,7 @@ namespace entity
 		void update(float fDT);
 
 	private:
+		// TODO: Add several onUpdate* overrides for updating before and after physics/sound/input etc.
 		vector<boost::shared_ptr<Entity>> m_aspEntities;
 
 	};

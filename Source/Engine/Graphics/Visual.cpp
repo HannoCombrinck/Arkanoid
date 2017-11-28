@@ -21,6 +21,9 @@ namespace graphics {
 
 	Visual::~Visual()
 	{
+		if (m_uSprite == ~0)
+			return;
+
 		m_pVisualSystem->removeSprite(m_uSprite);
 		m_uSprite = ~0;
 	}
@@ -33,4 +36,9 @@ namespace graphics {
 		m_pVisualSystem->modifySprite(m_uSprite).setPosition(m_vPos.x, m_vPos.y);
 	}
 	
+	void Visual::setPosition(const Vec2& vPos)
+	{
+		m_vPos = vPos;
+	}
+
 }

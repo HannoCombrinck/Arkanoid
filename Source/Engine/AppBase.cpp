@@ -70,6 +70,7 @@ void AppBase::update()
 
 void AppBase::render()
 {
+	// TODO: Do preRenderUpdate so visuals have latest information
 	engine().visuals().render();
 }
 

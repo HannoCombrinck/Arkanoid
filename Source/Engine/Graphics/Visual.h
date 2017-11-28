@@ -21,6 +21,8 @@ namespace graphics
 
 		void update(float fDT);
 
+		void setPosition(const Vec2& vPos);
+
 	private:
 		VisualSystem* m_pVisualSystem;
 		uint m_uSprite;

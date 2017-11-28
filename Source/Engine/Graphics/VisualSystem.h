@@ -1,5 +1,6 @@
 #pragma once
 #include <memory>
+#include <vector>
 
 #include <Engine/Core/GlobalTypes.h>
 
@@ -44,6 +45,7 @@ namespace graphics
 
 		// VisualSystem internals
 		// {
+		std::vector<boost::shared_ptr<Visual>> m_aspVisuals;
 		bool m_bVSync;
 		bool m_bFullscreen;
 		float m_fDeltaTime;

@@ -40,18 +40,25 @@ namespace graphics {
 
 	VisualSystem::~VisualSystem()
 	{
+		m_aspVisuals.clear();
+
 		delete m_pSFML;
 	}
 
 	boost::shared_ptr<Visual> VisualSystem::createVisual()
 	{
-		return boost::shared_ptr<Visual>(new Visual(this));
+		auto spVisual = boost::shared_ptr<Visual>(new Visual(this));
+		m_aspVisuals.push_back(spVisual);
+		return spVisual;
 	}
 
 	void VisualSystem::update(float fDT)
 	{
 		m_fDeltaTime = fDT;
 		m_fDeltaTimeSmoothed = m_fDeltaTimeSmoothed*0.98f + m_fDeltaTime*0.02f;
+
+		for (auto& v : m_aspVisuals)
+			v->update(fDT);
 	}
 
 	void VisualSystem::render()

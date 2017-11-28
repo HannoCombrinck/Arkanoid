@@ -17,6 +17,10 @@ Paddle* Paddle::create()
 }
 
 Paddle::Paddle()
+	: m_vPos(Vec2(0.0f, 0.0f))
+	, m_bLeft(false)
+	, m_bRight(false)
+	, m_bAction(false)
 {
 }
 
@@ -38,15 +42,21 @@ void Paddle::onUpdate(float fDT)
 
 	auto vMouseMove = engine().inputs().getMousePosRel();
 	if (vMouseMove.x != 0 || vMouseMove.y != 0)
-		cout << "Mouse move: " << vMouseMove.x << ", " << vMouseMove.y << endl;
+	{
+		m_vPos += vMouseMove;
+		//cout << "Mouse move: " << vMouseMove.x << ", " << vMouseMove.y << endl;
+	}
 
 	if (m_bLeft)
-		cout << "Left\n";
+	{
+		m_vPos.x -= 1.5f;
+	}
 	if (m_bRight)
-		cout << "Right\n";
+	{
+		m_vPos.x += 1.5f;
+	}
 	if (m_bAction)
 		cout << "Action\n";
-		
-	// Update visual according to current state
-	// engine().visuals().
+
+	m_spVisual->setPosition(m_vPos);
 }
