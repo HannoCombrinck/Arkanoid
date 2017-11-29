@@ -8,10 +8,6 @@ namespace input
 {
 	class InputSystem;
 }
-namespace entity
-{
-	class EntitySystem;
-}
 namespace graphics
 {
 	class VisualSystem;
@@ -19,4 +15,8 @@ namespace graphics
 namespace sound
 {
 	class SoundSystem;
+}
+namespace entity
+{
+	class EntitySystem;
 }

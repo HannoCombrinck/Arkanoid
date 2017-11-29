@@ -17,6 +17,8 @@ namespace entity
 		EntitySystem();
 		~EntitySystem();
 
+		void setActiveWorld(const boost::shared_ptr<World>& spWorld);
+
 	private:
 		// EngineSystems interface
 		// {
@@ -27,7 +29,7 @@ namespace entity
 
 		// EntitySystem internals
 		// {
-		std::vector<boost::shared_ptr<World>> m_aspWorlds;
+		boost::shared_ptr<World> m_spActiveWorld;
 		// }
 		
 	};

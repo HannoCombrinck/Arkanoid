@@ -37,6 +37,7 @@ void Arkanoid::startNewGame()
 	auto spLevel = levelGen.generate(*m_upFactory);
 	spLevel->init(engine());
 	m_spWorld = boost::shared_ptr<World>(spLevel);
+	engine().entities().setActiveWorld(m_spWorld);
 
 	m_eState = RUNNING;
 }
@@ -48,6 +49,7 @@ void Arkanoid::stopGame()
 
 	cout << "Stopping game\n";
 	m_spWorld.reset();
+	engine().entities().setActiveWorld(nullPtr);
 
 	m_eState = STOPPED;
 }
@@ -56,6 +58,7 @@ void Arkanoid::loadGame(const string& sFilename)
 {
 	auto spLevel = World::load(sFilename);
 	m_spWorld = boost::shared_ptr<World>(spLevel);
+	engine().entities().setActiveWorld(m_spWorld);
 
 	m_eState = RUNNING;
 }
@@ -66,9 +69,6 @@ void Arkanoid::onInit()
 
 void Arkanoid::onUpdate(float fDT)
 {
-	// Update world and all of its entities
-	if (m_spWorld)
-		m_spWorld->update(fDT);
 }
 
 void Arkanoid::onKeyPressed(KeyboardKey eKey)

@@ -7,16 +7,16 @@
 using namespace std;
 using namespace sf;
 using namespace input;
-using namespace entity;
 using namespace graphics;
 using namespace sound;
+using namespace entity;
 
 EngineSystems::EngineSystems(RenderWindow* pWindow)
 {
 	m_upInputSystem = make_unique<InputSystem>();
-	m_upEntitySystem = make_unique<EntitySystem>();
 	m_upVisualSystem = make_unique<VisualSystem>(pWindow);
 	m_upSoundSystem = make_unique<SoundSystem>();
+	m_upEntitySystem = make_unique<EntitySystem>();
 }
 
 EngineSystems::~EngineSystems()
@@ -36,11 +36,6 @@ InputSystem& EngineSystems::inputs()
 	return *m_upInputSystem; 
 }
 
-entity::EntitySystem& EngineSystems::entities()
-{
-	return *m_upEntitySystem;
-}
-
 VisualSystem& EngineSystems::visuals() 
 { 
 	return *m_upVisualSystem; 
@@ -49,4 +44,9 @@ VisualSystem& EngineSystems::visuals()
 SoundSystem& EngineSystems::sounds() 
 { 
 	return *m_upSoundSystem;
+}
+
+entity::EntitySystem& EngineSystems::entities()
+{
+	return *m_upEntitySystem;
 }

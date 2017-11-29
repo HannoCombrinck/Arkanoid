@@ -17,10 +17,17 @@ namespace entity {
 	{
 	}
 
+	void EntitySystem::setActiveWorld(const boost::shared_ptr<World>& spWorld)
+	{
+		m_spActiveWorld = spWorld;
+	}
+
 	void EntitySystem::update(float fDT)
 	{
-		for (auto& sp : m_aspWorlds)
-			sp->update(fDT);
+		if (!m_spActiveWorld)
+			return;
+
+		m_spActiveWorld->update(fDT);
 	}
 
 }
