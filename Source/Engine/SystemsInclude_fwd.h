@@ -8,6 +8,10 @@ namespace input
 {
 	class InputSystem;
 }
+namespace entity
+{
+	class EntitySystem;
+}
 namespace graphics
 {
 	class VisualSystem;

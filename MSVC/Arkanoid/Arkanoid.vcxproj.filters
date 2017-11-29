@@ -82,6 +82,9 @@
     <ClCompile Include="..\..\Source\Engine\Graphics\Visual.cpp">
       <Filter>Header/Source Files\Engine\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Entity\EntitySystem.cpp">
+      <Filter>Header/Source Files\Engine\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h">
@@ -146,6 +149,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Engine\Graphics\Visual.h">
       <Filter>Header/Source Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Entity\EntitySystem.h">
+      <Filter>Header/Source Files\Engine\Entity</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
