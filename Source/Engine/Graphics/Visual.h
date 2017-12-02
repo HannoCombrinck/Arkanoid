@@ -22,11 +22,15 @@ namespace graphics
 		void update(float fDT);
 
 		void setPosition(const Vec2& vPos);
+		void setSize(const Vec2& vSize);
 
 	private:
 		VisualSystem* m_pVisualSystem;
 		uint m_uSprite;
 		Vec2 m_vPos;
+		bool m_bPosChanged;
+		Vec2 m_vSize;
+		bool m_bSizeChanged;
 
 	};
 }
