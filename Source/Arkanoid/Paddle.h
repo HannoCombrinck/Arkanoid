@@ -27,6 +27,8 @@ private:
 	Vec2 m_vPos;
 	bool m_bLeft;
 	bool m_bRight;
+	bool m_bUp;
+	bool m_bDown;
 	bool m_bAction;
 	
 	boost::shared_ptr<graphics::Visual> m_spVisual;
