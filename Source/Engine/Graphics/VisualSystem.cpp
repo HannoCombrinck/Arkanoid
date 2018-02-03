@@ -52,6 +52,13 @@ namespace graphics {
 		return spVisual;
 	}
 
+	void VisualSystem::removeVisual(const boost::shared_ptr<Visual>& spVisual)
+	{
+		auto iter = find(m_aspVisuals.begin(), m_aspVisuals.end(), spVisual);
+		if (iter != m_aspVisuals.end())
+			m_aspVisuals.erase(iter);
+	}
+
 	void VisualSystem::update(float fDT)
 	{
 		m_fDeltaTime = fDT;
@@ -113,6 +120,7 @@ namespace graphics {
 
 	void VisualSystem::removeSprite(uint uHandle)
 	{
+		//m_aspVisuals
 		m_pSFML->aSprites.erase(m_pSFML->aSprites.begin() + uHandle);
 	}
 

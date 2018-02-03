@@ -24,6 +24,7 @@ namespace entity
 		// {
 		friend class EngineSystems;
 		friend class AppBase;
+		// TODO: Add several entitysystem updates (prePhysics, postPhysics, preVisuals, postVisuals etc.)
 		void update(float fDT);
 		// }
 

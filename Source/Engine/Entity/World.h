@@ -22,6 +22,7 @@ namespace entity
 
 		void init(EngineSystems& rEngine);
 		void addEntity(Entity* pEntity);
+		// TODO: Add several entitysystem updates (prePhysics, postPhysics, preVisuals, postVisuals etc.)
 		void update(float fDT);
 
 	private:

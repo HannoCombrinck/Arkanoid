@@ -22,7 +22,7 @@ namespace input
 		core::Vec2i getMousePos() const { return m_MousePos; }
 		core::Vec2i getMousePosRel() const { return m_MousePosRel; }
 
-		void setListener(const boost::shared_ptr<InputListener>& spListener);
+		void setListener(const boost::shared_ptr<InputListener>& spListener); // TODO: Remove listeners completely?
 		// }
 
 	private:
@@ -50,8 +50,8 @@ namespace input
 
 		// InputSystem internals
 		// {
-		boost::shared_ptr<InputListener> m_spListener;
-		boost::shared_ptr<InputListener> m_spNewListener;
+		boost::shared_ptr<InputListener> m_spListener;		// TODO: Remove listeners completely?
+		boost::shared_ptr<InputListener> m_spNewListener;	// TODO: Remove listeners completely?
 		// }
 
 	};

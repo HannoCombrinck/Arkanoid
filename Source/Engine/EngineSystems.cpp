@@ -25,6 +25,7 @@ EngineSystems::~EngineSystems()
 
 void EngineSystems::update(float fDT)
 {
+	// TODO: Add several entitysystem updates (prePhysics, postPhysics, preVisuals, postVisuals etc.)
 	m_upInputSystem->update(fDT);
 	m_upEntitySystem->update(fDT);
 	m_upVisualSystem->update(fDT);

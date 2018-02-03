@@ -13,6 +13,7 @@ namespace entity
 
 		void init(EngineSystems& rEngine);
 
+		// TODO: Add several entitysystem updates (prePhysics, postPhysics, preVisuals, postVisuals etc.)
 		void update(float fDT);
 
 	protected:
@@ -20,6 +21,7 @@ namespace entity
 
 	private:
 		virtual void onInit() {}
+		// TODO: Add several entitysystem onUpdates (onPrePhysics, onPostPhysics, onPreVisuals, onPostVisuals etc.)
 		virtual void onUpdate(float fDT) {}
 
 		EngineSystems* m_pEngine;

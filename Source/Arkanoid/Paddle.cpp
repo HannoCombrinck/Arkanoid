@@ -26,6 +26,7 @@ Paddle::Paddle()
 
 Paddle::~Paddle()
 {
+	engine().visuals().removeVisual(m_spVisual);
 }
 
 void Paddle::onInit()

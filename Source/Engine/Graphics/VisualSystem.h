@@ -23,6 +23,7 @@ namespace graphics
 		~VisualSystem();
 
 		boost::shared_ptr<Visual> createVisual();
+		void removeVisual(const boost::shared_ptr<Visual>& spVisual);
 
 	private:
 		// EngineSystems interface
