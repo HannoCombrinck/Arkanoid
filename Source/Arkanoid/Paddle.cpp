@@ -23,18 +23,19 @@ Paddle::Paddle()
 	, m_bUp(false)
 	, m_bDown(false)
 	, m_bAction(false)
+	, m_uVisual(~0)
 {
 }
 
 Paddle::~Paddle()
 {
-	engine().visuals().removeVisual(m_spVisual);
+	engine().visuals().removeVisual(m_uVisual);
 }
 
 void Paddle::onInit()
 {
 	// TODO: Create visuals, collision objects, sounds i.e. all the components that make up the Paddle object
-	m_spVisual = engine().visuals().createVisual();
+	m_uVisual = engine().visuals().createVisual();
 }
 
 void Paddle::onUpdate(float fDT)
@@ -63,5 +64,6 @@ void Paddle::onUpdate(float fDT)
 	if (m_bAction)
 		cout << "Action\n";
 
-	m_spVisual->setPosition(m_vPos);
+	auto& rVisual = engine().visuals().modifyVisual(m_uVisual);
+	rVisual.setPosition(m_vPos);
 }

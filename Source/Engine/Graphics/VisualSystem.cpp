@@ -45,18 +45,22 @@ namespace graphics {
 		delete m_pSFML;
 	}
 
-	boost::shared_ptr<Visual> VisualSystem::createVisual()
+	uint VisualSystem::createVisual()
 	{
 		auto spVisual = boost::shared_ptr<Visual>(new Visual(this));
 		m_aspVisuals.push_back(spVisual);
-		return spVisual;
+		return m_aspVisuals.size() - 1;
 	}
 
-	void VisualSystem::removeVisual(const boost::shared_ptr<Visual>& spVisual)
+	graphics::Visual& VisualSystem::modifyVisual(uint uVisual)
 	{
-		auto iter = find(m_aspVisuals.begin(), m_aspVisuals.end(), spVisual);
-		if (iter != m_aspVisuals.end())
-			m_aspVisuals.erase(iter);
+		assert(uVisual < m_aspVisuals.size());
+		return *(m_aspVisuals[uVisual]);
+	}
+
+	void VisualSystem::removeVisual(uint uVisual)
+	{
+		m_aspVisuals.erase(m_aspVisuals.begin() + uVisual);
 	}
 
 	void VisualSystem::update(float fDT)

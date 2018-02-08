@@ -22,8 +22,9 @@ namespace graphics
 		VisualSystem(sf::RenderWindow *pWindow);
 		~VisualSystem();
 
-		boost::shared_ptr<Visual> createVisual();
-		void removeVisual(const boost::shared_ptr<Visual>& spVisual);
+		uint createVisual();
+		Visual& modifyVisual(uint uVisual);
+		void removeVisual(uint uVisual);
 
 	private:
 		// EngineSystems interface
