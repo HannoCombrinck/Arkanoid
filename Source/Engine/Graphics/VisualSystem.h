@@ -35,6 +35,7 @@ namespace graphics
 		void render();
 		void resize(int iWidth, int iHeight);
 		void toggleFullscreen();
+		void toggleVSync();
 		// }
 
 		// Visual interface

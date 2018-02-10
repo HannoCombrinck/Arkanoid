@@ -111,6 +111,12 @@ namespace graphics {
 
 		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
 	}
+
+	void VisualSystem::toggleVSync()
+	{
+		m_bVSync = !m_bVSync;
+		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
+	}
 	
 	uint VisualSystem::createSprite(const std::string& sTextureFilename)
 	{

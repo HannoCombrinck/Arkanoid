@@ -57,6 +57,11 @@ void AppBase::toggleMouseLock()
 	m_upWindow->setMouseCursorVisible(!m_bMouseLock);
 }
 
+void AppBase::toggleVSync()
+{
+	engine().visuals().toggleVSync();
+}
+
 EngineSystems& AppBase::engine() 
 { 
 	return *m_upEngineSystems; 

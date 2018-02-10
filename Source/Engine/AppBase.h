@@ -28,6 +28,7 @@ protected:
 	void closeApplication();
 	void toggleFullscreen();
 	void toggleMouseLock();
+	void toggleVSync();
 	EngineSystems& engine();
 	// }
 

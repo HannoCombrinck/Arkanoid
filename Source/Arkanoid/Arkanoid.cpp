@@ -93,6 +93,9 @@ void Arkanoid::onKeyPressed(KeyboardKey eKey)
 	case KEY_F3:
 		toggleMouseLock();
 		break;
+	case KEY_F4:
+		toggleVSync();
+		break;
 	default:
 		break;
 	}
