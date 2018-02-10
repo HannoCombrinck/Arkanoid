@@ -1,4 +1,4 @@
-#include "LevelGenerator.h"
+#include "WorldGenerator.h"
 
 #include <iostream>
 
@@ -18,15 +18,15 @@ using namespace graphics;
 using namespace sound;
 using namespace entity;
 
-LevelGenerator::LevelGenerator()
+WorldGenerator::WorldGenerator()
 {
 }
 
-LevelGenerator::~LevelGenerator()
+WorldGenerator::~WorldGenerator()
 {
 }
 
-void LevelGenerator::generate(const boost::shared_ptr<World>& spWorld, ArkanoidFactory& factory)
+void WorldGenerator::generate(const boost::shared_ptr<World>& spWorld, ArkanoidFactory& factory)
 {
 	spWorld->addEntity(boost::shared_ptr<Entity>(factory.create("Paddle")));
 }

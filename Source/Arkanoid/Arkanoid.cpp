@@ -6,7 +6,7 @@
 #include <Engine/SystemsInclude.h>
 #include <Engine/EngineSystems.h>
 #include <Engine/Entity/World.h>
-#include <Arkanoid/LevelGenerator.h>
+#include <Arkanoid/WorldGenerator.h>
 #include <boost/make_shared.hpp>
 
 using namespace std;
@@ -35,8 +35,8 @@ void Arkanoid::startNewGame()
 
 	m_spWorld = boost::make_shared<World>();
 
-	LevelGenerator levelGen;
-	levelGen.generate(m_spWorld, *m_upFactory);
+	WorldGenerator worldGen;
+	worldGen.generate(m_spWorld, *m_upFactory);
 
 	m_spWorld->init(engine());
 	engine().entities().setActiveWorld(m_spWorld);

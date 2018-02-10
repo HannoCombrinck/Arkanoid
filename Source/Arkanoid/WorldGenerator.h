@@ -11,11 +11,11 @@ namespace entity
 
 class ArkanoidFactory;
 
-class LevelGenerator
+class WorldGenerator
 {
 public:
-	LevelGenerator();
-	~LevelGenerator();
+	WorldGenerator();
+	~WorldGenerator();
 
 	void generate(const boost::shared_ptr<entity::World>& spWorld, ArkanoidFactory& factory);
 
