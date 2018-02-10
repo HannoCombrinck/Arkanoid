@@ -38,7 +38,7 @@ namespace sound
 
 		// SoundSystem internals
 		// {
-		std::vector<boost::shared_ptr<Sound>> m_aspSounds;
+		std::vector<std::unique_ptr<Sound>> m_aupSounds;
 
 		core::Vec3 m_vListenerPosition;
 		core::Vec3 m_vListenerDirection;

@@ -40,27 +40,26 @@ namespace graphics {
 
 	VisualSystem::~VisualSystem()
 	{
-		m_aspVisuals.clear();
+		m_aupVisuals.clear();
 
 		delete m_pSFML;
 	}
 
 	uint VisualSystem::createVisual()
 	{
-		auto spVisual = boost::shared_ptr<Visual>(new Visual(this));
-		m_aspVisuals.push_back(spVisual);
-		return m_aspVisuals.size() - 1;
+		m_aupVisuals.push_back(std::make_unique<Visual>(this));
+		return m_aupVisuals.size() - 1;
 	}
 
 	graphics::Visual& VisualSystem::modifyVisual(uint uVisual)
 	{
-		assert(uVisual < m_aspVisuals.size());
-		return *(m_aspVisuals[uVisual]);
+		assert(uVisual < m_aupVisuals.size());
+		return *(m_aupVisuals[uVisual]);
 	}
 
 	void VisualSystem::removeVisual(uint uVisual)
 	{
-		m_aspVisuals.erase(m_aspVisuals.begin() + uVisual);
+		m_aupVisuals.erase(m_aupVisuals.begin() + uVisual);
 	}
 
 	void VisualSystem::update(float fDT)
@@ -68,7 +67,7 @@ namespace graphics {
 		m_fDeltaTime = fDT;
 		m_fDeltaTimeSmoothed = m_fDeltaTimeSmoothed*0.98f + m_fDeltaTime*0.02f;
 
-		for (auto& v : m_aspVisuals)
+		for (auto& v : m_aupVisuals)
 			v->update(fDT);
 	}
 

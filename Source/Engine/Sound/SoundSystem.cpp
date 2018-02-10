@@ -36,25 +36,24 @@ namespace sound {
 
 	uint SoundSystem::createSound()
 	{
-		auto spSound = boost::shared_ptr<Sound>(new Sound());
-		m_aspSounds.push_back(spSound);
-		return m_aspSounds.size() - 1;
+		m_aupSounds.push_back(std::make_unique<Sound>());
+		return m_aupSounds.size() - 1;
 	}
 
 	Sound & SoundSystem::modifySound(uint uSound)
 	{
-		assert(uSound < m_aspSounds.size());
-		return *(m_aspSounds[uSound]);
+		assert(uSound < m_aupSounds.size());
+		return *(m_aupSounds[uSound]);
 	}
 
 	void SoundSystem::removeSound(uint uSound)
 	{
-		m_aspSounds.erase(m_aspSounds.begin() + uSound);
+		m_aupSounds.erase(m_aupSounds.begin() + uSound);
 	}
 
 	void SoundSystem::update(float fDT)
 	{
-		for (auto& s : m_aspSounds)
+		for (auto& s : m_aupSounds)
 			s->update(fDT);
 	}
 

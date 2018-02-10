@@ -26,10 +26,7 @@ LevelGenerator::~LevelGenerator()
 {
 }
 
-World* LevelGenerator::generate(ArkanoidFactory& factory)
+void LevelGenerator::generate(const boost::shared_ptr<World>& spWorld, ArkanoidFactory& factory)
 {
-	World* pWorld = new World;
-	pWorld->addEntity(factory.create("Paddle"));
-
-	return pWorld;
+	spWorld->addEntity(factory.create("Paddle"));
 }

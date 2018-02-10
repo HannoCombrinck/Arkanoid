@@ -33,10 +33,12 @@ void Arkanoid::startNewGame()
 
 	cout << "Starting new game\n";
 
+	m_spWorld = boost::make_shared<World>();
+
 	LevelGenerator levelGen;
-	auto spLevel = levelGen.generate(*m_upFactory);
-	spLevel->init(engine());
-	m_spWorld = boost::shared_ptr<World>(spLevel);
+	levelGen.generate(m_spWorld, *m_upFactory);
+
+	m_spWorld->init(engine());
 	engine().entities().setActiveWorld(m_spWorld);
 
 	m_eState = RUNNING;

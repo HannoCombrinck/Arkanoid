@@ -17,7 +17,7 @@ public:
 	LevelGenerator();
 	~LevelGenerator();
 
-	entity::World* generate(ArkanoidFactory& factory);
+	void generate(const boost::shared_ptr<entity::World>& spWorld, ArkanoidFactory& factory);
 
 private:
 

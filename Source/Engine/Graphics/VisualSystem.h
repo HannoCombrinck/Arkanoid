@@ -48,7 +48,7 @@ namespace graphics
 
 		// VisualSystem internals
 		// {
-		std::vector<boost::shared_ptr<Visual>> m_aspVisuals;
+		std::vector<std::unique_ptr<Visual>> m_aupVisuals;
 		bool m_bVSync;
 		bool m_bFullscreen;
 		float m_fDeltaTime;
