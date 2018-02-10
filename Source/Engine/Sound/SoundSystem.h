@@ -26,6 +26,8 @@ namespace sound
 		~SoundSystem();
 
 		uint createSound();
+		Sound& modifySound(uint uSound);
+		void removeSound(uint uSound);
 
 	private:
 		// EngineSystems interface

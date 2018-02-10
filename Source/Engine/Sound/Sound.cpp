@@ -14,4 +14,8 @@ namespace sound {
 	{
 	}
 
+	void Sound::update(float fDT)
+	{
+	}
+
 }

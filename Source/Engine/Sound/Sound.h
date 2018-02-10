@@ -3,6 +3,11 @@
 
 namespace sound
 {
+	class SoundSystem;
+}
+
+namespace sound
+{
 	class Sound
 	{
 	public:
@@ -10,6 +15,11 @@ namespace sound
 		~Sound();
 
 	private:
+		// SoundSystem interface
+		// {
+		friend class SoundSystem;
+		void update(float fDT);
+		// }
 
 	};
 }

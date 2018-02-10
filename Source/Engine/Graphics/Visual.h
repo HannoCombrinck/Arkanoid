@@ -19,12 +19,16 @@ namespace graphics
 		Visual(VisualSystem* pVisualSystem);
 		~Visual();
 
-		void update(float fDT);
-
 		void setPosition(const Vec2& vPos);
 		void setSize(const Vec2& vSize);
 
 	private:
+		// VisualSystem interface
+		// {
+		friend class VisualSystem;
+		void update(float fDT);
+		// }
+
 		VisualSystem* m_pVisualSystem;
 		uint m_uSprite;
 		Vec2 m_vPos;
