@@ -21,7 +21,7 @@ namespace entity
 		static World* load(const string& sFilename);
 
 		void init(EngineSystems& rEngine);
-		void addEntity(Entity* pEntity);
+		void addEntity(const boost::shared_ptr<Entity> spEntity);
 		// TODO: Add several entitysystem updates (prePhysics, postPhysics, preVisuals, postVisuals etc.)
 		void update(float fDT);
 

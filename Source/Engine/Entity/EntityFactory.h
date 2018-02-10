@@ -22,13 +22,13 @@ namespace entity
 		EntityFactory();
 		virtual ~EntityFactory();
 
-		Entity* create(const string& sEntity);
+		std::unique_ptr<Entity> create(const string& sEntity);
 
 	protected:
-		void registerEntity(const string sEntity, const function<Entity*()>& func);
+		void registerEntity(const string sEntity, const function<std::unique_ptr<Entity>()>& func);
 
 	private:
-		unordered_map<string, function<Entity*()>> m_FactoryMap;
+		unordered_map<string, function<std::unique_ptr<Entity>()>> m_FactoryMap;
 
 		//unordered_map<string, PoolInterface> m_PoolMap;
 	};

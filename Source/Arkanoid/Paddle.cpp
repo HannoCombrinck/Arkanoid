@@ -11,9 +11,9 @@ using namespace std;
 using namespace input;
 using namespace graphics;
 
-Paddle* Paddle::create()
+std::unique_ptr<Paddle> Paddle::create()
 {
-	return new Paddle;
+	return std::make_unique<Paddle>();
 }
 
 Paddle::Paddle()

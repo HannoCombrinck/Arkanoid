@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include <Engine/Core/GlobalTypes.h>
+#include <Engine/Entity/Entity.h>
 
 using namespace std;
 
@@ -16,12 +17,12 @@ namespace entity {
 	{
 	}
 
-	void EntityFactory::registerEntity(const string sEntity, const function<Entity*()>& func)
+	void EntityFactory::registerEntity(const string sEntity, const function<std::unique_ptr<Entity>()>& func)
 	{
 		m_FactoryMap[sEntity] = func;
 	}
 
-	Entity* EntityFactory::create(const string & sEntity)
+	std::unique_ptr<Entity> EntityFactory::create(const string & sEntity)
 	{
 		// TODO: Check if pool exists for this type
 		// Return existing object from pool

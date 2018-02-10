@@ -30,9 +30,9 @@ namespace entity {
 			sp->init(rEngine);
 	}
 
-	void World::addEntity(Entity* pEntity)
+	void World::addEntity(const boost::shared_ptr<Entity> spEntity)
 	{
-		m_aspEntities.push_back(boost::shared_ptr<Entity>(pEntity));
+		m_aspEntities.push_back(spEntity);
 	}
 
 	void World::update(float fDT)

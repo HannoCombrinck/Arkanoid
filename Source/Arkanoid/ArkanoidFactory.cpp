@@ -6,7 +6,7 @@ using namespace std;
 
 ArkanoidFactory::ArkanoidFactory()
 {
-	registerEntity("Paddle", []() { return new Paddle; });
+	registerEntity("Paddle", []() { return std::make_unique<Paddle>(); });
 	registerEntity("PaddleStatic", Paddle::create);
 }
 
