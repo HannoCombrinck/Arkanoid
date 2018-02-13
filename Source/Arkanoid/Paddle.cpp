@@ -39,6 +39,13 @@ void Paddle::onInit()
 
 void Paddle::onUpdate(float fDT)
 {
+	getInputs();
+	updateState();
+	applyState();
+}
+
+void Paddle::getInputs()
+{
 	m_bLeft = engine().inputs().isKeyPressed(KEY_A);
 	m_bRight = engine().inputs().isKeyPressed(KEY_D);
 	m_bUp = engine().inputs().isKeyPressed(KEY_W);
@@ -51,7 +58,10 @@ void Paddle::onUpdate(float fDT)
 		m_vPos += vMouseMove;
 		//cout << "Mouse move: " << vMouseMove.x << ", " << vMouseMove.y << endl;
 	}
+}
 
+void Paddle::updateState()
+{
 	if (m_bLeft)
 		m_vPos.x -= 5.5f;
 	if (m_bRight)
@@ -62,7 +72,10 @@ void Paddle::onUpdate(float fDT)
 		m_vPos.y += 5.5f;
 	if (m_bAction)
 		cout << "Action\n";
+}
 
+void Paddle::applyState()
+{
 	auto& rVisual = engine().visuals().modifyVisual(m_uVisual);
 	rVisual.setPosition(m_vPos);
 }

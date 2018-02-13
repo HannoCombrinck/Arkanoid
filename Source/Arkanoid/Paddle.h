@@ -16,8 +16,18 @@ public:
 	virtual ~Paddle();
 
 private:
+	// Entity callbacks
+	// {
 	virtual void onInit() override;
 	virtual void onUpdate(float fDT) override;
+	// }
+
+	// Paddle internals
+	// {
+	void getInputs();
+	void updateState();
+	void applyState();
+	// }
 
 	Vec2 m_vPos;
 	bool m_bLeft;
