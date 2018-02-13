@@ -3,8 +3,7 @@
 #include <iostream>
 #include <functional>
 
-#include <Engine/SystemsInclude.h>
-#include <Engine/EngineSystems.h>
+#include <Engine/Engine.h>
 #include <Engine/Entity/World.h>
 #include <Arkanoid/WorldGenerator.h>
 #include <boost/make_shared.hpp>

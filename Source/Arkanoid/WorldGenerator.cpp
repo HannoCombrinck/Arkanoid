@@ -2,9 +2,7 @@
 
 #include <iostream>
 
-#include <Engine/Core/GlobalTypes.h>
-#include <Engine/EngineSystems.h>
-#include <Engine/SystemsInclude.h>
+#include <Engine/Engine.h>
 #include <Engine/Entity/World.h>
 #include <Engine/Entity/Entity.h>
 

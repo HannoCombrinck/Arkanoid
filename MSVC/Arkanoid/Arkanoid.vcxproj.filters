@@ -153,5 +153,8 @@
     <ClInclude Include="..\..\Source\Arkanoid\WorldGenerator.h">
       <Filter>Header/Source Files\Arkanoid</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Engine.h">
+      <Filter>Header/Source Files\Engine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
