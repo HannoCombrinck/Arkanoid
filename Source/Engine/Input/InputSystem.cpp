@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <Engine/Core/GlobalTypes.h>
-#include <SFML/Window.hpp>
 
 using namespace std;
 using namespace core;

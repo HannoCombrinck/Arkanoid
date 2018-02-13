@@ -26,7 +26,7 @@ namespace input
 		// }
 
 	private:
-		// EngineSystems interface
+		// AppBase interface
 		// {
 		friend class EngineSystems;
 		friend class AppBase;
