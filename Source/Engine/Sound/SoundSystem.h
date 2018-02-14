@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <vector>
+#include <unordered_map>
 #include <Engine/Core/Math/Math.h>
 #include <Engine/Core/GlobalTypes.h>
 #include <boost/shared_ptr.hpp>
@@ -25,7 +26,7 @@ namespace sound
 		SoundSystem();
 		~SoundSystem();
 
-		uint createSound();
+		uint createSound(const std::string& sFilename);
 		Sound& modifySound(uint uSound);
 		void removeSound(uint uSound);
 
@@ -44,6 +45,13 @@ namespace sound
 		core::Vec3 m_vListenerDirection;
 		float m_fGlobalVolume; 
 		// }
+
+		
+		std::unordered_map<std::string, uint> m_SoundPlayerMap;
+		std::unordered_map<std::string, uint> m_SoundBufferMap;
+
+		std::vector<std::unique_ptr<sf::Sound>> m_aSoundPlayers;
+		std::vector<std::unique_ptr<sf::SoundBuffer>> m_aSoundBuffers;
 
 		// TEMP
 		std::unique_ptr<sf::Sound> m_BeepSound;

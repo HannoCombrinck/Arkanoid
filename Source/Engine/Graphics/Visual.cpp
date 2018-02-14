@@ -19,7 +19,6 @@ namespace graphics {
 		, m_vSize(Vec2(1.0f, 1.0f))
 		, m_bSizeChanged(false)
 	{
-		m_uSprite = m_pVisualSystem->createSprite("../Data/Textures/test.tga");
 	}
 
 	Visual::~Visual()
@@ -29,6 +28,11 @@ namespace graphics {
 
 		m_pVisualSystem->removeSprite(m_uSprite);
 		m_uSprite = ~0;
+	}
+
+	void Visual::loadSprite(const std::string& sFilename)
+	{
+		m_uSprite = m_pVisualSystem->createSprite(sFilename);
 	}
 
 	void Visual::update(float fDT)

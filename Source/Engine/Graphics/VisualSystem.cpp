@@ -45,9 +45,11 @@ namespace graphics {
 		delete m_pSFML;
 	}
 
-	uint VisualSystem::createVisual()
+	uint VisualSystem::createVisual(const std::string& sFilename)
 	{
-		m_aupVisuals.push_back(std::make_unique<Visual>(this));
+		auto upVisual = std::make_unique<Visual>(this);
+		upVisual->loadSprite(sFilename);
+		m_aupVisuals.push_back(std::move(upVisual));
 		return m_aupVisuals.size() - 1;
 	}
 

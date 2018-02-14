@@ -22,7 +22,7 @@ namespace graphics
 		VisualSystem(sf::RenderWindow *pWindow);
 		~VisualSystem();
 
-		uint createVisual();
+		uint createVisual(const std::string& sFilename);
 		Visual& modifyVisual(uint uVisual);
 		void removeVisual(uint uVisual);
 
@@ -59,3 +59,38 @@ namespace graphics
 		SFMLMembers* m_pSFML;
 	};
 }
+
+/*
+template<typename T, int SIZE>
+class ResourceManager
+{
+T data[SIZE];
+int indices[SIZE];
+int back;
+
+ResourceManager() : back(0)
+{
+for(int i=0; i<SIZE; i++)
+indices[i] = i;
+}
+
+int Reserve()
+{ return indices[back++]; }
+
+void Release(int handle)
+{
+for(int i=0; i<back; i++)
+{
+if(indices[i] == handle)
+{
+back--;
+std::swap(indices[i], indices[back]);
+return;
+}
+}
+}
+
+T GetData(int handle)
+{ return data[handle]; }
+};
+*/

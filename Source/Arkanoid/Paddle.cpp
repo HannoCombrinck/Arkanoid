@@ -34,7 +34,8 @@ Paddle::~Paddle()
 void Paddle::onInit()
 {
 	// TODO: Create visuals, collision objects, sounds i.e. all the components that make up the Paddle object
-	m_uVisual = engine().visuals().createVisual();
+	m_uVisual = engine().visuals().createVisual("../Data/Textures/test.tga");
+	m_uSound = engine().sounds().createSound("../Data/Sounds/beep.wav");
 }
 
 void Paddle::onUpdate(float fDT)
@@ -46,13 +47,15 @@ void Paddle::onUpdate(float fDT)
 
 void Paddle::getInputs()
 {
-	m_bLeft = engine().inputs().isKeyPressed(KEY_A);
-	m_bRight = engine().inputs().isKeyPressed(KEY_D);
-	m_bUp = engine().inputs().isKeyPressed(KEY_W);
-	m_bDown = engine().inputs().isKeyPressed(KEY_S);
-	m_bAction = engine().inputs().isKeyPressed(KEY_Space) || engine().inputs().isMBPressed(MB_Left);
+	auto& is = engine().inputs();
 
-	auto vMouseMove = engine().inputs().getMousePosRel();
+	m_bLeft = is.isKeyPressed(KEY_A);
+	m_bRight = is.isKeyPressed(KEY_D);
+	m_bUp = is.isKeyPressed(KEY_W);
+	m_bDown = is.isKeyPressed(KEY_S);
+	m_bAction = is.isKeyPressed(KEY_Space) || is.isMBPressed(MB_Left);
+
+	auto vMouseMove = is.getMousePosRel();
 	if (vMouseMove.x != 0 || vMouseMove.y != 0)
 	{
 		m_vPos += vMouseMove;

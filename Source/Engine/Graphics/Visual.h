@@ -26,6 +26,7 @@ namespace graphics
 		// VisualSystem interface
 		// {
 		friend class VisualSystem;
+		void loadSprite(const std::string& sFilename);
 		void update(float fDT);
 		// }
 

@@ -34,9 +34,11 @@ namespace sound {
 	{
 	}
 
-	uint SoundSystem::createSound()
+	uint SoundSystem::createSound(const std::string& sFilename)
 	{
-		m_aupSounds.push_back(std::make_unique<Sound>());
+		auto upSound = std::make_unique<Sound>(this);
+		upSound->loadSound(sFilename);
+		m_aupSounds.push_back(std::move(upSound));
 		return m_aupSounds.size() - 1;
 	}
 
