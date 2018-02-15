@@ -10,11 +10,6 @@ using namespace std;
 using namespace input;
 using namespace graphics;
 
-std::unique_ptr<Paddle> Paddle::create()
-{
-	return std::make_unique<Paddle>();
-}
-
 Paddle::Paddle()
 	: m_vPos(Vec2(0.0f, 0.0f))
 	, m_bLeft(false)

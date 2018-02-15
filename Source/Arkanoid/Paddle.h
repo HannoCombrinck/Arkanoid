@@ -10,8 +10,6 @@ using namespace entity;
 class Paddle : public Entity
 {
 public:
-	static std::unique_ptr<Paddle> create();
-
 	Paddle();
 	virtual ~Paddle();
 
