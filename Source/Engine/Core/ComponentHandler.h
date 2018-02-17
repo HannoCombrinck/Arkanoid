@@ -10,9 +10,10 @@ public:
 		: m_uSize(uInitialSize)
 		, m_uNext(0U)
 	{
+		m_aComponents.resize(m_uSize);
 		for (uint i = 0U; i < m_uSize; ++i)
 		{
-			m_aComponents.emplace_back(COMPONENT_TYPE(pSystem));
+			m_aComponents[i].init(pSystem);
 			m_aIndices.push_back(i);
 		}
 	}
@@ -32,23 +33,33 @@ public:
 
 	void remove(uint uHandle)
 	{
-		assert(uIndex < m_uNext);
+		assert(uHandle < m_uNext);
 		for (uint i = 0U; i < m_uNext; ++i)
 		{
-			if (m_aIndices[i] = m_aIndices[uHandle])
+			if (m_aIndices[i] == m_aIndices[uHandle])
 			{
 				m_uNext--;
-				//m_aComponents[m_aIndices[i]].clean(); // TODO: De-allocate resources here?
+				m_aComponents[m_aIndices[i]].clean(); // TODO: De-allocate resources here?
 				std::swap(m_aIndices[i], m_aIndices[m_uNext]);
 				return;
 			}
 		}
 	}
 
-	void update(float fDT)
+	uint getSize() const
+	{
+		return m_uNext;
+	}
+
+	std::vector<COMPONENT_TYPE>& getData()
+	{
+		return m_aComponents;
+	}
+
+	void foreach(const std::function<void(COMPONENT_TYPE&)> f)
 	{
 		for (uint i = 0U; i < m_uNext; ++i)
-			m_aComponents[i].update(fDT);
+			f(m_aComponents[i]);
 	}
 
 private:

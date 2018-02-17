@@ -44,36 +44,36 @@ namespace graphics {
 
 	VisualSystem::~VisualSystem()
 	{
-		m_aupVisuals.clear();
+		//m_aupVisuals.clear();
 
 		delete m_pSFML;
 	}
 
 	uint VisualSystem::createVisual(const std::string& sFilename)
 	{
-		//auto uIndex = m_upCompHandler->create();
-		//m_upCompHandler->modify(uIndex).loadSprite(sFilename);
-		//return uIndex;
+		auto uIndex = m_upCompHandler->create();
+		m_upCompHandler->modify(uIndex).loadSprite(sFilename);
+		return uIndex;
 
-		auto upVisual = std::make_unique<Visual>(this);
-		upVisual->loadSprite(sFilename);
-		m_aupVisuals.push_back(std::move(upVisual));
-		return m_aupVisuals.size() - 1;
+		//auto upVisual = std::make_unique<Visual>(this);
+		//upVisual->loadSprite(sFilename);
+		//m_aupVisuals.push_back(std::move(upVisual));
+		//return m_aupVisuals.size() - 1;
 	}
 
 	graphics::Visual& VisualSystem::modifyVisual(uint uVisual)
 	{
-		//return m_upCompHandler->modify(uVisual);
+		return m_upCompHandler->modify(uVisual);
 
-		assert(uVisual < m_aupVisuals.size());
-		return *(m_aupVisuals[uVisual]);
-	}
+		//assert(uVisual < m_aupVisuals.size());
+		//return *(m_aupVisuals[uVisual]);
+	}	
 
 	void VisualSystem::removeVisual(uint uVisual)
 	{
-		//m_upCompHandler->remove(uVisual);
+		m_upCompHandler->remove(uVisual);
 
-		m_aupVisuals.erase(m_aupVisuals.begin() + uVisual);
+		//m_aupVisuals.erase(m_aupVisuals.begin() + uVisual);
 	}
 
 	void VisualSystem::update(float fDT)
@@ -81,10 +81,17 @@ namespace graphics {
 		m_fDeltaTime = fDT;
 		m_fDeltaTimeSmoothed = m_fDeltaTimeSmoothed*0.98f + m_fDeltaTime*0.02f;
 
-		for (auto& v : m_aupVisuals)
-			v->update(fDT);
+		//for (auto& v : m_aupVisuals)
+		//	v->update(fDT);
 
-		//m_upCompHandler->update(fDT);
+		/*auto uSize = m_upCompHandler->getSize();
+		auto& aData = m_upCompHandler->getData();
+		for (uint i = 0U; i < uSize; ++i)
+			aData[i].update(fDT);*/
+
+		m_upCompHandler->foreach([fDT](Visual& v) {
+			v.update(fDT);
+		});
 	}
 
 	void VisualSystem::render()
@@ -98,9 +105,18 @@ namespace graphics {
 		// TEMP TEST RENDERING
 		
 		// Draw sprites
-		for (const auto& s : m_pSFML->aSprites)
-			m_pSFML->pWindow->draw(s.first);
+		//for (const auto& s : m_pSFML->aSprites)
+		//	m_pSFML->pWindow->draw(s.first);
 
+		/*auto uSize = m_upCompHandler->getSize();
+		auto& aData = m_upCompHandler->getData();
+		for (uint i = 0U; i < uSize; ++i)
+			m_pSFML->pWindow->draw(aData[i].m_Sprite);*/
+
+		auto pWindow = m_pSFML->pWindow;
+		m_upCompHandler->foreach([pWindow](Visual& v) {
+			pWindow->draw(v.m_Sprite); 
+		});
 
 		m_pSFML->text.setString(to_string(1.0f / m_fDeltaTimeSmoothed));
 		m_pSFML->pWindow->draw(m_pSFML->text);

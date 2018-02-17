@@ -49,7 +49,7 @@ namespace graphics
 
 		// VisualSystem internals
 		// {
-		std::vector<std::unique_ptr<Visual>> m_aupVisuals;
+		//std::vector<std::unique_ptr<Visual>> m_aupVisuals;
 		bool m_bVSync;
 		bool m_bFullscreen;
 		float m_fDeltaTime;

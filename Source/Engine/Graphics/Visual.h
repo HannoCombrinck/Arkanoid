@@ -3,6 +3,7 @@
 
 #include <Engine/Core/Math/Math.h>
 #include <Engine/Core/GlobalTypes.h>
+#include <SFML/Graphics.hpp>
 
 using namespace core;
 
@@ -16,9 +17,11 @@ namespace graphics
 	class Visual
 	{
 	public:
-		Visual(VisualSystem* pVisualSystem);
+		Visual();
 		~Visual();
 
+		void init(VisualSystem* pVisualSystem);
+		void clean();
 		void update(float fDT);
 
 		void setPosition(const Vec2& vPos);
@@ -28,12 +31,13 @@ namespace graphics
 		// VisualSystem interface
 		// {
 		friend class VisualSystem;
-		void init(VisualSystem* pVisualSystem);
 		void loadSprite(const std::string& sFilename);
 		// }
 
 		VisualSystem* m_pVisualSystem;
 		uint m_uSprite;
+		sf::Sprite m_Sprite;
+		sf::Texture m_Texture;
 		Vec2 m_vPos;
 		bool m_bPosChanged;
 		Vec2 m_vSize;
