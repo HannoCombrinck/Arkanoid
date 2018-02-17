@@ -2,6 +2,7 @@
 #include <memory>
 #include <vector>
 
+#include <Engine/Core/ComponentHandler.h>
 #include <Engine/Core/GlobalTypes.h>
 
 namespace sf
@@ -55,53 +56,13 @@ namespace graphics
 		float m_fDeltaTimeSmoothed;
 		// }
 
-
-		std::vector<Visual> m_aVisuals;
-		std::vector<uint> m_aIndices;
-		uint m_uNext;
-
+		// TEMP handle functionality test
+		// {
+		typedef ComponentHandler<Visual, VisualSystem> visual_handler_type;
+		std::unique_ptr<visual_handler_type> m_upCompHandler;
+		// }
 
 		struct SFMLMembers;
 		SFMLMembers* m_pSFML;
 	};
 }
-
-/*
-template<typename T, int SIZE>
-class ResourceManager
-{
-	T data[SIZE];
-	int indices[SIZE];
-	int back;
-
-	ResourceManager() 
-		: back(0)
-	{
-		for(int i=0; i<SIZE; i++)
-			indices[i] = i;
-	}
-
-	int Reserve()
-	{ 
-		return indices[back++]; 
-	}
-
-	void Release(int handle)
-	{
-		for(int i=0; i<back; i++)
-		{
-			if(indices[i] == handle)
-			{
-				back--;
-				std::swap(indices[i], indices[back]);
-				return;
-			}
-		}
-	}
-
-	T GetData(int handle)
-	{ 
-		return data[handle]; 
-	}
-};
-*/

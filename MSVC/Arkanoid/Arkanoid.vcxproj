@@ -39,6 +39,7 @@
     <ClInclude Include="..\..\Source\Engine\Core\GlobalTypes.h" />
     <ClInclude Include="..\..\Source\Engine\Core\Math\Math.h" />
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h" />
+    <ClInclude Include="..\..\Source\Engine\Core\ComponentHandler.h" />
     <ClInclude Include="..\..\Source\Engine\Engine.h" />
     <ClInclude Include="..\..\Source\Engine\EngineSystems.h" />
     <ClInclude Include="..\..\Source\Engine\Entity\Entity.h" />

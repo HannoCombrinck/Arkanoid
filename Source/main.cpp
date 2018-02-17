@@ -20,6 +20,7 @@
 #include <boost/serialization/base_object.hpp>
 #include <boost/serialization/vector.hpp>
 #include <boost/serialization/export.hpp>
+#include <boost/pool/object_pool.hpp>
 
 #include <Engine/Core/Math/MathHelpers.h>
 
@@ -389,8 +390,47 @@ void testGraphSerialization()
 	auto spNewRoot = loadGraph("../Data/graph.dat");
 }
 
+struct PoolObj
+{
+	PoolObj(const std::string s) 
+	{
+		cout << "PoolObjConstructor" << s << endl; 
+	}
+
+	~PoolObj() 
+	{ 
+		cout << "PoolObjConstructor\n"; 
+	}
+
+	void foo() 
+	{ cout << "Func called\n"; 
+	}
+
+	unsigned char pData[1024*1024*5];
+};
+
+void testMemPool()
+{
+	boost::object_pool<PoolObj> nodePool(50U);
+
+	std::vector<PoolObj*> aNodes;
+	for (int i = 0; i < 50; ++i)
+	{
+		auto pObj = nodePool.construct("constructor called!");
+		pObj->foo();
+		aNodes.push_back(pObj);
+	}
+
+	for (auto np : aNodes)
+	{
+		nodePool.destroy(np);
+	}
+}
+
 int main(int argc, char** argv)
 {
+//	testMemPool();
+
 	Arkanoid arkanoid;
 	arkanoid.start();
 

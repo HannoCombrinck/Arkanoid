@@ -156,5 +156,8 @@
     <ClInclude Include="..\..\Source\Engine\Engine.h">
       <Filter>Header/Source Files\Engine</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\ComponentHandler.h">
+      <Filter>Header/Source Files\Engine\Core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

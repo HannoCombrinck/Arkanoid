@@ -19,6 +19,8 @@ namespace graphics
 		Visual(VisualSystem* pVisualSystem);
 		~Visual();
 
+		void update(float fDT);
+
 		void setPosition(const Vec2& vPos);
 		void setSize(const Vec2& vSize);
 
@@ -26,8 +28,8 @@ namespace graphics
 		// VisualSystem interface
 		// {
 		friend class VisualSystem;
+		void init(VisualSystem* pVisualSystem);
 		void loadSprite(const std::string& sFilename);
-		void update(float fDT);
 		// }
 
 		VisualSystem* m_pVisualSystem;

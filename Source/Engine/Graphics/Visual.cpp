@@ -10,7 +10,7 @@ using namespace std;
 using namespace sf;
 
 namespace graphics {
-
+	
 	Visual::Visual(VisualSystem* pVisualSystem)
 		: m_pVisualSystem(pVisualSystem)
 		, m_uSprite(~0)
@@ -28,6 +28,11 @@ namespace graphics {
 
 		m_pVisualSystem->removeSprite(m_uSprite);
 		m_uSprite = ~0;
+	}
+
+	void Visual::init(VisualSystem* pVisualSystem)
+	{
+		m_pVisualSystem = pVisualSystem;
 	}
 
 	void Visual::loadSprite(const std::string& sFilename)

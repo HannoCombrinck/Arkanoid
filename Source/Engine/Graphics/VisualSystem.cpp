@@ -36,6 +36,10 @@ namespace graphics {
 		m_pSFML->text.move(10.0f, 5.0f);
 		m_pSFML->text.setFont(m_pSFML->font);
 		m_pSFML->text.setCharacterSize(10U);
+
+		/////////////////////////////////////
+		m_upCompHandler = std::make_unique<visual_handler_type>(this, 20U);
+		/////////////////////////////////////
 	}
 
 	VisualSystem::~VisualSystem()
@@ -47,6 +51,10 @@ namespace graphics {
 
 	uint VisualSystem::createVisual(const std::string& sFilename)
 	{
+		//auto uIndex = m_upCompHandler->create();
+		//m_upCompHandler->modify(uIndex).loadSprite(sFilename);
+		//return uIndex;
+
 		auto upVisual = std::make_unique<Visual>(this);
 		upVisual->loadSprite(sFilename);
 		m_aupVisuals.push_back(std::move(upVisual));
@@ -55,12 +63,16 @@ namespace graphics {
 
 	graphics::Visual& VisualSystem::modifyVisual(uint uVisual)
 	{
+		//return m_upCompHandler->modify(uVisual);
+
 		assert(uVisual < m_aupVisuals.size());
 		return *(m_aupVisuals[uVisual]);
 	}
 
 	void VisualSystem::removeVisual(uint uVisual)
 	{
+		//m_upCompHandler->remove(uVisual);
+
 		m_aupVisuals.erase(m_aupVisuals.begin() + uVisual);
 	}
 
@@ -71,6 +83,8 @@ namespace graphics {
 
 		for (auto& v : m_aupVisuals)
 			v->update(fDT);
+
+		//m_upCompHandler->update(fDT);
 	}
 
 	void VisualSystem::render()
