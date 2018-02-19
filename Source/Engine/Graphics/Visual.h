@@ -12,6 +12,11 @@ namespace graphics
 	class VisualSystem;
 }
 
+namespace sf
+{
+	class RenderWindow;
+}
+
 namespace graphics
 {
 	class Visual

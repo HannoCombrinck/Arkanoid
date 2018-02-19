@@ -35,5 +35,6 @@ private:
 	bool m_bAction;
 	
 	uint m_uVisual;
+	uint m_uVisual2;
 	uint m_uSound;
 };

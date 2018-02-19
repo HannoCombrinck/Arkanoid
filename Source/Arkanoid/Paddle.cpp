@@ -24,12 +24,14 @@ Paddle::Paddle()
 Paddle::~Paddle()
 {
 	engine().visuals().removeVisual(m_uVisual);
+	engine().visuals().removeVisual(m_uVisual2);
 }
 
 void Paddle::onInit()
 {
 	// TODO: Create visuals, collision objects, sounds i.e. all the components that make up the Paddle object
 	m_uVisual = engine().visuals().createVisual("../Data/Textures/test.tga");
+	m_uVisual2 = engine().visuals().createVisual("../Data/Textures/test2.tga");
 	m_uSound = engine().sounds().createSound("../Data/Sounds/beep.wav");
 }
 
@@ -76,4 +78,6 @@ void Paddle::applyState()
 {
 	auto& rVisual = engine().visuals().modifyVisual(m_uVisual);
 	rVisual.setPosition(m_vPos);
+	auto& rVisual2 = engine().visuals().modifyVisual(m_uVisual2);
+	rVisual2.setPosition(m_vPos);
 }

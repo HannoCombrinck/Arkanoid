@@ -33,10 +33,9 @@ public:
 
 	void remove(uint uHandle)
 	{
-		assert(uHandle < m_uNext);
 		for (uint i = 0U; i < m_uNext; ++i)
 		{
-			if (m_aIndices[i] == m_aIndices[uHandle])
+			if (m_aIndices[i] == uHandle)
 			{
 				m_uNext--;
 				m_aComponents[m_aIndices[i]].clean(); // TODO: De-allocate resources here?
