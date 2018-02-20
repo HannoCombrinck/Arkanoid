@@ -26,6 +26,7 @@ namespace graphics
 		~Visual();
 
 		void init(VisualSystem* pVisualSystem);
+		bool alive() const;
 		void clean();
 		void update(float fDT);
 
@@ -40,6 +41,7 @@ namespace graphics
 		// }
 
 		VisualSystem* m_pVisualSystem;
+		bool m_bAlive;
 		uint m_uSprite;
 		sf::Sprite m_Sprite;
 		sf::Texture m_Texture;

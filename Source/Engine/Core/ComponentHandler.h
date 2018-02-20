@@ -22,13 +22,14 @@ public:
 
 	uint create()
 	{
+		assert(m_uNext < m_uSize);
 		return m_aIndices[m_uNext++];
 	}
 
-	COMPONENT_TYPE& modify(uint uIndex)
+	COMPONENT_TYPE& modify(uint uHandle)
 	{
-		assert(uIndex < m_uNext);
-		return m_aComponents[m_aIndices[uIndex]];
+		assert(uHandle < m_uSize);
+		return m_aComponents[uHandle];
 	}
 
 	void remove(uint uHandle)
@@ -38,7 +39,7 @@ public:
 			if (m_aIndices[i] == uHandle)
 			{
 				m_uNext--;
-				m_aComponents[m_aIndices[i]].clean(); // TODO: De-allocate resources here?
+				m_aComponents[uHandle].clean();
 				std::swap(m_aIndices[i], m_aIndices[m_uNext]);
 				return;
 			}
@@ -58,7 +59,10 @@ public:
 	void foreach(const std::function<void(COMPONENT_TYPE&)> f)
 	{
 		for (uint i = 0U; i < m_uNext; ++i)
-			f(m_aComponents[i]);
+		{
+			if (m_aComponents[i].alive())
+				f(m_aComponents[i]);
+		}
 	}
 
 private:

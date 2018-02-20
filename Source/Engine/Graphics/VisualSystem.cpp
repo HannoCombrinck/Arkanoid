@@ -51,9 +51,9 @@ namespace graphics {
 
 	uint VisualSystem::createVisual(const std::string& sFilename)
 	{
-		auto uIndex = m_upCompHandler->create();
-		m_upCompHandler->modify(uIndex).loadSprite(sFilename);
-		return uIndex;
+		auto uHandle = m_upCompHandler->create();
+		m_upCompHandler->modify(uHandle).loadSprite(sFilename);
+		return uHandle;
 
 		//auto upVisual = std::make_unique<Visual>(this);
 		//upVisual->loadSprite(sFilename);
@@ -105,13 +105,8 @@ namespace graphics {
 		// TEMP TEST RENDERING
 		
 		// Draw sprites
-		//for (const auto& s : m_pSFML->aSprites)
-		//	m_pSFML->pWindow->draw(s.first);
-
-		/*auto uSize = m_upCompHandler->getSize();
-		auto& aData = m_upCompHandler->getData();
-		for (uint i = 0U; i < uSize; ++i)
-			m_pSFML->pWindow->draw(aData[i].m_Sprite);*/
+		for (const auto& s : m_pSFML->aSprites)
+			m_pSFML->pWindow->draw(s.first);
 
 		auto pWindow = m_pSFML->pWindow;
 		m_upCompHandler->foreach([pWindow](Visual& v) {
