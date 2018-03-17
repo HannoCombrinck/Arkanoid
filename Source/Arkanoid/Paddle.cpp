@@ -7,6 +7,7 @@
 #include <Engine/Input/InputCodes.h>
 #include <Engine/Input/TextBuffer.h>
 #include <Engine/Graphics/Visual.h>
+#include <Engine/Graphics/VisualText.h>
 
 using namespace std;
 using namespace std::placeholders;
@@ -31,7 +32,7 @@ Paddle::~Paddle()
 	engine().visuals().removeVisual(m_uVisual2);
 	engine().visuals().removeVisual(m_uVisual);
 	engine().sounds().removeSound(m_uSound);
-	engine().visuals().removeVisualText(m_uText);
+	engine().visuals().removeVisualText(m_uVisualText);
 	engine().inputs().removeTextBuffer(m_uTextBuffer);
 }
 
@@ -42,7 +43,7 @@ void Paddle::onInit()
 	m_uVisual2 = engine().visuals().createVisual("../Data/Textures/test2.tga");
 	engine().visuals().modifyVisual(m_uVisual2).setSize(Vec2(0.25f, 0.25f));
 	m_uSound = engine().sounds().createSound("../Data/Sounds/beep.wav");
-	m_uText = engine().visuals().createVisualText("../Data/Fonts/impact.ttf");
+	m_uVisualText = engine().visuals().createVisualText("../Data/Fonts/impact.ttf");
 	m_uTextBuffer = engine().inputs().createTextBuffer();
 }
 
@@ -85,7 +86,14 @@ void Paddle::handleTextInput()
 		if (m_bInputMode)
 		{
 			if (ch != 13)
-				m_sCommand += ch;
+			{
+				if (ch != 8)
+					m_sCommand += ch;
+				else
+					m_sCommand = m_sCommand.substr(0U, m_sCommand.length() - 1);
+				
+				engine().visuals().modifyVisualText(m_uVisualText).setText(m_sCommand);
+			}
 			else
 				processCommand();
 		}
@@ -101,6 +109,7 @@ void Paddle::handleTextInput()
 
 void Paddle::processCommand()
 {
+	engine().visuals().modifyVisualText(m_uVisualText).setText(m_sCommand);
 	cout << "Command: " << m_sCommand << std::endl;
 	m_sCommand.clear();
 	m_bInputMode = false;

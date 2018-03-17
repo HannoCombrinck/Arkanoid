@@ -41,9 +41,9 @@ private:
 	uint m_uVisual;
 	uint m_uVisual2;
 	uint m_uSound;
+	uint m_uVisualText;
 
 	bool m_bInputMode;
 	std::string m_sCommand;
-	uint m_uText;
 	uint m_uTextBuffer;
 };

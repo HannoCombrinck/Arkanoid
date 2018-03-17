@@ -79,7 +79,8 @@ namespace graphics {
 	uint VisualSystem::createVisualText(const std::string & sText)
 	{
 		auto uHandle = m_upVisualTextHandler->create();
-		m_upVisualTextHandler->modify(uHandle).setText(sText);
+		m_upVisualTextHandler->modify(uHandle).loadFont(sText);
+		m_upVisualTextHandler->modify(uHandle).setText("TEMP");
 		return uHandle;
 	}
 
@@ -150,6 +151,10 @@ namespace graphics {
 		m_pSFML->text.setFillColor(cTD);
 		m_pSFML->text.setPosition(150.0f, 35.0f);
 		m_pSFML->pWindow->draw(m_pSFML->text);
+
+		m_upVisualTextHandler->foreach([pWindow](VisualText& vt) {
+			pWindow->draw(vt.m_Text);
+		});
 		//////
 
 		m_pSFML->pWindow->popGLStates();
