@@ -3,9 +3,15 @@
 #include <vector>
 
 #include <Engine/Core/Math/Math.h>
-#include <Engine/Input/InputListener.h>
+#include <Engine/Core/ComponentHandler.h>
+#include <Engine/Input/InputCodes.h>
 
 #include <boost/shared_ptr.hpp>
+
+namespace input
+{
+	class TextBuffer;
+}
 
 namespace input
 {
@@ -17,12 +23,14 @@ namespace input
 
 		// Public interface
 		// {
+		uint createTextBuffer();
+		TextBuffer& modifyTextBuffer(uint uHandle);
+		void removeTextBuffer(uint uHandle);
+
 		bool& isKeyPressed(KeyboardKey eKey) { return m_KBState[eKey]; }
 		bool& isMBPressed(MouseButton eButton) { return m_MBState[eButton]; }
 		core::Vec2i getMousePos() const { return m_MousePos; }
 		core::Vec2i getMousePosRel() const { return m_MousePosRel; }
-
-		void setListener(const boost::shared_ptr<InputListener>& spListener); // TODO: Remove listeners completely?
 		// }
 
 	private:
@@ -50,8 +58,8 @@ namespace input
 
 		// InputSystem internals
 		// {
-		boost::shared_ptr<InputListener> m_spListener;		// TODO: Remove listeners completely?
-		boost::shared_ptr<InputListener> m_spNewListener;	// TODO: Remove listeners completely?
+		typedef ComponentHandler<TextBuffer, InputSystem> text_buffer_handler_type;
+		std::unique_ptr<text_buffer_handler_type> m_upTextBufferHandler;
 		// }
 
 	};

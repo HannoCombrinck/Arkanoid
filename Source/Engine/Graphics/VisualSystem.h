@@ -13,6 +13,7 @@ namespace sf
 namespace graphics
 {
 	class Visual;
+	class VisualText;
 }
 
 namespace graphics
@@ -24,8 +25,12 @@ namespace graphics
 		~VisualSystem();
 
 		uint createVisual(const std::string& sFilename);
-		Visual& modifyVisual(uint uVisual);
-		void removeVisual(uint uVisual);
+		Visual& modifyVisual(uint uHandle);
+		void removeVisual(uint uHandle);
+
+		uint createVisualText(const std::string& sText);
+		VisualText& modifyVisualText(uint uHandle);
+		void removeVisualText(uint uHandle);
 
 	private:
 		// EngineSystems interface
@@ -59,7 +64,10 @@ namespace graphics
 		// TEMP handle functionality test
 		// {
 		typedef ComponentHandler<Visual, VisualSystem> visual_handler_type;
-		std::unique_ptr<visual_handler_type> m_upCompHandler;
+		std::unique_ptr<visual_handler_type> m_upVisualHandler;
+
+		typedef ComponentHandler<VisualText, VisualSystem> visual_text_handler_type;
+		std::unique_ptr<visual_text_handler_type> m_upVisualTextHandler;
 		// }
 
 		struct SFMLMembers;

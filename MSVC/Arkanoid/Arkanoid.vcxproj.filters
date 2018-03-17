@@ -85,6 +85,12 @@
     <ClCompile Include="..\..\Source\Arkanoid\WorldGenerator.cpp">
       <Filter>Header/Source Files\Arkanoid</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Graphics\VisualText.cpp">
+      <Filter>Header/Source Files\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Input\TextBuffer.cpp">
+      <Filter>Header/Source Files\Engine\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h">
@@ -158,6 +164,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Engine\Core\ComponentHandler.h">
       <Filter>Header/Source Files\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Graphics\VisualText.h">
+      <Filter>Header/Source Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Input\TextBuffer.h">
+      <Filter>Header/Source Files\Engine\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

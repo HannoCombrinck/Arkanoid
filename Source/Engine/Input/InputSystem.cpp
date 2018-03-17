@@ -3,80 +3,78 @@
 #include <iostream>
 #include <Engine/Core/GlobalTypes.h>
 
+#include <Engine/Input/TextBuffer.h>
+
 using namespace std;
 using namespace core;
 
 namespace input {
 
 	InputSystem::InputSystem()
-		: m_spListener(nullPtr)
-		, m_spNewListener(nullPtr)
 	{
 		memset(m_KBState, false, sizeof(bool)*KEY_KeyCount);
 		memset(m_MBState, false, sizeof(bool)*MB_ButtonCount);
 		m_MousePos = Vec2i(0, 0);
+
+		m_upTextBufferHandler = std::make_unique<text_buffer_handler_type>(this, 10U);
 	}
 
 	InputSystem::~InputSystem()
 	{
 	}
 
-	void InputSystem::setListener(const boost::shared_ptr<InputListener>& spListener)
+	uint InputSystem::createTextBuffer()
 	{
-		m_spNewListener = spListener;
+		auto uHandle = m_upTextBufferHandler->create();
+		m_upTextBufferHandler->modify(uHandle).init(this);
+		return uHandle;
+	}
+
+	TextBuffer & InputSystem::modifyTextBuffer(uint uHandle)
+	{
+		return m_upTextBufferHandler->modify(uHandle);
+	}
+
+	void InputSystem::removeTextBuffer(uint uHandle)
+	{
+		m_upTextBufferHandler->remove(uHandle);
 	}
 
 	void InputSystem::update(float fDT)
 	{
-		if (m_spListener != m_spNewListener)
-			m_spListener = m_spNewListener;
 	}
 
 	void InputSystem::keyPressed(KeyboardKey eKey)
 	{
 		m_KBState[eKey] = true;
-
-		if (m_spListener)
-			m_spListener->keyPressed(eKey);
 	}
 
 	void InputSystem::keyReleased(KeyboardKey eKey)
 	{
 		m_KBState[eKey] = false;
-
-		if (m_spListener)
-			m_spListener->keyReleased(eKey);
 	}
 
 	void InputSystem::charEntered(char ch)
 	{
-		if (m_spListener)
-			m_spListener->charEntered(ch);
+		auto& aTextBuffers = m_upTextBufferHandler->getData();
+		for (auto i = 0U; i < m_upTextBufferHandler->getSize(); ++i)
+			aTextBuffers[i].addChar(ch);
 	}
 
 	void InputSystem::mbPressed(MouseButton eButton)
 	{
 		m_MBState[eButton] = true;
-
-		if (m_spListener)
-			m_spListener->mbPressed(eButton);
 	}
 
 	void InputSystem::mbReleased(MouseButton eButton)
 	{
 		m_MBState[eButton] = false;
-		
-		if (m_spListener)
-			m_spListener->mbReleased(eButton);
 	}
 
 	void InputSystem::mouseMoved(int iX, int iY)
 	{
 		m_MousePos.x = iX;
 		m_MousePos.y = iY;
-
-		if (m_spListener)
-			m_spListener->mouseMoved(iX, iY);
 	}
 
 	void InputSystem::mouseMovedRel(int iX, int iY)
@@ -86,9 +84,6 @@ namespace input {
 
 		m_MousePosRel.x = iX;
 		m_MousePosRel.y = iY;
-
-		if (m_spListener)
-			m_spListener->mouseMovedRel(iX, iY);
 	}
 
 }

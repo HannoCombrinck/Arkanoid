@@ -4,6 +4,7 @@
 #include <vector>
 
 #include <Engine/Graphics/Visual.h>
+#include <Engine/Graphics/VisualText.h>
 
 #include <SFML/Graphics.hpp>
 
@@ -32,14 +33,13 @@ namespace graphics {
 		m_pSFML->pWindow->create(VideoMode(800U, 600U, 32U), "Test");
 		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
 
-		m_pSFML->font.loadFromFile("../Data/Fonts/f.ttf");
+		m_pSFML->font.loadFromFile("../Data/Fonts/impact.ttf");
 		m_pSFML->text.move(10.0f, 5.0f);
 		m_pSFML->text.setFont(m_pSFML->font);
-		m_pSFML->text.setCharacterSize(10U);
+		m_pSFML->text.setCharacterSize(20U);
 
-		/////////////////////////////////////
-		m_upCompHandler = std::make_unique<visual_handler_type>(this, 20U);
-		/////////////////////////////////////
+		m_upVisualHandler = std::make_unique<visual_handler_type>(this, 20U);
+		m_upVisualTextHandler = std::make_unique<visual_text_handler_type>(this, 20U);
 	}
 
 	VisualSystem::~VisualSystem()
@@ -51,8 +51,8 @@ namespace graphics {
 
 	uint VisualSystem::createVisual(const std::string& sFilename)
 	{
-		auto uHandle = m_upCompHandler->create();
-		m_upCompHandler->modify(uHandle).loadSprite(sFilename);
+		auto uHandle = m_upVisualHandler->create();
+		m_upVisualHandler->modify(uHandle).loadSprite(sFilename);
 		return uHandle;
 
 		//auto upVisual = std::make_unique<Visual>(this);
@@ -61,19 +61,36 @@ namespace graphics {
 		//return m_aupVisuals.size() - 1;
 	}
 
-	graphics::Visual& VisualSystem::modifyVisual(uint uVisual)
+	graphics::Visual& VisualSystem::modifyVisual(uint uHandle)
 	{
-		return m_upCompHandler->modify(uVisual);
+		return m_upVisualHandler->modify(uHandle);
 
 		//assert(uVisual < m_aupVisuals.size());
 		//return *(m_aupVisuals[uVisual]);
 	}	
 
-	void VisualSystem::removeVisual(uint uVisual)
+	void VisualSystem::removeVisual(uint uHandle)
 	{
-		m_upCompHandler->remove(uVisual);
+		m_upVisualHandler->remove(uHandle);
 
 		//m_aupVisuals.erase(m_aupVisuals.begin() + uVisual);
+	}
+
+	uint VisualSystem::createVisualText(const std::string & sText)
+	{
+		auto uHandle = m_upVisualTextHandler->create();
+		m_upVisualTextHandler->modify(uHandle).setText(sText);
+		return uHandle;
+	}
+
+	VisualText & VisualSystem::modifyVisualText(uint uHandle)
+	{
+		return m_upVisualTextHandler->modify(uHandle);
+	}
+
+	void VisualSystem::removeVisualText(uint uHandle)
+	{
+		m_upVisualTextHandler->remove(uHandle);
 	}
 
 	void VisualSystem::update(float fDT)
@@ -89,7 +106,7 @@ namespace graphics {
 		for (uint i = 0U; i < uSize; ++i)
 			aData[i].update(fDT);*/
 
-		m_upCompHandler->foreach([fDT](Visual& v) {
+		m_upVisualHandler->foreach([fDT](Visual& v) {
 			v.update(fDT);
 		});
 	}
@@ -109,11 +126,29 @@ namespace graphics {
 			m_pSFML->pWindow->draw(s.first);
 
 		auto pWindow = m_pSFML->pWindow;
-		m_upCompHandler->foreach([pWindow](Visual& v) {
+		m_upVisualHandler->foreach([pWindow](Visual& v) {
 			pWindow->draw(v.m_Sprite); 
 		});
 
 		m_pSFML->text.setString(to_string(1.0f / m_fDeltaTimeSmoothed));
+		auto c1 = Color(66U, 203U, 248U);
+		auto c2 = Color(61U, 155U, 161U);
+		auto c3 = Color(18U, 60U, 87U);
+
+		auto cTB = Color(20U, 204U, 250U);
+		auto cTD = Color(4U, 82U, 113U);
+
+		m_pSFML->text.setFillColor(c2);
+		m_pSFML->text.setPosition(10.0f, 5.0f);
+		m_pSFML->pWindow->draw(m_pSFML->text);
+
+		m_pSFML->text.setString("BRIGHT");
+		m_pSFML->text.setFillColor(cTB);
+		m_pSFML->text.setPosition(10.0f, 35.0f);
+		m_pSFML->pWindow->draw(m_pSFML->text);
+		m_pSFML->text.setString("Dim Text");
+		m_pSFML->text.setFillColor(cTD);
+		m_pSFML->text.setPosition(150.0f, 35.0f);
 		m_pSFML->pWindow->draw(m_pSFML->text);
 		//////
 

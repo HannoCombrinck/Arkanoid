@@ -1,12 +1,15 @@
 #include "Paddle.h"
 
 #include <iostream>
+#include <functional>
 
 #include <Engine/Engine.h>
 #include <Engine/Input/InputCodes.h>
+#include <Engine/Input/TextBuffer.h>
 #include <Engine/Graphics/Visual.h>
 
 using namespace std;
+using namespace std::placeholders;
 using namespace input;
 using namespace graphics;
 
@@ -18,6 +21,8 @@ Paddle::Paddle()
 	, m_bDown(false)
 	, m_bAction(false)
 	, m_uVisual(~0)
+	, m_bInputMode(false)
+	, m_sCommand("")
 {
 }
 
@@ -25,6 +30,9 @@ Paddle::~Paddle()
 {
 	engine().visuals().removeVisual(m_uVisual2);
 	engine().visuals().removeVisual(m_uVisual);
+	engine().sounds().removeSound(m_uSound);
+	engine().visuals().removeVisualText(m_uText);
+	engine().inputs().removeTextBuffer(m_uTextBuffer);
 }
 
 void Paddle::onInit()
@@ -34,6 +42,8 @@ void Paddle::onInit()
 	m_uVisual2 = engine().visuals().createVisual("../Data/Textures/test2.tga");
 	engine().visuals().modifyVisual(m_uVisual2).setSize(Vec2(0.25f, 0.25f));
 	m_uSound = engine().sounds().createSound("../Data/Sounds/beep.wav");
+	m_uText = engine().visuals().createVisualText("../Data/Fonts/impact.ttf");
+	m_uTextBuffer = engine().inputs().createTextBuffer();
 }
 
 void Paddle::onUpdate(float fDT)
@@ -53,12 +63,47 @@ void Paddle::getInputs()
 	m_bDown = is.isKeyPressed(KEY_S);
 	m_bAction = is.isKeyPressed(KEY_Space) || is.isMBPressed(MB_Left);
 
+	handleTextInput();
+
 	auto vMouseMove = is.getMousePosRel();
 	if (vMouseMove.x != 0 || vMouseMove.y != 0)
 	{
 		m_vPos += vMouseMove;
 		//cout << "Mouse move: " << vMouseMove.x << ", " << vMouseMove.y << endl;
 	}
+}
+
+void Paddle::handleTextInput()
+{
+	auto& textBuffer = engine().inputs().modifyTextBuffer(m_uTextBuffer);
+
+	if (textBuffer.getBuffer().empty())
+		return;
+
+	for (const auto& ch : textBuffer.getBuffer())
+	{
+		if (m_bInputMode)
+		{
+			if (ch != 13)
+				m_sCommand += ch;
+			else
+				processCommand();
+		}
+		else if (ch == 'i')
+		{
+			m_bInputMode = true;
+			m_sCommand.clear();
+		}
+	}
+
+	textBuffer.clean();
+}
+
+void Paddle::processCommand()
+{
+	cout << "Command: " << m_sCommand << std::endl;
+	m_sCommand.clear();
+	m_bInputMode = false;
 }
 
 void Paddle::updateState()

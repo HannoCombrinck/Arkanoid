@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include <Engine/Core/GlobalTypes.h>
 #include <Engine/Core/Math/Math.h>
 #include <Engine/Entity/Entity.h>
@@ -23,6 +25,8 @@ private:
 	// Paddle internals
 	// {
 	void getInputs();
+	void handleTextInput();
+	void processCommand();
 	void updateState();
 	void applyState();
 	// }
@@ -37,4 +41,9 @@ private:
 	uint m_uVisual;
 	uint m_uVisual2;
 	uint m_uSound;
+
+	bool m_bInputMode;
+	std::string m_sCommand;
+	uint m_uText;
+	uint m_uTextBuffer;
 };
