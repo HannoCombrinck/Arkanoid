@@ -25,7 +25,10 @@ Ball::~Ball()
 
 void Ball::onInit()
 {
-	m_uVisual = engine().visuals().createVisual("../Data/Textures/test.tga");
+	auto& vs = engine().visuals();
+	m_uVisual = vs.createVisual();
+	vs.modifyVisual(m_uVisual).loadSprite("../Data/Textures/test.tga");
+
 	engine().visuals().modifyVisual(m_uVisual).setSize(Vec2(0.25f, 0.25f));
 	//m_uSound = engine().sounds().createSound("../Data/Sounds/beep.wav");
 }

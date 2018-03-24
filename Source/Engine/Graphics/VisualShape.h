@@ -19,28 +19,42 @@ namespace sf
 
 namespace graphics
 {
-	class Visual
+	class VisualShape
 	{
 	public:
-		Visual();
-		~Visual();
+		enum EShapeType
+		{
+			SHAPE_LINE,
+			SHAPE_BOX,
+			SHAPE_CIRCLE,
+			SHAPE_MAX_TYPES
+		};
+
+		VisualShape();
+		~VisualShape();
 
 		void init(VisualSystem* pVisualSystem);
 		bool alive() const;
 		void clean();
-
 		void update(float fDT);
-		void loadSprite(const std::string& sFilename);
+
+		void setType(EShapeType eType);
 		void setPosition(const Vec2& vPos);
 		void setSize(const Vec2& vSize);
 
 	private:
+		// VisualSystem interface
+		// {
 		friend class VisualSystem;
+		// }
+
 		VisualSystem* m_pVisualSystem;
 		bool m_bAlive;
 		uint m_uSprite;
+		
 		sf::Sprite m_Sprite;
-		sf::Texture m_Texture;
+
+		EShapeType m_eType;
 		Vec2 m_vPos;
 		bool m_bPosChanged;
 		Vec2 m_vSize;

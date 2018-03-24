@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-#include <Engine/Graphics/Visual.h>
+
 #include <Engine/Graphics/VisualText.h>
 
 #include <SFML/Graphics.hpp>
@@ -38,18 +38,18 @@ namespace graphics {
 		m_pSFML->text.setFont(m_pSFML->font);
 		m_pSFML->text.setCharacterSize(20U);
 
-		m_upVisualHandler = std::make_unique<visual_handler_type>(this, 20U);
+		CREATE_COMPONENT_HANDLER(Visual, 20U);
+		//m_upVisualHandler = std::make_unique<visual_handler_type>(this, 20U);
+
 		m_upVisualTextHandler = std::make_unique<visual_text_handler_type>(this, 20U);
 	}
 
 	VisualSystem::~VisualSystem()
 	{
-		//m_aupVisuals.clear();
-
 		delete m_pSFML;
 	}
 
-	uint VisualSystem::createVisual(const std::string& sFilename)
+/*	uint VisualSystem::createVisual(const std::string& sFilename)
 	{
 		auto uHandle = m_upVisualHandler->create();
 		m_upVisualHandler->modify(uHandle).loadSprite(sFilename);
@@ -75,6 +75,7 @@ namespace graphics {
 
 		//m_aupVisuals.erase(m_aupVisuals.begin() + uVisual);
 	}
+*/
 
 	uint VisualSystem::createVisualText(const std::string & sText)
 	{

@@ -24,6 +24,7 @@
     <ClCompile Include="..\..\Source\Engine\Entity\EntitySystem.cpp" />
     <ClCompile Include="..\..\Source\Engine\Entity\World.cpp" />
     <ClCompile Include="..\..\Source\Engine\Graphics\Visual.cpp" />
+    <ClCompile Include="..\..\Source\Engine\Graphics\VisualShape.cpp" />
     <ClCompile Include="..\..\Source\Engine\Graphics\VisualSystem.cpp" />
     <ClCompile Include="..\..\Source\Engine\Graphics\VisualText.cpp" />
     <ClCompile Include="..\..\Source\Engine\Input\InputListener.cpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="..\..\Source\Engine\Entity\EntitySystem.h" />
     <ClInclude Include="..\..\Source\Engine\Entity\World.h" />
     <ClInclude Include="..\..\Source\Engine\Graphics\Visual.h" />
+    <ClInclude Include="..\..\Source\Engine\Graphics\VisualShape.h" />
     <ClInclude Include="..\..\Source\Engine\Graphics\VisualSystem.h" />
     <ClInclude Include="..\..\Source\Engine\Graphics\VisualText.h" />
     <ClInclude Include="..\..\Source\Engine\Input\InputCodes.h" />

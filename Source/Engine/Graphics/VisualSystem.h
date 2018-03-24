@@ -4,6 +4,7 @@
 
 #include <Engine/Core/ComponentHandler.h>
 #include <Engine/Core/GlobalTypes.h>
+#include <Engine/Graphics/Visual.h>
 
 namespace sf
 {
@@ -12,7 +13,6 @@ namespace sf
 }
 namespace graphics
 {
-	class Visual;
 	class VisualText;
 }
 
@@ -24,9 +24,10 @@ namespace graphics
 		VisualSystem(sf::RenderWindow *pWindow);
 		~VisualSystem();
 
-		uint createVisual(const std::string& sFilename);
+		ADD_COMPONENT(Visual)
+		/*uint createVisual(const std::string& sFilename);
 		Visual& modifyVisual(uint uHandle);
-		void removeVisual(uint uHandle);
+		void removeVisual(uint uHandle);*/
 
 		uint createVisualText(const std::string& sText);
 		VisualText& modifyVisualText(uint uHandle);
@@ -63,8 +64,8 @@ namespace graphics
 
 		// TEMP handle functionality test
 		// {
-		typedef ComponentHandler<Visual, VisualSystem> visual_handler_type;
-		std::unique_ptr<visual_handler_type> m_upVisualHandler;
+		/*typedef ComponentHandler<Visual, VisualSystem> visual_handler_type;
+		std::unique_ptr<visual_handler_type> m_upVisualHandler;*/
 
 		typedef ComponentHandler<VisualText, VisualSystem> visual_text_handler_type;
 		std::unique_ptr<visual_text_handler_type> m_upVisualTextHandler;
