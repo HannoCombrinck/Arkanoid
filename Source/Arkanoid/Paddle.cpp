@@ -38,17 +38,21 @@ Paddle::~Paddle()
 
 void Paddle::onInit()
 {
-	// TODO: Create visuals, collision objects, sounds i.e. all the components that make up the Paddle object
 	auto& vs = engine().visuals();
+
 	m_uVisual = vs.createVisual();
 	vs.modifyVisual(m_uVisual).loadSprite("../Data/Textures/test.tga");
 
 	m_uVisual2 = vs.createVisual();
 	vs.modifyVisual(m_uVisual2).loadSprite("../Data/Textures/test2.tga");
+	vs.modifyVisual(m_uVisual2).setSize(Vec2(0.25f, 0.25f));
 
-	engine().visuals().modifyVisual(m_uVisual2).setSize(Vec2(0.25f, 0.25f));
 	m_uSound = engine().sounds().createSound("../Data/Sounds/beep.wav");
-	m_uVisualText = engine().visuals().createVisualText("../Data/Fonts/impact.ttf");
+	
+	m_uVisualText = vs.createVisualText();
+	vs.modifyVisualText(m_uVisualText).setText("Temp");
+	vs.modifyVisualText(m_uVisualText).loadFont("../Data/Fonts/impact.ttf");
+
 	m_uTextBuffer = engine().inputs().createTextBuffer();
 }
 

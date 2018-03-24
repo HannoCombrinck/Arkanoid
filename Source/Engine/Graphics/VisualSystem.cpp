@@ -18,7 +18,6 @@ namespace graphics {
 		RenderWindow *pWindow;
 		Font font;
 		Text text;
-		vector<pair<Sprite,Texture>> aSprites;
 	};
 
 	VisualSystem::VisualSystem(RenderWindow *pWindow)
@@ -39,69 +38,18 @@ namespace graphics {
 		m_pSFML->text.setCharacterSize(20U);
 
 		CREATE_COMPONENT_HANDLER(Visual, 20U);
-		//m_upVisualHandler = std::make_unique<visual_handler_type>(this, 20U);
-
-		m_upVisualTextHandler = std::make_unique<visual_text_handler_type>(this, 20U);
+		CREATE_COMPONENT_HANDLER(VisualText, 20U);
 	}
 
 	VisualSystem::~VisualSystem()
 	{
 		delete m_pSFML;
 	}
-
-/*	uint VisualSystem::createVisual(const std::string& sFilename)
-	{
-		auto uHandle = m_upVisualHandler->create();
-		m_upVisualHandler->modify(uHandle).loadSprite(sFilename);
-		return uHandle;
-
-		//auto upVisual = std::make_unique<Visual>(this);
-		//upVisual->loadSprite(sFilename);
-		//m_aupVisuals.push_back(std::move(upVisual));
-		//return m_aupVisuals.size() - 1;
-	}
-
-	graphics::Visual& VisualSystem::modifyVisual(uint uHandle)
-	{
-		return m_upVisualHandler->modify(uHandle);
-
-		//assert(uVisual < m_aupVisuals.size());
-		//return *(m_aupVisuals[uVisual]);
-	}	
-
-	void VisualSystem::removeVisual(uint uHandle)
-	{
-		m_upVisualHandler->remove(uHandle);
-
-		//m_aupVisuals.erase(m_aupVisuals.begin() + uVisual);
-	}
-*/
-
-	uint VisualSystem::createVisualText(const std::string & sText)
-	{
-		auto uHandle = m_upVisualTextHandler->create();
-		m_upVisualTextHandler->modify(uHandle).loadFont(sText);
-		m_upVisualTextHandler->modify(uHandle).setText("TEMP");
-		return uHandle;
-	}
-
-	VisualText & VisualSystem::modifyVisualText(uint uHandle)
-	{
-		return m_upVisualTextHandler->modify(uHandle);
-	}
-
-	void VisualSystem::removeVisualText(uint uHandle)
-	{
-		m_upVisualTextHandler->remove(uHandle);
-	}
-
+	
 	void VisualSystem::update(float fDT)
 	{
 		m_fDeltaTime = fDT;
 		m_fDeltaTimeSmoothed = m_fDeltaTimeSmoothed*0.98f + m_fDeltaTime*0.02f;
-
-		//for (auto& v : m_aupVisuals)
-		//	v->update(fDT);
 
 		/*auto uSize = m_upCompHandler->getSize();
 		auto& aData = m_upCompHandler->getData();
@@ -124,9 +72,6 @@ namespace graphics {
 		// TEMP TEST RENDERING
 		
 		// Draw sprites
-		for (const auto& s : m_pSFML->aSprites)
-			m_pSFML->pWindow->draw(s.first);
-
 		auto pWindow = m_pSFML->pWindow;
 		m_upVisualHandler->foreach([pWindow](Visual& v) {
 			pWindow->draw(v.m_Sprite); 
@@ -183,27 +128,6 @@ namespace graphics {
 	{
 		m_bVSync = !m_bVSync;
 		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
-	}
-	
-	uint VisualSystem::createSprite(const std::string& sTextureFilename)
-	{
-		auto uIndex = m_pSFML->aSprites.size();
-		m_pSFML->aSprites.resize(uIndex + 1);
-		auto& rTex = m_pSFML->aSprites[uIndex].second;
-		rTex.loadFromFile(sTextureFilename);
-		m_pSFML->aSprites[uIndex].first.setTexture(rTex);
-		return uIndex;
-	}
-
-	void VisualSystem::removeSprite(uint uHandle)
-	{
-		//m_aspVisuals
-		m_pSFML->aSprites.erase(m_pSFML->aSprites.begin() + uHandle);
-	}
-
-	Sprite& VisualSystem::modifySprite(uint uHandle)
-	{
-		return m_pSFML->aSprites[uHandle].first;
 	}
 
 }

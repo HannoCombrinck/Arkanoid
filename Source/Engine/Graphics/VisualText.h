@@ -28,19 +28,15 @@ namespace graphics
 		void init(VisualSystem* pVisualSystem);
 		bool alive() const;
 		void clean();
-		void update(float fDT);
 
+		void update(float fDT);
+		void loadFont(const std::string& sFilename);
 		void setText(const std::string& sString);
 		void setPosition(const Vec2& vPos);
 		void setSize(const Vec2& vSize);
 
 	private:
-		// VisualSystem interface
-		// {
 		friend class VisualSystem;
-		void loadFont(const std::string& sFilename);
-		// }
-
 		VisualSystem* m_pVisualSystem;
 		bool m_bAlive;
 		sf::Text m_Text;
