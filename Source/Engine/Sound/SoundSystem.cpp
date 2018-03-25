@@ -14,9 +14,9 @@ namespace sound {
 	SoundSystem::SoundSystem()
 		: m_fGlobalVolume(100.0f)
 	{
-		m_BeepSoundBuffer = make_unique<sf::SoundBuffer>();
-		m_BeepSound = make_unique<sf::Sound>();
-		m_Music = make_unique<sf::Music>();
+		m_BeepSoundBuffer = unique_ptr<sf::SoundBuffer>(new sf::SoundBuffer);
+		m_BeepSound = unique_ptr<sf::Sound>(new sf::Sound);
+		m_Music = unique_ptr<sf::Music>(new sf::Music);
 
 		if (!m_BeepSoundBuffer->loadFromFile("../Data/Sounds/beep.wav"))
 			std::cout << "Couldn't load beep.wav\n";
@@ -36,7 +36,7 @@ namespace sound {
 
 	uint SoundSystem::createSound(const std::string& sFilename)
 	{
-		auto upSound = std::make_unique<Sound>(this);
+		auto upSound = unique_ptr<Sound>(new Sound(this));
 		upSound->loadSound(sFilename);
 		m_aupSounds.push_back(std::move(upSound));
 		return m_aupSounds.size() - 1;

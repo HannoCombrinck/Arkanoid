@@ -4,16 +4,16 @@
 
 #define ADD_COMPONENT(ComponentName) \
 public: \
-	uint create##ComponentName##() { return m_up##ComponentName##Handler->create(); } \
-	ComponentName##& modify##ComponentName##(uint uHandle) { return m_up##ComponentName##Handler->modify(uHandle); } \
-	void remove##ComponentName##(uint uHandle) { m_up##ComponentName##Handler->remove(uHandle); } \
+	uint create##ComponentName() { return m_up##ComponentName##Handler->create(); } \
+	ComponentName& modify##ComponentName(uint uHandle) { return m_up##ComponentName##Handler->modify(uHandle); } \
+	void remove##ComponentName(uint uHandle) { m_up##ComponentName##Handler->remove(uHandle); } \
 private: \
 	typedef ComponentHandler<ComponentName, VisualSystem>  ComponentName##_handler_type; \
-	std::unique_ptr<##ComponentName##_handler_type> m_up##ComponentName##Handler; \
-public: 
+	std::unique_ptr<ComponentName##_handler_type> m_up##ComponentName##Handler; \
+public:
 
 #define CREATE_COMPONENT_HANDLER(ComponentName, InitialComponentCount) \
-m_up##ComponentName##Handler = std::make_unique<##ComponentName##_handler_type>(this, InitialComponentCount);
+m_up##ComponentName##Handler = std::unique_ptr<ComponentName##_handler_type>(new ComponentName##_handler_type(this, InitialComponentCount));
 
 
 template <typename COMPONENT_TYPE, typename SYSTEM_TYPE>

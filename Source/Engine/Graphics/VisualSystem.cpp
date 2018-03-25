@@ -45,7 +45,7 @@ namespace graphics {
 	{
 		delete m_pSFML;
 	}
-	
+
 	void VisualSystem::update(float fDT)
 	{
 		m_fDeltaTime = fDT;
@@ -70,11 +70,11 @@ namespace graphics {
 
 		//////
 		// TEMP TEST RENDERING
-		
+
 		// Draw sprites
 		auto pWindow = m_pSFML->pWindow;
 		m_upVisualHandler->foreach([pWindow](Visual& v) {
-			pWindow->draw(v.m_Sprite); 
+			pWindow->draw(v.m_Sprite);
 		});
 
 		m_pSFML->text.setString(to_string(1.0f / m_fDeltaTimeSmoothed));
@@ -85,16 +85,16 @@ namespace graphics {
 		auto cTB = Color(20U, 204U, 250U);
 		auto cTD = Color(4U, 82U, 113U);
 
-		m_pSFML->text.setFillColor(c2);
+		m_pSFML->text.setColor(c2);
 		m_pSFML->text.setPosition(10.0f, 5.0f);
 		m_pSFML->pWindow->draw(m_pSFML->text);
 
 		m_pSFML->text.setString("BRIGHT");
-		m_pSFML->text.setFillColor(cTB);
+		m_pSFML->text.setColor(cTB);
 		m_pSFML->text.setPosition(10.0f, 35.0f);
 		m_pSFML->pWindow->draw(m_pSFML->text);
 		m_pSFML->text.setString("Dim Text");
-		m_pSFML->text.setFillColor(cTD);
+		m_pSFML->text.setColor(cTD);
 		m_pSFML->text.setPosition(150.0f, 35.0f);
 		m_pSFML->pWindow->draw(m_pSFML->text);
 
@@ -104,7 +104,7 @@ namespace graphics {
 		//////
 
 		m_pSFML->pWindow->popGLStates();
-		// Flip buffers 
+		// Flip buffers
 		m_pSFML->pWindow->display();
 	}
 

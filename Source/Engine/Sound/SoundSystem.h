@@ -18,6 +18,8 @@ namespace sound
 	class Sound;
 }
 
+class EngineSystems;
+
 namespace sound
 {
 	class SoundSystem
@@ -33,7 +35,7 @@ namespace sound
 	private:
 		// EngineSystems interface
 		// {
-		friend class EngineSystems;
+		friend class ::EngineSystems;
 		void update(float fDT);
 		// }
 
@@ -43,10 +45,10 @@ namespace sound
 
 		core::Vec3 m_vListenerPosition;
 		core::Vec3 m_vListenerDirection;
-		float m_fGlobalVolume; 
+		float m_fGlobalVolume;
 		// }
 
-		
+
 		std::unordered_map<std::string, uint> m_SoundPlayerMap;
 		std::unordered_map<std::string, uint> m_SoundBufferMap;
 

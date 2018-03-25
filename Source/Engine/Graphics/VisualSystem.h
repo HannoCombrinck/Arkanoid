@@ -13,6 +13,9 @@ namespace sf
 	class Sprite;
 }
 
+class EngineSystems;
+class AppBase;
+
 namespace graphics
 {
 	class VisualSystem
@@ -27,8 +30,8 @@ namespace graphics
 	private:
 		// EngineSystems interface
 		// {
-		friend class EngineSystems;
-		friend class AppBase;
+		friend class ::EngineSystems;
+		friend class ::AppBase;
 		void update(float fDT);
 		void render();
 		void resize(int iWidth, int iHeight);

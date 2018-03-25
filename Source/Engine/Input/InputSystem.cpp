@@ -16,7 +16,7 @@ namespace input {
 		memset(m_MBState, false, sizeof(bool)*MB_ButtonCount);
 		m_MousePos = Vec2i(0, 0);
 
-		m_upTextBufferHandler = std::make_unique<text_buffer_handler_type>(this, 10U);
+		m_upTextBufferHandler = unique_ptr<text_buffer_handler_type>(new text_buffer_handler_type(this, 10U));
 	}
 
 	InputSystem::~InputSystem()

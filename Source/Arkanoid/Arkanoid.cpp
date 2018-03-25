@@ -18,7 +18,7 @@ Arkanoid::Arkanoid()
 	: m_spWorld(nullPtr)
 	, m_eState(STOPPED)
 {
-	m_upFactory = make_unique<ArkanoidFactory>();
+	m_upFactory = unique_ptr<ArkanoidFactory>(new ArkanoidFactory);
 }
 
 Arkanoid::~Arkanoid()

@@ -13,6 +13,9 @@ namespace input
 	class TextBuffer;
 }
 
+class EngineSystems;
+class AppBase;
+
 namespace input
 {
 	class InputSystem
@@ -36,8 +39,8 @@ namespace input
 	private:
 		// AppBase interface
 		// {
-		friend class EngineSystems;
-		friend class AppBase;
+		friend class ::EngineSystems;
+		friend class ::AppBase;
 		void update(float fDT);
 		void keyPressed(KeyboardKey eKey);
 		void keyReleased(KeyboardKey eKey);

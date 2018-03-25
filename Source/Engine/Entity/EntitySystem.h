@@ -9,6 +9,9 @@ namespace entity
 	class World;
 }
 
+class EngineSystems;
+class AppBase;
+
 namespace entity
 {
 	class EntitySystem
@@ -22,8 +25,8 @@ namespace entity
 	private:
 		// EngineSystems interface
 		// {
-		friend class EngineSystems;
-		friend class AppBase;
+		friend class ::EngineSystems;
+		friend class ::AppBase;
 		// TODO: Add several entitysystem updates (prePhysics, postPhysics, preVisuals, postVisuals etc.)
 		void update(float fDT);
 		// }
@@ -32,6 +35,6 @@ namespace entity
 		// {
 		boost::shared_ptr<World> m_spActiveWorld;
 		// }
-		
+
 	};
 }

@@ -14,7 +14,7 @@ struct NullPointer
 	inline operator boost::shared_ptr<T>() const { return boost::shared_ptr<T>(); }
 
 	template<class T>
-	inline operator std::unique_ptr<T>() const { return std::make_unique<T>(); }
+	inline operator std::unique_ptr<T>() const { return std::unique_ptr<T>(); }
 
 	template<class T>
 	inline operator T* () const { return 0; }

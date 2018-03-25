@@ -13,10 +13,10 @@ using namespace entity;
 
 EngineSystems::EngineSystems(RenderWindow* pWindow)
 {
-	m_upInputSystem = make_unique<InputSystem>();
-	m_upVisualSystem = make_unique<VisualSystem>(pWindow);
-	m_upSoundSystem = make_unique<SoundSystem>();
-	m_upEntitySystem = make_unique<EntitySystem>();
+	m_upInputSystem = unique_ptr<InputSystem>(new InputSystem);
+	m_upVisualSystem = unique_ptr<VisualSystem>(new VisualSystem(pWindow));
+	m_upSoundSystem = unique_ptr<SoundSystem>(new SoundSystem);
+	m_upEntitySystem = unique_ptr<EntitySystem>(new EntitySystem);
 }
 
 EngineSystems::~EngineSystems()
@@ -32,18 +32,18 @@ void EngineSystems::update(float fDT)
 	m_upSoundSystem->update(fDT);
 }
 
-InputSystem& EngineSystems::inputs() 
-{ 
-	return *m_upInputSystem; 
+InputSystem& EngineSystems::inputs()
+{
+	return *m_upInputSystem;
 }
 
-VisualSystem& EngineSystems::visuals() 
-{ 
-	return *m_upVisualSystem; 
+VisualSystem& EngineSystems::visuals()
+{
+	return *m_upVisualSystem;
 }
 
-SoundSystem& EngineSystems::sounds() 
-{ 
+SoundSystem& EngineSystems::sounds()
+{
 	return *m_upSoundSystem;
 }
 

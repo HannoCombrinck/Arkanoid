@@ -19,9 +19,9 @@ AppBase::AppBase()
 	: m_fDeltaTime(0.0f)
 	, m_bMouseLock(false)
 {
-	m_upWindow = make_unique<RenderWindow>();
-	m_upClock = make_unique<Clock>();
-	m_upEngineSystems = make_unique<EngineSystems>(m_upWindow.get());
+	m_upWindow = unique_ptr<RenderWindow>(new RenderWindow);
+	m_upClock = unique_ptr<Clock>(new Clock);
+	m_upEngineSystems = unique_ptr<EngineSystems>(new EngineSystems(m_upWindow.get()));
 }
 
 AppBase::~AppBase()
@@ -53,7 +53,7 @@ void AppBase::toggleFullscreen()
 void AppBase::toggleMouseLock()
 {
 	m_bMouseLock = !m_bMouseLock;
-	m_upWindow->setMouseCursorGrabbed(m_bMouseLock);
+	//m_upWindow->setMouseCursorGrabbed(m_bMouseLock);
 	m_upWindow->setMouseCursorVisible(!m_bMouseLock);
 }
 
@@ -62,9 +62,9 @@ void AppBase::toggleVSync()
 	engine().visuals().toggleVSync();
 }
 
-EngineSystems& AppBase::engine() 
-{ 
-	return *m_upEngineSystems; 
+EngineSystems& AppBase::engine()
+{
+	return *m_upEngineSystems;
 }
 
 void AppBase::update()

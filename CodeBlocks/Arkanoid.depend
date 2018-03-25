@@ -1,0 +1,801 @@
+# depslib dependency file v1.0
+1521975723 source:/home/hanno/development/Arkanoid/Source/Arkanoid/Arkanoid.cpp
+	"Arkanoid.h"
+	<iostream>
+	<functional>
+	<Engine/Engine.h>
+	<Engine/Entity/World.h>
+	<Arkanoid/WorldGenerator.h>
+	<boost/make_shared.hpp>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Arkanoid/Arkanoid.h
+	<memory>
+	<string>
+	<Engine/AppBase.h>
+	<Arkanoid/ArkanoidFactory.h>
+	<boost/shared_ptr.hpp>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/AppBase.h
+	<memory>
+	<Engine/Input/InputCodes.h>
+	<Engine/Core/Math/Math.h>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/Input/InputCodes.h
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/Core/Math/Math.h
+	<glm/vec2.hpp>
+	<glm/vec3.hpp>
+	<glm/vec4.hpp>
+	<glm/mat4x4.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtx/quaternion.hpp>
+	<glm/gtc/type_ptr.hpp>
+
+1502887720 /home/hanno/development/Libraries/glm/vec2.hpp
+	"detail/type_vec2.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_vec2.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_vec.hpp
+	"precision.hpp"
+	"type_int.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/precision.hpp
+	"setup.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/setup.hpp
+	<cassert>
+	<cstddef>
+	"../simd/platform.h"
+
+1502887720 /home/hanno/development/Libraries/glm/simd/platform.h
+	<cuda.h>
+	<intrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<popcntintrin.h>
+	<nmmintrin.h>
+	<smmintrin.h>
+	<tmmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_int.hpp
+	"setup.hpp"
+	<type_traits>
+	<cstdint>
+
+1502887720 /home/hanno/development/Libraries/glm/detail/_swizzle.hpp
+
+1502887720 /home/hanno/development/Libraries/glm/detail/_swizzle_func.hpp
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_vec2.inl
+
+1502887720 /home/hanno/development/Libraries/glm/vec3.hpp
+	"detail/type_vec3.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_vec3.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_vec3.inl
+
+1502887720 /home/hanno/development/Libraries/glm/vec4.hpp
+	"detail/type_vec4.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_vec4.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_vec4.inl
+	"type_vec4_simd.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_vec4_simd.inl
+
+1502887720 /home/hanno/development/Libraries/glm/mat4x4.hpp
+	"detail/type_mat4x4.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat4x4.hpp
+	"../fwd.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/fwd.hpp
+	"detail/type_int.hpp"
+	"detail/type_float.hpp"
+	"detail/type_vec.hpp"
+	"detail/type_mat.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_float.hpp
+	"setup.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat.hpp
+	"precision.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat4x4.inl
+	"func_matrix.hpp"
+	"type_mat4x4_simd.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_matrix.hpp
+	"../detail/precision.hpp"
+	"../detail/setup.hpp"
+	"../detail/type_mat.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	"func_matrix.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/mat2x2.hpp
+	"detail/type_mat2x2.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat2x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x2.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat2x2.inl
+	"func_matrix.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/mat2x3.hpp
+	"detail/type_mat2x3.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat2x3.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x3.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat2x3.inl
+
+1502887720 /home/hanno/development/Libraries/glm/mat2x4.hpp
+	"detail/type_mat2x4.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat2x4.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x4.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat2x4.inl
+
+1502887720 /home/hanno/development/Libraries/glm/mat3x2.hpp
+	"detail/type_mat3x2.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat3x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x2.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat3x2.inl
+
+1502887720 /home/hanno/development/Libraries/glm/mat3x3.hpp
+	"detail/type_mat3x3.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat3x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x3.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat3x3.inl
+	"func_matrix.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/mat3x4.hpp
+	"detail/type_mat3x4.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat3x4.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x4.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat3x4.inl
+
+1502887720 /home/hanno/development/Libraries/glm/mat4x2.hpp
+	"detail/type_mat4x2.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat4x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x2.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat4x2.inl
+
+1502887720 /home/hanno/development/Libraries/glm/mat4x3.hpp
+	"detail/type_mat4x3.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat4x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x3.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_mat4x3.inl
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+	"func_matrix_simd.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/geometric.hpp
+	"detail/func_geometric.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_geometric.hpp
+	"type_vec3.hpp"
+	"func_geometric.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_geometric.inl
+	"func_exponential.hpp"
+	"func_common.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_float.hpp"
+	"func_geometric_simd.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_exponential.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<cmath>
+	"func_exponential.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_vec1.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_vec1.inl
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_exponential.inl
+	"func_vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cmath>
+	<cassert>
+	"func_exponential_simd.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_vector_relational.hpp
+	"precision.hpp"
+	"setup.hpp"
+	"func_vector_relational.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_vector_relational.inl
+	<limits>
+	"func_vector_relational_simd.inl"
+
+1483566164 /home/hanno/development/Libraries/glm/detail/func_vector_relational_simd.inl
+
+1502887720 /home/hanno/development/Libraries/glm/detail/_vectorize.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_exponential_simd.inl
+	"../simd/exponential.h"
+
+1483566166 /home/hanno/development/Libraries/glm/simd/exponential.h
+	"platform.h"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_common.hpp
+	"setup.hpp"
+	"precision.hpp"
+	"type_int.hpp"
+	"_fixes.hpp"
+	"func_common.inl"
+
+1483566164 /home/hanno/development/Libraries/glm/detail/_fixes.hpp
+	<cmath>
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_common.inl
+	"func_vector_relational.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+	"func_common_simd.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_common_simd.inl
+	"../simd/common.h"
+	<immintrin.h>
+
+1502887720 /home/hanno/development/Libraries/glm/simd/common.h
+	"platform.h"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_geometric_simd.inl
+	"../simd/geometric.h"
+
+1483566166 /home/hanno/development/Libraries/glm/simd/geometric.h
+	"common.h"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_matrix_simd.inl
+	"type_mat4x4.hpp"
+	"func_geometric.hpp"
+	"../simd/matrix.h"
+
+1502887720 /home/hanno/development/Libraries/glm/simd/matrix.h
+	"geometric.h"
+
+1483566164 /home/hanno/development/Libraries/glm/detail/type_mat4x4_simd.inl
+
+1502887720 /home/hanno/development/Libraries/glm/gtc/matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../gtc/constants.hpp"
+	"matrix_transform.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/gtc/constants.hpp
+	"../detail/setup.hpp"
+	"constants.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/gtc/constants.inl
+	<limits>
+
+1502887720 /home/hanno/development/Libraries/glm/gtc/matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/trigonometric.hpp
+	"detail/func_trigonometric.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_trigonometric.hpp
+	"setup.hpp"
+	"precision.hpp"
+	"func_trigonometric.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+	"func_trigonometric_simd.inl"
+
+1483566164 /home/hanno/development/Libraries/glm/detail/func_trigonometric_simd.inl
+
+1502887720 /home/hanno/development/Libraries/glm/matrix.hpp
+	"detail/func_matrix.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/gtx/quaternion.hpp
+	"../glm.hpp"
+	"../gtc/constants.hpp"
+	"../gtc/quaternion.hpp"
+	"../gtx/norm.hpp"
+	"quaternion.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/glm.hpp
+	"detail/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cassert>
+	"fwd.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"trigonometric.hpp"
+	"exponential.hpp"
+	"common.hpp"
+	"packing.hpp"
+	"geometric.hpp"
+	"matrix.hpp"
+	"vector_relational.hpp"
+	"integer.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/exponential.hpp
+	"detail/func_exponential.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/common.hpp
+	"detail/func_common.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/packing.hpp
+	"detail/func_packing.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_packing.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"func_packing.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_packing.inl
+	"func_common.hpp"
+	"type_half.hpp"
+	"../fwd.hpp"
+	"func_packing_simd.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_half.hpp
+	"setup.hpp"
+	"type_half.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/type_half.inl
+
+1483566164 /home/hanno/development/Libraries/glm/detail/func_packing_simd.inl
+
+1502887720 /home/hanno/development/Libraries/glm/vector_relational.hpp
+	"detail/func_vector_relational.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/integer.hpp
+	"detail/func_integer.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_integer.hpp
+	"setup.hpp"
+	"precision.hpp"
+	"func_common.hpp"
+	"func_vector_relational.hpp"
+	"func_integer.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_integer.inl
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_int.hpp"
+	"_vectorize.hpp"
+	<intrin.h>
+	<limits>
+	"func_integer_simd.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/detail/func_integer_simd.inl
+	"../simd/integer.h"
+
+1483566166 /home/hanno/development/Libraries/glm/simd/integer.h
+
+1502887720 /home/hanno/development/Libraries/glm/gtc/quaternion.hpp
+	"../mat3x3.hpp"
+	"../mat4x4.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../gtc/constants.hpp"
+	"quaternion.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/gtc/quaternion.inl
+	"../trigonometric.hpp"
+	"../geometric.hpp"
+	"../exponential.hpp"
+	<limits>
+	"quaternion_simd.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/gtc/quaternion_simd.inl
+
+1502887720 /home/hanno/development/Libraries/glm/gtx/norm.hpp
+	"../detail/func_geometric.hpp"
+	"../gtx/quaternion.hpp"
+	"norm.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/gtx/norm.inl
+	"../detail/precision.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/gtx/quaternion.inl
+	<limits>
+	"../gtc/constants.hpp"
+
+1502887720 /home/hanno/development/Libraries/glm/gtc/type_ptr.hpp
+	"../gtc/quaternion.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	<cstring>
+	"type_ptr.inl"
+
+1502887720 /home/hanno/development/Libraries/glm/gtc/type_ptr.inl
+	<cstring>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Arkanoid/ArkanoidFactory.h
+	<Engine/Entity/EntityFactory.h>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/Entity/EntityFactory.h
+	<memory>
+	<string>
+	<unordered_map>
+	<functional>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/Engine.h
+	<Engine/SystemsInclude.h>
+	<Engine/EngineSystems.h>
+	<Engine/Core/GlobalTypes.h>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/SystemsInclude.h
+	<Engine/Input/InputSystem.h>
+	<Engine/Graphics/VisualSystem.h>
+	<Engine/Sound/SoundSystem.h>
+	<Engine/Entity/EntitySystem.h>
+
+1521977278 /home/hanno/development/Arkanoid/Source/Engine/Input/InputSystem.h
+	<vector>
+	<Engine/Core/Math/Math.h>
+	<Engine/Core/ComponentHandler.h>
+	<Engine/Input/InputCodes.h>
+	<boost/shared_ptr.hpp>
+
+1521977406 /home/hanno/development/Arkanoid/Source/Engine/Core/ComponentHandler.h
+	<Engine/Core/GlobalTypes.h>
+
+1521975701 /home/hanno/development/Arkanoid/Source/Engine/Core/GlobalTypes.h
+	<boost/shared_ptr.hpp>
+	<boost/weak_ptr.hpp>
+
+1521977324 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualSystem.h
+	<memory>
+	<vector>
+	<Engine/Core/ComponentHandler.h>
+	<Engine/Core/GlobalTypes.h>
+	<Engine/Graphics/Visual.h>
+	<Engine/Graphics/VisualText.h>
+
+1521974123 /home/hanno/development/Arkanoid/Source/Engine/Graphics/Visual.h
+	<memory>
+	<Engine/Core/Math/Math.h>
+	<Engine/Core/GlobalTypes.h>
+	<SFML/Graphics.hpp>
+
+1521974123 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualText.h
+	<memory>
+	<Engine/Core/Math/Math.h>
+	<Engine/Core/GlobalTypes.h>
+	<SFML/Graphics.hpp>
+
+1521977343 /home/hanno/development/Arkanoid/Source/Engine/Sound/SoundSystem.h
+	<memory>
+	<vector>
+	<unordered_map>
+	<Engine/Core/Math/Math.h>
+	<Engine/Core/GlobalTypes.h>
+	<boost/shared_ptr.hpp>
+
+1521977305 /home/hanno/development/Arkanoid/Source/Engine/Entity/EntitySystem.h
+	<memory>
+	<vector>
+	<Engine/Core/GlobalTypes.h>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/EngineSystems.h
+	<memory>
+	<Engine/SystemsInclude_fwd.h>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/SystemsInclude_fwd.h
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/Entity/World.h
+	<memory>
+	<vector>
+	<Engine/Core/Math/Math.h>
+	<boost/shared_ptr.hpp>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Arkanoid/WorldGenerator.h
+	<memory>
+	<string>
+	<boost/shared_ptr.hpp>
+
+1521975851 source:/home/hanno/development/Arkanoid/Source/Arkanoid/ArkanoidFactory.cpp
+	"ArkanoidFactory.h"
+	<Arkanoid/Paddle.h>
+	<Arkanoid/Ball.h>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Arkanoid/Paddle.h
+	<vector>
+	<Engine/Core/GlobalTypes.h>
+	<Engine/Core/Math/Math.h>
+	<Engine/Entity/Entity.h>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/Entity/Entity.h
+	<memory>
+
+1521974123 /home/hanno/development/Arkanoid/Source/Arkanoid/Ball.h
+	<vector>
+	<Engine/Core/GlobalTypes.h>
+	<Engine/Core/Math/Math.h>
+	<Engine/Entity/Entity.h>
+
+1521974123 source:/home/hanno/development/Arkanoid/Source/Arkanoid/Ball.cpp
+	"Ball.h"
+	<iostream>
+	<functional>
+	<Engine/Engine.h>
+	<Engine/Graphics/Visual.h>
+
+1521974123 source:/home/hanno/development/Arkanoid/Source/Arkanoid/Paddle.cpp
+	"Paddle.h"
+	<iostream>
+	<functional>
+	<Engine/Engine.h>
+	<Engine/Input/InputCodes.h>
+	<Engine/Input/TextBuffer.h>
+	<Engine/Graphics/Visual.h>
+	<Engine/Graphics/VisualText.h>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/Input/TextBuffer.h
+	<memory>
+	<vector>
+	<Engine/Core/GlobalTypes.h>
+
+1521633645 source:/home/hanno/development/Arkanoid/Source/Arkanoid/WorldGenerator.cpp
+	"WorldGenerator.h"
+	<iostream>
+	<Engine/Engine.h>
+	<Engine/Entity/World.h>
+	<Engine/Entity/Entity.h>
+	<Arkanoid/ArkanoidFactory.h>
+	<boost/make_shared.hpp>
+
+1521976518 source:/home/hanno/development/Arkanoid/Source/Engine/AppBase.cpp
+	"AppBase.h"
+	<iostream>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<Engine/EngineSystems.h>
+	<Engine/Input/InputSystem.h>
+	<Engine/Graphics/VisualSystem.h>
+
+1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Core/Math/MathHelpers.cpp
+	"MathHelpers.h"
+
+1521977121 /home/hanno/development/Arkanoid/Source/Engine/Core/Math/MathHelpers.h
+	<Engine/Core/Math/Math.h>
+
+1521977174 source:/home/hanno/development/Arkanoid/Source/Engine/EngineSystems.cpp
+	"EngineSystems.h"
+	<iostream>
+	<SFML/Graphics.hpp>
+	<Engine/SystemsInclude.h>
+
+1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Entity/Entity.cpp
+	"Entity.h"
+	<iostream>
+	<assert.h>
+	<Engine/EngineSystems.h>
+
+1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Entity/EntityFactory.cpp
+	"EntityFactory.h"
+	<iostream>
+	<Engine/Core/GlobalTypes.h>
+	<Engine/Entity/Entity.h>
+
+1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Entity/EntitySystem.cpp
+	"EntitySystem.h"
+	<Engine/Entity/World.h>
+	<iostream>
+	<vector>
+
+1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Entity/World.cpp
+	"World.h"
+	<iostream>
+	<Engine/Entity/Entity.h>
+	<Engine/EngineSystems.h>
+
+1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/Visual.cpp
+	"Visual.h"
+	<iostream>
+	<Engine/Graphics/VisualSystem.h>
+
+1521974123 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShape.cpp
+	"VisualShape.h"
+	<iostream>
+	<Engine/Graphics/VisualSystem.h>
+
+1521974123 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShape.h
+	<memory>
+	<Engine/Core/Math/Math.h>
+	<Engine/Core/GlobalTypes.h>
+	<SFML/Graphics.hpp>
+
+1521977443 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualSystem.cpp
+	"VisualSystem.h"
+	<iostream>
+	<vector>
+	<Engine/Graphics/VisualText.h>
+	<SFML/Graphics.hpp>
+
+1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualText.cpp
+	"VisualText.h"
+	<iostream>
+	<Engine/Graphics/VisualSystem.h>
+
+1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Input/InputListener.cpp
+	"InputListener.h"
+	<iostream>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/Input/InputListener.h
+	<Engine/Core/Math/Math.h>
+	<Engine/Input/InputCodes.h>
+
+1521977467 source:/home/hanno/development/Arkanoid/Source/Engine/Input/InputSystem.cpp
+	"InputSystem.h"
+	<iostream>
+	<Engine/Core/GlobalTypes.h>
+	<Engine/Input/TextBuffer.h>
+
+1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Input/TextBuffer.cpp
+	"TextBuffer.h"
+	<iostream>
+	<Engine/Input/InputSystem.h>
+
+1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Sound/Sound.cpp
+	"Sound.h"
+	<iostream>
+
+1521633645 /home/hanno/development/Arkanoid/Source/Engine/Sound/Sound.h
+	<memory>
+	<Engine/Core/GlobalTypes.h>
+
+1521977717 source:/home/hanno/development/Arkanoid/Source/main.cpp
+	<iostream>
+	<Engine/Core/Math/MathHelpers.h>
+	<Engine/AppBase.h>
+	<Engine/Input/InputSystem.h>
+	<Arkanoid/Arkanoid.h>
+
+1521977544 source:/home/hanno/development/Arkanoid/Source/Engine/Sound/SoundSystem.cpp
+	"SoundSystem.h"
+	<iostream>
+	<SFML/Audio.hpp>
+	<Engine/Sound/Sound.h>
+
