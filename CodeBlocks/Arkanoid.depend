@@ -581,7 +581,7 @@
 1521977406 /home/hanno/development/Arkanoid/Source/Engine/Core/ComponentHandler.h
 	<Engine/Core/GlobalTypes.h>
 
-1521975701 /home/hanno/development/Arkanoid/Source/Engine/Core/GlobalTypes.h
+1521988005 /home/hanno/development/Arkanoid/Source/Engine/Core/GlobalTypes.h
 	<boost/shared_ptr.hpp>
 	<boost/weak_ptr.hpp>
 
@@ -786,7 +786,7 @@
 	<memory>
 	<Engine/Core/GlobalTypes.h>
 
-1521977717 source:/home/hanno/development/Arkanoid/Source/main.cpp
+1521977783 source:/home/hanno/development/Arkanoid/Source/main.cpp
 	<iostream>
 	<Engine/Core/Math/MathHelpers.h>
 	<Engine/AppBase.h>
