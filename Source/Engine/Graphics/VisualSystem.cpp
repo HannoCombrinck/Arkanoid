@@ -56,7 +56,7 @@ namespace graphics {
 		for (uint i = 0U; i < uSize; ++i)
 			aData[i].update(fDT);*/
 
-		m_upVisualHandler->foreach([fDT](Visual& v) {
+		VisualHandler().foreach([fDT](Visual& v) {
 			v.update(fDT);
 		});
 	}
@@ -73,7 +73,7 @@ namespace graphics {
 
 		// Draw sprites
 		auto pWindow = m_pSFML->pWindow;
-		m_upVisualHandler->foreach([pWindow](Visual& v) {
+		VisualHandler().foreach([pWindow](Visual& v) {
 			pWindow->draw(v.m_Sprite);
 		});
 
@@ -98,7 +98,7 @@ namespace graphics {
 		m_pSFML->text.setPosition(150.0f, 35.0f);
 		m_pSFML->pWindow->draw(m_pSFML->text);
 
-		m_upVisualTextHandler->foreach([pWindow](VisualText& vt) {
+		VisualTextHandler().foreach([pWindow](VisualText& vt) {
 			pWindow->draw(vt.m_Text);
 		});
 		//////

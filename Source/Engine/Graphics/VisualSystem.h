@@ -24,8 +24,8 @@ namespace graphics
 		VisualSystem(sf::RenderWindow *pWindow);
 		~VisualSystem();
 
-		ADD_COMPONENT(Visual)
-		ADD_COMPONENT(VisualText)
+		ADD_COMPONENT(VisualSystem, Visual)
+		ADD_COMPONENT(VisualSystem, VisualText)
 
 	private:
 		// EngineSystems interface

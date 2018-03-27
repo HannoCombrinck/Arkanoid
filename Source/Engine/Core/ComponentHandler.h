@@ -2,13 +2,15 @@
 
 #include <Engine/Core/GlobalTypes.h>
 
-#define ADD_COMPONENT(ComponentName) \
+#define ADD_COMPONENT(SystemName, ComponentName) \
 public: \
 	uint create##ComponentName() { return m_up##ComponentName##Handler->create(); } \
 	ComponentName& modify##ComponentName(uint uHandle) { return m_up##ComponentName##Handler->modify(uHandle); } \
 	void remove##ComponentName(uint uHandle) { m_up##ComponentName##Handler->remove(uHandle); } \
 private: \
-	typedef ComponentHandler<ComponentName, VisualSystem>  ComponentName##_handler_type; \
+	friend class SystemName; \
+	typedef ComponentHandler<ComponentName, SystemName>  ComponentName##_handler_type; \
+	ComponentName##_handler_type& ComponentName##Handler() { return *m_up##ComponentName##Handler; } \
 	std::unique_ptr<ComponentName##_handler_type> m_up##ComponentName##Handler; \
 public:
 
