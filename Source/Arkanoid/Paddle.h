@@ -22,14 +22,11 @@ private:
 	virtual void onUpdate(float fDT) override;
 	// }
 
-	// Paddle internals
-	// {
 	void getInputs();
 	void handleTextInput();
 	void processCommand();
 	void updateState();
 	void applyState();
-	// }
 
 	Vec2 m_vPos;
 	bool m_bLeft;
