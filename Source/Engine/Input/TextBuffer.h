@@ -18,6 +18,7 @@ namespace input
 		~TextBuffer();
 
 		void init(InputSystem* pInputSystem);
+		void created();
 		void clean();
 
 		const std::vector<char>& getBuffer() const;

@@ -34,9 +34,9 @@ private:
 	bool m_bUp;
 	bool m_bDown;
 	bool m_bAction;
-	
+
 	uint m_uVisual;
-	uint m_uVisual2;
+	uint m_uVisualBox;
 	uint m_uSound;
 	uint m_uVisualText;
 

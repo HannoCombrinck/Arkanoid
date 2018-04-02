@@ -26,6 +26,7 @@ namespace graphics
 		~Visual();
 
 		void init(VisualSystem* pVisualSystem);
+		void created();
 		bool alive() const;
 		void clean();
 

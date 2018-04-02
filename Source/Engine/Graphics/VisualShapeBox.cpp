@@ -51,11 +51,24 @@ namespace graphics {
         return Vec4(vColour.r, vColour.g, vColour.b, vColour.a);
     }
 
+    void VisualShapeBox::onInit(VisualSystem* pVisualSystem)
+    {
+    }
+
+    void VisualShapeBox::onCreated()
+    {
+    }
+
+    void VisualShapeBox::onClean()
+    {
+    }
+
 	void VisualShapeBox::onUpdate(float fDT)
 	{
 	}
 
 	void VisualShapeBox::onDraw(sf::RenderWindow& window)
 	{
+        window.draw(m_Rectangle);
 	}
 }

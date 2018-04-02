@@ -74,6 +74,8 @@
 		<Unit filename="../Source/Engine/Graphics/VisualShape.h" />
 		<Unit filename="../Source/Engine/Graphics/VisualShapeBox.cpp" />
 		<Unit filename="../Source/Engine/Graphics/VisualShapeBox.h" />
+		<Unit filename="../Source/Engine/Graphics/VisualShapeCircle.cpp" />
+		<Unit filename="../Source/Engine/Graphics/VisualShapeCircle.h" />
 		<Unit filename="../Source/Engine/Graphics/VisualSystem.cpp" />
 		<Unit filename="../Source/Engine/Graphics/VisualSystem.h" />
 		<Unit filename="../Source/Engine/Graphics/VisualText.cpp" />

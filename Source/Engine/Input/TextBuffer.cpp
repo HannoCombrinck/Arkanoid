@@ -23,6 +23,10 @@ namespace input {
 		m_pInputSystem = pInputSystem;
 	}
 
+	void TextBuffer::created()
+	{
+	}
+
 	void TextBuffer::clean()
 	{
 		m_Buffer.clear();

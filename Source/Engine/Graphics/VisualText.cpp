@@ -8,7 +8,7 @@ using namespace std;
 using namespace sf;
 
 namespace graphics {
-	
+
 	VisualText::VisualText()
 		: m_pVisualSystem(0)
 		, m_bAlive(false)
@@ -26,6 +26,10 @@ namespace graphics {
 	void VisualText::init(VisualSystem* pVisualSystem)
 	{
 		m_pVisualSystem = pVisualSystem;
+	}
+
+	void VisualText::created()
+	{
 	}
 
 	bool VisualText::alive() const
@@ -51,7 +55,7 @@ namespace graphics {
 	{
 		if (!alive())
 			return;
-		
+
 		if (m_bPosChanged)
 		{
 			m_Text.setPosition(m_vPos.x, m_vPos.y);
@@ -63,7 +67,7 @@ namespace graphics {
 			m_bSizeChanged = false;
 		}
 	}
-	
+
 	void VisualText::setText(const std::string & sString)
 	{
 		m_sString = sString;
@@ -74,7 +78,7 @@ namespace graphics {
 	{
 		m_bPosChanged = true;
 		m_vPos = vPos;
-		
+
 	}
 
 	void VisualText::setSize(const Vec2 & vSize)

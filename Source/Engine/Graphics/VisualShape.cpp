@@ -22,6 +22,13 @@ namespace graphics {
 	void VisualShape::init(VisualSystem* pVisualSystem)
 	{
 		m_pVisualSystem = pVisualSystem;
+		onInit(pVisualSystem);
+	}
+
+	void VisualShape::created()
+	{
+        m_bAlive = true;
+        onCreated();
 	}
 
 	bool VisualShape::alive() const
@@ -32,17 +39,20 @@ namespace graphics {
 	void VisualShape::clean()
 	{
 		m_bAlive = false;
+		onClean();
 	}
 
 	void VisualShape::update(float fDT)
 	{
 		if (!alive())
 			return;
+
+        onUpdate(fDT);
 	}
 
     void VisualShape::draw(sf::RenderWindow& window)
     {
-        //window.draw(
+        onDraw(window);
     }
 
 }

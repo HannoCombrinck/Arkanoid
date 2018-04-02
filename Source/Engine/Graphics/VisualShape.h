@@ -21,6 +21,7 @@ namespace graphics
 		virtual ~VisualShape();
 
 		void init(VisualSystem* pVisualSystem);
+		void created();
 		bool alive() const;
 		void clean();
 		void update(float fDT);
@@ -28,6 +29,7 @@ namespace graphics
 
 	private:
         virtual void onInit(VisualSystem* pVisualSystem) {}
+        virtual void onCreated() {}
         virtual void onClean() {}
 		virtual void onUpdate(float fDT) {}
 		virtual void onDraw(sf::RenderWindow& window) {}

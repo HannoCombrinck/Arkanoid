@@ -22,6 +22,7 @@ Paddle::Paddle()
 	, m_bDown(false)
 	, m_bAction(false)
 	, m_uVisual(~0)
+	, m_uVisualBox(~0)
 	, m_bInputMode(false)
 	, m_sCommand("")
 {
@@ -29,8 +30,8 @@ Paddle::Paddle()
 
 Paddle::~Paddle()
 {
-	engine().visuals().removeVisual(m_uVisual2);
 	engine().visuals().removeVisual(m_uVisual);
+	engine().visuals().removeVisualShapeBox(m_uVisualBox);
 	engine().sounds().removeSound(m_uSound);
 	engine().visuals().removeVisualText(m_uVisualText);
 	engine().inputs().removeTextBuffer(m_uTextBuffer);
@@ -43,12 +44,12 @@ void Paddle::onInit()
 	m_uVisual = vs.createVisual();
 	vs.modifyVisual(m_uVisual).loadSprite("../Data/Textures/test.tga");
 
-	m_uVisual2 = vs.createVisual();
-	vs.modifyVisual(m_uVisual2).loadSprite("../Data/Textures/test2.tga");
-	vs.modifyVisual(m_uVisual2).setSize(Vec2(0.25f, 0.25f));
+    m_uVisualBox = vs.createVisualShapeBox();
+    vs.modifyVisualShapeBox(m_uVisualBox).setSize(Vec2(100.0f, 20.0f));
+    vs.modifyVisualShapeBox(m_uVisualBox).setPosition(Vec2(100.0f, 100.0f));
 
 	m_uSound = engine().sounds().createSound("../Data/Sounds/beep.wav");
-	
+
 	m_uVisualText = vs.createVisualText();
 	vs.modifyVisualText(m_uVisualText).setText("Temp");
 	vs.modifyVisualText(m_uVisualText).loadFont("../Data/Fonts/impact.ttf");
@@ -100,7 +101,7 @@ void Paddle::handleTextInput()
 					m_sCommand += ch;
 				else
 					m_sCommand = m_sCommand.substr(0U, m_sCommand.length() - 1);
-				
+
 				engine().visuals().modifyVisualText(m_uVisualText).setText(m_sCommand);
 			}
 			else
@@ -142,6 +143,4 @@ void Paddle::applyState()
 {
 	auto& rVisual = engine().visuals().modifyVisual(m_uVisual);
 	rVisual.setPosition(m_vPos);
-	auto& rVisual2 = engine().visuals().modifyVisual(m_uVisual2);
-	rVisual2.setPosition(m_vPos);
 }

@@ -578,28 +578,30 @@
 	<Engine/Input/InputCodes.h>
 	<boost/shared_ptr.hpp>
 
-1522596692 /home/hanno/development/Arkanoid/Source/Engine/Core/ComponentHandler.h
+1522661906 /home/hanno/development/Arkanoid/Source/Engine/Core/ComponentHandler.h
 	<Engine/Core/GlobalTypes.h>
 
 1521988005 /home/hanno/development/Arkanoid/Source/Engine/Core/GlobalTypes.h
 	<boost/shared_ptr.hpp>
 	<boost/weak_ptr.hpp>
 
-1522342916 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualSystem.h
+1522655399 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualSystem.h
 	<memory>
 	<vector>
 	<Engine/Core/ComponentHandler.h>
 	<Engine/Core/GlobalTypes.h>
 	<Engine/Graphics/Visual.h>
+	<Engine/Graphics/VisualShapeBox.h>
+	<Engine/Graphics/VisualShapeCircle.h>
 	<Engine/Graphics/VisualText.h>
 
-1521974123 /home/hanno/development/Arkanoid/Source/Engine/Graphics/Visual.h
+1522661929 /home/hanno/development/Arkanoid/Source/Engine/Graphics/Visual.h
 	<memory>
 	<Engine/Core/Math/Math.h>
 	<Engine/Core/GlobalTypes.h>
 	<SFML/Graphics.hpp>
 
-1521974123 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualText.h
+1522661958 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualText.h
 	<memory>
 	<Engine/Core/Math/Math.h>
 	<Engine/Core/GlobalTypes.h>
@@ -640,7 +642,7 @@
 	<Arkanoid/Paddle.h>
 	<Arkanoid/Ball.h>
 
-1522342916 /home/hanno/development/Arkanoid/Source/Arkanoid/Paddle.h
+1522655221 /home/hanno/development/Arkanoid/Source/Arkanoid/Paddle.h
 	<vector>
 	<Engine/Core/GlobalTypes.h>
 	<Engine/Core/Math/Math.h>
@@ -662,7 +664,7 @@
 	<Engine/Engine.h>
 	<Engine/Graphics/Visual.h>
 
-1521974123 source:/home/hanno/development/Arkanoid/Source/Arkanoid/Paddle.cpp
+1522662286 source:/home/hanno/development/Arkanoid/Source/Arkanoid/Paddle.cpp
 	"Paddle.h"
 	<iostream>
 	<functional>
@@ -672,7 +674,7 @@
 	<Engine/Graphics/Visual.h>
 	<Engine/Graphics/VisualText.h>
 
-1521633645 /home/hanno/development/Arkanoid/Source/Engine/Input/TextBuffer.h
+1522662224 /home/hanno/development/Arkanoid/Source/Engine/Input/TextBuffer.h
 	<memory>
 	<vector>
 	<Engine/Core/GlobalTypes.h>
@@ -731,30 +733,30 @@
 	<Engine/Entity/Entity.h>
 	<Engine/EngineSystems.h>
 
-1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/Visual.cpp
+1522661946 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/Visual.cpp
 	"Visual.h"
 	<iostream>
 	<Engine/Graphics/VisualSystem.h>
 
-1522651124 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShape.cpp
+1522662531 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShape.cpp
 	"VisualShape.h"
 	<iostream>
 	<Engine/Graphics/VisualSystem.h>
 
-1522652843 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShape.h
+1522662486 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShape.h
 	<memory>
 	<Engine/Core/Math/Math.h>
 	<Engine/Core/GlobalTypes.h>
 	<SFML/Graphics.hpp>
 
-1522653606 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualSystem.cpp
+1522662261 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualSystem.cpp
 	"VisualSystem.h"
 	<iostream>
 	<vector>
 	<Engine/Graphics/VisualText.h>
 	<SFML/Graphics.hpp>
 
-1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualText.cpp
+1522661971 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualText.cpp
 	"VisualText.h"
 	<iostream>
 	<Engine/Graphics/VisualSystem.h>
@@ -773,7 +775,7 @@
 	<Engine/Core/GlobalTypes.h>
 	<Engine/Input/TextBuffer.h>
 
-1521633645 source:/home/hanno/development/Arkanoid/Source/Engine/Input/TextBuffer.cpp
+1522662220 source:/home/hanno/development/Arkanoid/Source/Engine/Input/TextBuffer.cpp
 	"TextBuffer.h"
 	<iostream>
 	<Engine/Input/InputSystem.h>
@@ -796,12 +798,21 @@
 	<SFML/Audio.hpp>
 	<Engine/Sound/Sound.h>
 
-1522653410 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShapeBox.cpp
+1522662458 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShapeBox.cpp
 	"VisualShapeBox.h"
 	<iostream>
 	<Engine/Graphics/VisualSystem.h>
 
-1522653135 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShapeBox.h
+1522661992 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShapeBox.h
 	<memory>
 	<Engine/Graphics/VisualShape.h>
+
+1522662046 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShapeCircle.h
+	<memory>
+	<Engine/Graphics/VisualShape.h>
+
+1522662076 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShapeCircle.cpp
+	"VisualShapeCircle.h"
+	<iostream>
+	<Engine/Graphics/VisualSystem.h>
 

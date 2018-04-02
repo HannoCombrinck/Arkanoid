@@ -12,29 +12,26 @@ namespace graphics
 
 namespace graphics
 {
-	class VisualShapeBox : public VisualShape
+	class VisualShapeCircle : public VisualShape
 	{
 	public:
-		VisualShapeBox();
-		virtual ~VisualShapeBox();
+		VisualShapeCircle();
+		virtual ~VisualShapeCircle();
 
 		void setPosition(const Vec2& vPos);
 		const Vec2& getPosition() const;
 
-		void setSize(const Vec2& vSize);
-		const Vec2& getSize() const;
+		void setRadius(float fRadius);
+		float getRadius() const;
 
 		void setColour(const Vec4& vColour);
 		const Vec4& getColour() const;
 
 	private:
-        void onInit(VisualSystem* pVisualSystem) override;
         void onCreated() override;
-        void onClean() override;
         void onUpdate(float fDT) override;
         void onDraw(sf::RenderWindow& window) override;
 
-        sf::RectangleShape m_Rectangle;
-
+        sf::CircleShape m_Circle;
 	};
 }

@@ -5,6 +5,8 @@
 #include <Engine/Core/ComponentHandler.h>
 #include <Engine/Core/GlobalTypes.h>
 #include <Engine/Graphics/Visual.h>
+#include <Engine/Graphics/VisualShapeBox.h>
+#include <Engine/Graphics/VisualShapeCircle.h>
 #include <Engine/Graphics/VisualText.h>
 
 namespace sf
@@ -25,6 +27,8 @@ namespace graphics
 		~VisualSystem();
 
 		ADD_COMPONENT(VisualSystem, Visual)
+		ADD_COMPONENT(VisualSystem, VisualShapeBox)
+		ADD_COMPONENT(VisualSystem, VisualShapeCircle)
 		ADD_COMPONENT(VisualSystem, VisualText)
 
 	private:

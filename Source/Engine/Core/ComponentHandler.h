@@ -38,7 +38,9 @@ public:
 	uint create()
 	{
 		assert(m_uNext < m_uSize);
-		return m_aIndices[m_uNext++];
+		auto uIndex = m_aIndices[m_uNext++];
+        m_aComponents[uIndex].created();
+		return uIndex;
 	}
 
 	COMPONENT_TYPE& modify(uint uHandle)

@@ -41,6 +41,8 @@ namespace graphics {
 		m_pSFML->text.setCharacterSize(20U);
 
 		CREATE_COMPONENT_HANDLER(Visual, 20U);
+		CREATE_COMPONENT_HANDLER(VisualShapeBox, 20U);
+		CREATE_COMPONENT_HANDLER(VisualShapeCircle, 20U);
 		CREATE_COMPONENT_HANDLER(VisualText, 20U);
 	}
 
@@ -78,6 +80,10 @@ namespace graphics {
 		auto pWindow = m_pSFML->pWindow;
 		VisualHandler().foreach([pWindow](Visual& v) {
 			pWindow->draw(v.m_Sprite);
+		});
+
+		VisualShapeBoxHandler().foreach([pWindow](VisualShapeBox& v) {
+            v.draw(*pWindow);
 		});
 
 		m_pSFML->text.setString(to_string(1.0f / m_fDeltaTimeSmoothed));
