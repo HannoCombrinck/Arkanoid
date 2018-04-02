@@ -8,7 +8,6 @@ public: \
 	ComponentName& modify##ComponentName(uint uHandle) { return m_up##ComponentName##Handler->modify(uHandle); } \
 	void remove##ComponentName(uint uHandle) { m_up##ComponentName##Handler->remove(uHandle); } \
 private: \
-	friend class SystemName; \
 	typedef ComponentHandler<ComponentName, SystemName>  ComponentName##_handler_type; \
 	ComponentName##_handler_type& ComponentName##Handler() { return *m_up##ComponentName##Handler; } \
 	std::unique_ptr<ComponentName##_handler_type> m_up##ComponentName##Handler; \

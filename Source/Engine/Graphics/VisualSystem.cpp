@@ -21,16 +21,19 @@ namespace graphics {
 	};
 
 	VisualSystem::VisualSystem(RenderWindow *pWindow)
-		: m_fDeltaTime(0.0f)
-		, m_fDeltaTimeSmoothed(0.0f)
-		, m_bVSync(true)
+        : m_bVSync(true)
 		, m_bFullscreen(false)
+		, m_fDeltaTime(0.0f)
+		, m_fDeltaTimeSmoothed(0.0f)
+
 	{
 		m_pSFML = new SFMLMembers;
 		m_pSFML->pWindow = pWindow;
 
 		m_pSFML->pWindow->create(VideoMode(800U, 600U, 32U), "Test");
 		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
+		auto uFrameLimit = m_bVSync ? 60U : 0U;
+        m_pSFML->pWindow->setFramerateLimit(uFrameLimit);
 
 		m_pSFML->font.loadFromFile("../Data/Fonts/impact.ttf");
 		m_pSFML->text.move(10.0f, 5.0f);
@@ -122,12 +125,16 @@ namespace graphics {
 			m_pSFML->pWindow->create(VideoMode(800U, 600U, 32U), "Test");
 
 		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
+		auto uFrameLimit = m_bVSync ? 60U : 0U;
+        m_pSFML->pWindow->setFramerateLimit(uFrameLimit);
 	}
 
 	void VisualSystem::toggleVSync()
 	{
 		m_bVSync = !m_bVSync;
 		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
+		auto uFrameLimit = m_bVSync ? 60U : 0U;
+        m_pSFML->pWindow->setFramerateLimit(uFrameLimit);
 	}
 
 }

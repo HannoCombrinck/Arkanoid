@@ -578,14 +578,14 @@
 	<Engine/Input/InputCodes.h>
 	<boost/shared_ptr.hpp>
 
-1521977406 /home/hanno/development/Arkanoid/Source/Engine/Core/ComponentHandler.h
+1522596692 /home/hanno/development/Arkanoid/Source/Engine/Core/ComponentHandler.h
 	<Engine/Core/GlobalTypes.h>
 
 1521988005 /home/hanno/development/Arkanoid/Source/Engine/Core/GlobalTypes.h
 	<boost/shared_ptr.hpp>
 	<boost/weak_ptr.hpp>
 
-1521977324 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualSystem.h
+1522342916 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualSystem.h
 	<memory>
 	<vector>
 	<Engine/Core/ComponentHandler.h>
@@ -640,7 +640,7 @@
 	<Arkanoid/Paddle.h>
 	<Arkanoid/Ball.h>
 
-1521633645 /home/hanno/development/Arkanoid/Source/Arkanoid/Paddle.h
+1522342916 /home/hanno/development/Arkanoid/Source/Arkanoid/Paddle.h
 	<vector>
 	<Engine/Core/GlobalTypes.h>
 	<Engine/Core/Math/Math.h>
@@ -686,7 +686,7 @@
 	<Arkanoid/ArkanoidFactory.h>
 	<boost/make_shared.hpp>
 
-1521976518 source:/home/hanno/development/Arkanoid/Source/Engine/AppBase.cpp
+1522653677 source:/home/hanno/development/Arkanoid/Source/Engine/AppBase.cpp
 	"AppBase.h"
 	<iostream>
 	<SFML/Graphics.hpp>
@@ -736,18 +736,18 @@
 	<iostream>
 	<Engine/Graphics/VisualSystem.h>
 
-1521974123 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShape.cpp
+1522651124 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShape.cpp
 	"VisualShape.h"
 	<iostream>
 	<Engine/Graphics/VisualSystem.h>
 
-1521974123 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShape.h
+1522652843 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShape.h
 	<memory>
 	<Engine/Core/Math/Math.h>
 	<Engine/Core/GlobalTypes.h>
 	<SFML/Graphics.hpp>
 
-1521977443 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualSystem.cpp
+1522653606 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualSystem.cpp
 	"VisualSystem.h"
 	<iostream>
 	<vector>
@@ -786,16 +786,22 @@
 	<memory>
 	<Engine/Core/GlobalTypes.h>
 
-1521977783 source:/home/hanno/development/Arkanoid/Source/main.cpp
+1522571285 source:/home/hanno/development/Arkanoid/Source/main.cpp
 	<iostream>
-	<Engine/Core/Math/MathHelpers.h>
-	<Engine/AppBase.h>
-	<Engine/Input/InputSystem.h>
 	<Arkanoid/Arkanoid.h>
 
-1521977544 source:/home/hanno/development/Arkanoid/Source/Engine/Sound/SoundSystem.cpp
+1522571131 source:/home/hanno/development/Arkanoid/Source/Engine/Sound/SoundSystem.cpp
 	"SoundSystem.h"
 	<iostream>
 	<SFML/Audio.hpp>
 	<Engine/Sound/Sound.h>
+
+1522653410 source:/home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShapeBox.cpp
+	"VisualShapeBox.h"
+	<iostream>
+	<Engine/Graphics/VisualSystem.h>
+
+1522653135 /home/hanno/development/Arkanoid/Source/Engine/Graphics/VisualShapeBox.h
+	<memory>
+	<Engine/Graphics/VisualShape.h>
 

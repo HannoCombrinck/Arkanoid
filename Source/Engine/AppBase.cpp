@@ -127,6 +127,8 @@ void AppBase::handleEvents()
 			engine().inputs().mbReleased(btn);
 		}
 		break;
+		default:
+		break;
 		}
 	}
 

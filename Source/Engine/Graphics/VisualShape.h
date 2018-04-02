@@ -12,53 +12,28 @@ namespace graphics
 	class VisualSystem;
 }
 
-namespace sf
-{
-	class RenderWindow;
-}
-
 namespace graphics
 {
 	class VisualShape
 	{
 	public:
-		enum EShapeType
-		{
-			SHAPE_LINE,
-			SHAPE_BOX,
-			SHAPE_CIRCLE,
-			SHAPE_MAX_TYPES
-		};
-
 		VisualShape();
-		~VisualShape();
+		virtual ~VisualShape();
 
 		void init(VisualSystem* pVisualSystem);
 		bool alive() const;
 		void clean();
 		void update(float fDT);
-
-		void setType(EShapeType eType);
-		void setPosition(const Vec2& vPos);
-		void setSize(const Vec2& vSize);
+		void draw(sf::RenderWindow& window);
 
 	private:
-		// VisualSystem interface
-		// {
-		friend class VisualSystem;
-		// }
+        virtual void onInit(VisualSystem* pVisualSystem) {}
+        virtual void onClean() {}
+		virtual void onUpdate(float fDT) {}
+		virtual void onDraw(sf::RenderWindow& window) {}
 
+		friend class VisualSystem;
 		VisualSystem* m_pVisualSystem;
 		bool m_bAlive;
-		uint m_uSprite;
-		
-		sf::Sprite m_Sprite;
-
-		EShapeType m_eType;
-		Vec2 m_vPos;
-		bool m_bPosChanged;
-		Vec2 m_vSize;
-		bool m_bSizeChanged;
-
 	};
 }

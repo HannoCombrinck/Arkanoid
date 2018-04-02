@@ -1,7 +1,4 @@
 #include <iostream>
-#include <Engine/Core/Math/MathHelpers.h>
-#include <Engine/AppBase.h>
-#include <Engine/Input/InputSystem.h>
 #include <Arkanoid/Arkanoid.h>
 
 using namespace std;
