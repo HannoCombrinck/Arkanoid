@@ -23,7 +23,7 @@ namespace graphics {
         m_Circle.setPosition(vPos.x, vPos.y);
     }
 
-    const Vec2& VisualShapeCircle::getPosition() const
+    Vec2 VisualShapeCircle::getPosition() const
     {
         auto vPos = m_Circle.getPosition();
         return Vec2(vPos.x, vPos.y);
@@ -39,15 +39,18 @@ namespace graphics {
         return m_Circle.getRadius();
     }
 
-    void VisualShapeCircle::setColour(const Vec4& vColour)
+    void VisualShapeCircle::setColour(uint r, uint g, uint b, uint a)
     {
-        m_Circle.setFillColor(Color(vColour.x, vColour.y, vColour.z, vColour.w));
+        m_Circle.setFillColor(Color(r, g, b, a));
     }
 
-    const Vec4& VisualShapeCircle::getColour() const
+    void VisualShapeCircle::getColour(uint& r, uint& g, uint& b, uint& a) const
     {
-        auto vColour = m_Circle.getFillColor();
-        return Vec4(vColour.r, vColour.g, vColour.b, vColour.a);
+        auto Colour = m_Circle.getFillColor();
+		r = Colour.r;
+		g = Colour.g;
+		b = Colour.b;
+		a = Colour.a;
     }
 
     void VisualShapeCircle::onCreated()

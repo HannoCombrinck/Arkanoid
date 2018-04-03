@@ -19,13 +19,13 @@ namespace graphics
 		virtual ~VisualShapeBox();
 
 		void setPosition(const Vec2& vPos);
-		const Vec2& getPosition() const;
+		Vec2 getPosition() const;
 
 		void setSize(const Vec2& vSize);
-		const Vec2& getSize() const;
+		Vec2 getSize() const;
 
-		void setColour(const Vec4& vColour);
-		const Vec4& getColour() const;
+		void setColour(uint r, uint g, uint b, uint a);
+		void getColour(uint& r, uint& g, uint& b, uint& a) const;
 
 	private:
         void onInit(VisualSystem* pVisualSystem) override;

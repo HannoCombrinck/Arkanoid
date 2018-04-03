@@ -23,7 +23,7 @@ namespace graphics {
         m_Rectangle.setPosition(vPos.x, vPos.y);
     }
 
-    const Vec2& VisualShapeBox::getPosition() const
+    Vec2 VisualShapeBox::getPosition() const
     {
         auto vPos = m_Rectangle.getPosition();
         return Vec2(vPos.x, vPos.y);
@@ -34,22 +34,25 @@ namespace graphics {
         m_Rectangle.setSize(Vector2f(vSize.x, vSize.y));
     }
 
-    const Vec2& VisualShapeBox::getSize() const
+    Vec2 VisualShapeBox::getSize() const
     {
         auto vSize = m_Rectangle.getSize();
         return Vec2(vSize.x, vSize.y);
     }
 
-    void VisualShapeBox::setColour(const Vec4& vColour)
-    {
-        m_Rectangle.setFillColor(Color(vColour.x, vColour.y, vColour.z, vColour.w));
-    }
+	void VisualShapeBox::setColour(uint r, uint g, uint b, uint a)
+	{
+		m_Rectangle.setFillColor(Color(r, g, b, a));
+	}
 
-    const Vec4& VisualShapeBox::getColour() const
-    {
-        auto vColour = m_Rectangle.getFillColor();
-        return Vec4(vColour.r, vColour.g, vColour.b, vColour.a);
-    }
+	void VisualShapeBox::getColour(uint& r, uint& g, uint& b, uint& a) const
+	{
+		auto Colour = m_Rectangle.getFillColor();
+		r = Colour.r;
+		g = Colour.g;
+		b = Colour.b;
+		a = Colour.a;
+	}
 
     void VisualShapeBox::onInit(VisualSystem* pVisualSystem)
     {

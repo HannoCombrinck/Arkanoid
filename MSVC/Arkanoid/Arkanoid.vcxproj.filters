@@ -97,6 +97,12 @@
     <ClCompile Include="..\..\Source\Engine\Graphics\VisualShape.cpp">
       <Filter>Header/Source Files\Engine\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Graphics\VisualShapeBox.cpp">
+      <Filter>Header/Source Files\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Graphics\VisualShapeCircle.cpp">
+      <Filter>Header/Source Files\Engine\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h">
@@ -181,6 +187,12 @@
       <Filter>Header/Source Files\Arkanoid</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Engine\Graphics\VisualShape.h">
+      <Filter>Header/Source Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Graphics\VisualShapeBox.h">
+      <Filter>Header/Source Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Graphics\VisualShapeCircle.h">
       <Filter>Header/Source Files\Engine\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
