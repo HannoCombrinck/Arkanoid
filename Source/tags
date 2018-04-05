@@ -1,0 +1,576 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADD_COMPONENT	Engine/Core/ComponentHandler.h	5;"	d
+AppBase	Engine/AppBase.cpp	/^AppBase::AppBase()$/;"	f	class:AppBase
+AppBase	Engine/AppBase.h	/^class AppBase$/;"	c
+Arkanoid	Arkanoid/Arkanoid.cpp	/^Arkanoid::Arkanoid()$/;"	f	class:Arkanoid
+Arkanoid	Arkanoid/Arkanoid.h	/^class Arkanoid : public AppBase$/;"	c
+ArkanoidFactory	Arkanoid/ArkanoidFactory.cpp	/^ArkanoidFactory::ArkanoidFactory()$/;"	f	class:ArkanoidFactory
+ArkanoidFactory	Arkanoid/ArkanoidFactory.h	/^class ArkanoidFactory : public entity::EntityFactory$/;"	c
+Ball	Arkanoid/Ball.cpp	/^Ball::Ball()$/;"	f	class:Ball
+Ball	Arkanoid/Ball.h	/^class Ball : public Entity$/;"	c
+CREATE_COMPONENT_HANDLER	Engine/Core/ComponentHandler.h	16;"	d
+Component	main backup.cpp	/^		Component() {}$/;"	f	class:game::Component
+Component	main backup.cpp	/^	class Component $/;"	c	namespace:game	file:
+ComponentHandler	Engine/Core/ComponentHandler.h	/^	ComponentHandler(SYSTEM_TYPE* pSystem, uint uInitialSize)$/;"	f	class:ComponentHandler
+ComponentHandler	Engine/Core/ComponentHandler.h	/^class ComponentHandler$/;"	c
+EPSILON	Engine/Core/Math/Math.h	/^	const float EPSILON = 1E-6f;$/;"	m	namespace:core
+EngineSystems	Engine/EngineSystems.cpp	/^EngineSystems::EngineSystems(RenderWindow* pWindow)$/;"	f	class:EngineSystems
+EngineSystems	Engine/EngineSystems.h	/^class EngineSystems$/;"	c
+Entity	Engine/Entity/Entity.cpp	/^	Entity::Entity()$/;"	f	class:entity::Entity
+Entity	Engine/Entity/Entity.h	/^	class Entity$/;"	c	namespace:entity
+EntityFactory	Engine/Entity/EntityFactory.cpp	/^	EntityFactory::EntityFactory()$/;"	f	class:entity::EntityFactory
+EntityFactory	Engine/Entity/EntityFactory.h	/^	class EntityFactory$/;"	c	namespace:entity
+EntitySystem	Engine/Entity/EntitySystem.cpp	/^	EntitySystem::EntitySystem()$/;"	f	class:entity::EntitySystem
+EntitySystem	Engine/Entity/EntitySystem.h	/^	class EntitySystem$/;"	c	namespace:entity
+GameObject	main backup.cpp	/^		GameObject() {}$/;"	f	class:game::GameObject
+GameObject	main backup.cpp	/^	class GameObject$/;"	c	namespace:game	file:
+GameState	Arkanoid/Arkanoid.h	/^	enum GameState$/;"	g	class:Arkanoid
+GameWorld	main backup.cpp	/^		GameWorld() {}$/;"	f	class:game::GameWorld
+GameWorld	main backup.cpp	/^	class GameWorld$/;"	c	namespace:game	file:
+Geometry	main backup.cpp	/^	Geometry() {}$/;"	f	class:Geometry
+Geometry	main backup.cpp	/^	Geometry(const string& s) : Node(s) {}$/;"	f	class:Geometry
+Geometry	main backup.cpp	/^class Geometry : public Node$/;"	c	file:
+InputListener	Engine/Input/InputListener.cpp	/^	InputListener::InputListener()$/;"	f	class:input::InputListener
+InputListener	Engine/Input/InputListener.h	/^	class InputListener$/;"	c	namespace:input
+InputSystem	Engine/Input/InputSystem.cpp	/^	InputSystem::InputSystem()$/;"	f	class:input::InputSystem
+InputSystem	Engine/Input/InputSystem.h	/^	class InputSystem$/;"	c	namespace:input
+KEY_A	Engine/Input/InputCodes.h	/^		KEY_A = 0,        \/\/ The A key$/;"	e	enum:input::KeyboardKey
+KEY_Add	Engine/Input/InputCodes.h	/^		KEY_Add,          \/\/ The + key$/;"	e	enum:input::KeyboardKey
+KEY_B	Engine/Input/InputCodes.h	/^		KEY_B,            \/\/ The B key$/;"	e	enum:input::KeyboardKey
+KEY_BackSlash	Engine/Input/InputCodes.h	/^		KEY_BackSlash,    \/\/ The \\ key$/;"	e	enum:input::KeyboardKey
+KEY_BackSpace	Engine/Input/InputCodes.h	/^		KEY_BackSpace,    \/\/ The Backspace key$/;"	e	enum:input::KeyboardKey
+KEY_C	Engine/Input/InputCodes.h	/^		KEY_C,            \/\/ The C key$/;"	e	enum:input::KeyboardKey
+KEY_Comma	Engine/Input/InputCodes.h	/^		KEY_Comma,        \/\/ The , key$/;"	e	enum:input::KeyboardKey
+KEY_D	Engine/Input/InputCodes.h	/^		KEY_D,            \/\/ The D key$/;"	e	enum:input::KeyboardKey
+KEY_Dash	Engine/Input/InputCodes.h	/^		KEY_Dash,         \/\/ The - key$/;"	e	enum:input::KeyboardKey
+KEY_Delete	Engine/Input/InputCodes.h	/^		KEY_Delete,       \/\/ The Delete key$/;"	e	enum:input::KeyboardKey
+KEY_Divide	Engine/Input/InputCodes.h	/^		KEY_Divide,       \/\/ The \/ key$/;"	e	enum:input::KeyboardKey
+KEY_Down	Engine/Input/InputCodes.h	/^		KEY_Down,         \/\/ Down arrow$/;"	e	enum:input::KeyboardKey
+KEY_E	Engine/Input/InputCodes.h	/^		KEY_E,            \/\/ The E key$/;"	e	enum:input::KeyboardKey
+KEY_End	Engine/Input/InputCodes.h	/^		KEY_End,          \/\/ The End key$/;"	e	enum:input::KeyboardKey
+KEY_Equal	Engine/Input/InputCodes.h	/^		KEY_Equal,        \/\/ The = key$/;"	e	enum:input::KeyboardKey
+KEY_Escape	Engine/Input/InputCodes.h	/^		KEY_Escape,       \/\/ The Escape key$/;"	e	enum:input::KeyboardKey
+KEY_F	Engine/Input/InputCodes.h	/^		KEY_F,            \/\/ The F key$/;"	e	enum:input::KeyboardKey
+KEY_F1	Engine/Input/InputCodes.h	/^		KEY_F1,           \/\/ The F1 key$/;"	e	enum:input::KeyboardKey
+KEY_F10	Engine/Input/InputCodes.h	/^		KEY_F10,          \/\/ The F10 key$/;"	e	enum:input::KeyboardKey
+KEY_F11	Engine/Input/InputCodes.h	/^		KEY_F11,          \/\/ The F11 key$/;"	e	enum:input::KeyboardKey
+KEY_F12	Engine/Input/InputCodes.h	/^		KEY_F12,          \/\/ The F12 key$/;"	e	enum:input::KeyboardKey
+KEY_F13	Engine/Input/InputCodes.h	/^		KEY_F13,          \/\/ The F13 key$/;"	e	enum:input::KeyboardKey
+KEY_F14	Engine/Input/InputCodes.h	/^		KEY_F14,          \/\/ The F14 key$/;"	e	enum:input::KeyboardKey
+KEY_F15	Engine/Input/InputCodes.h	/^		KEY_F15,          \/\/ The F15 key$/;"	e	enum:input::KeyboardKey
+KEY_F2	Engine/Input/InputCodes.h	/^		KEY_F2,           \/\/ The F2 key$/;"	e	enum:input::KeyboardKey
+KEY_F3	Engine/Input/InputCodes.h	/^		KEY_F3,           \/\/ The F3 key$/;"	e	enum:input::KeyboardKey
+KEY_F4	Engine/Input/InputCodes.h	/^		KEY_F4,           \/\/ The F4 key$/;"	e	enum:input::KeyboardKey
+KEY_F5	Engine/Input/InputCodes.h	/^		KEY_F5,           \/\/ The F5 key$/;"	e	enum:input::KeyboardKey
+KEY_F6	Engine/Input/InputCodes.h	/^		KEY_F6,           \/\/ The F6 key$/;"	e	enum:input::KeyboardKey
+KEY_F7	Engine/Input/InputCodes.h	/^		KEY_F7,           \/\/ The F7 key$/;"	e	enum:input::KeyboardKey
+KEY_F8	Engine/Input/InputCodes.h	/^		KEY_F8,           \/\/ The F8 key$/;"	e	enum:input::KeyboardKey
+KEY_F9	Engine/Input/InputCodes.h	/^		KEY_F9,           \/\/ The F9 key$/;"	e	enum:input::KeyboardKey
+KEY_G	Engine/Input/InputCodes.h	/^		KEY_G,            \/\/ The G key$/;"	e	enum:input::KeyboardKey
+KEY_H	Engine/Input/InputCodes.h	/^		KEY_H,            \/\/ The H key$/;"	e	enum:input::KeyboardKey
+KEY_Home	Engine/Input/InputCodes.h	/^		KEY_Home,         \/\/ The Home key$/;"	e	enum:input::KeyboardKey
+KEY_I	Engine/Input/InputCodes.h	/^		KEY_I,            \/\/ The I key$/;"	e	enum:input::KeyboardKey
+KEY_Insert	Engine/Input/InputCodes.h	/^		KEY_Insert,       \/\/ The Insert key$/;"	e	enum:input::KeyboardKey
+KEY_J	Engine/Input/InputCodes.h	/^		KEY_J,            \/\/ The J key$/;"	e	enum:input::KeyboardKey
+KEY_K	Engine/Input/InputCodes.h	/^		KEY_K,            \/\/ The K key$/;"	e	enum:input::KeyboardKey
+KEY_KeyCount	Engine/Input/InputCodes.h	/^		KEY_KeyCount      \/\/ Keep last -- the total number of keyboard keys$/;"	e	enum:input::KeyboardKey
+KEY_L	Engine/Input/InputCodes.h	/^		KEY_L,            \/\/ The L key$/;"	e	enum:input::KeyboardKey
+KEY_LAlt	Engine/Input/InputCodes.h	/^		KEY_LAlt,         \/\/ The left Alt key$/;"	e	enum:input::KeyboardKey
+KEY_LBracket	Engine/Input/InputCodes.h	/^		KEY_LBracket,     \/\/ The [ key$/;"	e	enum:input::KeyboardKey
+KEY_LControl	Engine/Input/InputCodes.h	/^		KEY_LControl,     \/\/ The left Control key$/;"	e	enum:input::KeyboardKey
+KEY_LShift	Engine/Input/InputCodes.h	/^		KEY_LShift,       \/\/ The left Shift key$/;"	e	enum:input::KeyboardKey
+KEY_LSystem	Engine/Input/InputCodes.h	/^		KEY_LSystem,      \/\/ The left OS specific key: window (Windows and Linux), apple (MacOS X), ...$/;"	e	enum:input::KeyboardKey
+KEY_Left	Engine/Input/InputCodes.h	/^		KEY_Left,         \/\/ Left arrow$/;"	e	enum:input::KeyboardKey
+KEY_M	Engine/Input/InputCodes.h	/^		KEY_M,            \/\/ The M key$/;"	e	enum:input::KeyboardKey
+KEY_Menu	Engine/Input/InputCodes.h	/^		KEY_Menu,         \/\/ The Menu key$/;"	e	enum:input::KeyboardKey
+KEY_Multiply	Engine/Input/InputCodes.h	/^		KEY_Multiply,     \/\/ The * key$/;"	e	enum:input::KeyboardKey
+KEY_N	Engine/Input/InputCodes.h	/^		KEY_N,            \/\/ The N key$/;"	e	enum:input::KeyboardKey
+KEY_Num0	Engine/Input/InputCodes.h	/^		KEY_Num0,         \/\/ The 0 key$/;"	e	enum:input::KeyboardKey
+KEY_Num1	Engine/Input/InputCodes.h	/^		KEY_Num1,         \/\/ The 1 key$/;"	e	enum:input::KeyboardKey
+KEY_Num2	Engine/Input/InputCodes.h	/^		KEY_Num2,         \/\/ The 2 key$/;"	e	enum:input::KeyboardKey
+KEY_Num3	Engine/Input/InputCodes.h	/^		KEY_Num3,         \/\/ The 3 key$/;"	e	enum:input::KeyboardKey
+KEY_Num4	Engine/Input/InputCodes.h	/^		KEY_Num4,         \/\/ The 4 key$/;"	e	enum:input::KeyboardKey
+KEY_Num5	Engine/Input/InputCodes.h	/^		KEY_Num5,         \/\/ The 5 key$/;"	e	enum:input::KeyboardKey
+KEY_Num6	Engine/Input/InputCodes.h	/^		KEY_Num6,         \/\/ The 6 key$/;"	e	enum:input::KeyboardKey
+KEY_Num7	Engine/Input/InputCodes.h	/^		KEY_Num7,         \/\/ The 7 key$/;"	e	enum:input::KeyboardKey
+KEY_Num8	Engine/Input/InputCodes.h	/^		KEY_Num8,         \/\/ The 8 key$/;"	e	enum:input::KeyboardKey
+KEY_Num9	Engine/Input/InputCodes.h	/^		KEY_Num9,         \/\/ The 9 key$/;"	e	enum:input::KeyboardKey
+KEY_Numpad0	Engine/Input/InputCodes.h	/^		KEY_Numpad0,      \/\/ The numpad 0 key$/;"	e	enum:input::KeyboardKey
+KEY_Numpad1	Engine/Input/InputCodes.h	/^		KEY_Numpad1,      \/\/ The numpad 1 key$/;"	e	enum:input::KeyboardKey
+KEY_Numpad2	Engine/Input/InputCodes.h	/^		KEY_Numpad2,      \/\/ The numpad 2 key$/;"	e	enum:input::KeyboardKey
+KEY_Numpad3	Engine/Input/InputCodes.h	/^		KEY_Numpad3,      \/\/ The numpad 3 key$/;"	e	enum:input::KeyboardKey
+KEY_Numpad4	Engine/Input/InputCodes.h	/^		KEY_Numpad4,      \/\/ The numpad 4 key$/;"	e	enum:input::KeyboardKey
+KEY_Numpad5	Engine/Input/InputCodes.h	/^		KEY_Numpad5,      \/\/ The numpad 5 key$/;"	e	enum:input::KeyboardKey
+KEY_Numpad6	Engine/Input/InputCodes.h	/^		KEY_Numpad6,      \/\/ The numpad 6 key$/;"	e	enum:input::KeyboardKey
+KEY_Numpad7	Engine/Input/InputCodes.h	/^		KEY_Numpad7,      \/\/ The numpad 7 key$/;"	e	enum:input::KeyboardKey
+KEY_Numpad8	Engine/Input/InputCodes.h	/^		KEY_Numpad8,      \/\/ The numpad 8 key$/;"	e	enum:input::KeyboardKey
+KEY_Numpad9	Engine/Input/InputCodes.h	/^		KEY_Numpad9,      \/\/ The numpad 9 key$/;"	e	enum:input::KeyboardKey
+KEY_O	Engine/Input/InputCodes.h	/^		KEY_O,            \/\/ The O key$/;"	e	enum:input::KeyboardKey
+KEY_P	Engine/Input/InputCodes.h	/^		KEY_P,            \/\/ The P key$/;"	e	enum:input::KeyboardKey
+KEY_PageDown	Engine/Input/InputCodes.h	/^		KEY_PageDown,     \/\/ The Page down key$/;"	e	enum:input::KeyboardKey
+KEY_PageUp	Engine/Input/InputCodes.h	/^		KEY_PageUp,       \/\/ The Page up key$/;"	e	enum:input::KeyboardKey
+KEY_Pause	Engine/Input/InputCodes.h	/^		KEY_Pause,        \/\/ The Pause key$/;"	e	enum:input::KeyboardKey
+KEY_Period	Engine/Input/InputCodes.h	/^		KEY_Period,       \/\/ The . key$/;"	e	enum:input::KeyboardKey
+KEY_Q	Engine/Input/InputCodes.h	/^		KEY_Q,            \/\/ The Q key$/;"	e	enum:input::KeyboardKey
+KEY_Quote	Engine/Input/InputCodes.h	/^		KEY_Quote,        \/\/ The ' key$/;"	e	enum:input::KeyboardKey
+KEY_R	Engine/Input/InputCodes.h	/^		KEY_R,            \/\/ The R key$/;"	e	enum:input::KeyboardKey
+KEY_RAlt	Engine/Input/InputCodes.h	/^		KEY_RAlt,         \/\/ The right Alt key$/;"	e	enum:input::KeyboardKey
+KEY_RBracket	Engine/Input/InputCodes.h	/^		KEY_RBracket,     \/\/ The ] key$/;"	e	enum:input::KeyboardKey
+KEY_RControl	Engine/Input/InputCodes.h	/^		KEY_RControl,     \/\/ The right Control key$/;"	e	enum:input::KeyboardKey
+KEY_RShift	Engine/Input/InputCodes.h	/^		KEY_RShift,       \/\/ The right Shift key$/;"	e	enum:input::KeyboardKey
+KEY_RSystem	Engine/Input/InputCodes.h	/^		KEY_RSystem,      \/\/ The right OS specific key: window (Windows and Linux), apple (MacOS X), ...$/;"	e	enum:input::KeyboardKey
+KEY_Return	Engine/Input/InputCodes.h	/^		KEY_Return,       \/\/ The Return key$/;"	e	enum:input::KeyboardKey
+KEY_Right	Engine/Input/InputCodes.h	/^		KEY_Right,        \/\/ Right arrow$/;"	e	enum:input::KeyboardKey
+KEY_S	Engine/Input/InputCodes.h	/^		KEY_S,            \/\/ The S key$/;"	e	enum:input::KeyboardKey
+KEY_SemiColon	Engine/Input/InputCodes.h	/^		KEY_SemiColon,    \/\/ The ; key$/;"	e	enum:input::KeyboardKey
+KEY_Slash	Engine/Input/InputCodes.h	/^		KEY_Slash,        \/\/ The \/ key$/;"	e	enum:input::KeyboardKey
+KEY_Space	Engine/Input/InputCodes.h	/^		KEY_Space,        \/\/ The Space key$/;"	e	enum:input::KeyboardKey
+KEY_Subtract	Engine/Input/InputCodes.h	/^		KEY_Subtract,     \/\/ The - key$/;"	e	enum:input::KeyboardKey
+KEY_T	Engine/Input/InputCodes.h	/^		KEY_T,            \/\/ The T key$/;"	e	enum:input::KeyboardKey
+KEY_Tab	Engine/Input/InputCodes.h	/^		KEY_Tab,          \/\/ The Tabulation key$/;"	e	enum:input::KeyboardKey
+KEY_Tilde	Engine/Input/InputCodes.h	/^		KEY_Tilde,        \/\/ The ~ key$/;"	e	enum:input::KeyboardKey
+KEY_U	Engine/Input/InputCodes.h	/^		KEY_U,            \/\/ The U key$/;"	e	enum:input::KeyboardKey
+KEY_Unknown	Engine/Input/InputCodes.h	/^		KEY_Unknown = -1, \/\/ Unhandled key$/;"	e	enum:input::KeyboardKey
+KEY_Up	Engine/Input/InputCodes.h	/^		KEY_Up,           \/\/ Up arrow$/;"	e	enum:input::KeyboardKey
+KEY_V	Engine/Input/InputCodes.h	/^		KEY_V,            \/\/ The V key$/;"	e	enum:input::KeyboardKey
+KEY_W	Engine/Input/InputCodes.h	/^		KEY_W,            \/\/ The W key$/;"	e	enum:input::KeyboardKey
+KEY_X	Engine/Input/InputCodes.h	/^		KEY_X,            \/\/ The X key$/;"	e	enum:input::KeyboardKey
+KEY_Y	Engine/Input/InputCodes.h	/^		KEY_Y,            \/\/ The Y key$/;"	e	enum:input::KeyboardKey
+KEY_Z	Engine/Input/InputCodes.h	/^		KEY_Z,            \/\/ The Z key$/;"	e	enum:input::KeyboardKey
+KeyboardKey	Engine/Input/InputCodes.h	/^	enum KeyboardKey$/;"	g	namespace:input
+MB_ButtonCount	Engine/Input/InputCodes.h	/^		MB_ButtonCount \/\/ Keep last -- the total number of mouse buttons$/;"	e	enum:input::MouseButton
+MB_Left	Engine/Input/InputCodes.h	/^		MB_Left,       \/\/ The left mouse button$/;"	e	enum:input::MouseButton
+MB_Middle	Engine/Input/InputCodes.h	/^		MB_Middle,     \/\/ The middle (wheel) mouse button$/;"	e	enum:input::MouseButton
+MB_Right	Engine/Input/InputCodes.h	/^		MB_Right,      \/\/ The right mouse button$/;"	e	enum:input::MouseButton
+MB_XButton1	Engine/Input/InputCodes.h	/^		MB_XButton1,   \/\/ The first extra mouse button$/;"	e	enum:input::MouseButton
+MB_XButton2	Engine/Input/InputCodes.h	/^		MB_XButton2,   \/\/ The second extra mouse button$/;"	e	enum:input::MouseButton
+MW_HorizontalWheel	Engine/Input/InputCodes.h	/^		MW_HorizontalWheel \/\/ The horizontal mouse wheel$/;"	e	enum:input::MouseWheel
+MW_VerticalWheel	Engine/Input/InputCodes.h	/^		MW_VerticalWheel,  \/\/ The vertical mouse wheel$/;"	e	enum:input::MouseWheel
+Mat4	Engine/Core/Math/Math.h	/^	typedef glm::mat4 Mat4;$/;"	t	namespace:core
+MouseButton	Engine/Input/InputCodes.h	/^	enum MouseButton$/;"	g	namespace:input
+MouseWheel	Engine/Input/InputCodes.h	/^	enum MouseWheel$/;"	g	namespace:input
+Node	main backup.cpp	/^	Node() {}$/;"	f	class:Node
+Node	main backup.cpp	/^	Node(const string& s) : m_sName(s) {}$/;"	f	class:Node
+Node	main backup.cpp	/^class Node : public boost::enable_shared_from_this<Node>$/;"	c	file:
+NullPointer	Engine/Core/GlobalTypes.h	/^struct NullPointer$/;"	s
+PAUSED	Arkanoid/Arkanoid.h	/^		PAUSED,$/;"	e	enum:Arkanoid::GameState
+PI	Engine/Core/Math/Math.h	/^	const float PI = 3.14159265f;$/;"	m	namespace:core
+Paddle	Arkanoid/Paddle.cpp	/^Paddle::Paddle()$/;"	f	class:Paddle
+Paddle	Arkanoid/Paddle.h	/^class Paddle : public Entity$/;"	c
+PoolObj	main backup.cpp	/^	PoolObj(const std::string s) $/;"	f	struct:PoolObj
+PoolObj	main backup.cpp	/^struct PoolObj$/;"	s	file:
+PowerUp	main backup.cpp	/^	PowerUp() {}$/;"	f	class:PowerUp
+PowerUp	main backup.cpp	/^class PowerUp : public game::GameObject$/;"	c	file:
+RUNNING	Arkanoid/Arkanoid.h	/^		RUNNING,$/;"	e	enum:Arkanoid::GameState
+SFMLMembers	Engine/Graphics/VisualSystem.cpp	/^	struct VisualSystem::SFMLMembers$/;"	s	class:graphics::VisualSystem	file:
+STOPPED	Arkanoid/Arkanoid.h	/^		STOPPED,$/;"	e	enum:Arkanoid::GameState
+Sound	Engine/Sound/Sound.cpp	/^	Sound::Sound(SoundSystem* pSoundSystem)$/;"	f	class:sound::Sound
+Sound	Engine/Sound/Sound.h	/^	class Sound$/;"	c	namespace:sound
+SoundSystem	Engine/Sound/SoundSystem.cpp	/^	SoundSystem::SoundSystem()$/;"	f	class:sound::SoundSystem
+SoundSystem	Engine/Sound/SoundSystem.h	/^	class SoundSystem$/;"	c	namespace:sound
+TextBuffer	Engine/Input/TextBuffer.cpp	/^	TextBuffer::TextBuffer()$/;"	f	class:input::TextBuffer
+TextBuffer	Engine/Input/TextBuffer.h	/^	class TextBuffer$/;"	c	namespace:input
+Vec2	Engine/Core/Math/Math.h	/^	typedef glm::vec2 Vec2;$/;"	t	namespace:core
+Vec2i	Engine/Core/Math/Math.h	/^	typedef glm::ivec2 Vec2i;$/;"	t	namespace:core
+Vec3	Engine/Core/Math/Math.h	/^	typedef glm::vec3 Vec3;$/;"	t	namespace:core
+Vec4	Engine/Core/Math/Math.h	/^	typedef glm::vec4 Vec4;$/;"	t	namespace:core
+Visual	Engine/Graphics/Visual.cpp	/^	Visual::Visual()$/;"	f	class:graphics::Visual
+Visual	Engine/Graphics/Visual.h	/^	class Visual$/;"	c	namespace:graphics
+VisualShape	Engine/Graphics/VisualShape.cpp	/^	VisualShape::VisualShape()$/;"	f	class:graphics::VisualShape
+VisualShape	Engine/Graphics/VisualShape.h	/^	class VisualShape$/;"	c	namespace:graphics
+VisualShapeBox	Engine/Graphics/VisualShapeBox.cpp	/^	VisualShapeBox::VisualShapeBox()$/;"	f	class:graphics::VisualShapeBox
+VisualShapeBox	Engine/Graphics/VisualShapeBox.h	/^	class VisualShapeBox : public VisualShape$/;"	c	namespace:graphics
+VisualShapeCircle	Engine/Graphics/VisualShapeCircle.cpp	/^	VisualShapeCircle::VisualShapeCircle()$/;"	f	class:graphics::VisualShapeCircle
+VisualShapeCircle	Engine/Graphics/VisualShapeCircle.h	/^	class VisualShapeCircle : public VisualShape$/;"	c	namespace:graphics
+VisualSystem	Engine/Graphics/VisualSystem.cpp	/^	VisualSystem::VisualSystem(RenderWindow *pWindow)$/;"	f	class:graphics::VisualSystem
+VisualSystem	Engine/Graphics/VisualSystem.h	/^	class VisualSystem$/;"	c	namespace:graphics
+VisualText	Engine/Graphics/VisualText.cpp	/^	VisualText::VisualText()$/;"	f	class:graphics::VisualText
+VisualText	Engine/Graphics/VisualText.h	/^	class VisualText$/;"	c	namespace:graphics
+World	Engine/Entity/World.cpp	/^	World::World()$/;"	f	class:entity::World
+World	Engine/Entity/World.h	/^	class World$/;"	c	namespace:entity
+WorldGenerator	Arkanoid/WorldGenerator.cpp	/^WorldGenerator::WorldGenerator()$/;"	f	class:WorldGenerator
+WorldGenerator	Arkanoid/WorldGenerator.h	/^class WorldGenerator$/;"	c
+addChar	Engine/Input/TextBuffer.cpp	/^	void TextBuffer::addChar(const char & ch)$/;"	f	class:input::TextBuffer
+addChild	main backup.cpp	/^	void addChild(const boost::shared_ptr<Node>& spChild)$/;"	f	class:Node
+addEntity	Engine/Entity/World.cpp	/^	void World::addEntity(const boost::shared_ptr<Entity> spEntity)$/;"	f	class:entity::World
+alive	Engine/Graphics/Visual.cpp	/^	bool Visual::alive() const$/;"	f	class:graphics::Visual
+alive	Engine/Graphics/VisualShape.cpp	/^	bool VisualShape::alive() const$/;"	f	class:graphics::VisualShape
+alive	Engine/Graphics/VisualText.cpp	/^	bool VisualText::alive() const$/;"	f	class:graphics::VisualText
+applyState	Arkanoid/Ball.cpp	/^void Ball::applyState()$/;"	f	class:Ball
+applyState	Arkanoid/Paddle.cpp	/^void Paddle::applyState()$/;"	f	class:Paddle
+buildGraph	main backup.cpp	/^boost::shared_ptr<Node> buildGraph() $/;"	f
+calcQuatWComponent	Engine/Core/Math/MathHelpers.cpp	/^	float calcQuatWComponent(const glm::quat &q) $/;"	f	namespace:core
+charEntered	Engine/Input/InputListener.cpp	/^	void InputListener::charEntered(char ch)$/;"	f	class:input::InputListener
+charEntered	Engine/Input/InputSystem.cpp	/^	void InputSystem::charEntered(char ch)$/;"	f	class:input::InputSystem
+checkTime	Engine/AppBase.cpp	/^void AppBase::checkTime()$/;"	f	class:AppBase
+clean	Engine/Graphics/Visual.cpp	/^	void Visual::clean()$/;"	f	class:graphics::Visual
+clean	Engine/Graphics/VisualShape.cpp	/^	void VisualShape::clean()$/;"	f	class:graphics::VisualShape
+clean	Engine/Graphics/VisualText.cpp	/^	void VisualText::clean()$/;"	f	class:graphics::VisualText
+clean	Engine/Input/TextBuffer.cpp	/^	void TextBuffer::clean()$/;"	f	class:input::TextBuffer
+closeApplication	Engine/AppBase.cpp	/^void AppBase::closeApplication()$/;"	f	class:AppBase
+core	Engine/Core/Math/Math.h	/^namespace core$/;"	n
+core	Engine/Core/Math/MathHelpers.cpp	/^namespace core {$/;"	n	file:
+core	Engine/Core/Math/MathHelpers.h	/^namespace core$/;"	n
+core	main backup.cpp	/^	namespace core$/;"	n	namespace:prototype	file:
+create	Engine/Core/ComponentHandler.h	/^	uint create()$/;"	f	class:ComponentHandler
+create	Engine/Entity/EntityFactory.cpp	/^	std::unique_ptr<Entity> EntityFactory::create(const string & sEntity)$/;"	f	class:entity::EntityFactory
+createSound	Engine/Sound/SoundSystem.cpp	/^	uint SoundSystem::createSound(const std::string& sFilename)$/;"	f	class:sound::SoundSystem
+createTextBuffer	Engine/Input/InputSystem.cpp	/^	uint InputSystem::createTextBuffer()$/;"	f	class:input::InputSystem
+created	Engine/Graphics/Visual.cpp	/^	void Visual::created()$/;"	f	class:graphics::Visual
+created	Engine/Graphics/VisualShape.cpp	/^	void VisualShape::created()$/;"	f	class:graphics::VisualShape
+created	Engine/Graphics/VisualText.cpp	/^	void VisualText::created()$/;"	f	class:graphics::VisualText
+created	Engine/Input/TextBuffer.cpp	/^	void TextBuffer::created()$/;"	f	class:input::TextBuffer
+draw	Engine/Graphics/VisualShape.cpp	/^    void VisualShape::draw(sf::RenderWindow& window)$/;"	f	class:graphics::VisualShape
+engine	Engine/AppBase.cpp	/^EngineSystems& AppBase::engine()$/;"	f	class:AppBase
+engine	Engine/Entity/Entity.cpp	/^	EngineSystems& Entity::engine()$/;"	f	class:entity::Entity
+entities	Engine/EngineSystems.cpp	/^entity::EntitySystem& EngineSystems::entities()$/;"	f	class:EngineSystems
+entity	Arkanoid/Arkanoid.h	/^namespace entity$/;"	n
+entity	Arkanoid/WorldGenerator.h	/^namespace entity$/;"	n
+entity	Engine/Entity/Entity.cpp	/^namespace entity {$/;"	n	file:
+entity	Engine/Entity/Entity.h	/^namespace entity$/;"	n
+entity	Engine/Entity/EntityFactory.cpp	/^namespace entity {$/;"	n	file:
+entity	Engine/Entity/EntityFactory.h	/^namespace entity$/;"	n
+entity	Engine/Entity/EntitySystem.cpp	/^namespace entity {$/;"	n	file:
+entity	Engine/Entity/EntitySystem.h	/^namespace entity$/;"	n
+entity	Engine/Entity/World.cpp	/^namespace entity {$/;"	n	file:
+entity	Engine/Entity/World.h	/^namespace entity$/;"	n
+entity	Engine/SystemsInclude_fwd.h	/^namespace entity$/;"	n
+entity	main backup.cpp	/^	namespace entity$/;"	n	namespace:prototype	file:
+font	Engine/Graphics/VisualSystem.cpp	/^		Font font;$/;"	m	struct:graphics::VisualSystem::SFMLMembers	file:
+foo	main backup.cpp	/^	void foo() $/;"	f	struct:PoolObj
+foreach	Engine/Core/ComponentHandler.h	/^	void foreach(const std::function<void(COMPONENT_TYPE&)> f)$/;"	f	class:ComponentHandler
+game	main backup.cpp	/^namespace game$/;"	n	file:
+generate	Arkanoid/WorldGenerator.cpp	/^void WorldGenerator::generate(const boost::shared_ptr<World>& spWorld, ArkanoidFactory& factory)$/;"	f	class:WorldGenerator
+getBuffer	Engine/Input/TextBuffer.cpp	/^	const std::vector<char>& TextBuffer::getBuffer() const$/;"	f	class:input::TextBuffer
+getBuffer	main backup.cpp	/^	const vector<char>& getBuffer() const { return m_Buffer; }$/;"	f	class:Geometry
+getColour	Engine/Graphics/VisualShapeBox.cpp	/^	void VisualShapeBox::getColour(uint& r, uint& g, uint& b, uint& a) const$/;"	f	class:graphics::VisualShapeBox
+getColour	Engine/Graphics/VisualShapeCircle.cpp	/^    void VisualShapeCircle::getColour(uint& r, uint& g, uint& b, uint& a) const$/;"	f	class:graphics::VisualShapeCircle
+getData	Engine/Core/ComponentHandler.h	/^	std::vector<COMPONENT_TYPE>& getData()$/;"	f	class:ComponentHandler
+getInputs	Arkanoid/Paddle.cpp	/^void Paddle::getInputs()$/;"	f	class:Paddle
+getMousePos	Engine/Input/InputSystem.h	/^		core::Vec2i getMousePos() const { return m_MousePos; }$/;"	f	class:input::InputSystem
+getMousePosRel	Engine/Input/InputSystem.h	/^		core::Vec2i getMousePosRel() const { return m_MousePosRel; }$/;"	f	class:input::InputSystem
+getName	main backup.cpp	/^	string getName() const { return m_sName; }$/;"	f	class:Node
+getPosition	Engine/Graphics/VisualShapeBox.cpp	/^    Vec2 VisualShapeBox::getPosition() const$/;"	f	class:graphics::VisualShapeBox
+getPosition	Engine/Graphics/VisualShapeCircle.cpp	/^    Vec2 VisualShapeCircle::getPosition() const$/;"	f	class:graphics::VisualShapeCircle
+getRadius	Engine/Graphics/VisualShapeCircle.cpp	/^    float VisualShapeCircle::getRadius() const$/;"	f	class:graphics::VisualShapeCircle
+getSize	Engine/Core/ComponentHandler.h	/^	uint getSize() const$/;"	f	class:ComponentHandler
+getSize	Engine/Graphics/VisualShapeBox.cpp	/^    Vec2 VisualShapeBox::getSize() const$/;"	f	class:graphics::VisualShapeBox
+graphics	Engine/Graphics/Visual.cpp	/^namespace graphics {$/;"	n	file:
+graphics	Engine/Graphics/Visual.h	/^namespace graphics$/;"	n
+graphics	Engine/Graphics/VisualShape.cpp	/^namespace graphics {$/;"	n	file:
+graphics	Engine/Graphics/VisualShape.h	/^namespace graphics$/;"	n
+graphics	Engine/Graphics/VisualShapeBox.cpp	/^namespace graphics {$/;"	n	file:
+graphics	Engine/Graphics/VisualShapeBox.h	/^namespace graphics$/;"	n
+graphics	Engine/Graphics/VisualShapeCircle.cpp	/^namespace graphics {$/;"	n	file:
+graphics	Engine/Graphics/VisualShapeCircle.h	/^namespace graphics$/;"	n
+graphics	Engine/Graphics/VisualSystem.cpp	/^namespace graphics {$/;"	n	file:
+graphics	Engine/Graphics/VisualSystem.h	/^namespace graphics$/;"	n
+graphics	Engine/Graphics/VisualText.cpp	/^namespace graphics {$/;"	n	file:
+graphics	Engine/Graphics/VisualText.h	/^namespace graphics$/;"	n
+graphics	Engine/SystemsInclude_fwd.h	/^namespace graphics$/;"	n
+graphics	main backup.cpp	/^		namespace graphics$/;"	n	namespace:prototype::core	file:
+graphics	main backup.cpp	/^	namespace graphics$/;"	n	namespace:prototype	file:
+handleEvents	Engine/AppBase.cpp	/^void AppBase::handleEvents()$/;"	f	class:AppBase
+handleMouseInput	Engine/AppBase.cpp	/^void AppBase::handleMouseInput()$/;"	f	class:AppBase
+handleTextInput	Arkanoid/Paddle.cpp	/^void Paddle::handleTextInput()$/;"	f	class:Paddle
+init	Engine/Entity/Entity.cpp	/^	void Entity::init(EngineSystems& rEngine)$/;"	f	class:entity::Entity
+init	Engine/Entity/World.cpp	/^	void World::init(EngineSystems& rEngine)$/;"	f	class:entity::World
+init	Engine/Graphics/Visual.cpp	/^	void Visual::init(VisualSystem* pVisualSystem)$/;"	f	class:graphics::Visual
+init	Engine/Graphics/VisualShape.cpp	/^	void VisualShape::init(VisualSystem* pVisualSystem)$/;"	f	class:graphics::VisualShape
+init	Engine/Graphics/VisualText.cpp	/^	void VisualText::init(VisualSystem* pVisualSystem)$/;"	f	class:graphics::VisualText
+init	Engine/Input/TextBuffer.cpp	/^	void TextBuffer::init(InputSystem* pInputSystem)$/;"	f	class:input::TextBuffer
+init	main backup.cpp	/^		void init() { onInit(); }$/;"	f	class:game::GameObject
+input	Engine/Input/InputCodes.h	/^namespace input$/;"	n
+input	Engine/Input/InputListener.cpp	/^namespace input {$/;"	n	file:
+input	Engine/Input/InputListener.h	/^namespace input$/;"	n
+input	Engine/Input/InputSystem.cpp	/^namespace input {$/;"	n	file:
+input	Engine/Input/InputSystem.h	/^namespace input$/;"	n
+input	Engine/Input/TextBuffer.cpp	/^namespace input {$/;"	n	file:
+input	Engine/Input/TextBuffer.h	/^namespace input$/;"	n
+input	Engine/SystemsInclude_fwd.h	/^namespace input$/;"	n
+inputs	Engine/EngineSystems.cpp	/^InputSystem& EngineSystems::inputs()$/;"	f	class:EngineSystems
+isKeyPressed	Engine/Input/InputSystem.h	/^		bool& isKeyPressed(KeyboardKey eKey) { return m_KBState[eKey]; }$/;"	f	class:input::InputSystem
+isMBPressed	Engine/Input/InputSystem.h	/^		bool& isMBPressed(MouseButton eButton) { return m_MBState[eButton]; }$/;"	f	class:input::InputSystem
+keyPressed	Engine/Input/InputListener.cpp	/^	void InputListener::keyPressed(KeyboardKey eKey)$/;"	f	class:input::InputListener
+keyPressed	Engine/Input/InputSystem.cpp	/^	void InputSystem::keyPressed(KeyboardKey eKey)$/;"	f	class:input::InputSystem
+keyReleased	Engine/Input/InputListener.cpp	/^	void InputListener::keyReleased(KeyboardKey eKey)$/;"	f	class:input::InputListener
+keyReleased	Engine/Input/InputSystem.cpp	/^	void InputSystem::keyReleased(KeyboardKey eKey)$/;"	f	class:input::InputSystem
+load	Engine/Entity/World.cpp	/^	World* World::load(const string & sFilename)$/;"	f	class:entity::World
+loadFont	Engine/Graphics/VisualText.cpp	/^	void VisualText::loadFont(const std::string& sFilename)$/;"	f	class:graphics::VisualText
+loadGame	Arkanoid/Arkanoid.cpp	/^void Arkanoid::loadGame(const string& sFilename)$/;"	f	class:Arkanoid
+loadGraph	main backup.cpp	/^boost::shared_ptr<Node> loadGraph(const string& sFile)$/;"	f
+loadSound	Engine/Sound/Sound.cpp	/^	void Sound::loadSound(const std::string & sFilename)$/;"	f	class:sound::Sound
+loadSprite	Engine/Graphics/Visual.cpp	/^	void Visual::loadSprite(const std::string& sFilename)$/;"	f	class:graphics::Visual
+m_BeepSound	Engine/Sound/SoundSystem.h	/^		std::unique_ptr<sf::Sound> m_BeepSound;$/;"	m	class:sound::SoundSystem
+m_BeepSoundBuffer	Engine/Sound/SoundSystem.h	/^		std::unique_ptr<sf::SoundBuffer> m_BeepSoundBuffer;$/;"	m	class:sound::SoundSystem
+m_Buffer	Engine/Input/TextBuffer.h	/^		std::vector<char> m_Buffer;$/;"	m	class:input::TextBuffer
+m_Buffer	main backup.cpp	/^	vector<char> m_Buffer;$/;"	m	class:Geometry	file:
+m_Circle	Engine/Graphics/VisualShapeCircle.h	/^        sf::CircleShape m_Circle;$/;"	m	class:graphics::VisualShapeCircle
+m_FactoryMap	Engine/Entity/EntityFactory.h	/^		unordered_map<string, function<std::unique_ptr<Entity>()>> m_FactoryMap;$/;"	m	class:entity::EntityFactory
+m_Font	Engine/Graphics/VisualText.h	/^		sf::Font m_Font;$/;"	m	class:graphics::VisualText
+m_KBState	Engine/Input/InputSystem.h	/^		bool m_KBState[KEY_KeyCount];$/;"	m	class:input::InputSystem
+m_MBState	Engine/Input/InputSystem.h	/^		bool m_MBState[MB_ButtonCount];$/;"	m	class:input::InputSystem
+m_MousePos	Engine/Input/InputSystem.h	/^		core::Vec2i m_MousePos;$/;"	m	class:input::InputSystem
+m_MousePosRel	Engine/Input/InputSystem.h	/^		core::Vec2i m_MousePosRel;$/;"	m	class:input::InputSystem
+m_Music	Engine/Sound/SoundSystem.h	/^		std::unique_ptr<sf::Music> m_Music;$/;"	m	class:sound::SoundSystem
+m_Rectangle	Engine/Graphics/VisualShapeBox.h	/^        sf::RectangleShape m_Rectangle;$/;"	m	class:graphics::VisualShapeBox
+m_SoundBufferMap	Engine/Sound/SoundSystem.h	/^		std::unordered_map<std::string, uint> m_SoundBufferMap;$/;"	m	class:sound::SoundSystem
+m_SoundPlayerMap	Engine/Sound/SoundSystem.h	/^		std::unordered_map<std::string, uint> m_SoundPlayerMap;$/;"	m	class:sound::SoundSystem
+m_Sprite	Engine/Graphics/Visual.h	/^		sf::Sprite m_Sprite;$/;"	m	class:graphics::Visual
+m_Text	Engine/Graphics/VisualText.h	/^		sf::Text m_Text;$/;"	m	class:graphics::VisualText
+m_Texture	Engine/Graphics/Visual.h	/^		sf::Texture m_Texture;$/;"	m	class:graphics::Visual
+m_aComponents	Engine/Core/ComponentHandler.h	/^	std::vector<COMPONENT_TYPE> m_aComponents;$/;"	m	class:ComponentHandler
+m_aIndices	Engine/Core/ComponentHandler.h	/^	std::vector<uint> m_aIndices;$/;"	m	class:ComponentHandler
+m_aSoundBuffers	Engine/Sound/SoundSystem.h	/^		std::vector<std::unique_ptr<sf::SoundBuffer>> m_aSoundBuffers;$/;"	m	class:sound::SoundSystem
+m_aSoundPlayers	Engine/Sound/SoundSystem.h	/^		std::vector<std::unique_ptr<sf::Sound>> m_aSoundPlayers;$/;"	m	class:sound::SoundSystem
+m_aspChildren	main backup.cpp	/^	vector<boost::shared_ptr<Node>> m_aspChildren;$/;"	m	class:Node	file:
+m_aspEntities	Engine/Entity/World.h	/^		vector<boost::shared_ptr<Entity>> m_aspEntities;$/;"	m	class:entity::World
+m_aupSounds	Engine/Sound/SoundSystem.h	/^		std::vector<std::unique_ptr<Sound>> m_aupSounds;$/;"	m	class:sound::SoundSystem
+m_bAction	Arkanoid/Paddle.h	/^	bool m_bAction;$/;"	m	class:Paddle
+m_bAlive	Engine/Graphics/Visual.h	/^		bool m_bAlive;$/;"	m	class:graphics::Visual
+m_bAlive	Engine/Graphics/VisualShape.h	/^		bool m_bAlive;$/;"	m	class:graphics::VisualShape
+m_bAlive	Engine/Graphics/VisualText.h	/^		bool m_bAlive;$/;"	m	class:graphics::VisualText
+m_bDown	Arkanoid/Paddle.h	/^	bool m_bDown;$/;"	m	class:Paddle
+m_bFullscreen	Engine/Graphics/VisualSystem.h	/^		bool m_bFullscreen;$/;"	m	class:graphics::VisualSystem
+m_bInputMode	Arkanoid/Paddle.h	/^	bool m_bInputMode;$/;"	m	class:Paddle
+m_bLeft	Arkanoid/Paddle.h	/^	bool m_bLeft;$/;"	m	class:Paddle
+m_bMouseLock	Engine/AppBase.h	/^	bool m_bMouseLock;$/;"	m	class:AppBase
+m_bPosChanged	Engine/Graphics/Visual.h	/^		bool m_bPosChanged;$/;"	m	class:graphics::Visual
+m_bPosChanged	Engine/Graphics/VisualText.h	/^		bool m_bPosChanged;$/;"	m	class:graphics::VisualText
+m_bRight	Arkanoid/Paddle.h	/^	bool m_bRight;$/;"	m	class:Paddle
+m_bSizeChanged	Engine/Graphics/Visual.h	/^		bool m_bSizeChanged;$/;"	m	class:graphics::Visual
+m_bSizeChanged	Engine/Graphics/VisualText.h	/^		bool m_bSizeChanged;$/;"	m	class:graphics::VisualText
+m_bUp	Arkanoid/Paddle.h	/^	bool m_bUp;$/;"	m	class:Paddle
+m_bVSync	Engine/Graphics/VisualSystem.h	/^		bool m_bVSync;$/;"	m	class:graphics::VisualSystem
+m_eState	Arkanoid/Arkanoid.h	/^	GameState m_eState;$/;"	m	class:Arkanoid
+m_fDeltaTime	Engine/AppBase.h	/^	float m_fDeltaTime;$/;"	m	class:AppBase
+m_fDeltaTime	Engine/Graphics/VisualSystem.h	/^		float m_fDeltaTime;$/;"	m	class:graphics::VisualSystem
+m_fDeltaTimeSmoothed	Engine/Graphics/VisualSystem.h	/^		float m_fDeltaTimeSmoothed;$/;"	m	class:graphics::VisualSystem
+m_fGlobalVolume	Engine/Sound/SoundSystem.h	/^		float m_fGlobalVolume;$/;"	m	class:sound::SoundSystem
+m_pEngine	Engine/Entity/Entity.h	/^		EngineSystems* m_pEngine;$/;"	m	class:entity::Entity
+m_pInputSystem	Engine/Input/TextBuffer.h	/^		InputSystem* m_pInputSystem;$/;"	m	class:input::TextBuffer
+m_pSFML	Engine/Graphics/VisualSystem.h	/^		SFMLMembers* m_pSFML;$/;"	m	class:graphics::VisualSystem
+m_pSoundSystem	Engine/Sound/Sound.h	/^		SoundSystem* m_pSoundSystem;$/;"	m	class:sound::Sound
+m_pVisualSystem	Engine/Graphics/Visual.h	/^		VisualSystem* m_pVisualSystem;$/;"	m	class:graphics::Visual
+m_pVisualSystem	Engine/Graphics/VisualShape.h	/^		VisualSystem* m_pVisualSystem;$/;"	m	class:graphics::VisualShape
+m_pVisualSystem	Engine/Graphics/VisualText.h	/^		VisualSystem* m_pVisualSystem;$/;"	m	class:graphics::VisualText
+m_sCommand	Arkanoid/Paddle.h	/^	std::string m_sCommand;$/;"	m	class:Paddle
+m_sName	main backup.cpp	/^	string m_sName;$/;"	m	class:Node	file:
+m_sString	Engine/Graphics/VisualText.h	/^		std::string m_sString;$/;"	m	class:graphics::VisualText
+m_spActiveWorld	Engine/Entity/EntitySystem.h	/^		boost::shared_ptr<World> m_spActiveWorld;$/;"	m	class:entity::EntitySystem
+m_spWorld	Arkanoid/Arkanoid.h	/^	boost::shared_ptr<entity::World> m_spWorld;$/;"	m	class:Arkanoid
+m_uNext	Engine/Core/ComponentHandler.h	/^	uint m_uNext;$/;"	m	class:ComponentHandler
+m_uSize	Engine/Core/ComponentHandler.h	/^	uint m_uSize;$/;"	m	class:ComponentHandler
+m_uSound	Arkanoid/Ball.h	/^	uint m_uSound;$/;"	m	class:Ball
+m_uSound	Arkanoid/Paddle.h	/^	uint m_uSound;$/;"	m	class:Paddle
+m_uSound	Engine/Sound/Sound.h	/^		uint m_uSound;$/;"	m	class:sound::Sound
+m_uSprite	Engine/Graphics/Visual.h	/^		uint m_uSprite;$/;"	m	class:graphics::Visual
+m_uTextBuffer	Arkanoid/Paddle.h	/^	uint m_uTextBuffer;$/;"	m	class:Paddle
+m_uVisual	Arkanoid/Ball.h	/^	uint m_uVisual;$/;"	m	class:Ball
+m_uVisual	Arkanoid/Paddle.h	/^	uint m_uVisual;$/;"	m	class:Paddle
+m_uVisualBox	Arkanoid/Paddle.h	/^	uint m_uVisualBox;$/;"	m	class:Paddle
+m_uVisualText	Arkanoid/Paddle.h	/^	uint m_uVisualText;$/;"	m	class:Paddle
+m_upClock	Engine/AppBase.h	/^	std::unique_ptr<sf::Clock> m_upClock;$/;"	m	class:AppBase
+m_upEngineSystems	Engine/AppBase.h	/^	std::unique_ptr<EngineSystems> m_upEngineSystems;$/;"	m	class:AppBase
+m_upEntitySystem	Engine/EngineSystems.h	/^	std::unique_ptr<entity::EntitySystem> m_upEntitySystem;$/;"	m	class:EngineSystems
+m_upFactory	Arkanoid/Arkanoid.h	/^	unique_ptr<ArkanoidFactory> m_upFactory;$/;"	m	class:Arkanoid
+m_upInputSystem	Engine/EngineSystems.h	/^	std::unique_ptr<input::InputSystem> m_upInputSystem;$/;"	m	class:EngineSystems
+m_upSoundSystem	Engine/EngineSystems.h	/^	std::unique_ptr<sound::SoundSystem> m_upSoundSystem;$/;"	m	class:EngineSystems
+m_upTextBufferHandler	Engine/Input/InputSystem.h	/^		std::unique_ptr<text_buffer_handler_type> m_upTextBufferHandler;$/;"	m	class:input::InputSystem
+m_upVisualSystem	Engine/EngineSystems.h	/^	std::unique_ptr<graphics::VisualSystem> m_upVisualSystem;$/;"	m	class:EngineSystems
+m_upWindow	Engine/AppBase.h	/^	std::unique_ptr<sf::RenderWindow> m_upWindow;$/;"	m	class:AppBase
+m_vListenerDirection	Engine/Sound/SoundSystem.h	/^		core::Vec3 m_vListenerDirection;$/;"	m	class:sound::SoundSystem
+m_vListenerPosition	Engine/Sound/SoundSystem.h	/^		core::Vec3 m_vListenerPosition;$/;"	m	class:sound::SoundSystem
+m_vMousePos	Engine/AppBase.h	/^	core::Vec2i m_vMousePos;$/;"	m	class:AppBase
+m_vPos	Arkanoid/Ball.h	/^	Vec2 m_vPos;$/;"	m	class:Ball
+m_vPos	Arkanoid/Paddle.h	/^	Vec2 m_vPos;$/;"	m	class:Paddle
+m_vPos	Engine/Graphics/Visual.h	/^		Vec2 m_vPos;$/;"	m	class:graphics::Visual
+m_vPos	Engine/Graphics/VisualText.h	/^		Vec2 m_vPos;$/;"	m	class:graphics::VisualText
+m_vSize	Engine/Graphics/Visual.h	/^		Vec2 m_vSize;$/;"	m	class:graphics::Visual
+m_vSize	Engine/Graphics/VisualText.h	/^		Vec2 m_vSize;$/;"	m	class:graphics::VisualText
+main	main backup.cpp	/^int main(int argc, char** argv)$/;"	f
+main	main.cpp	/^int main(int argc, char** argv)$/;"	f
+mbPressed	Engine/Input/InputListener.cpp	/^	void InputListener::mbPressed(MouseButton eButton)$/;"	f	class:input::InputListener
+mbPressed	Engine/Input/InputSystem.cpp	/^	void InputSystem::mbPressed(MouseButton eButton)$/;"	f	class:input::InputSystem
+mbReleased	Engine/Input/InputListener.cpp	/^	void InputListener::mbReleased(MouseButton eButton)$/;"	f	class:input::InputListener
+mbReleased	Engine/Input/InputSystem.cpp	/^	void InputSystem::mbReleased(MouseButton eButton)$/;"	f	class:input::InputSystem
+modify	Engine/Core/ComponentHandler.h	/^	COMPONENT_TYPE& modify(uint uHandle)$/;"	f	class:ComponentHandler
+modifyBuffer	main backup.cpp	/^	vector<char>& modifyBuffer() { return m_Buffer; }$/;"	f	class:Geometry
+modifySound	Engine/Sound/SoundSystem.cpp	/^	Sound & SoundSystem::modifySound(uint uSound)$/;"	f	class:sound::SoundSystem
+modifyTextBuffer	Engine/Input/InputSystem.cpp	/^	TextBuffer & InputSystem::modifyTextBuffer(uint uHandle)$/;"	f	class:input::InputSystem
+mouseMoved	Engine/Input/InputListener.cpp	/^	void InputListener::mouseMoved(int iX, int iY)$/;"	f	class:input::InputListener
+mouseMoved	Engine/Input/InputSystem.cpp	/^	void InputSystem::mouseMoved(int iX, int iY)$/;"	f	class:input::InputSystem
+mouseMovedRel	Engine/Input/InputListener.cpp	/^	void InputListener::mouseMovedRel(int iX, int iY)$/;"	f	class:input::InputListener
+mouseMovedRel	Engine/Input/InputSystem.cpp	/^	void InputSystem::mouseMovedRel(int iX, int iY)$/;"	f	class:input::InputSystem
+multiplyQuat	Engine/Core/Math/MathHelpers.cpp	/^	glm::quat multiplyQuat(const glm::quat &q1, const glm::quat &q2) $/;"	f	namespace:core
+nullPtr	Engine/Core/GlobalTypes.h	/^static NullPointer nullPtr;$/;"	v
+onCharEntered	Engine/AppBase.h	/^	virtual void onCharEntered(char ch) {}$/;"	f	class:AppBase
+onCharEntered	Engine/Input/InputListener.h	/^		virtual void onCharEntered(char ch) {}$/;"	f	class:input::InputListener
+onClean	Engine/Graphics/VisualShape.h	/^        virtual void onClean() {}$/;"	f	class:graphics::VisualShape
+onClean	Engine/Graphics/VisualShapeBox.cpp	/^    void VisualShapeBox::onClean()$/;"	f	class:graphics::VisualShapeBox
+onCreated	Engine/Graphics/VisualShape.h	/^        virtual void onCreated() {}$/;"	f	class:graphics::VisualShape
+onCreated	Engine/Graphics/VisualShapeBox.cpp	/^    void VisualShapeBox::onCreated()$/;"	f	class:graphics::VisualShapeBox
+onCreated	Engine/Graphics/VisualShapeCircle.cpp	/^    void VisualShapeCircle::onCreated()$/;"	f	class:graphics::VisualShapeCircle
+onDraw	Engine/Graphics/VisualShape.h	/^		virtual void onDraw(sf::RenderWindow& window) {}$/;"	f	class:graphics::VisualShape
+onDraw	Engine/Graphics/VisualShapeBox.cpp	/^	void VisualShapeBox::onDraw(sf::RenderWindow& window)$/;"	f	class:graphics::VisualShapeBox
+onDraw	Engine/Graphics/VisualShapeCircle.cpp	/^	void VisualShapeCircle::onDraw(sf::RenderWindow& window)$/;"	f	class:graphics::VisualShapeCircle
+onInit	Arkanoid/Arkanoid.cpp	/^void Arkanoid::onInit()$/;"	f	class:Arkanoid
+onInit	Arkanoid/Ball.cpp	/^void Ball::onInit()$/;"	f	class:Ball
+onInit	Arkanoid/Paddle.cpp	/^void Paddle::onInit()$/;"	f	class:Paddle
+onInit	Engine/AppBase.h	/^	virtual void onInit() {}$/;"	f	class:AppBase
+onInit	Engine/Entity/Entity.h	/^		virtual void onInit() {}$/;"	f	class:entity::Entity
+onInit	Engine/Graphics/VisualShape.h	/^        virtual void onInit(VisualSystem* pVisualSystem) {}$/;"	f	class:graphics::VisualShape
+onInit	Engine/Graphics/VisualShapeBox.cpp	/^    void VisualShapeBox::onInit(VisualSystem* pVisualSystem)$/;"	f	class:graphics::VisualShapeBox
+onInit	main backup.cpp	/^		virtual void onInit() {}$/;"	f	class:game::GameObject	file:
+onKeyPressed	Arkanoid/Arkanoid.cpp	/^void Arkanoid::onKeyPressed(KeyboardKey eKey)$/;"	f	class:Arkanoid
+onKeyPressed	Engine/AppBase.h	/^	virtual void onKeyPressed(input::KeyboardKey eKey) {}$/;"	f	class:AppBase
+onKeyPressed	Engine/Input/InputListener.h	/^		virtual void onKeyPressed(KeyboardKey eKey) {}$/;"	f	class:input::InputListener
+onKeyReleased	Engine/AppBase.h	/^	virtual void onKeyReleased(input::KeyboardKey eKey) {}$/;"	f	class:AppBase
+onKeyReleased	Engine/Input/InputListener.h	/^		virtual void onKeyReleased(KeyboardKey eKey) {}$/;"	f	class:input::InputListener
+onMBPressed	Engine/AppBase.h	/^	virtual void onMBPressed(input::MouseButton eButton) {}$/;"	f	class:AppBase
+onMBPressed	Engine/Input/InputListener.h	/^		virtual void onMBPressed(MouseButton eButton) {}$/;"	f	class:input::InputListener
+onMBReleased	Engine/AppBase.h	/^	virtual void onMBReleased(input::MouseButton eButton) {}$/;"	f	class:AppBase
+onMBReleased	Engine/Input/InputListener.h	/^		virtual void onMBReleased(MouseButton eButton) {}$/;"	f	class:input::InputListener
+onMouseMoved	Engine/AppBase.h	/^	virtual void onMouseMoved(int iX, int iY) {}$/;"	f	class:AppBase
+onMouseMoved	Engine/Input/InputListener.h	/^		virtual void onMouseMoved(int iX, int iY) {}$/;"	f	class:input::InputListener
+onMouseMovedRel	Engine/AppBase.h	/^	virtual void onMouseMovedRel(int iX, int iY) {}$/;"	f	class:AppBase
+onMouseMovedRel	Engine/Input/InputListener.h	/^		virtual void onMouseMovedRel(int iX, int iY) {}$/;"	f	class:input::InputListener
+onUpdate	Arkanoid/Arkanoid.cpp	/^void Arkanoid::onUpdate(float fDT)$/;"	f	class:Arkanoid
+onUpdate	Arkanoid/Ball.cpp	/^void Ball::onUpdate(float fDT)$/;"	f	class:Ball
+onUpdate	Arkanoid/Paddle.cpp	/^void Paddle::onUpdate(float fDT)$/;"	f	class:Paddle
+onUpdate	Engine/AppBase.h	/^	virtual void onUpdate(float fDT) {}$/;"	f	class:AppBase
+onUpdate	Engine/Entity/Entity.h	/^		virtual void onUpdate(float fDT) {}$/;"	f	class:entity::Entity
+onUpdate	Engine/Graphics/VisualShape.h	/^		virtual void onUpdate(float fDT) {}$/;"	f	class:graphics::VisualShape
+onUpdate	Engine/Graphics/VisualShapeBox.cpp	/^	void VisualShapeBox::onUpdate(float fDT)$/;"	f	class:graphics::VisualShapeBox
+onUpdate	Engine/Graphics/VisualShapeCircle.cpp	/^	void VisualShapeCircle::onUpdate(float fDT)$/;"	f	class:graphics::VisualShapeCircle
+operator T*	Engine/Core/GlobalTypes.h	/^	inline operator T* () const { return 0; }$/;"	f	struct:NullPointer
+operator boost::shared_ptr<T>	Engine/Core/GlobalTypes.h	/^	inline operator boost::shared_ptr<T>() const { return boost::shared_ptr<T>(); }$/;"	f	struct:NullPointer
+operator boost::weak_ptr<T>	Engine/Core/GlobalTypes.h	/^	inline operator boost::weak_ptr<T>() const { return boost::weak_ptr<T>(); }$/;"	f	struct:NullPointer
+operator std::unique_ptr<T>	Engine/Core/GlobalTypes.h	/^	inline operator std::unique_ptr<T>() const { return std::unique_ptr<T>(); }$/;"	f	struct:NullPointer
+override	Arkanoid/Arkanoid.h	/^	void onInit() override;$/;"	m	class:Arkanoid
+override	Arkanoid/Arkanoid.h	/^	void onKeyPressed(input::KeyboardKey eKey) override;$/;"	m	class:Arkanoid
+override	Arkanoid/Arkanoid.h	/^	void onUpdate(float fDT) override;$/;"	m	class:Arkanoid
+override	Arkanoid/Ball.h	/^	virtual void onInit() override;$/;"	m	class:Ball
+override	Arkanoid/Ball.h	/^	virtual void onUpdate(float fDT) override;$/;"	m	class:Ball
+override	Arkanoid/Paddle.h	/^	virtual void onInit() override;$/;"	m	class:Paddle
+override	Arkanoid/Paddle.h	/^	virtual void onUpdate(float fDT) override;$/;"	m	class:Paddle
+override	Engine/Graphics/VisualShapeBox.h	/^        void onClean() override;$/;"	m	class:graphics::VisualShapeBox
+override	Engine/Graphics/VisualShapeBox.h	/^        void onCreated() override;$/;"	m	class:graphics::VisualShapeBox
+override	Engine/Graphics/VisualShapeBox.h	/^        void onDraw(sf::RenderWindow& window) override;$/;"	m	class:graphics::VisualShapeBox
+override	Engine/Graphics/VisualShapeBox.h	/^        void onInit(VisualSystem* pVisualSystem) override;$/;"	m	class:graphics::VisualShapeBox
+override	Engine/Graphics/VisualShapeBox.h	/^        void onUpdate(float fDT) override;$/;"	m	class:graphics::VisualShapeBox
+override	Engine/Graphics/VisualShapeCircle.h	/^        void onCreated() override;$/;"	m	class:graphics::VisualShapeCircle
+override	Engine/Graphics/VisualShapeCircle.h	/^        void onDraw(sf::RenderWindow& window) override;$/;"	m	class:graphics::VisualShapeCircle
+override	Engine/Graphics/VisualShapeCircle.h	/^        void onUpdate(float fDT) override;$/;"	m	class:graphics::VisualShapeCircle
+pData	main backup.cpp	/^	unsigned char pData[1024*1024*5];$/;"	m	struct:PoolObj	file:
+pWindow	Engine/Graphics/VisualSystem.cpp	/^		RenderWindow *pWindow;$/;"	m	struct:graphics::VisualSystem::SFMLMembers	file:
+physics	main backup.cpp	/^		namespace physics$/;"	n	namespace:prototype::core	file:
+physics	main backup.cpp	/^	namespace physics$/;"	n	namespace:prototype	file:
+processCommand	Arkanoid/Paddle.cpp	/^void Paddle::processCommand()$/;"	f	class:Paddle
+prototype	main backup.cpp	/^namespace prototype$/;"	n	file:
+registerEntity	Engine/Entity/EntityFactory.cpp	/^	void EntityFactory::registerEntity(const string sEntity, const function<std::unique_ptr<Entity>()>& func)$/;"	f	class:entity::EntityFactory
+remove	Engine/Core/ComponentHandler.h	/^	void remove(uint uHandle)$/;"	f	class:ComponentHandler
+removeSound	Engine/Sound/SoundSystem.cpp	/^	void SoundSystem::removeSound(uint uSound)$/;"	f	class:sound::SoundSystem
+removeTextBuffer	Engine/Input/InputSystem.cpp	/^	void InputSystem::removeTextBuffer(uint uHandle)$/;"	f	class:input::InputSystem
+render	Engine/AppBase.cpp	/^void AppBase::render()$/;"	f	class:AppBase
+render	Engine/Graphics/VisualSystem.cpp	/^	void VisualSystem::render()$/;"	f	class:graphics::VisualSystem
+resize	Engine/Graphics/VisualSystem.cpp	/^	void VisualSystem::resize(int iWidth, int iHeight)$/;"	f	class:graphics::VisualSystem
+saveGraph	main backup.cpp	/^bool saveGraph(const boost::shared_ptr<Node>& spRoot, const string& sFile)$/;"	f
+serialize	main backup.cpp	/^		void serialize(Archive& a, const unsigned int uVersion)$/;"	f	class:game::GameObject	file:
+serialize	main backup.cpp	/^	void serialize(Archive& a, const unsigned int uVersion)$/;"	f	class:Geometry	file:
+serialize	main backup.cpp	/^	void serialize(Archive& a, const unsigned int uVersion)$/;"	f	class:Node	file:
+setActiveWorld	Engine/Entity/EntitySystem.cpp	/^	void EntitySystem::setActiveWorld(const boost::shared_ptr<World>& spWorld)$/;"	f	class:entity::EntitySystem
+setColour	Engine/Graphics/VisualShapeBox.cpp	/^	void VisualShapeBox::setColour(uint r, uint g, uint b, uint a)$/;"	f	class:graphics::VisualShapeBox
+setColour	Engine/Graphics/VisualShapeCircle.cpp	/^    void VisualShapeCircle::setColour(uint r, uint g, uint b, uint a)$/;"	f	class:graphics::VisualShapeCircle
+setName	main backup.cpp	/^	void setName(const string& s) { m_sName = s; }$/;"	f	class:Node
+setPosition	Engine/Graphics/Visual.cpp	/^	void Visual::setPosition(const Vec2& vPos)$/;"	f	class:graphics::Visual
+setPosition	Engine/Graphics/VisualShapeBox.cpp	/^    void VisualShapeBox::setPosition(const Vec2& vPos)$/;"	f	class:graphics::VisualShapeBox
+setPosition	Engine/Graphics/VisualShapeCircle.cpp	/^    void VisualShapeCircle::setPosition(const Vec2& vPos)$/;"	f	class:graphics::VisualShapeCircle
+setPosition	Engine/Graphics/VisualText.cpp	/^	void VisualText::setPosition(const Vec2& vPos)$/;"	f	class:graphics::VisualText
+setRadius	Engine/Graphics/VisualShapeCircle.cpp	/^    void VisualShapeCircle::setRadius(float fRadius)$/;"	f	class:graphics::VisualShapeCircle
+setSize	Engine/Graphics/Visual.cpp	/^	void Visual::setSize(const Vec2 & vSize)$/;"	f	class:graphics::Visual
+setSize	Engine/Graphics/VisualShapeBox.cpp	/^    void VisualShapeBox::setSize(const Vec2& vSize)$/;"	f	class:graphics::VisualShapeBox
+setSize	Engine/Graphics/VisualText.cpp	/^	void VisualText::setSize(const Vec2 & vSize)$/;"	f	class:graphics::VisualText
+setText	Engine/Graphics/VisualText.cpp	/^	void VisualText::setText(const std::string & sString)$/;"	f	class:graphics::VisualText
+sf	Engine/AppBase.h	/^namespace sf$/;"	n
+sf	Engine/Graphics/Visual.h	/^namespace sf$/;"	n
+sf	Engine/Graphics/VisualSystem.h	/^namespace sf$/;"	n
+sf	Engine/Graphics/VisualText.h	/^namespace sf$/;"	n
+sf	Engine/Sound/SoundSystem.h	/^namespace sf$/;"	n
+sf	Engine/SystemsInclude_fwd.h	/^namespace sf$/;"	n
+slerpQuat	Engine/Core/Math/MathHelpers.cpp	/^	glm::quat slerpQuat(const glm::quat &q1, const glm::quat &q2, float u) $/;"	f	namespace:core
+smoothTo	Engine/Core/Math/MathHelpers.h	/^	static T smoothTo(const T &current, const T& target, float speed)$/;"	f	namespace:core
+sound	Engine/Sound/Sound.cpp	/^namespace sound {$/;"	n	file:
+sound	Engine/Sound/Sound.h	/^namespace sound$/;"	n
+sound	Engine/Sound/SoundSystem.cpp	/^namespace sound {$/;"	n	file:
+sound	Engine/Sound/SoundSystem.h	/^namespace sound$/;"	n
+sound	Engine/SystemsInclude_fwd.h	/^namespace sound$/;"	n
+sound	main backup.cpp	/^		namespace sound$/;"	n	namespace:prototype::core	file:
+sound	main backup.cpp	/^	namespace sound$/;"	n	namespace:prototype	file:
+sounds	Engine/EngineSystems.cpp	/^SoundSystem& EngineSystems::sounds()$/;"	f	class:EngineSystems
+start	Engine/AppBase.cpp	/^void AppBase::start()$/;"	f	class:AppBase
+startNewGame	Arkanoid/Arkanoid.cpp	/^void Arkanoid::startNewGame()$/;"	f	class:Arkanoid
+stopGame	Arkanoid/Arkanoid.cpp	/^void Arkanoid::stopGame()$/;"	f	class:Arkanoid
+testGraphSerialization	main backup.cpp	/^void testGraphSerialization()$/;"	f
+testMemPool	main backup.cpp	/^void testMemPool()$/;"	f
+text	Engine/Graphics/VisualSystem.cpp	/^		Text text;$/;"	m	struct:graphics::VisualSystem::SFMLMembers	file:
+text_buffer_handler_type	Engine/Input/InputSystem.h	/^		typedef ComponentHandler<TextBuffer, InputSystem> text_buffer_handler_type;$/;"	t	class:input::InputSystem
+toDegrees	Engine/Core/Math/MathHelpers.cpp	/^	float toDegrees(float rad)$/;"	f	namespace:core
+toRadians	Engine/Core/Math/MathHelpers.cpp	/^	float toRadians(float deg)$/;"	f	namespace:core
+toggleFullscreen	Engine/AppBase.cpp	/^void AppBase::toggleFullscreen()$/;"	f	class:AppBase
+toggleFullscreen	Engine/Graphics/VisualSystem.cpp	/^	void VisualSystem::toggleFullscreen()$/;"	f	class:graphics::VisualSystem
+toggleMouseLock	Engine/AppBase.cpp	/^void AppBase::toggleMouseLock()$/;"	f	class:AppBase
+toggleVSync	Engine/AppBase.cpp	/^void AppBase::toggleVSync()$/;"	f	class:AppBase
+toggleVSync	Engine/Graphics/VisualSystem.cpp	/^	void VisualSystem::toggleVSync()$/;"	f	class:graphics::VisualSystem
+traverse	main backup.cpp	/^	virtual void traverse(const function<void(const boost::shared_ptr<Node>& spNode)>& f)$/;"	f	class:Node
+uint	Engine/Core/GlobalTypes.h	/^typedef unsigned int uint;$/;"	t
+update	Engine/AppBase.cpp	/^void AppBase::update()$/;"	f	class:AppBase
+update	Engine/EngineSystems.cpp	/^void EngineSystems::update(float fDT)$/;"	f	class:EngineSystems
+update	Engine/Entity/Entity.cpp	/^	void Entity::update(float fDT)$/;"	f	class:entity::Entity
+update	Engine/Entity/EntitySystem.cpp	/^	void EntitySystem::update(float fDT)$/;"	f	class:entity::EntitySystem
+update	Engine/Entity/World.cpp	/^	void World::update(float fDT)$/;"	f	class:entity::World
+update	Engine/Graphics/Visual.cpp	/^	void Visual::update(float fDT)$/;"	f	class:graphics::Visual
+update	Engine/Graphics/VisualShape.cpp	/^	void VisualShape::update(float fDT)$/;"	f	class:graphics::VisualShape
+update	Engine/Graphics/VisualSystem.cpp	/^	void VisualSystem::update(float fDT)$/;"	f	class:graphics::VisualSystem
+update	Engine/Graphics/VisualText.cpp	/^	void VisualText::update(float fDT)$/;"	f	class:graphics::VisualText
+update	Engine/Input/InputSystem.cpp	/^	void InputSystem::update(float fDT)$/;"	f	class:input::InputSystem
+update	Engine/Sound/Sound.cpp	/^	void Sound::update(float fDT)$/;"	f	class:sound::Sound
+update	Engine/Sound/SoundSystem.cpp	/^	void SoundSystem::update(float fDT)$/;"	f	class:sound::SoundSystem
+updateState	Arkanoid/Ball.cpp	/^void Ball::updateState()$/;"	f	class:Ball
+updateState	Arkanoid/Paddle.cpp	/^void Paddle::updateState()$/;"	f	class:Paddle
+visuals	Engine/EngineSystems.cpp	/^VisualSystem& EngineSystems::visuals()$/;"	f	class:EngineSystems
+~AppBase	Engine/AppBase.cpp	/^AppBase::~AppBase()$/;"	f	class:AppBase
+~Arkanoid	Arkanoid/Arkanoid.cpp	/^Arkanoid::~Arkanoid()$/;"	f	class:Arkanoid
+~ArkanoidFactory	Arkanoid/ArkanoidFactory.cpp	/^ArkanoidFactory::~ArkanoidFactory()$/;"	f	class:ArkanoidFactory
+~Ball	Arkanoid/Ball.cpp	/^Ball::~Ball()$/;"	f	class:Ball
+~Component	main backup.cpp	/^		~Component() {}$/;"	f	class:game::Component
+~ComponentHandler	Engine/Core/ComponentHandler.h	/^	~ComponentHandler() {}$/;"	f	class:ComponentHandler
+~EngineSystems	Engine/EngineSystems.cpp	/^EngineSystems::~EngineSystems()$/;"	f	class:EngineSystems
+~Entity	Engine/Entity/Entity.cpp	/^	Entity::~Entity()$/;"	f	class:entity::Entity
+~EntityFactory	Engine/Entity/EntityFactory.cpp	/^	EntityFactory::~EntityFactory()$/;"	f	class:entity::EntityFactory
+~EntitySystem	Engine/Entity/EntitySystem.cpp	/^	EntitySystem::~EntitySystem()$/;"	f	class:entity::EntitySystem
+~GameObject	main backup.cpp	/^		~GameObject() {}$/;"	f	class:game::GameObject
+~GameWorld	main backup.cpp	/^		~GameWorld() {}$/;"	f	class:game::GameWorld
+~Geometry	main backup.cpp	/^	virtual ~Geometry() {}$/;"	f	class:Geometry
+~InputListener	Engine/Input/InputListener.cpp	/^	InputListener::~InputListener()$/;"	f	class:input::InputListener
+~InputSystem	Engine/Input/InputSystem.cpp	/^	InputSystem::~InputSystem()$/;"	f	class:input::InputSystem
+~Node	main backup.cpp	/^	virtual ~Node() {}$/;"	f	class:Node
+~Paddle	Arkanoid/Paddle.cpp	/^Paddle::~Paddle()$/;"	f	class:Paddle
+~PoolObj	main backup.cpp	/^	~PoolObj() $/;"	f	struct:PoolObj
+~PowerUp	main backup.cpp	/^	virtual ~PowerUp() {}$/;"	f	class:PowerUp
+~Sound	Engine/Sound/Sound.cpp	/^	Sound::~Sound()$/;"	f	class:sound::Sound
+~SoundSystem	Engine/Sound/SoundSystem.cpp	/^	SoundSystem::~SoundSystem()$/;"	f	class:sound::SoundSystem
+~TextBuffer	Engine/Input/TextBuffer.cpp	/^	TextBuffer::~TextBuffer()$/;"	f	class:input::TextBuffer
+~Visual	Engine/Graphics/Visual.cpp	/^	Visual::~Visual()$/;"	f	class:graphics::Visual
+~VisualShape	Engine/Graphics/VisualShape.cpp	/^	VisualShape::~VisualShape()$/;"	f	class:graphics::VisualShape
+~VisualShapeBox	Engine/Graphics/VisualShapeBox.cpp	/^	VisualShapeBox::~VisualShapeBox()$/;"	f	class:graphics::VisualShapeBox
+~VisualShapeCircle	Engine/Graphics/VisualShapeCircle.cpp	/^	VisualShapeCircle::~VisualShapeCircle()$/;"	f	class:graphics::VisualShapeCircle
+~VisualSystem	Engine/Graphics/VisualSystem.cpp	/^	VisualSystem::~VisualSystem()$/;"	f	class:graphics::VisualSystem
+~VisualText	Engine/Graphics/VisualText.cpp	/^	VisualText::~VisualText()$/;"	f	class:graphics::VisualText
+~World	Engine/Entity/World.cpp	/^	World::~World()$/;"	f	class:entity::World
+~WorldGenerator	Arkanoid/WorldGenerator.cpp	/^WorldGenerator::~WorldGenerator()$/;"	f	class:WorldGenerator
