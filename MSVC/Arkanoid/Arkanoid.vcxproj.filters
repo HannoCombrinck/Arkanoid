@@ -29,6 +29,9 @@
     <Filter Include="Header/Source Files\Engine\Entity">
       <UniqueIdentifier>{a93f5b77-fa80-499a-8564-9e9491801028}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header/Source Files\Engine\Network">
+      <UniqueIdentifier>{94c33346-f2b4-446a-a70e-6c1865ca1ebe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\main.cpp">
@@ -102,6 +105,12 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Engine\Graphics\VisualShapeCircle.cpp">
       <Filter>Header/Source Files\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Network\Address.cpp">
+      <Filter>Header/Source Files\Engine\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Network\Socket.cpp">
+      <Filter>Header/Source Files\Engine\Network</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +203,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Engine\Graphics\VisualShapeCircle.h">
       <Filter>Header/Source Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Network\Address.h">
+      <Filter>Header/Source Files\Engine\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Network\Socket.h">
+      <Filter>Header/Source Files\Engine\Network</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

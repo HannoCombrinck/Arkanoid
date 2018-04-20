@@ -32,6 +32,8 @@
     <ClCompile Include="..\..\Source\Engine\Input\InputListener.cpp" />
     <ClCompile Include="..\..\Source\Engine\Input\InputSystem.cpp" />
     <ClCompile Include="..\..\Source\Engine\Input\TextBuffer.cpp" />
+    <ClCompile Include="..\..\Source\Engine\Network\Address.cpp" />
+    <ClCompile Include="..\..\Source\Engine\Network\Socket.cpp" />
     <ClCompile Include="..\..\Source\Engine\Sound\Sound.cpp" />
     <ClCompile Include="..\..\Source\Engine\Sound\SoundSystem.cpp" />
     <ClCompile Include="..\..\Source\main.cpp" />
@@ -63,6 +65,8 @@
     <ClInclude Include="..\..\Source\Engine\Input\InputListener.h" />
     <ClInclude Include="..\..\Source\Engine\Input\InputSystem.h" />
     <ClInclude Include="..\..\Source\Engine\Input\TextBuffer.h" />
+    <ClInclude Include="..\..\Source\Engine\Network\Address.h" />
+    <ClInclude Include="..\..\Source\Engine\Network\Socket.h" />
     <ClInclude Include="..\..\Source\Engine\Sound\Sound.h" />
     <ClInclude Include="..\..\Source\Engine\Sound\SoundSystem.h" />
     <ClInclude Include="..\..\Source\Engine\SystemsInclude.h" />

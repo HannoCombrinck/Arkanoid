@@ -4,6 +4,8 @@
 #include <boost/weak_ptr.hpp>
 
 typedef unsigned int uint;
+typedef unsigned short ushort;
+typedef unsigned char uchar;
 
 struct NullPointer
 {
