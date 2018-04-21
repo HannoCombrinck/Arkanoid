@@ -9,9 +9,8 @@ using namespace std;
 
 void testSocket()
 {
-	Socket socket;
-	auto iRes = socket.open(3001);
-	if (!iRes)
+	Socket socket(3001);
+	if (!socket.isOpen())
 	{
 		cout << "Failed to open socket\n";
 		return;

@@ -16,34 +16,27 @@ using namespace std;
 
 namespace network {
 
-	Socket::Socket()
+	Socket::Socket(ushort uPort)
 		: m_iHandle(-1)
 	{
+		//////////////////////////////////
+		// TODO: Move to NetworkSystem
 		#if PLATFORM == PLATFORM_WINDOWS
 			WSADATA WsaData;
 			auto iStartupResult = WSAStartup(MAKEWORD(2, 2), &WsaData);
 			if (iStartupResult != NO_ERROR)
 				cout << "Failed to initialize sockets library, error: " << iStartupResult << endl;
 		#endif
-	}
+		//////////////////////////////////
 
-	Socket::~Socket()
-	{
-		#if PLATFORM == PLATFORM_WINDOWS
-			WSACleanup();
-		#endif
-	}
-
-	bool Socket::open(ushort uPort)
-	{
 		// Create socket
 		m_iHandle = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
 		if (m_iHandle <= 0)
 		{
 			cout << "Failed to create socket\n";
-			return false;
+			return;
 		}
-		
+
 		// Bind socket to provided port number
 		sockaddr_in address;
 		address.sin_family = AF_INET;
@@ -54,7 +47,7 @@ namespace network {
 		if (iBindResult < 0)
 		{
 			cout << "Failed to bind socket\n";
-			return false;
+			return;
 		}
 
 		// Put socket in non-blocking mode
@@ -64,7 +57,7 @@ namespace network {
 			if (iSetIOModeResult != 0)
 			{
 				cout << "Failed to set socket to non-blocking mode\n";
-				return false;
+				return;
 			}
 		#elif PLATFORM == PLATFORM_UNIX
 			int iNonBlocking = 1;
@@ -72,14 +65,12 @@ namespace network {
 			if (iSetIOModeResult < 0)
 			{
 				cout << "Failed to set socket to non-blocking mode\n";
-				return false;
+				return;
 			}
 		#endif
-
-		return true;
 	}
 
-	void Socket::close()
+	Socket::~Socket()
 	{
 		#if PLATFORM == PLATFORM_WINDOWS
 			closesocket(m_iHandle);
@@ -87,6 +78,13 @@ namespace network {
 			close(m_iHandle);
 		#endif
 		m_iHandle = -1;
+
+		//////////////////////////////////
+		// TODO: Move to NetworkSystem
+		#if PLATFORM == PLATFORM_WINDOWS
+			WSACleanup();
+		#endif
+		//////////////////////////////////
 	}
 
 	bool Socket::isOpen() const
@@ -122,7 +120,7 @@ namespace network {
 		auto iBytes = recvfrom(m_iHandle, reinterpret_cast<char*>(pData), iSize, 0, reinterpret_cast<sockaddr*>(&senderAddress), &iSenderAddressSize);
 		
 		if (iBytes < -1)
-			cout << "Receive error: " << strerror(errno) << endl;
+			cout << "Receive error: " << errno << endl;
 
 		sender = Address(ntohl(senderAddress.sin_addr.s_addr), ntohs(senderAddress.sin_port));
 		return iBytes;
