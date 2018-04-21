@@ -32,7 +32,7 @@ namespace graphics {
 
 		m_pSFML->pWindow->create(VideoMode(800U, 600U, 32U), "Test");
 		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
-		auto uFrameLimit = m_bVSync ? 60U : 0U;
+		auto uFrameLimit = m_bVSync ? 61U : 0U;
         m_pSFML->pWindow->setFramerateLimit(uFrameLimit);
 
 		m_pSFML->font.loadFromFile("../Data/Fonts/impact.ttf");
@@ -131,7 +131,7 @@ namespace graphics {
 			m_pSFML->pWindow->create(VideoMode(800U, 600U, 32U), "Test");
 
 		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
-		auto uFrameLimit = m_bVSync ? 60U : 0U;
+		auto uFrameLimit = m_bVSync ? 61U : 0U;
         m_pSFML->pWindow->setFramerateLimit(uFrameLimit);
 	}
 
@@ -139,7 +139,7 @@ namespace graphics {
 	{
 		m_bVSync = !m_bVSync;
 		m_pSFML->pWindow->setVerticalSyncEnabled(m_bVSync);
-		auto uFrameLimit = m_bVSync ? 60U : 0U;
+		auto uFrameLimit = m_bVSync ? 61U : 0U;
         m_pSFML->pWindow->setFramerateLimit(uFrameLimit);
 	}
 
