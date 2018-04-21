@@ -37,7 +37,6 @@ void testSocket()
 			for (auto i = 0; i < iBytes; ++i)
 				cout << aBuffer[i];
 			cout << endl;
-			system("Pause");
 		}
 	}
 }
