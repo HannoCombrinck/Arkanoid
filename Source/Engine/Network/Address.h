@@ -9,6 +9,7 @@ namespace network
 	{
 	public:
 		Address();
+		Address(ushort uPort);
 		Address(uchar a, uchar b, uchar c, uchar d, ushort uPort);
 		Address(uint uAddress, ushort uPort);
 		~Address();

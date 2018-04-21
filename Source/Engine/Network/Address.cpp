@@ -8,7 +8,13 @@ namespace network {
 
 	Address::Address()
 		: m_uAddress((127 << 24) | uchar(1))
-		, m_uPort(3000)
+		, m_uPort(3000U)
+	{
+	}
+
+	Address::Address(ushort uPort)
+		: m_uAddress((127 << 24) | uchar(1))
+		, m_uPort(uPort)
 	{
 	}
 

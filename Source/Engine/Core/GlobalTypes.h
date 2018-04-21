@@ -1,5 +1,14 @@
 #pragma once
 
+#define PLATFORM_WINDOWS  1
+#define PLATFORM_UNIX     2
+
+#if defined(WIN32)
+#define PLATFORM PLATFORM_WINDOWS
+#else
+#define PLATFORM PLATFORM_UNIX
+#endif
+
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
 

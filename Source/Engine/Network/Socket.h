@@ -20,10 +20,10 @@ namespace network
 		void close();
 		bool isOpen() const;
 		bool send(const Address& destination, const void* pData, int iSize);
-		int receive(const Address& sender, void* pData, int iSize);
+		int receive(Address& sender, void* pData, int iSize);
 
 	private:
-		int iHandle;
+		int m_iHandle;
 
 	};
 }
