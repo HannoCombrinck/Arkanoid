@@ -5,13 +5,9 @@
 #include <Engine/Math/Math.h>
 #include <Engine/Core/ComponentHandler.h>
 #include <Engine/Input/InputCodes.h>
+#include <Engine/Input/TextBuffer.h>
 
 #include <boost/shared_ptr.hpp>
-
-namespace input
-{
-	class TextBuffer;
-}
 
 class EngineSystems;
 class AppBase;
@@ -24,17 +20,12 @@ namespace input
 		InputSystem();
 		~InputSystem();
 
-		// Public interface
-		// {
-		uint createTextBuffer();
-		TextBuffer& modifyTextBuffer(uint uHandle);
-		void removeTextBuffer(uint uHandle);
+		ADD_COMPONENT(InputSystem, TextBuffer)
 
 		bool& isKeyPressed(KeyboardKey eKey) { return m_KBState[eKey]; }
 		bool& isMBPressed(MouseButton eButton) { return m_MBState[eButton]; }
 		math::Vec2i getMousePos() const { return m_MousePos; }
 		math::Vec2i getMousePosRel() const { return m_MousePosRel; }
-		// }
 
 	private:
 		// AppBase interface
@@ -58,12 +49,5 @@ namespace input
 		math::Vec2i m_MousePos;
 		math::Vec2i m_MousePosRel;
 		// }
-
-		// InputSystem internals
-		// {
-		typedef ComponentHandler<TextBuffer, InputSystem> text_buffer_handler_type;
-		std::unique_ptr<text_buffer_handler_type> m_upTextBufferHandler;
-		// }
-
 	};
 }

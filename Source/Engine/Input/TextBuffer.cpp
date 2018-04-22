@@ -23,6 +23,11 @@ namespace input {
 		m_pInputSystem = pInputSystem;
 	}
 
+	bool TextBuffer::alive() const
+	{
+		return true;
+	}
+
 	void TextBuffer::created()
 	{
 	}

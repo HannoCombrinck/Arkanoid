@@ -4,13 +4,8 @@
 #include <functional>
 
 #include <Engine/Engine.h>
-#include <Engine/Input/InputCodes.h>
-#include <Engine/Input/TextBuffer.h>
-#include <Engine/Graphics/Visual.h>
-#include <Engine/Graphics/VisualText.h>
 
 using namespace std;
-using namespace std::placeholders;
 using namespace input;
 using namespace graphics;
 

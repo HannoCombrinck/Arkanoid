@@ -18,6 +18,7 @@ namespace input
 		~TextBuffer();
 
 		void init(InputSystem* pInputSystem);
+		bool alive() const;
 		void created();
 		void clean();
 

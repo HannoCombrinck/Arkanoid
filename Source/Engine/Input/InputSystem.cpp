@@ -3,8 +3,6 @@
 #include <iostream>
 #include <Engine/Core/GlobalTypes.h>
 
-#include <Engine/Input/TextBuffer.h>
-
 using namespace std;
 using namespace math;
 
@@ -16,28 +14,11 @@ namespace input {
 		memset(m_MBState, false, sizeof(bool)*MB_ButtonCount);
 		m_MousePos = Vec2i(0, 0);
 
-		m_upTextBufferHandler = unique_ptr<text_buffer_handler_type>(new text_buffer_handler_type(this, 10U));
+		CREATE_COMPONENT_HANDLER(TextBuffer, 10U)
 	}
 
 	InputSystem::~InputSystem()
 	{
-	}
-
-	uint InputSystem::createTextBuffer()
-	{
-		auto uHandle = m_upTextBufferHandler->create();
-		m_upTextBufferHandler->modify(uHandle).init(this);
-		return uHandle;
-	}
-
-	TextBuffer & InputSystem::modifyTextBuffer(uint uHandle)
-	{
-		return m_upTextBufferHandler->modify(uHandle);
-	}
-
-	void InputSystem::removeTextBuffer(uint uHandle)
-	{
-		m_upTextBufferHandler->remove(uHandle);
 	}
 
 	void InputSystem::update(float fDT)
@@ -56,9 +37,9 @@ namespace input {
 
 	void InputSystem::charEntered(char ch)
 	{
-		auto& aTextBuffers = m_upTextBufferHandler->getData();
-		for (auto i = 0U; i < m_upTextBufferHandler->getSize(); ++i)
-			aTextBuffers[i].addChar(ch);
+		TextBufferHandler().foreach([ch](TextBuffer& tb) {
+			tb.addChar(ch);
+		});
 	}
 
 	void InputSystem::mbPressed(MouseButton eButton)
