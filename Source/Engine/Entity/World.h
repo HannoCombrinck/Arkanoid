@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
 #include <vector>
-#include <Engine/Core/Math/Math.h>
+#include <Engine/Math/Math.h>
 #include <boost/shared_ptr.hpp>
 
 using namespace std;

@@ -17,7 +17,6 @@
     <ClCompile Include="..\..\Source\Arkanoid\WorldGenerator.cpp" />
     <ClCompile Include="..\..\Source\Arkanoid\Paddle.cpp" />
     <ClCompile Include="..\..\Source\Engine\AppBase.cpp" />
-    <ClCompile Include="..\..\Source\Engine\Core\Math\MathHelpers.cpp" />
     <ClCompile Include="..\..\Source\Engine\EngineSystems.cpp" />
     <ClCompile Include="..\..\Source\Engine\Entity\Entity.cpp" />
     <ClCompile Include="..\..\Source\Engine\Entity\EntityFactory.cpp" />
@@ -32,6 +31,7 @@
     <ClCompile Include="..\..\Source\Engine\Input\InputListener.cpp" />
     <ClCompile Include="..\..\Source\Engine\Input\InputSystem.cpp" />
     <ClCompile Include="..\..\Source\Engine\Input\TextBuffer.cpp" />
+    <ClCompile Include="..\..\Source\Engine\Math\MathHelpers.cpp" />
     <ClCompile Include="..\..\Source\Engine\Network\Address.cpp" />
     <ClCompile Include="..\..\Source\Engine\Network\Socket.cpp" />
     <ClCompile Include="..\..\Source\Engine\Sound\Sound.cpp" />
@@ -46,8 +46,6 @@
     <ClInclude Include="..\..\Source\Arkanoid\Paddle.h" />
     <ClInclude Include="..\..\Source\Engine\AppBase.h" />
     <ClInclude Include="..\..\Source\Engine\Core\GlobalTypes.h" />
-    <ClInclude Include="..\..\Source\Engine\Core\Math\Math.h" />
-    <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h" />
     <ClInclude Include="..\..\Source\Engine\Core\ComponentHandler.h" />
     <ClInclude Include="..\..\Source\Engine\Engine.h" />
     <ClInclude Include="..\..\Source\Engine\EngineSystems.h" />
@@ -65,6 +63,8 @@
     <ClInclude Include="..\..\Source\Engine\Input\InputListener.h" />
     <ClInclude Include="..\..\Source\Engine\Input\InputSystem.h" />
     <ClInclude Include="..\..\Source\Engine\Input\TextBuffer.h" />
+    <ClInclude Include="..\..\Source\Engine\Math\Math.h" />
+    <ClInclude Include="..\..\Source\Engine\Math\MathHelpers.h" />
     <ClInclude Include="..\..\Source\Engine\Network\Address.h" />
     <ClInclude Include="..\..\Source\Engine\Network\Socket.h" />
     <ClInclude Include="..\..\Source\Engine\Sound\Sound.h" />

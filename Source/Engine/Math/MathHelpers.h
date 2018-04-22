@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Engine/Core/Math/Math.h>
+#include <Engine/Math/Math.h>
 
 namespace core
 {

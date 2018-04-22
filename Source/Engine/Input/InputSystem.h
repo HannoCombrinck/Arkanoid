@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include <Engine/Core/Math/Math.h>
+#include <Engine/Math/Math.h>
 #include <Engine/Core/ComponentHandler.h>
 #include <Engine/Input/InputCodes.h>
 

@@ -2,7 +2,7 @@
 
 #include <memory>
 #include <Engine/Input/InputCodes.h>
-#include <Engine/Core/Math/Math.h>
+#include <Engine/Math/Math.h>
 
 namespace sf
 {

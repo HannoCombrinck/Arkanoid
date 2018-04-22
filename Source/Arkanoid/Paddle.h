@@ -3,7 +3,7 @@
 #include <vector>
 
 #include <Engine/Core/GlobalTypes.h>
-#include <Engine/Core/Math/Math.h>
+#include <Engine/Math/Math.h>
 #include <Engine/Entity/Entity.h>
 
 using namespace core;

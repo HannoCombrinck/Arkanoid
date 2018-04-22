@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
 
-#include <Engine/Core/Math/Math.h>
+#include <Engine/Math/Math.h>
 #include <Engine/Core/GlobalTypes.h>
 #include <SFML/Graphics.hpp>
 

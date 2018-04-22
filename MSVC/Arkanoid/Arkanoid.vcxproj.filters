@@ -11,9 +11,6 @@
     <Filter Include="Header/Source Files\Engine\Core">
       <UniqueIdentifier>{84145602-7385-4d0f-bd61-f9da7595cef5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header/Source Files\Engine\Core\Math">
-      <UniqueIdentifier>{c88ebff0-1bb2-4e03-8bee-1d1e816585f8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header/Source Files\Engine\Sound">
       <UniqueIdentifier>{93fc0621-a742-4b01-9006-4d361c8da7bd}</UniqueIdentifier>
     </Filter>
@@ -32,13 +29,13 @@
     <Filter Include="Header/Source Files\Engine\Network">
       <UniqueIdentifier>{94c33346-f2b4-446a-a70e-6c1865ca1ebe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header/Source Files\Engine\Math">
+      <UniqueIdentifier>{43ac7268-d192-44b5-b539-abcfa1a10aec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\main.cpp">
       <Filter>Header/Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\Engine\Core\Math\MathHelpers.cpp">
-      <Filter>Header/Source Files\Engine\Core\Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Engine\AppBase.cpp">
       <Filter>Header/Source Files\Engine</Filter>
@@ -112,14 +109,11 @@
     <ClCompile Include="..\..\Source\Engine\Network\Socket.cpp">
       <Filter>Header/Source Files\Engine\Network</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Math\MathHelpers.cpp">
+      <Filter>Header/Source Files\Engine\Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\Engine\Core\Math\MathHelpers.h">
-      <Filter>Header/Source Files\Engine\Core\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Engine\Core\Math\Math.h">
-      <Filter>Header/Source Files\Engine\Core\Math</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\Engine\AppBase.h">
       <Filter>Header/Source Files\Engine</Filter>
     </ClInclude>
@@ -209,6 +203,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Engine\Network\Socket.h">
       <Filter>Header/Source Files\Engine\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Math\Math.h">
+      <Filter>Header/Source Files\Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Math\MathHelpers.h">
+      <Filter>Header/Source Files\Engine\Math</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
