@@ -3,7 +3,7 @@
 #include <iostream>
 
 using namespace std;
-using namespace core;
+using namespace math;
 
 namespace input {
 

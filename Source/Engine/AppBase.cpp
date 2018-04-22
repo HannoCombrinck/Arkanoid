@@ -11,7 +11,7 @@
 
 using namespace sf;
 using namespace std;
-using namespace core;
+using namespace math;
 using namespace input;
 using namespace graphics;
 

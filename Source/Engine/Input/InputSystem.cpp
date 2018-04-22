@@ -6,7 +6,7 @@
 #include <Engine/Input/TextBuffer.h>
 
 using namespace std;
-using namespace core;
+using namespace math;
 
 namespace input {
 
