@@ -3,7 +3,7 @@
 
 #include <Engine/Graphics/VisualShape.h>
 
-using namespace core;
+using namespace math;
 
 namespace graphics
 {

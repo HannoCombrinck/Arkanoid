@@ -59,6 +59,6 @@ private:
 	std::unique_ptr<sf::Clock> m_upClock;
 	float m_fDeltaTime;
 	std::unique_ptr<EngineSystems> m_upEngineSystems;
-	core::Vec2i m_vMousePos;
+	math::Vec2i m_vMousePos;
 	bool m_bMouseLock;
 };

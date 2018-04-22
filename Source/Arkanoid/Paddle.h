@@ -6,7 +6,7 @@
 #include <Engine/Math/Math.h>
 #include <Engine/Entity/Entity.h>
 
-using namespace core;
+using namespace math;
 using namespace entity;
 
 class Paddle : public Entity

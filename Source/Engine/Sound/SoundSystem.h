@@ -43,8 +43,8 @@ namespace sound
 		// {
 		std::vector<std::unique_ptr<Sound>> m_aupSounds;
 
-		core::Vec3 m_vListenerPosition;
-		core::Vec3 m_vListenerDirection;
+		math::Vec3 m_vListenerPosition;
+		math::Vec3 m_vListenerDirection;
 		float m_fGlobalVolume;
 		// }
 

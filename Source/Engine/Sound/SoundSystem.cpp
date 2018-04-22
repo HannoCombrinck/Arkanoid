@@ -7,7 +7,7 @@
 #include <Engine/Sound/Sound.h>
 
 using namespace std;
-using namespace core;
+using namespace math;
 
 namespace sound {
 

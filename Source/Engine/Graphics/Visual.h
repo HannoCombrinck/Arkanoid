@@ -1,11 +1,11 @@
 #pragma once
 #include <memory>
 
-#include <Engine/Math/Math.h>
 #include <Engine/Core/GlobalTypes.h>
+#include <Engine/Math/Math.h>
 #include <SFML/Graphics.hpp>
 
-using namespace core;
+using namespace math;
 
 namespace graphics
 {

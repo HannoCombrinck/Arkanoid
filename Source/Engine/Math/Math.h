@@ -8,7 +8,7 @@
 #include <glm/gtx/quaternion.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-namespace core
+namespace math
 {
 	typedef glm::vec2 Vec2;
 	typedef glm::ivec2 Vec2i;
