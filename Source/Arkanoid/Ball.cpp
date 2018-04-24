@@ -1,4 +1,4 @@
-#include "Ball.h"
+/*#include "Ball.h"
 
 #include <iostream>
 #include <functional>
@@ -50,3 +50,4 @@ void Ball::applyState()
 	auto& rVisual = engine().visuals().modifyVisual(m_uVisual);
 	rVisual.setPosition(m_vPos);
 }
+*/
