@@ -52,12 +52,10 @@ private:
 	void render();
 	void handleEvents();
 	void handleMouseInput();
-	void checkTime();
 	// }
 
 	std::unique_ptr<sf::RenderWindow> m_upWindow;
 	std::unique_ptr<sf::Clock> m_upClock;
-	float m_fDeltaTime;
 	std::unique_ptr<EngineSystems> m_upEngineSystems;
 	math::Vec2i m_vMousePos;
 	bool m_bMouseLock;

@@ -16,7 +16,7 @@ using namespace input;
 using namespace graphics;
 
 AppBase::AppBase()
-	: m_fDeltaTime(0.0f)
+	: m_vMousePos(Vec2i(0,0))
 	, m_bMouseLock(false)
 {
 	m_upWindow = unique_ptr<RenderWindow>(new RenderWindow);
@@ -34,7 +34,6 @@ void AppBase::start()
 	while (m_upWindow->isOpen())
 	{
 		handleEvents();
-		checkTime();
 		update();
 		render();
 	}
@@ -69,8 +68,9 @@ EngineSystems& AppBase::engine()
 
 void AppBase::update()
 {
-	engine().update(m_fDeltaTime);
-	onUpdate(m_fDeltaTime);
+	auto fDeltaTime = m_upClock->restart().asSeconds();
+	engine().update(fDeltaTime);
+	onUpdate(fDeltaTime);
 }
 
 void AppBase::render()
@@ -168,9 +168,4 @@ void AppBase::handleMouseInput()
 	}
 
 	engine().inputs().mouseMovedRel(0, 0);
-}
-
-void AppBase::checkTime()
-{
-	m_fDeltaTime = m_upClock->restart().asSeconds();
 }

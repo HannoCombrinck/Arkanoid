@@ -8,6 +8,7 @@
 using namespace std;
 using namespace input;
 using namespace graphics;
+using namespace sound;
 
 Paddle::Paddle()
 	: m_vPos(Vec2(0.0f, 0.0f))
