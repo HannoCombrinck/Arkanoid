@@ -11,10 +11,10 @@ public:
 
 	void update(float fDT);
 
-	input::InputSystem& inputs();
-	graphics::VisualSystem& visuals();
-	sound::SoundSystem& sounds();
-	entity::EntitySystem& entities();
+	input::InputSystem& is();
+	graphics::VisualSystem& vs();
+	sound::SoundSystem& ss();
+	entity::EntitySystem& es();
 
 private:
 	std::unique_ptr<input::InputSystem> m_upInputSystem;

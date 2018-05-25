@@ -34,22 +34,22 @@ namespace entity {
 
 	EntitySystem& Entity::es()
 	{
-		return m_pEngine->entities();
+		return m_pEngine->es();
 	}
 
 	VisualSystem& Entity::vs()
 	{
-		return m_pEngine->visuals();
+		return m_pEngine->vs();
 	}
 
 	InputSystem& Entity::is()
 	{
-		return m_pEngine->inputs();
+		return m_pEngine->is();
 	}
 
 	SoundSystem& Entity::ss()
 	{
-		return m_pEngine->sounds();
+		return m_pEngine->ss();
 	}
 
 }

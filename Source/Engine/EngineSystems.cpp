@@ -32,22 +32,22 @@ void EngineSystems::update(float fDT)
 	m_upSoundSystem->update(fDT);
 }
 
-InputSystem& EngineSystems::inputs()
+InputSystem& EngineSystems::is()
 {
 	return *m_upInputSystem;
 }
 
-VisualSystem& EngineSystems::visuals()
+VisualSystem& EngineSystems::vs()
 {
 	return *m_upVisualSystem;
 }
 
-SoundSystem& EngineSystems::sounds()
+SoundSystem& EngineSystems::ss()
 {
 	return *m_upSoundSystem;
 }
 
-entity::EntitySystem& EngineSystems::entities()
+entity::EntitySystem& EngineSystems::es()
 {
 	return *m_upEntitySystem;
 }

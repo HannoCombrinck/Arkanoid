@@ -46,7 +46,7 @@ void AppBase::closeApplication()
 
 void AppBase::toggleFullscreen()
 {
-	engine().visuals().toggleFullscreen();
+	engine().vs().toggleFullscreen();
 }
 
 void AppBase::toggleMouseLock()
@@ -58,7 +58,7 @@ void AppBase::toggleMouseLock()
 
 void AppBase::toggleVSync()
 {
-	engine().visuals().toggleVSync();
+	engine().vs().toggleVSync();
 }
 
 EngineSystems& AppBase::engine()
@@ -76,7 +76,7 @@ void AppBase::update()
 void AppBase::render()
 {
 	// TODO: Do preRenderUpdate so visuals have latest information
-	engine().visuals().render();
+	engine().vs().render();
 }
 
 void AppBase::handleEvents()
@@ -90,41 +90,41 @@ void AppBase::handleEvents()
 			m_upWindow->close();
 			break;
 		case Event::Resized:
-			engine().visuals().resize(e.size.width, e.size.height);
+			engine().vs().resize(e.size.width, e.size.height);
 			break;
 		case Event::KeyPressed:
 		{
 			auto key = KeyboardKey(e.key.code);
 			onKeyPressed(key);
-			engine().inputs().keyPressed(key);
+			engine().is().keyPressed(key);
 		}
 		break;
 		case Event::KeyReleased:
 		{
 			auto key = KeyboardKey(e.key.code);
 			onKeyReleased(key);
-			engine().inputs().keyReleased(key);
+			engine().is().keyReleased(key);
 		}
 		break;
 		case Event::TextEntered:
 			if (e.text.unicode < 128)
 			{
 				onCharEntered(static_cast<char>(e.text.unicode));
-				engine().inputs().charEntered(static_cast<char>(e.text.unicode));
+				engine().is().charEntered(static_cast<char>(e.text.unicode));
 			}
 			break;
 		case Event::MouseButtonPressed:
 		{
 			auto btn = MouseButton(e.mouseButton.button);
 			onMBPressed(btn);
-			engine().inputs().mbPressed(btn);
+			engine().is().mbPressed(btn);
 		}
 		break;
 		case Event::MouseButtonReleased:
 		{
 			auto btn = MouseButton(e.mouseButton.button);
 			onMBReleased(btn);
-			engine().inputs().mbReleased(btn);
+			engine().is().mbReleased(btn);
 		}
 		break;
 		default:
@@ -150,7 +150,7 @@ void AppBase::handleMouseInput()
 			onMouseMovedRel(vDiff.x, vDiff.y);
 		}
 
-		engine().inputs().mouseMovedRel(vDiff.x, vDiff.y);
+		engine().is().mouseMovedRel(vDiff.x, vDiff.y);
 		return;
 	}
 
@@ -159,13 +159,13 @@ void AppBase::handleMouseInput()
 	{
 		auto iX = vMousePosWindow.x;
 		auto iY = vMousePosWindow.y;
-		engine().inputs().mouseMoved(iX, iY);
-		engine().inputs().mouseMovedRel(iX - m_vMousePos.x, iY - m_vMousePos.y);
+		engine().is().mouseMoved(iX, iY);
+		engine().is().mouseMovedRel(iX - m_vMousePos.x, iY - m_vMousePos.y);
 		onMouseMovedRel(iX - m_vMousePos.x, iY - m_vMousePos.y);
 		onMouseMoved(iX, iY);
 		m_vMousePos = Vec2(iX, iY);
 		return;
 	}
 
-	engine().inputs().mouseMovedRel(0, 0);
+	engine().is().mouseMovedRel(0, 0);
 }
