@@ -27,7 +27,7 @@ namespace sound {
 			std::cout << "Couldn't load ambient.ogg";
 
 		m_Music->setLoop(true);
-		//m_Music->play();
+		m_Music->play();
 	}
 
 	SoundSystem::~SoundSystem()

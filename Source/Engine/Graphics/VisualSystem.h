@@ -38,6 +38,7 @@ namespace graphics
 		friend class ::AppBase;
 		void update(float fDT);
 		void render();
+		void processGUIEvents(const sf::Event& e);
 		void resize(int iWidth, int iHeight);
 		void toggleFullscreen();
 		void toggleVSync();

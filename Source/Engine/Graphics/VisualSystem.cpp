@@ -3,10 +3,12 @@
 #include <iostream>
 #include <vector>
 
-
 #include <Engine/Graphics/VisualText.h>
 
 #include <SFML/Graphics.hpp>
+
+#include <imgui/imgui.h>
+#include <imgui/imgui-SFML.h>
 
 using namespace std;
 using namespace sf;
@@ -40,6 +42,8 @@ namespace graphics {
 		m_pSFML->text.setFont(m_pSFML->font);
 		m_pSFML->text.setCharacterSize(20U);
 
+		ImGui::SFML::Init(*m_pSFML->pWindow);
+
 		CREATE_COMPONENT_HANDLER(Visual, 20U);
 		CREATE_COMPONENT_HANDLER(VisualShapeBox, 20U);
 		CREATE_COMPONENT_HANDLER(VisualShapeCircle, 20U);
@@ -48,6 +52,7 @@ namespace graphics {
 
 	VisualSystem::~VisualSystem()
 	{
+		ImGui::SFML::Shutdown();
 		delete m_pSFML;
 	}
 
@@ -64,6 +69,34 @@ namespace graphics {
 		VisualHandler().foreach([fDT](Visual& v) {
 			v.update(fDT);
 		});
+
+		ImGui::SFML::Update(*m_pSFML->pWindow, seconds(fDT));
+
+		///////////////////////////////////////////
+		///////////////////////////////////////////
+		ImGui::Begin("Sample window");
+		static float colour[3] = { 0.0f, 0.0f, 0.0f };
+
+		if (ImGui::ColorEdit3("Background color", colour))
+		{
+			cout << "Color R: " << static_cast<Uint8>(colour[0] * 255.f) << endl;
+			cout << "Color G: " << static_cast<Uint8>(colour[1] * 255.f) << endl;
+			cout << "Color B: " << static_cast<Uint8>(colour[2] * 255.f) << endl;
+		}
+
+		static char windowTitle[255];
+		if (ImGui::InputText("Window title", windowTitle, 255))
+		{
+			cout << "Input text changed: " << windowTitle << endl;
+		}
+
+		if (ImGui::Button("Update window title"))
+		{
+			m_pSFML->pWindow->setTitle(windowTitle);
+		}
+		ImGui::End();
+		///////////////////////////////////////////////
+		///////////////////////////////////////////
 	}
 
 	void VisualSystem::render()
@@ -112,9 +145,16 @@ namespace graphics {
 		});
 		//////
 
+		ImGui::SFML::Render(*m_pSFML->pWindow);
+
 		m_pSFML->pWindow->popGLStates();
 		// Flip buffers
 		m_pSFML->pWindow->display();
+	}
+
+	void VisualSystem::processGUIEvents(const Event & e)
+	{
+		ImGui::SFML::ProcessEvent(e);
 	}
 
 	void VisualSystem::resize(int iWidth, int iHeight)

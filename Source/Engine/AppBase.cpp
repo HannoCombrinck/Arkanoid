@@ -130,6 +130,8 @@ void AppBase::handleEvents()
 		default:
 		break;
 		}
+
+		engine().vs().processGUIEvents(e);
 	}
 
 	handleMouseInput();
