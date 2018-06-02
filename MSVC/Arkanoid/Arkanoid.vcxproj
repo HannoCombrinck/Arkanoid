@@ -32,7 +32,6 @@
     <ClCompile Include="..\..\Source\Engine\Graphics\VisualShapeCircle.cpp" />
     <ClCompile Include="..\..\Source\Engine\Graphics\VisualSystem.cpp" />
     <ClCompile Include="..\..\Source\Engine\Graphics\VisualText.cpp" />
-    <ClCompile Include="..\..\Source\Engine\GUI\GUISystem.cpp" />
     <ClCompile Include="..\..\Source\Engine\Input\InputListener.cpp" />
     <ClCompile Include="..\..\Source\Engine\Input\InputSystem.cpp" />
     <ClCompile Include="..\..\Source\Engine\Input\TextBuffer.cpp" />
@@ -64,7 +63,6 @@
     <ClInclude Include="..\..\Source\Engine\Graphics\VisualShapeCircle.h" />
     <ClInclude Include="..\..\Source\Engine\Graphics\VisualSystem.h" />
     <ClInclude Include="..\..\Source\Engine\Graphics\VisualText.h" />
-    <ClInclude Include="..\..\Source\Engine\GUI\GUISystem.h" />
     <ClInclude Include="..\..\Source\Engine\Input\InputCodes.h" />
     <ClInclude Include="..\..\Source\Engine\Input\InputListener.h" />
     <ClInclude Include="..\..\Source\Engine\Input\InputSystem.h" />
