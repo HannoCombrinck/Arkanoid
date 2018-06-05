@@ -18,9 +18,10 @@ namespace graphics {
 	{
 	}
 
-    void VisualShapeBox::setPosition(const Vec2& vPos)
+	VisualShapeBox& VisualShapeBox::setPosition(const Vec2& vPos)
     {
         m_Rectangle.setPosition(vPos.x, vPos.y);
+		return *this;
     }
 
     Vec2 VisualShapeBox::getPosition() const
@@ -29,9 +30,10 @@ namespace graphics {
         return Vec2(vPos.x, vPos.y);
     }
 
-    void VisualShapeBox::setSize(const Vec2& vSize)
+	VisualShapeBox& VisualShapeBox::setSize(const Vec2& vSize)
     {
         m_Rectangle.setSize(Vector2f(vSize.x, vSize.y));
+		return *this;
     }
 
     Vec2 VisualShapeBox::getSize() const
@@ -40,9 +42,10 @@ namespace graphics {
         return Vec2(vSize.x, vSize.y);
     }
 
-	void VisualShapeBox::setColour(uint r, uint g, uint b, uint a)
+	VisualShapeBox& VisualShapeBox::setColour(uint r, uint g, uint b, uint a)
 	{
 		m_Rectangle.setFillColor(Color(r, g, b, a));
+		return *this;
 	}
 
 	void VisualShapeBox::getColour(uint& r, uint& g, uint& b, uint& a) const

@@ -4,7 +4,7 @@
 
 #define ADD_COMPONENT(SystemName, ComponentName) \
 public: \
-	uint create##ComponentName() { return m_up##ComponentName##Handler->create(); } \
+	ComponentName& create##ComponentName(uint& uHandle) { uHandle = m_up##ComponentName##Handler->create(); return modify##ComponentName(uHandle); } \
 	ComponentName& modify##ComponentName(uint uHandle) { return m_up##ComponentName##Handler->modify(uHandle); } \
 	void remove##ComponentName(uint uHandle) { m_up##ComponentName##Handler->remove(uHandle); } \
 private: \

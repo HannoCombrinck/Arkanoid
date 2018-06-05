@@ -18,13 +18,13 @@ namespace graphics
 		VisualShapeBox();
 		virtual ~VisualShapeBox();
 
-		void setPosition(const Vec2& vPos);
+		VisualShapeBox& setPosition(const Vec2& vPos);
 		Vec2 getPosition() const;
 
-		void setSize(const Vec2& vSize);
+		VisualShapeBox& setSize(const Vec2& vSize);
 		Vec2 getSize() const;
 
-		void setColour(uint r, uint g, uint b, uint a);
+		VisualShapeBox& setColour(uint r, uint g, uint b, uint a);
 		void getColour(uint& r, uint& g, uint& b, uint& a) const;
 
 	private:

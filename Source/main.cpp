@@ -42,8 +42,6 @@ void testSocket()
 
 int main(int argc, char** argv)
 {
-	testSocket();
-
 	Arkanoid arkanoid;
 	arkanoid.start();
 

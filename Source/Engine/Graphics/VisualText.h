@@ -31,10 +31,11 @@ namespace graphics
 		void clean();
 
 		void update(float fDT);
-		void loadFont(const std::string& sFilename);
-		void setText(const std::string& sString);
-		void setPosition(const Vec2& vPos);
-		void setSize(const Vec2& vSize);
+
+		VisualText& loadFont(const std::string& sFilename);
+		VisualText& setText(const std::string& sString);
+		VisualText& setPosition(const Vec2& vPos);
+		VisualText& setSize(const Vec2& vSize);
 
 	private:
 		friend class VisualSystem;

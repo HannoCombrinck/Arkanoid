@@ -35,20 +35,23 @@ Paddle::~Paddle()
 
 void Paddle::onInit()
 {
-	m_uVisual = vs().createVisual();
-	vs().modifyVisual(m_uVisual).loadSprite("../Data/Textures/test.tga");
+	vs().createVisual(m_uVisual)
+		.loadSprite("../Data/Textures/test.tga")
+		;
 
-    m_uVisualBox = vs().createVisualShapeBox();
-    vs().modifyVisualShapeBox(m_uVisualBox).setSize(Vec2(100.0f, 20.0f));
-    vs().modifyVisualShapeBox(m_uVisualBox).setPosition(Vec2(100.0f, 100.0f));
+    vs().createVisualShapeBox(m_uVisualBox)
+		.setSize(Vec2(100.0f, 20.0f))
+		.setPosition(Vec2(100.0f, 100.0f))
+		;
 
 	m_uSound = ss().createSound("../Data/Sounds/beep.wav");
 
-	m_uVisualText = vs().createVisualText();
-	vs().modifyVisualText(m_uVisualText).setText("Temp");
-	vs().modifyVisualText(m_uVisualText).loadFont("../Data/Fonts/impact.ttf");
+	vs().createVisualText(m_uVisualText)
+		.setText("Temp")
+		.loadFont("../Data/Fonts/impact.ttf")
+		;
 
-	m_uTextBuffer = is().createTextBuffer();
+	is().createTextBuffer(m_uTextBuffer);
 }
 
 void Paddle::onUpdate(float fDT)

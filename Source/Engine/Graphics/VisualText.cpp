@@ -44,11 +44,12 @@ namespace graphics {
 		m_bAlive = false;
 	}
 
-	void VisualText::loadFont(const std::string& sFilename)
+	VisualText& VisualText::loadFont(const std::string& sFilename)
 	{
 		m_Font.loadFromFile(sFilename);
 		m_Text.setFont(m_Font);
 		m_bAlive = true;
+		return *this;
 	}
 
 	void VisualText::update(float fDT)
@@ -68,23 +69,25 @@ namespace graphics {
 		}
 	}
 
-	void VisualText::setText(const std::string & sString)
+	VisualText& VisualText::setText(const std::string & sString)
 	{
 		m_sString = sString;
 		m_Text.setString(sString);
+		return *this;
 	}
 
-	void VisualText::setPosition(const Vec2& vPos)
+	VisualText& VisualText::setPosition(const Vec2& vPos)
 	{
 		m_bPosChanged = true;
 		m_vPos = vPos;
-
+		return *this;
 	}
 
-	void VisualText::setSize(const Vec2 & vSize)
+	VisualText& VisualText::setSize(const Vec2 & vSize)
 	{
 		m_bSizeChanged = true;
 		m_vSize = vSize;
+		return *this;
 	}
 
 }
