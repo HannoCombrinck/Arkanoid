@@ -31,9 +31,9 @@ namespace graphics
 		void clean();
 
 		void update(float fDT);
-		void loadSprite(const std::string& sFilename);
-		void setPosition(const Vec2& vPos);
-		void setSize(const Vec2& vSize);
+		Visual& loadSprite(const std::string& sFilename);
+		Visual& setPosition(const Vec2& vPos);
+		Visual& setSize(const Vec2& vSize);
 
 	private:
 		friend class VisualSystem;

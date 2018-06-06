@@ -55,12 +55,13 @@ namespace graphics {
 		m_uSprite = ~0;*/
 	}
 
-	void Visual::loadSprite(const std::string& sFilename)
+	Visual& Visual::loadSprite(const std::string& sFilename)
 	{
 		//m_uSprite = m_pVisualSystem->createSprite(sFilename);
 		m_Texture.loadFromFile(sFilename);
 		m_Sprite.setTexture(m_Texture);
 		m_bAlive = true;
+		return *this;
 	}
 
 	void Visual::update(float fDT)
@@ -80,17 +81,18 @@ namespace graphics {
 		}
 	}
 
-	void Visual::setPosition(const Vec2& vPos)
+	Visual& Visual::setPosition(const Vec2& vPos)
 	{
 		m_bPosChanged = true;
 		m_vPos = vPos;
-
+		return *this;
 	}
 
-	void Visual::setSize(const Vec2 & vSize)
+	Visual& Visual::setSize(const Vec2 & vSize)
 	{
 		m_bSizeChanged = true;
 		m_vSize = vSize;
+		return *this;
 	}
 
 }
