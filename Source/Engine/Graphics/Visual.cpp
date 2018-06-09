@@ -33,7 +33,7 @@ namespace graphics {
 		m_Sprite = sf::Sprite();
 	}
 
-	bool Visual::alive() const
+	bool Visual::isAlive() const
 	{
 		return m_bAlive;
 	}
@@ -47,7 +47,7 @@ namespace graphics {
 
 	void Visual::update(float fDT)
 	{
-		if (!alive())
+		if (!isAlive())
 			return;
 
 		if (m_bPosChanged)

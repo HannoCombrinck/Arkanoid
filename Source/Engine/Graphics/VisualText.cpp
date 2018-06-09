@@ -32,7 +32,7 @@ namespace graphics {
 		m_Font = sf::Font();
 	}
 
-	bool VisualText::alive() const
+	bool VisualText::isAlive() const
 	{
 		return m_bAlive;
 	}
@@ -46,7 +46,7 @@ namespace graphics {
 
 	void VisualText::update(float fDT)
 	{
-		if (!alive())
+		if (!isAlive())
 			return;
 
 		if (m_bPosChanged)

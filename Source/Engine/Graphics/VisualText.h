@@ -22,7 +22,7 @@ namespace graphics
 
 		void init();
 		void destroy();
-		bool alive() const;
+		bool isAlive() const;
 
 		void update(float fDT);
 

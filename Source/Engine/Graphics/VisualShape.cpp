@@ -28,14 +28,14 @@ namespace graphics {
 		onDestroy();
 	}
 
-	bool VisualShape::alive() const
+	bool VisualShape::isAlive() const
 	{
 		return m_bAlive;
 	}
 
 	void VisualShape::update(float fDT)
 	{
-		if (!alive())
+		if (!isAlive())
 			return;
 
         onUpdate(fDT);

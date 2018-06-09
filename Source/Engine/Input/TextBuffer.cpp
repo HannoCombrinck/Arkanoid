@@ -21,7 +21,7 @@ namespace input {
 		m_bAlive = true;
 	}
 
-	bool TextBuffer::alive() const
+	bool TextBuffer::isAlive() const
 	{
 		return m_bAlive;
 	}

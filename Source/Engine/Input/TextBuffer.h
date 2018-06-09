@@ -14,7 +14,7 @@ namespace input
 
 		void init();
 		void destroy();
-		bool alive() const;
+		bool isAlive() const;
 
 		void clear();
 		const std::vector<char>& getBuffer() const;

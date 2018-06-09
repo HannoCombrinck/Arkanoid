@@ -17,7 +17,7 @@ namespace graphics
 
 		void init();
 		void destroy();
-		bool alive() const;
+		bool isAlive() const;
 
 		void update(float fDT);
 		Visual& loadSprite(const std::string& sFilename);

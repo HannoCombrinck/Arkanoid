@@ -75,7 +75,7 @@ public:
 	{
 		for (uint i = 0U; i < m_uNext; ++i)
 		{
-			if (m_aComponents[i].alive())
+			if (m_aComponents[i].isAlive())
 				f(m_aComponents[i]);
 		}
 	}
