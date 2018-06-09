@@ -2,16 +2,13 @@
 
 #include <iostream>
 
-#include <Engine/Graphics/VisualSystem.h>
-
 using namespace std;
 using namespace sf;
 
 namespace graphics {
 
 	VisualShape::VisualShape()
-		: m_pVisualSystem(0)
-		, m_bAlive(false)
+		: m_bAlive(false)
 	{
 	}
 
@@ -19,27 +16,21 @@ namespace graphics {
 	{
 	}
 
-	void VisualShape::init(VisualSystem* pVisualSystem)
+	void VisualShape::init()
 	{
-		m_pVisualSystem = pVisualSystem;
-		onInit(pVisualSystem);
+		onInit();
+		m_bAlive = true;
 	}
 
-	void VisualShape::created()
+	void VisualShape::destroy()
 	{
-        m_bAlive = true;
-        onCreated();
+		m_bAlive = false;
+		onDestroy();
 	}
 
 	bool VisualShape::alive() const
 	{
 		return m_bAlive;
-	}
-
-	void VisualShape::clean()
-	{
-		m_bAlive = false;
-		onClean();
 	}
 
 	void VisualShape::update(float fDT)

@@ -7,11 +7,6 @@ using namespace math;
 
 namespace graphics
 {
-	class VisualSystem;
-}
-
-namespace graphics
-{
 	class VisualShapeBox : public VisualShape
 	{
 	public:
@@ -28,9 +23,7 @@ namespace graphics
 		void getColour(uint& r, uint& g, uint& b, uint& a) const;
 
 	private:
-        void onInit(VisualSystem* pVisualSystem) override;
-        void onCreated() override;
-        void onClean() override;
+        void onInit() override;
         void onUpdate(float fDT) override;
         void onDraw(sf::RenderWindow& window) override;
 

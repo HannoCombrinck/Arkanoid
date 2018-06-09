@@ -75,6 +75,7 @@ namespace graphics {
 		///////////////////////////////////////////
 		///////////////////////////////////////////
 		ImGui::Begin("Sample window");
+		
 		static float colour[3] = { 0.0f, 0.0f, 0.0f };
 
 		if (ImGui::ColorEdit3("Background color", colour))

@@ -9,26 +9,15 @@ using namespace math;
 
 namespace graphics
 {
-	class VisualSystem;
-}
-
-namespace sf
-{
-	class RenderWindow;
-}
-
-namespace graphics
-{
 	class Visual
 	{
 	public:
 		Visual();
 		~Visual();
 
-		void init(VisualSystem* pVisualSystem);
-		void created();
+		void init();
+		void destroy();
 		bool alive() const;
-		void clean();
 
 		void update(float fDT);
 		Visual& loadSprite(const std::string& sFilename);
@@ -37,8 +26,8 @@ namespace graphics
 
 	private:
 		friend class VisualSystem;
-		VisualSystem* m_pVisualSystem;
 		bool m_bAlive;
+
 		uint m_uSprite;
 		sf::Sprite m_Sprite;
 		sf::Texture m_Texture;

@@ -6,22 +6,17 @@
 
 namespace input
 {
-	class InputSystem;
-}
-
-namespace input
-{
 	class TextBuffer
 	{
 	public:
 		TextBuffer();
 		~TextBuffer();
 
-		void init(InputSystem* pInputSystem);
+		void init();
+		void destroy();
 		bool alive() const;
-		void created();
-		void clean();
 
+		void clear();
 		const std::vector<char>& getBuffer() const;
 
 	private:
@@ -31,7 +26,8 @@ namespace input
 		void addChar(const char& ch);
 		// }
 
-		InputSystem* m_pInputSystem;
+		bool m_bAlive;
+
 		std::vector<char> m_Buffer;
 	};
 }

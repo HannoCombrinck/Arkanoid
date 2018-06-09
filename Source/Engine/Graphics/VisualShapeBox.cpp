@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-#include <Engine/Graphics/VisualSystem.h>
-
 using namespace std;
 using namespace sf;
 
@@ -57,15 +55,7 @@ namespace graphics {
 		a = Colour.a;
 	}
 
-    void VisualShapeBox::onInit(VisualSystem* pVisualSystem)
-    {
-    }
-
-    void VisualShapeBox::onCreated()
-    {
-    }
-
-    void VisualShapeBox::onClean()
+    void VisualShapeBox::onInit()
     {
     }
 

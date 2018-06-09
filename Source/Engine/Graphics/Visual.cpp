@@ -2,16 +2,13 @@
 
 #include <iostream>
 
-#include <Engine/Graphics/VisualSystem.h>
-
 using namespace std;
 using namespace sf;
 
 namespace graphics {
 
 	Visual::Visual()
-		: m_pVisualSystem(0)
-		, m_bAlive(false)
+		: m_bAlive(false)
 		, m_uSprite(~0)
 		, m_vPos(Vec2(0.0f, 0.0f))
 		, m_bPosChanged(false)
@@ -22,45 +19,29 @@ namespace graphics {
 
 	Visual::~Visual()
 	{
-		/*if (m_uSprite == ~0)
-			return;
-
-		m_pVisualSystem->removeSprite(m_uSprite);
-		m_uSprite = ~0;*/
 	}
 
-	void Visual::init(VisualSystem* pVisualSystem)
+	void Visual::init()
 	{
-		m_pVisualSystem = pVisualSystem;
+		m_bAlive = true;
 	}
 
-	void Visual::created()
+	void Visual::destroy()
 	{
+		m_bAlive = false;
+		m_Texture = sf::Texture();
+		m_Sprite = sf::Sprite();
 	}
 
 	bool Visual::alive() const
 	{
 		return m_bAlive;
 	}
-
-	void Visual::clean()
-	{
-		m_Texture = sf::Texture();
-		m_Sprite = sf::Sprite();
-		m_bAlive = false;
-		/*if (m_uSprite == ~0)
-			return;
-
-		m_pVisualSystem->removeSprite(m_uSprite);
-		m_uSprite = ~0;*/
-	}
-
+		
 	Visual& Visual::loadSprite(const std::string& sFilename)
 	{
-		//m_uSprite = m_pVisualSystem->createSprite(sFilename);
 		m_Texture.loadFromFile(sFilename);
 		m_Sprite.setTexture(m_Texture);
-		m_bAlive = true;
 		return *this;
 	}
 

@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-#include <Engine/Graphics/VisualSystem.h>
-
 using namespace std;
 using namespace sf;
 
@@ -51,10 +49,6 @@ namespace graphics {
 		g = Colour.g;
 		b = Colour.b;
 		a = Colour.a;
-    }
-
-    void VisualShapeCircle::onCreated()
-    {
     }
 
 	void VisualShapeCircle::onUpdate(float fDT)

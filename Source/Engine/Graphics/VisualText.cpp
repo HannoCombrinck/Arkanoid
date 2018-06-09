@@ -2,16 +2,13 @@
 
 #include <iostream>
 
-#include <Engine/Graphics/VisualSystem.h>
-
 using namespace std;
 using namespace sf;
 
 namespace graphics {
 
 	VisualText::VisualText()
-		: m_pVisualSystem(0)
-		, m_bAlive(false)
+		: m_bAlive(false)
 		, m_vPos(Vec2(0.0f, 0.0f))
 		, m_bPosChanged(false)
 		, m_vSize(Vec2(1.0f, 1.0f))
@@ -23,13 +20,16 @@ namespace graphics {
 	{
 	}
 
-	void VisualText::init(VisualSystem* pVisualSystem)
+	void VisualText::init()
 	{
-		m_pVisualSystem = pVisualSystem;
+		m_bAlive = true;
 	}
 
-	void VisualText::created()
+	void VisualText::destroy()
 	{
+		m_bAlive = false;
+		m_Text = sf::Text();
+		m_Font = sf::Font();
 	}
 
 	bool VisualText::alive() const
@@ -37,18 +37,10 @@ namespace graphics {
 		return m_bAlive;
 	}
 
-	void VisualText::clean()
-	{
-		m_Text = sf::Text();
-		m_Font = sf::Font();
-		m_bAlive = false;
-	}
-
 	VisualText& VisualText::loadFont(const std::string& sFilename)
 	{
 		m_Font.loadFromFile(sFilename);
 		m_Text.setFont(m_Font);
-		m_bAlive = true;
 		return *this;
 	}
 

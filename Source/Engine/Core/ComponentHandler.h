@@ -22,15 +22,13 @@ class ComponentHandler
 {
 public:
 	ComponentHandler(SYSTEM_TYPE* pSystem, uint uInitialSize)
-		: m_uSize(uInitialSize)
+		: m_pSystem(pSystem)
+		, m_uSize(uInitialSize)
 		, m_uNext(0U)
 	{
 		m_aComponents.resize(m_uSize);
 		for (uint i = 0U; i < m_uSize; ++i)
-		{
-			m_aComponents[i].init(pSystem);
 			m_aIndices.push_back(i);
-		}
 	}
 
 	~ComponentHandler() {}
@@ -39,7 +37,7 @@ public:
 	{
 		assert(m_uNext < m_uSize);
 		auto uIndex = m_aIndices[m_uNext++];
-        m_aComponents[uIndex].created();
+        m_aComponents[uIndex].init();
 		return uIndex;
 	}
 
@@ -56,7 +54,7 @@ public:
 			if (m_aIndices[i] == uHandle)
 			{
 				m_uNext--;
-				m_aComponents[uHandle].clean();
+				m_aComponents[uHandle].destroy();
 				std::swap(m_aIndices[i], m_aIndices[m_uNext]);
 				return;
 			}
@@ -83,6 +81,7 @@ public:
 	}
 
 private:
+	SYSTEM_TYPE* m_pSystem; // TODO: Is this necessary?
 	std::vector<COMPONENT_TYPE> m_aComponents;
 	std::vector<uint> m_aIndices;
 	uint m_uNext;

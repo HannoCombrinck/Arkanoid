@@ -109,7 +109,7 @@ void Paddle::handleTextInput()
 		}
 	}
 
-	textBuffer.clean();
+	textBuffer.clear();
 }
 
 void Paddle::processCommand()

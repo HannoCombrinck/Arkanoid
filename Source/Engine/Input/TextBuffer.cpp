@@ -2,14 +2,12 @@
 
 #include <iostream>
 
-#include <Engine/Input/InputSystem.h>
-
 using namespace std;
 
 namespace input {
 
 	TextBuffer::TextBuffer()
-		: m_pInputSystem(0)
+		: m_bAlive(false)
 	{
 	}
 
@@ -18,21 +16,23 @@ namespace input {
 		m_Buffer.clear();
 	}
 
-	void TextBuffer::init(InputSystem* pInputSystem)
+	void TextBuffer::init()
 	{
-		m_pInputSystem = pInputSystem;
+		m_bAlive = true;
 	}
 
 	bool TextBuffer::alive() const
 	{
-		return true;
+		return m_bAlive;
 	}
 
-	void TextBuffer::created()
+	void TextBuffer::destroy()
 	{
+		m_bAlive = false;
+		clear();
 	}
 
-	void TextBuffer::clean()
+	void TextBuffer::clear()
 	{
 		m_Buffer.clear();
 	}

@@ -7,11 +7,6 @@ using namespace math;
 
 namespace graphics
 {
-	class VisualSystem;
-}
-
-namespace graphics
-{
 	class VisualShapeCircle : public VisualShape
 	{
 	public:
@@ -28,7 +23,6 @@ namespace graphics
 		void getColour(uint& r, uint& g, uint& b, uint& a) const;
 
 	private:
-        void onCreated() override;
         void onUpdate(float fDT) override;
         void onDraw(sf::RenderWindow& window) override;
 

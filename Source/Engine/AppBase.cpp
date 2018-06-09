@@ -52,7 +52,7 @@ void AppBase::toggleFullscreen()
 void AppBase::toggleMouseLock()
 {
 	m_bMouseLock = !m_bMouseLock;
-	//m_upWindow->setMouseCursorGrabbed(m_bMouseLock);
+	m_upWindow->setMouseCursorGrabbed(m_bMouseLock);
 	m_upWindow->setMouseCursorVisible(!m_bMouseLock);
 }
 

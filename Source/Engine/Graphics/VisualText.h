@@ -7,11 +7,6 @@
 
 using namespace math;
 
-namespace graphics
-{
-	class VisualSystem;
-}
-
 namespace sf
 {
 	class RenderWindow;
@@ -25,10 +20,9 @@ namespace graphics
 		VisualText();
 		~VisualText();
 
-		void init(VisualSystem* pVisualSystem);
-		void created();
+		void init();
+		void destroy();
 		bool alive() const;
-		void clean();
 
 		void update(float fDT);
 
@@ -39,7 +33,6 @@ namespace graphics
 
 	private:
 		friend class VisualSystem;
-		VisualSystem* m_pVisualSystem;
 		bool m_bAlive;
 		sf::Text m_Text;
 		sf::Font m_Font;
