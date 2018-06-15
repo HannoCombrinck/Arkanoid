@@ -69,6 +69,16 @@ void Paddle::getInputs()
 	m_bDown = is().isKeyPressed(KEY_S);
 	m_bAction = is().isKeyPressed(KEY_Space) || is().isMBPressed(MB_Left);
 
+	/*PaddleData p ;
+	uint uPaddleID = 1U;
+	auto pd = PaddleData 
+	{ 
+		Vec2(1.0f, 1.0f) 
+	};
+	world().add(uPaddleID, pd)
+		.paddleSpecificFunc()
+		;*/
+
 	handleTextInput();
 
 	auto vMouseMove = is().getMousePosRel();

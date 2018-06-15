@@ -9,11 +9,64 @@
 using namespace math;
 using namespace entity;
 
+struct EntityData
+{
+	virtual const std::string& getEntityType() const = 0;
+};
+
+class Paddle;
+
+/*
+Paddle
+{
+	Vec2 vPos
+}
+*/
+
+struct PaddleData : public EntityData
+{
+	Vec2 vPos;
+
+	const std::string& getEntityType() const { return "Paddle"; }
+};
+/*
+
+	template <class Archive>
+	void serialize(Archive& a, const unsigned int uVersion)
+	{
+		a & boost::serialization::base_object<EntityData>(*this);
+		a & vPos;
+	}
+};
+BOOST_SERIALIZATION_SHARED_PTR(PaddleData)
+BOOST_CLASS_EXPORT(PaddleData)
+*/
+
+namespace
+{
+	void loadEntities()
+	{
+		std::vector<boost::shared_ptr<EntityData>> aspEntities;
+		for (auto sp : aspEntities)
+		{
+			auto sEntityType = sp->getEntityType();
+			//auto pEntity = factory.create(sEntityType);
+			//pEntity->initFrom(sp);
+			//pWorld->add(pEntity);
+		}
+	}
+}
+
 class Paddle : public Entity
 {
 public:
 	Paddle();
 	virtual ~Paddle();
+
+	void initFrom(EntityData* rData)
+	{
+		auto pPaddleData = reinterpret_cast<PaddleData*>(rData);
+	}
 
 private:
 	// Entity callbacks
