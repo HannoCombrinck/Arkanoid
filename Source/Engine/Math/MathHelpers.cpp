@@ -12,6 +12,15 @@ namespace math {
 		return rad*180.0f/PI;
 	}
 
+	float clamp(const float fVal, const float fMin, const float fMax)
+	{
+		if (fVal > fMax)
+			return fMax;
+		else if (fVal < fMin)
+			return fMin;
+		return fVal;
+	}
+
 	float calcQuatWComponent(const glm::quat &q)
 	{
 		float t = 1.0f - q.x*q.x - q.y*q.y - q.z*q.z;

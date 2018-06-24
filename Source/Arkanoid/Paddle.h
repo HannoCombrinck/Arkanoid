@@ -11,10 +11,8 @@ using namespace entity;
 
 struct EntityData
 {
-	virtual const std::string& getEntityType() const = 0;
+	virtual const std::string getEntityType() const = 0;
 };
-
-class Paddle;
 
 /*
 Paddle
@@ -26,8 +24,9 @@ Paddle
 struct PaddleData : public EntityData
 {
 	Vec2 vPos;
+	float fSpeed;
 
-	const std::string& getEntityType() const { return "Paddle"; }
+	const std::string getEntityType() const { return "Paddle"; }
 };
 /*
 
@@ -81,15 +80,16 @@ private:
 	void updateState();
 	void applyState();
 
-	Vec2 m_vPos;
+	PaddleData m_Data;
 	bool m_bLeft;
 	bool m_bRight;
 	bool m_bAction;
 
 	uint m_uPaddleVis;
+
+	// Test
 	uint m_uSound;
 	uint m_uVisualText;
-
 	bool m_bInputMode;
 	std::string m_sCommand;
 	uint m_uTextBuffer;

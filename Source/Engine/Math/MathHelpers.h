@@ -10,6 +10,9 @@ namespace math
 	//! Converts radians to degrees
 	float toDegrees(float rad);
 
+	//! Clamps a value to provided range
+	float clamp(const float fVal, const float fMin, const float fMax);
+
 	//! Assumes unit quaternion and calculate w component.
 	float calcQuatWComponent(const glm::quat &q);
 

@@ -37,7 +37,7 @@ namespace graphics {
 		return m_bAlive;
 	}
 
-	VisualText& VisualText::loadFont(const std::string& sFilename)
+	VisualText& VisualText::setFont(const std::string& sFilename)
 	{
 		m_Font.loadFromFile(sFilename);
 		m_Text.setFont(m_Font);

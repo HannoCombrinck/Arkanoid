@@ -26,7 +26,7 @@ namespace graphics
 
 		void update(float fDT);
 
-		VisualText& loadFont(const std::string& sFilename);
+		VisualText& setFont(const std::string& sFilename);
 		VisualText& setText(const std::string& sString);
 		VisualText& setPosition(const Vec2& vPos);
 		VisualText& setSize(const Vec2& vSize);

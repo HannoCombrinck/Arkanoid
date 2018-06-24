@@ -4,6 +4,7 @@
 #include <functional>
 
 #include <Engine/Engine.h>
+#include <Engine/Math/MathHelpers.h>
 
 using namespace std;
 using namespace input;
@@ -11,8 +12,7 @@ using namespace graphics;
 using namespace sound;
 
 Paddle::Paddle()
-	: m_vPos(Vec2(0.0f, 0.0f))
-	, m_bLeft(false)
+	: m_bLeft(false)
 	, m_bRight(false)
 	, m_bAction(false)
 	, m_bInputMode(false)
@@ -31,10 +31,11 @@ Paddle::~Paddle()
 void Paddle::onInit()
 {
 	auto vPaddleSize = Vec2(100.0f, 20.0f);
-	m_vPos = Vec2(360.0f, 560.0f);
-
+	m_Data.vPos = Vec2(360.0f, 560.0f);
+	m_Data.fSpeed = 8.0f;
+ 
 	vs().createVisualShapeBox(m_uPaddleVis)
-		.setPosition(m_vPos)
+		.setPosition(m_Data.vPos)
 		.setSize(vPaddleSize)
 		.setColour(100U, 100U, 100U, 255U)
 		;
@@ -42,8 +43,8 @@ void Paddle::onInit()
 	m_uSound = ss().createSound("../Data/Sounds/beep.wav");
 
 	vs().createVisualText(m_uVisualText)
+		.setFont("../Data/Fonts/impact.ttf")
 		.setText("Temp")
-		.loadFont("../Data/Fonts/impact.ttf")
 		;
 
 	is().createTextBuffer(m_uTextBuffer);
@@ -105,10 +106,21 @@ void Paddle::handleTextInput()
 			else
 				processCommand();
 		}
-		else if (ch == 'i')
+		else
 		{
-			m_bInputMode = true;
-			m_sCommand.clear();
+			switch (ch)
+			{
+			case 'i':
+				m_bInputMode = true;
+				m_sCommand.clear();
+				break;
+			case '2':
+				m_Data.fSpeed = clamp(m_Data.fSpeed - 1.0f, 0.0f, 15.0f);
+				break;
+			case '3':
+				m_Data.fSpeed = clamp(m_Data.fSpeed + 1.0f, 0.0f, 15.0f);
+				break;
+			}
 		}
 	}
 
@@ -126,9 +138,9 @@ void Paddle::processCommand()
 void Paddle::updateState()
 {
 	if (m_bLeft)
-		m_vPos.x -= 5.5f;
+		m_Data.vPos.x -= m_Data.fSpeed;
 	if (m_bRight)
-		m_vPos.x += 5.5f;
+		m_Data.vPos.x += m_Data.fSpeed;
 	if (m_bAction)
 		cout << "Action\n";
 }
@@ -136,6 +148,6 @@ void Paddle::updateState()
 void Paddle::applyState()
 {
 	vs().modifyVisualShapeBox(m_uPaddleVis)
-		.setPosition(m_vPos)
+		.setPosition(m_Data.vPos)
 		;
 }
