@@ -26,22 +26,21 @@ Paddle::Paddle()
 
 Paddle::~Paddle()
 {
-	vs().removeVisual(m_uVisual);
-	vs().removeVisualShapeBox(m_uVisualBox);
 	ss().removeSound(m_uSound);
 	vs().removeVisualText(m_uVisualText);
 	is().removeTextBuffer(m_uTextBuffer);
+	vs().removeVisualShapeBox(m_uPaddleVis);
 }
 
 void Paddle::onInit()
 {
-	vs().createVisual(m_uVisual)
-		.loadSprite("../Data/Textures/test.tga")
-		;
+	auto vPaddleSize = Vec2(100.0f, 20.0f);
+	m_vPos = Vec2(360.0f, 560.0f);
 
-    vs().createVisualShapeBox(m_uVisualBox)
-		.setSize(Vec2(100.0f, 20.0f))
-		.setPosition(Vec2(100.0f, 100.0f))
+	vs().createVisualShapeBox(m_uPaddleVis)
+		.setPosition(m_vPos)
+		.setSize(vPaddleSize)
+		.setColour(100U, 100U, 100U, 255U)
 		;
 
 	m_uSound = ss().createSound("../Data/Sounds/beep.wav");
@@ -63,10 +62,8 @@ void Paddle::onUpdate(float fDT)
 
 void Paddle::getInputs()
 {
-	m_bLeft = is().isKeyPressed(KEY_A);
-	m_bRight = is().isKeyPressed(KEY_D);
-	m_bUp = is().isKeyPressed(KEY_W);
-	m_bDown = is().isKeyPressed(KEY_S);
+	m_bLeft = is().isKeyPressed(KEY_A) || is().isKeyPressed(KEY_Left);
+	m_bRight = is().isKeyPressed(KEY_D) || is().isKeyPressed(KEY_Right);
 	m_bAction = is().isKeyPressed(KEY_Space) || is().isMBPressed(MB_Left);
 
 	/*PaddleData p ;
@@ -84,7 +81,7 @@ void Paddle::getInputs()
 	auto vMouseMove = is().getMousePosRel();
 	if (vMouseMove.x != 0 || vMouseMove.y != 0)
 	{
-		m_vPos += vMouseMove;
+		//m_vPos += vMouseMove;
 		//cout << "Mouse move: " << vMouseMove.x << ", " << vMouseMove.y << endl;
 	}
 }
@@ -136,16 +133,13 @@ void Paddle::updateState()
 		m_vPos.x -= 5.5f;
 	if (m_bRight)
 		m_vPos.x += 5.5f;
-	if (m_bUp)
-		m_vPos.y -= 5.5f;
-	if (m_bDown)
-		m_vPos.y += 5.5f;
 	if (m_bAction)
 		cout << "Action\n";
 }
 
 void Paddle::applyState()
 {
-	auto& rVisual = vs().modifyVisual(m_uVisual);
-	rVisual.setPosition(m_vPos);
+	vs().modifyVisualShapeBox(m_uPaddleVis)
+		.setPosition(m_vPos)
+		;
 }

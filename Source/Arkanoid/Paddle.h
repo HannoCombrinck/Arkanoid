@@ -84,12 +84,9 @@ private:
 	Vec2 m_vPos;
 	bool m_bLeft;
 	bool m_bRight;
-	bool m_bUp;
-	bool m_bDown;
 	bool m_bAction;
 
-	uint m_uVisual;
-	uint m_uVisualBox;
+	uint m_uPaddleVis;
 	uint m_uSound;
 	uint m_uVisualText;
 

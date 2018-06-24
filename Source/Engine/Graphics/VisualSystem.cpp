@@ -61,11 +61,6 @@ namespace graphics {
 		m_fDeltaTime = fDT;
 		m_fDeltaTimeSmoothed = m_fDeltaTimeSmoothed*0.98f + m_fDeltaTime*0.02f;
 
-		/*auto uSize = m_upCompHandler->getSize();
-		auto& aData = m_upCompHandler->getData();
-		for (uint i = 0U; i < uSize; ++i)
-			aData[i].update(fDT);*/
-
 		VisualHandler().foreach([fDT](Visual& v) {
 			v.update(fDT);
 		});
@@ -74,6 +69,7 @@ namespace graphics {
 
 		///////////////////////////////////////////
 		///////////////////////////////////////////
+		/*
 		ImGui::Begin("Sample window");
 		
 		static float colour[3] = { 0.0f, 0.0f, 0.0f };
@@ -96,6 +92,7 @@ namespace graphics {
 			m_pSFML->pWindow->setTitle(windowTitle);
 		}
 		ImGui::End();
+		*/
 		///////////////////////////////////////////////
 		///////////////////////////////////////////
 	}
