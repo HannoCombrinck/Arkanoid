@@ -6,6 +6,12 @@
 #include <Engine/Engine.h>
 #include <Engine/Math/MathHelpers.h>
 
+BOOST_SERIALIZATION_SHARED_PTR(EntityData)
+BOOST_CLASS_EXPORT(EntityData)
+
+BOOST_SERIALIZATION_SHARED_PTR(PaddleData)
+BOOST_CLASS_EXPORT(PaddleData)
+
 using namespace std;
 using namespace input;
 using namespace graphics;

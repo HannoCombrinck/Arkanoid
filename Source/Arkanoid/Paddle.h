@@ -21,14 +21,12 @@ using namespace entity;
 struct EntityData
 {
 	virtual const std::string getEntityType() const = 0;
-};
 
-/*
-Paddle
-{
-	Vec2 vPos
-}
-*/
+	template <class Archive>
+	void serialize(Archive& a, const unsigned int uVersion)
+	{
+	}
+};
 
 struct PaddleData : public EntityData
 {
@@ -36,19 +34,17 @@ struct PaddleData : public EntityData
 	float fSpeed;
 
 	const std::string getEntityType() const { return "Paddle"; }
-//};
 
 	template <class Archive>
 	void serialize(Archive& a, const unsigned int uVersion)
 	{
-		//a & boost::serialization::base_object<EntityData>(*this);
+		a & boost::serialization::base_object<EntityData>(*this);
 		a & vPos.x;
 		a & vPos.y;
 		a & fSpeed;
 	}
 };
-BOOST_SERIALIZATION_SHARED_PTR(PaddleData)
-BOOST_CLASS_EXPORT(PaddleData)
+
 
 namespace
 {
