@@ -83,6 +83,23 @@ void Paddle::getInputs()
 	}
 }
 
+void Paddle::updateState()
+{
+	if (m_bLeft)
+		m_Data.vPos.x -= m_Data.fSpeed;
+	if (m_bRight)
+		m_Data.vPos.x += m_Data.fSpeed;
+	if (m_bAction)
+		cout << "Action\n";
+}
+
+void Paddle::applyState()
+{
+	vs().modifyVisualShapeBox(m_uPaddleVis)
+		.setPosition(m_Data.vPos)
+		;
+}
+
 void Paddle::handleTextInput()
 {
 	auto& textBuffer = is().modifyTextBuffer(m_uTextBuffer);
@@ -133,21 +150,4 @@ void Paddle::processCommand()
 	cout << "Command: " << m_sCommand << std::endl;
 	m_sCommand.clear();
 	m_bInputMode = false;
-}
-
-void Paddle::updateState()
-{
-	if (m_bLeft)
-		m_Data.vPos.x -= m_Data.fSpeed;
-	if (m_bRight)
-		m_Data.vPos.x += m_Data.fSpeed;
-	if (m_bAction)
-		cout << "Action\n";
-}
-
-void Paddle::applyState()
-{
-	vs().modifyVisualShapeBox(m_uPaddleVis)
-		.setPosition(m_Data.vPos)
-		;
 }

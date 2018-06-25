@@ -6,6 +6,15 @@
 #include <Engine/Math/Math.h>
 #include <Engine/Entity/Entity.h>
 
+#include <boost/archive/text_oarchive.hpp> 
+#include <boost/archive/text_iarchive.hpp> 
+#include <boost/serialization/serialization.hpp>
+#include <boost/serialization/shared_ptr.hpp>
+#include <boost/serialization/base_object.hpp>
+#include <boost/serialization/vector.hpp>
+#include <boost/serialization/export.hpp>
+
+
 using namespace math;
 using namespace entity;
 
@@ -27,19 +36,19 @@ struct PaddleData : public EntityData
 	float fSpeed;
 
 	const std::string getEntityType() const { return "Paddle"; }
-};
-/*
+//};
 
 	template <class Archive>
 	void serialize(Archive& a, const unsigned int uVersion)
 	{
-		a & boost::serialization::base_object<EntityData>(*this);
-		a & vPos;
+		//a & boost::serialization::base_object<EntityData>(*this);
+		a & vPos.x;
+		a & vPos.y;
+		a & fSpeed;
 	}
 };
 BOOST_SERIALIZATION_SHARED_PTR(PaddleData)
 BOOST_CLASS_EXPORT(PaddleData)
-*/
 
 namespace
 {
