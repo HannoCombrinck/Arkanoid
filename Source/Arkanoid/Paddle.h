@@ -18,6 +18,17 @@
 using namespace math;
 using namespace entity;
 
+namespace boost {
+namespace serialization {
+	template <class Archive>
+	void serialize(Archive& a, Vec2& v, const unsigned int uVersion)
+	{
+		a & v.x;
+		a & v.y;
+	}
+}
+}
+
 struct EntityData
 {
 	virtual const std::string getEntityType() const = 0;
@@ -39,8 +50,8 @@ struct PaddleData : public EntityData
 	void serialize(Archive& a, const unsigned int uVersion)
 	{
 		a & boost::serialization::base_object<EntityData>(*this);
-		a & vPos.x;
-		a & vPos.y;
+		a & vPos;/* .x;
+		a & vPos.y;*/
 		a & fSpeed;
 	}
 };
