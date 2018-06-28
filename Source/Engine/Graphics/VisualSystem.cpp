@@ -56,6 +56,11 @@ namespace graphics {
 		delete m_pSFML;
 	}
 
+	void VisualSystem::printVisualTextHandler()
+	{
+		VisualTextHandler().printLists();
+	}
+
 	void VisualSystem::update(float fDT)
 	{
 		m_fDeltaTime = fDT;

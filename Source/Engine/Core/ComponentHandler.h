@@ -35,6 +35,9 @@ public:
 
 	uint create()
 	{
+		if (m_uNext >= m_uSize)
+			std::cout << "Too many components created - this handler has a max of: " << m_uSize << std::endl;
+
 		assert(m_uNext < m_uSize);
 		auto uIndex = m_aIndices[m_uNext++];
         m_aComponents[uIndex].init();
@@ -77,6 +80,25 @@ public:
 		{
 			if (m_aComponents[i].isAlive())
 				f(m_aComponents[i]);
+		}
+	}
+
+	void printLists()
+	{
+		std::cout << "Component names:\n";
+		for (auto& r : m_aComponents)
+		{
+			if (r.isAlive())
+				r.printName();
+		}
+
+		std::cout << "Index list:\n";
+		uint uIndex = 0U;
+		for (auto i = 0U; i < m_aIndices.size(); ++i)
+		{
+			uIndex = m_aIndices[i];
+			if (m_aComponents[uIndex].isAlive())
+				std::cout << i << ") " << uIndex << std::endl;
 		}
 	}
 

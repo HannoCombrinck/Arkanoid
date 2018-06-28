@@ -49,11 +49,56 @@ void Paddle::onInit()
 	m_uSound = ss().createSound("../Data/Sounds/beep.wav");
 
 	vs().createVisualText(m_uVisualText)
+		.setName("i0")
 		.setFont("../Data/Fonts/impact.ttf")
 		.setText("Temp")
 		;
 
 	is().createTextBuffer(m_uTextBuffer);
+
+
+	std::cout << "Component test\n";
+	uint i1, i2, i3, i4, i5, i6, i7;
+	vs().createVisualText(i1).setName("i1");
+	vs().createVisualText(i2).setName("i2");
+	vs().createVisualText(i3).setName("i3");
+	vs().removeVisualText(i2);
+	vs().createVisualText(i4).setName("i4");
+	vs().createVisualText(i5).setName("i5");
+	vs().createVisualText(i6).setName("i6");
+	vs().removeVisualText(i1);
+	vs().createVisualText(i7).setName("i7");
+	vs().removeVisualText(i4);
+	vs().removeVisualText(i5);
+	vs().removeVisualText(i6);
+	vs().createVisualText(i4).setName("i4");
+	vs().createVisualText(i5).setName("i5");
+	vs().createVisualText(i6).setName("i6");
+	vs().removeVisualText(i4);
+	vs().createVisualText(i4).setName("i4");
+	vs().removeVisualText(i4);
+	vs().createVisualText(i4).setName("i4");
+	vs().removeVisualText(i4);
+	vs().createVisualText(i4).setName("i4");
+	vs().removeVisualText(i4);
+	vs().createVisualText(i4).setName("i4");
+	vs().removeVisualText(i4);
+	vs().createVisualText(i4).setName("i4");
+	vs().removeVisualText(i4);
+	vs().createVisualText(i2).setName("i2");
+	vs().createVisualText(i4).setName("i4");
+	
+
+	vs().printVisualTextHandler();
+	
+	vs().removeVisualText(i2);
+	vs().removeVisualText(i3);
+	vs().removeVisualText(i4);
+	vs().removeVisualText(i5);
+	vs().removeVisualText(i6);
+	vs().removeVisualText(i7);
+
+	std::cout << "End component test\n";
 }
 
 void Paddle::onUpdate(float fDT)

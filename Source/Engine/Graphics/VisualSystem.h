@@ -26,6 +26,8 @@ namespace graphics
 		VisualSystem(sf::RenderWindow *pWindow);
 		~VisualSystem();
 
+		void printVisualTextHandler();
+
 		ADD_COMPONENT(VisualSystem, Visual)
 		ADD_COMPONENT(VisualSystem, VisualShapeBox)
 		ADD_COMPONENT(VisualSystem, VisualShapeCircle)

@@ -61,6 +61,17 @@ namespace graphics {
 		}
 	}
 
+	VisualText & VisualText::setName(const std::string & s) 
+	{ 
+		m_sName = s; 
+		return *this; 
+	}
+
+	void VisualText::printName()
+	{
+		std::cout << "VisualText name: " << m_sName << std::endl;
+	}
+
 	VisualText& VisualText::setText(const std::string & sString)
 	{
 		m_sString = sString;

@@ -26,6 +26,9 @@ namespace graphics
 
 		void update(float fDT);
 
+		VisualText& setName(const std::string& s);
+		void printName();
+
 		VisualText& setFont(const std::string& sFilename);
 		VisualText& setText(const std::string& sString);
 		VisualText& setPosition(const Vec2& vPos);
@@ -36,6 +39,8 @@ namespace graphics
 		bool m_bAlive;
 		sf::Text m_Text;
 		sf::Font m_Font;
+
+		std::string m_sName;
 
 		std::string m_sString;
 		Vec2 m_vPos;
