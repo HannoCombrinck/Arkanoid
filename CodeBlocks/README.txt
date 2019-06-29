@@ -1,0 +1,1 @@
+The CodeBlocks project is out of date and not currently in a working state.
