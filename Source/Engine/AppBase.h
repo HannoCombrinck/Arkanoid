@@ -23,7 +23,7 @@ public:
 	// }
 
 protected:
-	// Derived application
+	// Derived application interface
 	// {
 	void closeApplication();
 	void toggleFullscreen();
